@@ -1,2 +1,2 @@
-# Small-
+# Small
 Projecte Final
