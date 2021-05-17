@@ -29,6 +29,49 @@ body{
     background-color: transparent;
 }
 
+#dSeccions{
+    font-weight: bolder;
+
+}
+
+#fotosSeccions{
+        width: 95%;
+        height: 100%;
+        border-radius: 100%;
+        border: 7px solid #01E4FF;
+    
+}
+
+#fotosSeccions2{
+    width: 95%;
+    height: 100%;
+    border-radius: 100%;
+    border: 7px solid #07FB7F;
+
+}
+
+#fotosSeccions3{
+    width: 95%;
+    height: 100%;
+    border-radius: 100%;
+    border: 7px solid #FF0910;
+
+}
+#seccio{
+    font-weight: lighter;
+    font-size:1.5em;
+}
+
+
+#fotosSeccions4{
+    width: 95%;
+    height: 100%;
+    border-radius: 100%;
+    border: 7px solid #FDB402;
+
+}
+
+
 .lletrero{
     background-color:rgb(255, 255, 255, 0.7);
     width:100%;
@@ -81,9 +124,30 @@ h1{
     background-size: cover;
     background-attachment: fixed;
     min-height: 104vh;
-
-
-
 }
+.bgcontainer{
+    background-color: #07FB7F;
+    width:100%;
+    height:auto;
+    padding-bottom:80px;
+}
+
+#bot{
+    width:40%;
+}
+#ProdBot{
+    font-weight: bolder;
+    color:white;
+    font-size:2em;
+}
+
+#c{
+    font-weight: bold;
+}
+#p{
+    font-size:1.5em;
+}
+
+
 
 /*Media Queries*/
