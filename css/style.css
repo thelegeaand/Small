@@ -1,3 +1,237 @@
-body{
-    color:blue;
+
+/*body*/
+html{
+    scroll-behavior: smooth;
 }
+
+
+
+body{
+
+        background-color: white;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: normal;
+        overflow-x: hidden;
+    
+}
+
+/*header*/
+#logo{
+
+    width:65%;
+
+}
+#bcolor{
+    color: white;
+    background-color: #07FB7F;
+    border-radius: 13px;
+    font-weight: bold;
+    padding: 11px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#bgcust{
+    background-color: transparent;
+}
+
+#dSeccions{
+    font-weight: bolder;
+
+}
+
+#fotosSeccions{
+        width: 95%;
+        height: 100%;
+        border-radius: 100%;
+        border: 7px solid #01E4FF;
+    
+}
+
+#fotosSeccions2{
+    width: 95%;
+    height: 100%;
+    border-radius: 100%;
+    border: 7px solid #07FB7F;
+
+}
+
+#fotosSeccions3{
+    width: 95%;
+    height: 100%;
+    border-radius: 100%;
+    border: 7px solid #FF0910;
+
+}
+#seccio{
+    font-weight: lighter;
+    font-size:1.5em;
+}
+
+
+#fotosSeccions4{
+    width: 95%;
+    height: 100%;
+    border-radius: 100%;
+    border: 7px solid #FDB402;
+
+}
+
+
+.lletrero{
+    background-color:rgb(255, 255, 255, 0.7);
+    width:100%;
+    height:auto;
+    box-shadow: 1px 0px 3px black;
+    border-radius: 2px;
+    margin-top:5%;
+    padding:4%;
+}
+.navbar {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    margin-top:-16px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: black;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+
+h1{
+    color:black; filter:alpha(opacity=100); opacity:100%; 
+    font-size:3.8vw;
+}
+
+.header {
+    background: url("../img/FondoPrincipalWeb.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 104vh;
+}
+.bgcontainer{
+    background-color: #07FB7F;
+    width:100%;
+    height:auto;
+    padding-bottom:80px;
+}
+
+#bot{
+    width:40%;
+}
+#ProdBot{
+    font-weight: bolder;
+    color:white;
+    font-size:2em;
+}
+
+#c{
+    font-weight: bold;
+}
+#p{
+    font-size:1.5em;
+}
+
+.card1{
+    background: url("../img/Clients.jpg");background-repeat: no-repeat;background-size: contain;
+    width:100%;
+    height:50%;
+}
+
+.bgcontainer2{
+    background-color: #545554;
+    width:100%;
+    height:auto;
+    
+
+}
+
+
+
+.flecha{
+
+    color: #07FB7F;
+    font-size: 66px;
+    animation: bounce .5s alternate infinite ease-in;
+
+
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(-10%)
+    }
+
+    to {
+        transform: translate(0%);
+        font-size: 66px;
+        color: #2da86b;
+    }
+}
+.SmallScroll{
+
+    background-color: #545554;
+    overflow-x: hidden;
+    padding-bottom: 5EM;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    padding-bottom: 56%;
+    padding-top: 14%;
+   
+}
+
+.rowc{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 6%;
+    width: 90%;
+
+}
+
+.lista{
+    text-decoration: none;
+    list-style: none;
+    margin-left: -10%;
+    padding-top: 8%;
+}
+
+
+.t1{
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+/*Media Queries*/
