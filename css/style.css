@@ -14,8 +14,7 @@ body{
         overflow-x: hidden;
     
 }
-
-/*header*/
+/*header & Main*/
 #logo{
 
     width:65%;
@@ -226,7 +225,7 @@ h1{
     padding-top: 8%;
 }
 
-
+/*footer*/
 .t1{
     font-weight: bold;
     text-align: center;
@@ -243,6 +242,49 @@ h1{
 }
 .ICON:hover{
     color:#07FB7F;
+
+}
+
+/*Modals*/
+
+#titol1{
+
+    font-weight: bold;
+
+
+}
+#imgModal{
+    width:28%;
+}
+
+.modal-content {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid ;
+    border-radius: 13px;
+    border-color:#07FB7F;
+    outline: 0;
+}
+
+#registre{
+    color:#07FB7F;
+}
+
+.boton{
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
