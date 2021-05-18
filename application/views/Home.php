@@ -215,6 +215,36 @@
             </button>
           </div>
           <div class="modal-body ">
+          <p> <strong>POLITICA DE COOKIES</strong><br><br>
+          <strong>Que són?</strong><br> Les Cookies són petits arxius que els llocs web envien al 
+          navegador i que s'emmagatzemen en el terminal de l'usuari, que pot ser un ordinador personal,
+          un telèfon mòbil, una tauleta o qualsevol altre dispositiu.<br><br><strong>Quina és la seva funció?</strong><br> 
+          Exerceixen un paper essencial en la prestació de nombrosos serveis de TU. Entre altres funcions, permeten que un lloc web emmagatzemi 
+          i recuperi informació sobre els hàbits de navegació d'un Usuari o el seu equip i, depenent de la informació obtinguda, pot usar-se per 
+          a reconèixer a l'usuari i millorar el servei ofert a través d'un lloc web i/o aplicació.<br><br><strong>Quin tipus de Cookies existeixen?</strong></br> 
+          Les Cookies es poden usar de manera conjunta o per separat i es poden classificar d'acord amb diferents criteris, com:
+          El propòsit (cookies tècniques, anàlisis, cookies de personalització, com es defineix en la Secció 3 d'aquesta Política.)
+          L'entitat de gestió (les Cookies pròpies establertes pel domini del lloc web visitat per l'usuari o les cookies de tercers són les establertes 
+          i administrades per diferents 
+          dominis en el lloc web visitat amb l'objectiu de poder enviar als usuaris publicitat personalitzada.)
+          El temps d'activitat o retenció d'emmagatzematge ( cookies de session o cookies persistents), etc.<br><br><strong>TIPUS DE COOKIES QUE UTILITZEM</strong><br>
+          Aquesta pàgina web utilitza cookies de tercers que són aquelles 
+          que s'envien al teu ordinador o terminal des d'un domini o una pàgina web que no és gestionada per nosaltres, sinó per 
+          una altra entitat que tracta les dades obtingudes a través de les cookies.
+          En aquest cas les Cookies són utilitzades amb finalitats estadístics 
+          relacionats amb les visites que rep i les pàgines que es consulten, quedant acceptat el seu ús en navegar per ella.
+          Si desitja més informació més sobre els tipus de cookies de seguiment i 
+          anàlisi de dades de Google faci<a href="https://policies.google.com/technologies/cookies?hl=ca"> clic aquí</a>.Per a informar-se sobre com eliminar les cookies del seu explorador:
+        <br><br>
+        <strong>Firefox</strong><br>
+        <strong>Chrome</strong><br>
+        <strong>Internet Explorer</strong><br>
+        <strong>Safari</strong><br>
+        <strong>Opera</strong><br>
+
+         
+
+          </p>
            
           </div>
 
