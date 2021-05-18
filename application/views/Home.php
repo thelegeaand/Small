@@ -253,7 +253,38 @@
     </div>
   </div>
   </div>
-  <p class="copy">Small 2021 &copy;</p>
+  <div class="container d-flex justify-content-center  mt-4 mb-4">
+
+  <div class="row">
+<div >
+  <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-instagram">
+                        <span class="sr-only">LogoInsta</span>
+                        <span class="fa fa-instagram fa-3x ICON"></span>
+  </a>
+
+  </div>
+
+  <div>
+  <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-twitter">
+                        <span class="sr-only">LogoInsta</span>
+                        <span class="fa fa-twitter fa-3x ICON"></span>
+  </a>
+  </div>
+  <div>
+  <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-facebook">
+                        <span class="sr-only">LogoInsta</span>
+                        <span class="fa fa-facebook fa-3x ICON"></span>
+  </a>
+  </div>
+
+  
+
+  </div>
+  
+
+  </div>
+
+  <p class="copy offset-8 ml-2 mb-4">Small 2021 &copy;</p>
 
 </div>
 
