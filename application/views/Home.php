@@ -14,9 +14,6 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>js/scripts.js">
-
-
-
   <title>Pàgina Principal Small</title>
 </head>
 
@@ -54,7 +51,7 @@
         </div>
       </div>
     </div>
-
+<!--Header amb Formulari Botigues per Secció -->
     <div class="container lletrero d-flex justify-content-center ">
       <div class="row ">
         <div class="Tlletrero text-center">
@@ -92,6 +89,8 @@
  
 
   <main>
+
+  <!--Apartat amb Seccions -->
     <section id="A">
 
       <div class="container mt-5">
@@ -258,30 +257,26 @@
   <div class="row">
 <div >
   <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-instagram">
-                        <span class="sr-only">LogoInsta</span>
+                        <span class="sr-only">Logo Instagram</span>
                         <span class="fa fa-instagram fa-3x ICON"></span>
   </a>
 
   </div>
 
   <div>
-  <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-twitter">
-                        <span class="sr-only">LogoInsta</span>
+  <a href="https://www.twitter.com/" class="btn btn-block btn-social btn-twitter">
+                        <span class="sr-only">Logo Twitter</span>
                         <span class="fa fa-twitter fa-3x ICON"></span>
   </a>
   </div>
   <div>
-  <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-facebook">
-                        <span class="sr-only">LogoInsta</span>
+  <a href="https://www.facebook.com/" class="btn btn-block btn-social btn-facebook">
+                        <span class="sr-only">Logo Facebook</span>
                         <span class="fa fa-facebook fa-3x ICON"></span>
   </a>
   </div>
-
-  
-
   </div>
   
-
   </div>
 
   <p class="copy offset-8 ml-2 mb-4">Small 2021 &copy;</p>
