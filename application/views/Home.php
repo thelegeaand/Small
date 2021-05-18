@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,20 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>js/scripts.js">
+
+
 
   <title>Pàgina Principal Small</title>
 </head>
 
 <body>
+
   <!--Header-->
   <header class="header">
     <nav class="navbar navbar-light bgcust justify-content-between ">
@@ -23,6 +31,8 @@
         <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0  mr-3" type="submit">Registrar-se</button>
       </form>
     </nav>
+
+</div>
 
     <!-- Modal Iniciar Sessió -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -67,9 +77,19 @@
 
           </div>
       </div>
+      </form>
     </div>
-    </form>
+   
+      <!--Fletxa desplaçament al contingut-->
+      <div class="text-center mt-4">
+            <a href="#A">
+                <span class="fa fa-angle-down flecha"></span>
+                <span class="sr-only">Seccions</span>
+            </a>
+        </div>
+     
   </header>
+ 
 
   <main>
     <section id="A">
@@ -159,25 +179,112 @@
     </section>
 
 
+    <section id="C">
+
+      <div class="container mt-5 mb-5">
+        <div class="row">
+
+          <div class="card1">
+
+
+          </div>
+
+          <div class="card2">
+
+
+          </div>
+
+          <div class="card3">
+
+
+          </div>
+        </div>
 
 
 
 
 
 
-
-
-
-
-
+    </section>
   </main>
+  <footer>
+
+    <div class="container-fluid bgcontainer2">
+
+    <div class="container">
+
+        <div class="row pt-4 SmallScroll d-flex justify-content-center ">
+
+        <div class="row rowc">
+        <div class="col-sm-4 col-12 col-lg-4">
+    <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+      <div class="card-body">
+        <h5 class="card-title t1">LEGAL</h5> 
+        <ul class="lista">
+          <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Termes i Condicions</a></li>   
+        <li class="pt-3"><a class="card-text pt-2" style="text-decoration:none;color:white;" href="#">Privacitat</a></li>
+        <li class="pt-3"> <a class="card-text pt-2" style="text-decoration:none;color:white;" href="#">Cookies</a></li>
+       </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-12 col-lg-4">
+    <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+      <div class="card-body">
+        <h5 class="card-title t1">LEGAL</h5> 
+        <ul class="lista">
+          <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Termes i Condicions</a></li>   
+        <li class="pt-3"><a class="card-text pt-2" style="text-decoration:none;color:white;" href="#">Privacitat</a></li>
+        <li class="pt-3"> <a class="card-text pt-2" style="text-decoration:none;color:white;" href="#">Cookies</a></li>
+       </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-12 col-lg-4">
+    <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+      <div class="card-body">
+        <h5 class="card-title t1">LEGAL</h5> 
+        <ul class="lista">
+          <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Termes i Condicions</a></li>   
+        <li class="pt-3"><a class="card-text pt-2" style="text-decoration:none;color:white;" href="#">Privacitat</a></li>
+        <li class="pt-3"> <a class="card-text pt-2" style="text-decoration:none;color:white;" href="#">Cookies</a></li>
+       </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+  <p class="copy">Small 2021 &copy;</p>
+
+</div>
+
+      </div>
+
+
+     
+  </footer>
+
+
+
+  <script>
+        $("a[href^='#']").click(function(e) {
+            e.preventDefault();
+
+            var position = $($(this).attr("href")).offset().top;
+
+            $("body, html").animate({
+                scrollTop: position
+            }, 1000);
+        });
+    </script>
 
 
 
 
 
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+      
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
