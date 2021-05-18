@@ -232,6 +232,18 @@ h1{
     text-align: center;
 }
 
+.copy{
+    font-weight:bold;
+    color:white;
+}
 
+.ICON{
+    color: white;
+
+}
+.ICON:hover{
+    color:#07FB7F;
+
+}
 
 /*Media Queries*/
