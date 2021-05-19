@@ -45,11 +45,11 @@
             <form>
               <div class="form-row">
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault01">Nom Usuari</label>
+                  <label for="validationDefault01">NOM USUARI</label>
                   <input type="text" class="form-control" id="Usuari" required>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">Contransenya</label>
+                  <label for="validationDefault02">PASSWORD</label>
                   <input type="password" class="form-control" id="Password" required>
                 </div>
 
@@ -83,7 +83,67 @@
           </div>
           <div class="modal-body ">
             <form>
-           ....
+            <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault01">NOM</label>
+                  <input type="text" class="form-control" id="Usuari" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">PRIMER COGNOM</label>
+                  <input type="text" class="form-control" id="Cognom" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">SEGON COGNOM</label>
+                  <input type="text" class="form-control" id="Cognom2" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">DNI</label>
+                  <input type="text" class="form-control" id="Dni" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">DATA DE NAIXEMENT</label>
+                  <input type="date" class="form-control" id="dnaix" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">CORREU ELECTRÒNIC</label>
+                  <input type="mail" class="form-control" id="mail" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-row">
+                  <div class="col-md-4">
+                  <label for="validationDefault02">CIUTAT</label>
+                  <input type="text" class="form-control" id="ciutat" required>
+                  </div>
+                  <div class="col-md-4">
+                  <label for="validationDefault02">PROVÍNCIA</label>
+                  <input type="mail" class="form-control" id="mail" required>
+                  </div>
+                  <div class="col-md-4">
+                  <label for="validationDefault02">C.POSTAL</label>
+                  <input type="mail" class="form-control" id="mail" required>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">PASSWORD</label>
+                  <input type="password" class="form-control" id="mail" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">REPETEIX PASSWORD</label>
+                  <input type="password" class="form-control" id="mail" required>
+                </div>
+
+                <div class="offset-4 text-center boton">
+                  <button type="submit" id="bcolor" class="btn btn-outline-success">Iniciar Sessió</button>
+
+                </div>
+                <div class="offset-2 mt-2">
+                  <p>No ets <strong>Client</strong> o no tens <strong>Botiga</strong>? <span id="registre">Registra't<span></p>
+
+                </div>
+
+
+              </div>
             </form>
           </div>
         </div>
@@ -388,24 +448,37 @@
     <!--Secció C-Apartat Cards -->
     <section id="C">
 
-      <div class="container mt-5 mb-5">
-        <div class="row">
-
-          <div class="card1">
-
-
-          </div>
-
-          <div class="card2">
-
-
-          </div>
-
-          <div class="card3">
-
-
+    <div class="container mb-5 mt-5 justify-content-center d-flex">
+      <div class="row col-md-12">
+        <div class="col-md-4">
+          <div class="card1" style="width: 18rem;">
+            <div class="card-body card1-cuerpo">
+              <h5 class="card-title margin-div">BOTIGUES</h5>
+              <p class="card-text">Vols afegir la teva botiga i treballar amb nosaltres?<br> <strong>UNEIX-TE</strong> a nosaltres per aconseguir arribar a més clients!</p>
+              <a href="#" class="btn" id="bcolor">Go somewhere</a>
+            </div>
           </div>
         </div>
+        <div class="col-md-4">
+          <div class="card2" style="width: 18rem;">
+            <div class="card-body card1-cuerpo">
+              <h5 class="card-title">BOTIGUES</h5>
+              <p class="card-text">Vols afegir la teva botiga i treballar amb nosaltres?<br> <strong>UNEIX-TE</strong> a nosaltres per aconseguir arribar a més clients!</p>
+              <a href="#" class="btn" id="bcolor">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card3" style="width: 18rem;">
+            <div class="card-body card1-cuerpo">
+              <h5 class="card-title margin-div">BOTIGUES</h5>
+              <p class="card-text">Vols afegir la teva botiga i treballar amb nosaltres?<br> <strong>UNEIX-TE</strong> a nosaltres per aconseguir arribar a més clients!</p>
+              <a href="#" class="btn" id="bcolor">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     </section>
   </main>
