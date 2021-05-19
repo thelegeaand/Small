@@ -236,7 +236,7 @@
           Si desitja més informació més sobre els tipus de cookies de seguiment i 
           anàlisi de dades de Google faci<a href="https://policies.google.com/technologies/cookies?hl=ca"> clic aquí</a>.Per a informar-se sobre com eliminar les cookies del seu explorador:
         <br><br>
-        
+
         <strong>Firefox</strong><br>
         <strong>Chrome</strong><br>
         <strong>Internet Explorer</strong><br>
