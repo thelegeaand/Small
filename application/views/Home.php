@@ -204,7 +204,6 @@
       </div>
     </div>
      <!-- Modal ús Cookies -->
-
      <div class="modal fade" id="Cookies" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
