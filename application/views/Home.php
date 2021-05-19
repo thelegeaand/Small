@@ -58,7 +58,7 @@
 
                 </div>
                 <div class="offset-2 mt-2">
-                  <p>No ets <strong>Client</strong> o no tens <strong>Botiga</strong>? <span id="registre">Registra't<span></p>
+                  <p>No ets <strong>Client</strong> o no tens <strong>Botiga</strong>? <span id="registre">Registra't</span></p>
 
                 </div>
 
@@ -72,7 +72,7 @@
     </div>
     <!-- Modal per Registrar-se -->
 
-    <div class="modal fade" id="Registre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade mb-5" id="Registre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5 " style="border-bottom:0px;">
@@ -134,11 +134,11 @@
                 </div>
 
                 <div class="offset-4 text-center boton">
-                  <button type="submit" id="bcolor" class="btn btn-outline-success">Iniciar Sessió</button>
+                  <button type="submit" id="bcolor" class="btn btn-outline-success">Registra't</button>
 
                 </div>
-                <div class="offset-2 mt-2">
-                  <p>No ets <strong>Client</strong> o no tens <strong>Botiga</strong>? <span id="registre">Registra't<span></p>
+                <div class="offset-3 mt-2">
+                  <p>Si ja tens un Compte, <span id="registre">Inicia Sessió<span></p>
 
                 </div>
 
@@ -152,7 +152,7 @@
 
      <!-- Modal Termes i  Condicions -->
 
-     <div class="modal fade" id="Condicions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade mb-5" id="Condicions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5" style="border-bottom:0px;">
@@ -214,7 +214,7 @@
 
      <!-- Modal Privacitat-->
 
-     <div class="modal fade" id="Privacitat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade mb-5" id="Privacitat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5" style="border-bottom:0px;">
@@ -264,7 +264,7 @@
       </div>
     </div>
      <!-- Modal ús Cookies -->
-     <div class="modal fade" id="Cookies" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade mb-5" id="Cookies" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5" style="border-bottom:0px;">
@@ -368,7 +368,7 @@
         <div class="row text-center">
           <div class="col-md-12 col-12">
             <div class="row mt-5">
-              <div class="col-md-6 col-lg-3 col-6 mt-2 text-center">
+              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
                 <div class="mb-2">
                   <img id="fotosSeccions" src="<?php echo base_url(); ?>img/pescado.jpg" alt="Imatge Fruiteria">
                 </div>
@@ -376,7 +376,7 @@
                   <p id="seccio">PEIXATERIA</p>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-3 col-6 mt-2 text-center">
+              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
                 <div class="mb-2">
                   <img id="fotosSeccions2" src="<?php echo base_url(); ?>img/fruta_verdura.jpg" alt="Imatge Fruiteria">
                 </div>
@@ -385,7 +385,7 @@
                 </div>
               </div>
 
-              <div class="col-md-6 col-lg-3 col-6 mt-2 text-center">
+              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
                 <div class="mb-2">
                   <img id="fotosSeccions3" src="<?php echo base_url(); ?>img/Carne.jpg" alt="Imatge Fruiteria">
                 </div>
@@ -394,7 +394,7 @@
                 </div>
 
               </div>
-              <div class="col-md-6 col-lg-3 col-6 mt-2 text-center">
+              <div class="col-md-6 col-lg-3 col-xs-6 col-6 mt-2 text-center">
                 <div class="mb-2">
                   <img id="fotosSeccions4" src="<?php echo base_url(); ?>img/Aviram.jpg" alt="Imatge Fruiteria">
                 </div>
@@ -446,34 +446,40 @@
     </section>
 
     <!--Secció C-Apartat Cards -->
-    <section id="C">
+    <section id="C d-flex justify-content-center">
 
     <div class="container mb-5 mt-5 justify-content-center d-flex">
       <div class="row col-md-12">
-        <div class="col-md-4">
+        <div class="col-md-4 col-12 col-sm-12 col-lg-4 mb-4">
           <div class="card1" style="width: 18rem;">
+            <div class="spacer-card">
+
+            </div>
             <div class="card-body card1-cuerpo">
               <h5 class="card-title margin-div">BOTIGUES</h5>
               <p class="card-text">Vols afegir la teva botiga i treballar amb nosaltres?<br> <strong>UNEIX-TE</strong> a nosaltres per aconseguir arribar a més clients!</p>
-              <a href="#" class="btn" id="bcolor">Go somewhere</a>
+              <a href="#" class="btn" id="bcolor">BOTIGUES</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-12 col-sm-12 col-lg-4 mb-4">
           <div class="card2" style="width: 18rem;">
-            <div class="card-body card1-cuerpo">
-              <h5 class="card-title">BOTIGUES</h5>
-              <p class="card-text">Vols afegir la teva botiga i treballar amb nosaltres?<br> <strong>UNEIX-TE</strong> a nosaltres per aconseguir arribar a més clients!</p>
-              <a href="#" class="btn" id="bcolor">Go somewhere</a>
+            <div class="card-body ">
+              <h5 class="card-title">CLIENTS</h5>
+              <p class="card-text">Els clients podran fer <br>encàrregs només a la seva <br>ciutat o zones de la seva població. T'animes a provar?</p>
+              <a href="#" class="btn" id="bcolor" data-toggle="modal" data-target="#Registre">REGISTRA'T</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-12 col-sm-12 col-lg-4">
           <div class="card3" style="width: 18rem;">
+          <div class="spacer-card">
+
+            </div>
             <div class="card-body card1-cuerpo">
-              <h5 class="card-title margin-div">BOTIGUES</h5>
-              <p class="card-text">Vols afegir la teva botiga i treballar amb nosaltres?<br> <strong>UNEIX-TE</strong> a nosaltres per aconseguir arribar a més clients!</p>
-              <a href="#" class="btn" id="bcolor">Go somewhere</a>
+              <h5 class="card-title margin-div">REPARTIDORS</h5>
+              <p class="card-text">Vols repartir amb nosaltres? Contacte'ns!</p>
+              <a href="#" class="btn" id="bcolor">CONTACTE</a>
             </div>
           </div>
         </div>

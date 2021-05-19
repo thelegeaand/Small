@@ -159,6 +159,11 @@ h1{
     height:500px;
 }
 
+.spacer-card{
+    height: 250px;
+    width: 100%;
+}
+
 .card2{
     background: url("../img/clients.jpg");background-repeat: no-repeat;background-size: cover;
     width:100%;
@@ -234,8 +239,10 @@ h1{
     margin-left: -10%;
     padding-top: 8%;
 }
-.margin-div{
-    margin-top: 225px;
+
+.card1-cuerpo{
+    background-color:rgb(255, 255, 255, 0.9);
+    height: 50%;
 }
 /*footer*/
 .t1{
