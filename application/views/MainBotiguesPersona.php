@@ -331,22 +331,17 @@
       <div class="seccions">
         <form>
           <div class="form-inline mt-2 d-flex justify-content-center ">
-            <select class="form-control mr-sm-2 col-sm-6" id="exampleFormControlSelect1">
-              <option>Aviram</option>
-              <option>Carnisseries</option>
-              <option>Peixateries</option>
-              <option>Fruiteria</option>
-            </select>
+        
 
-            <a id="bcolor" class="btn btn-outline-success my-2 my-sm-0" href="<?php echo base_url(); ?>index.php/SmallController/MainBotiguesPer" type="submit">Buscar Botigues</a>
+            <a id="bcolor" href="<?php echo base_url(); ?>index.php/SmallController/index" class="btn btn-outline-success my-2 my-sm-0" type="submit">HOME</a>
 
           </div>
+        </form>
       </div>
-      </form>
+      
     </div>
-
-    <!--Fletxa desplaçament al contingut-->
-    <div class="text-center mt-4">
+      <!--Fletxa desplaçament al contingut-->
+      <div class="text-center mt-4">
       <a href="#A">
         <span class="fa fa-angle-down flecha"></span>
         <span class="sr-only">Seccions</span>
@@ -354,250 +349,25 @@
     </div>
 
   </header>
-
-
   <main>
+  <section id="A">
 
-    <!--Secció A-Apartat amb Seccions -->
-    <section id="A">
+<div class="container mt-5">
+  <div class="text-center">
+    <h2 id="dSeccions">DIFERENTS SECCIONS!</h2>
+  </div>
 
-      <div class="container mt-5">
-        <div class="text-center">
-          <h2 id="dSeccions">DIFERENTS SECCIONS!</h2>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-12 col-12">
-            <div class="row mt-5">
-              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions" src="<?php echo base_url(); ?>img/pescado.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div class="text-center">
-                  <p id="seccio">PEIXATERIA</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions2" src="<?php echo base_url(); ?>img/fruta_verdura.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div>
-                  <p id="seccio" class="text-center">FRUITERIA</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions3" src="<?php echo base_url(); ?>img/Carne.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div>
-                  <p id="seccio" class="text-center">CARNISSERIA<br>XARCUTERIA</p>
-                </div>
-
-              </div>
-              <div class="col-md-6 col-lg-3 col-xs-6 col-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions4" src="<?php echo base_url(); ?>img/Aviram.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div>
-                  <p id="seccio" class="text-center">AVIRAM</p>
-                </div>
-              </div>
+    <div class="row">
+            <div class="col-md-6">
+            <form>
+                <img src="../img/tienda.png" alt="">
+            </form>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Secció B-Apartat Info -->
-    <section id="B" class="mt-5">
-      <div class="container-fluid bgcontainer">
-        <div class="container text-center pt-5">
-          <h3 id="ProdBot">PRODUCTES DE LES BOTIGUES DE LA TEVA CIUTAT A CASA!</h3>
-          <div class="row pt-4">
-            <div class="col-md-4 col-lg-4 col-12 mt-2 text-center">
-              <div class="mb-2">
-                <img id="bot" src="<?php echo base_url(); ?>img/tienda.png" alt="Imatge Fruiteria">
-              </div>
-              <div class="text-center">
-                <h4 id="c">Les Botigues de Confiança</h4>
-                <p id="p">Varietat de Botigues amb diferents que podràs explorar....</p>
-              </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-12 mt-2 text-center">
-              <div class="mb-2">
-                <img id="bot" src="<?php echo base_url(); ?>img/productos-lacteos.png" alt="Imatge Fruiteria">
-              </div>
-              <div class="text-center">
-                <h4 id="c">Fes la Compra</h4>
-                <p id="p">Pots Trobar qualsevol aliment ,el quan Pots escollir entre diferents Botigues. </p>
-              </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-12 mt-2 text-center">
-              <div class="mb-2">
-                <img id="bot" src="<?php echo base_url(); ?>img/nuevo-producto.png" alt="Imatge Fruiteria">
-              </div>
-              <div class="text-center">
-                <h4 id="c">Entrega Globalitzada</h4>
-                <p id="p">Demana el que vulguis de diferents Establiments i nosaltres t'ho portem tot.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--Secció C-Apartat Cards -->
-    <section id="C d-flex justify-content-center">
-
-    <div class="container mb-5 mt-5 justify-content-center d-flex">
-      <div class="row col-md-12">
-        <div class="col-md-4 col-12 col-sm-12 col-lg-4 mb-4">
-          <div class="card1" style="width: 18rem;">
-            <div class="spacer-card">
+            <div class="col-md-6">
 
             </div>
-            <div class="card-body card1-cuerpo">
-              <h5 class="card-title margin-div">BOTIGUES</h5>
-              <p class="card-text">Vols afegir la teva botiga i treballar amb nosaltres?<br> <strong>UNEIX-TE</strong> a nosaltres per aconseguir arribar a més clients!</p>
-              <a href="#" class="btn" id="bcolor">BOTIGUES</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-12 col-sm-12 col-lg-4 mb-4">
-          <div class="card2" style="width: 18rem;">
-            <div class="card-body ">
-              <h5 class="card-title">CLIENTS</h5>
-              <p class="card-text">Els clients podran fer <br>encàrregs només a la seva <br>ciutat o zones de la seva població. T'animes a provar?</p>
-              <a href="#" class="btn" id="bcolor" data-toggle="modal" data-target="#Registre">REGISTRA'T</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-12 col-sm-12 col-lg-4">
-          <div class="card3" style="width: 18rem;">
-          <div class="spacer-card">
-
-            </div>
-            <div class="card-body card1-cuerpo">
-              <h5 class="card-title margin-div">REPARTIDORS</h5>
-              <p class="card-text">Vols repartir amb nosaltres? Contacte'ns!</p>
-              <a href="#" class="btn" id="bcolor">CONTACTE</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
-    </section>
+</div>
+</section>
   </main>
-  <!--Footer Small -->
-  <footer>
-
-    <div class="container-fluid bgcontainer2">
-
-      <div class="container">
-
-        <div class="row pt-4 SmallScroll d-flex justify-content-center ">
-
-          <div class="row rowc">
-            <div class="col-sm-4 col-12 col-lg-4">
-              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
-                <div class="card-body">
-                  <h5 class="card-title t1">SMALL</h5>
-                  <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="#logo">Home</a></li>
-                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Registre">Registre Client</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="#">RegistreBotiga</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 col-12 col-lg-4">
-              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
-                <div class="card-body">
-                  <h5 class="card-title t1">LEGAL</h5>
-                  <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Condicions">Termes i Condicions</a></li>
-                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Privacitat">Privacitat</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Cookies">Cookies</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 col-12 col-lg-4">
-              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
-                <div class="card-body">
-                  <h5 class="card-title t1">AJUDA</h5>
-                  <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Contacte</a></li>
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Small-Inc@gmail.com</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;" href="#">+34 678930323</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container d-flex justify-content-center  mt-4 mb-4">
-
-            <div class="row">
-              <div>
-                <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-instagram">
-                  <span class="sr-only">Logo Instagram</span>
-                  <span class="fa fa-instagram fa-3x ICON"></span>
-                </a>
-
-              </div>
-
-              <div>
-                <a href="https://www.twitter.com/" class="btn btn-block btn-social btn-twitter">
-                  <span class="sr-only">Logo Twitter</span>
-                  <span class="fa fa-twitter fa-3x ICON"></span>
-                </a>
-              </div>
-              <div>
-                <a href="https://www.facebook.com/" class="btn btn-block btn-social btn-facebook">
-                  <span class="sr-only">Logo Facebook</span>
-                  <span class="fa fa-facebook fa-3x ICON"></span>
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-          <p class="copy offset-8 ml-2 mb-4">Small 2021 &copy;</p>
-
-        </div>
-
-      </div>
-
-
-
-  </footer>
-
-
-
-  <script>
-    $("a[href^='#']").click(function(e) {
-      e.preventDefault();
-
-      var position = $($(this).attr("href")).offset().top;
-
-      $("body, html").animate({
-        scrollTop: position
-      }, 1000);
-    });
-  </script>
-
-
-
-
-
-
-
-
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-</body>
-
-</html>

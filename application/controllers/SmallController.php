@@ -14,11 +14,16 @@ class SmallController extends CI_Controller {
         
     }
 
+public function MainBotiguesPer()
+{
+    $this->load->view('MainBotiguesPersona');
+}
+
 	public function index()
 	{
        
 		$this->load->view('Home');
         
 	}
-
+    
 }
