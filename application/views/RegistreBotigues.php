@@ -20,16 +20,16 @@
 <body>
 
   <!--Header-->
-  <header class="header">
+  <header class="">
     <nav class="navbar navbar-light bgcust justify-content-between ">
       <a class="navbar-brand ml-3"><img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logo" alt="Imatge Corporativa Small"></a>
       <form class="form-inline d-flex justify-content-left">
+        <a href="" class="nav-linkes">Home</a>
+        <a href="" class="nav-linkes">Donar d'Alta Botiga</a>
+        <a href="" class="nav-linkes">Botigues</a>
         <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0 mr-3" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
-        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0  mr-3" type="button" data-toggle="modal" data-target="#Registre">Registrar-se</button>
       </form>
     </nav>
-
-    </div>
 
     <!-- Modal Iniciar Sessió -->
     <div class="modal fade" id="IniciSessio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -319,177 +319,216 @@
       </div>
     </div>
    
-    <!--Header amb Formulari Botigues per Secció -->
-    <div class="container lletrero d-flex justify-content-center ">
-      <div class="row ">
-        <div class="Tlletrero text-center">
-          <h1 class="titol p-5">EL MERCAT ONLINE JA HA ARRIBAT A LA TEVA CIUTAT</h1>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="seccions">
-        <form>
-          <div class="form-inline mt-2 d-flex justify-content-center ">
-            <select class="form-control mr-sm-2 col-sm-6" id="exampleFormControlSelect1">
-              <option>Aviram</option>
-              <option>Carnisseries</option>
-              <option>Peixateries</option>
-              <option>Fruiteria</option>
-            </select>
 
-            <a id="bcolor" class="btn btn-outline-success my-2 my-sm-0" href="<?php echo base_url(); ?>index.php/SmallController/MainBotiguesPer" type="submit">Buscar Botigues</a>
-
-          </div>
-      </div>
-      </form>
-    </div>
-
-    <!--Fletxa desplaçament al contingut-->
-    <div class="text-center mt-4">
-      <a href="#A">
-        <span class="fa fa-angle-down flecha"></span>
-        <span class="sr-only">Seccions</span>
-      </a>
-    </div>
 
   </header>
 
-
-  <main>
-
-    <!--Secció A-Apartat amb Seccions -->
-    <section id="A">
-
-      <div class="container mt-5">
-        <div class="text-center">
-          <h2 id="dSeccions">DIFERENTS SECCIONS!</h2>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-12 col-12">
-            <div class="row mt-5">
-              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions" src="<?php echo base_url(); ?>img/pescado.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div class="text-center">
-                  <p id="seccio">PEIXATERIA</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions2" src="<?php echo base_url(); ?>img/fruta_verdura.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div>
-                  <p id="seccio" class="text-center">FRUITERIA</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions3" src="<?php echo base_url(); ?>img/Carne.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div>
-                  <p id="seccio" class="text-center">CARNISSERIA<br>XARCUTERIA</p>
-                </div>
-
-              </div>
-              <div class="col-md-6 col-lg-3 col-xs-6 col-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions4" src="<?php echo base_url(); ?>img/Aviram.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div>
-                  <p id="seccio" class="text-center">AVIRAM</p>
-                </div>
-              </div>
+   <body>
+   <div class="text-botiga text-center">
+            <h4 class="mt-5"><strong>AFEGEIX LA TEVA BOTIGA DE MANERA FÀCIL</strong></h4>
+            <p class="mb-5 pb-5">Veus que les teves vendes han disminuit notablement?<br> Incentiva el teu negoci amb nosaltres!</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Secció B-Apartat Info -->
-    <section id="B" class="mt-5">
-      <div class="container-fluid bgcontainer">
-        <div class="container text-center pt-5">
-          <h3 id="ProdBot">PRODUCTES DE LES BOTIGUES DE LA TEVA CIUTAT A CASA!</h3>
-          <div class="row pt-4">
-            <div class="col-md-4 col-lg-4 col-12 mt-2 text-center">
-              <div class="mb-2">
-                <img id="bot" src="<?php echo base_url(); ?>img/tienda.png" alt="Imatge Fruiteria">
-              </div>
-              <div class="text-center">
-                <h4 id="c">Les Botigues de Confiança</h4>
-                <p id="p">Varietat de Botigues amb diferents que podràs explorar....</p>
-              </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-12 mt-2 text-center">
-              <div class="mb-2">
-                <img id="bot" src="<?php echo base_url(); ?>img/productos-lacteos.png" alt="Imatge Fruiteria">
-              </div>
-              <div class="text-center">
-                <h4 id="c">Fes la Compra</h4>
-                <p id="p">Pots Trobar qualsevol aliment ,el quan Pots escollir entre diferents Botigues. </p>
-              </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-12 mt-2 text-center">
-              <div class="mb-2">
-                <img id="bot" src="<?php echo base_url(); ?>img/nuevo-producto.png" alt="Imatge Fruiteria">
-              </div>
-              <div class="text-center">
-                <h4 id="c">Entrega Globalitzada</h4>
-                <p id="p">Demana el que vulguis de diferents Establiments i nosaltres t'ho portem tot.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--Secció C-Apartat Cards -->
-    <section id="C d-flex justify-content-center">
-
-    <div class="container mb-5 mt-5 justify-content-center d-flex">
-      <div class="row">
-        <div class="col-md-4 col-12 col-sm-12 col-lg-4 mb-4">
-          <div class="card1" style="width: 18rem;">
-            <div class="spacer-card">
-
-            </div>
-            <div class="card-body card1-cuerpo">
-              <h5 class="card-title margin-div">BOTIGUES</h5>
-              <p class="card-text">Vols afegir la teva botiga i treballar amb nosaltres?<br> <strong>UNEIX-TE</strong> a nosaltres per aconseguir arribar a més clients!</p>
-              <a href="<?php echo base_url(); ?>index.php/SmallController/RegisterBotiga" class="btn" id="bcolor">BOTIGUES</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-12 col-sm-12 col-lg-4 mb-4">
-          <div class="card2" style="width: 18rem;">
-            <div class="card-body ">
-              <h5 class="card-title">CLIENTS</h5>
-              <p class="card-text">Els clients podran fer <br>encàrregs només a la seva <br>ciutat o zones de la seva població. T'animes a provar?</p>
-              <a href="#" class="btn" id="bcolor" data-toggle="modal" data-target="#Registre">REGISTRA'T</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-12 col-sm-12 col-lg-4">
-          <div class="card3" style="width: 18rem;">
-          <div class="spacer-card">
-
-            </div>
-            <div class="card-body card1-cuerpo">
-              <h5 class="card-title margin-div">REPARTIDORS</h5>
-              <p class="card-text">Vols repartir amb nosaltres? Contacte'ns!</p>
-              <a href="#" class="btn" id="bcolor">CONTACTE</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="registre">
+       <div class="container mb-5 pb-5">
+            
+  <div id="accordion mb-5 pb-5">
+  <div class="card mb-5 pb-5">
+    <div class="card-header text-center cardVerde" id="headingOne">
+      <h5 class="mb-0 ">
+        <button class="btn titolRegistre" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Segueix els Següents Passos
+        </button>
+      </h5>
     </div>
 
-    </section>
-  </main>
-  <!--Footer Small -->
-  <footer>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="container  adv">
+            <p class="ml-5 mt-4">*Qualsevol dada podrà modificar-se en un futur.</p>
+            <div class="row mt-4 col-md-5 col-12">
+                <h4 class="numerosRegistro mr-2">1</h4><h4>Introdueix les teves Dades</h4>
+                </div>
+            
+            
+              <div class="form-row mt-4">
+                <div class="col-md-6 mb-3 text-center">
+                  <input type="text" class="form-control mb-4" id="Usuari" placeholder="Nom Propietari">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="password" class="form-control mb-4" id="Password" placeholder="DNI Propietari" required>
+                </div>
+                <div class="col-md-4">
+                <input type="password" class="form-control mb-4" id="Password" placeholder="Nom Usuari" required>
+                </div>
+                <div class="col-md-4">
+                <input type="password" class="form-control mb-4" id="Password" placeholder="Password" required>
+                </div>
+                <div class="col-md-4">
+                <input type="password" class="form-control mb-4" id="Password" placeholder="Confirmar Password" required>
+                </div>
+              </div>
+
+            <div class="row mt-4 col-md-5 col-12">
+                <h4 class="numerosRegistro  mr-2">2</h4><h4>Introdueix les dades de la Botiga</h4>
+                </div>
+            
+
+
+              <div class="form-row mt-4">
+                <div class="col-md-6 mb-3 text-center">
+                  <input type="text" class="form-control" id="Usuari" placeholder="Nom Botiga">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="password" class="form-control mb-4" id="Password" placeholder="Nom Empresa" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="password" class="form-control mb-4" id="Password" placeholder="CIF" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="password" class="form-control mb-4" id="Password" placeholder="Correu Electrònic Empresa" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="password" class="form-control mb-4" id="Password" placeholder="Provincia" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="password" class="form-control mb-4" id="Password" placeholder="Ciutat" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <input type="password" class="form-control mb-4" id="Password" placeholder="Codi Postal" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <input type="password" class="form-control mb-4" id="Password" placeholder="Carrer" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <input type="password" class="form-control mb-4" id="Password" placeholder="Número" required>
+                </div>
+              </div>
+
+              <div class="row mt-4 col-md-5 col-12">
+                <h4 class="numerosRegistro mr-2">3</h4><h4>Dades Bancaries</h4>
+                </div>
+            
+            
+              <div class="form-row mt-4">
+                <div class="col-md-3 mb-3 text-center">
+                  <input type="text" class="form-control" id="Usuari" placeholder="ES 21" readonly>
+                </div>
+                <div class="col-md-9 mb-3">
+                  <input type="password" class="form-control" id="Password" placeholder="IBAN*" required>
+                </div>
+              </div>
+
+              <div class="offset-4 text-center boton">
+                  <button type="submit" id="bcolor" class="btn btn-outline-success mt-5 mb-5">Afegir Botiga</button>
+
+                </div>
+            </form>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+       </div>
+       
+       </div>
+    <div class="registre2 mb-5">
+       <div class="container">
+            <div class="text-center mb-4">
+                <h4><strong>COM FUNCIONA?</strong></h4>
+            </div>
+            <div id="accordion">
+
+  <div class="card">
+    <div class="card-header cardRed text-center">
+      <a class="card-link tituloCard" data-toggle="collapse" href="#collapseFour">
+        1.-Registre
+      </a>
+    </div>
+    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+      <div class="">
+        Lorem ipsum..
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header text-center cardAmarilla">
+      <a class="collapsed card-link tituloCard" data-toggle="collapse" href="#collapseTwo">
+       2.-Personalització
+      </a>
+    </div>
+    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        Lorem ipsum..
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header cardBlue text-center">
+      <a class="collapsed card-link tituloCard" data-toggle="collapse" href="#collapseThree">
+        3.-Afegir Productes
+      </a>
+    </div>
+    <div id="collapseThree" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        Lorem ipsum..
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header cardGreen text-center">
+      <a class="collapsed card-link tituloCard" data-toggle="collapse" href="#collapseThree">
+        3.-Afegir Productes
+      </a>
+    </div>
+    <div id="collapseThree" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        Lorem ipsum..
+      </div>
+    </div>
+    </div>
+
+    </div>
+       </div>
+   </div>
+
+    <div class="cajasdiv mt-5 pt-5">
+    <div class="registre3 mt-5 container ">
+    <div class="perque text-center">
+            <h4><strong>PERQUÈ NOSALTRES?</strong></h4>            
+    </div>
+    <div class="d-flex justify-content-center">
+            <div class="cajasp text-center pl-5 pr-5 pt-5 mt-5 mb-5 col-md-6 pb-5">
+              <h4><strong>Augmenta les teves vendes!</strong></h4>
+              <img src="<?php echo base_url(); ?>img/pago-en-efectivo.png" class="imagenCajas" alt="">
+              <p class="mt-4">Amb la nostra ajuda i mètode veuras com s'incrementen les vendes.</p>
+            </div>
+    </div>
+    <div class="row">
+    <div class="d-flex justify-content-center col-md-6">
+            <div class="cajasp text-center pl-5 pr-5 pt-5 mt-5 mb-5 pb-5">
+              <h4><strong>Abarca nous nínxols</strong></h4>
+              <img src="<?php echo base_url(); ?>img/mujer.png" class="imagenCajas" alt="">
+              <p class="mt-4">Arriba a més gent i consegueix clients nous.<br></p>
+            </div>
+    </div>
+    <div class="d-flex justify-content-center col-md-6">
+            <div class="cajasp text-center pl-5 pr-5 pt-5 mt-5 mb-5 pb-5">
+              <h4><strong>Plana per la teva Botiga</strong></h4>
+              <img src="<?php echo base_url(); ?>img/www.png" class="imagenCajas" alt="">
+              <p class="mt-4">Plana única per mostrar-te i afegir els teus Productes.<br></p>
+            </div>
+    </div>
+    </div>
+</div>
+    </div>
+
+
+
+   </body>
+
+   <footer>
 
     <div class="container-fluid bgcontainer2">
 
@@ -571,33 +610,5 @@
 
 
   </footer>
-
-
-
-  <script>
-    $("a[href^='#']").click(function(e) {
-      e.preventDefault();
-
-      var position = $($(this).attr("href")).offset().top;
-
-      $("body, html").animate({
-        scrollTop: position
-      }, 1000);
-    });
-  </script>
-
-
-
-
-
-
-
-
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-</body>
 
 </html>

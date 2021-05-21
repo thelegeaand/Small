@@ -15,6 +15,23 @@ body{
     
 }
 /*header & Main*/
+a{
+    text-decoration: none !important;
+}
+a:hover{
+    text-decoration: none;
+    color: #07FB7F;
+}
+.nav-linkes{
+    color: #07FB7F;
+    margin-right: 40px;
+    text-decoration: none;
+}
+.registre{
+    background: url("../img/tcomanda.png") no-repeat;
+    background-size: cover;
+    padding-bottom: 5%;
+}
 #logo{
 
     width:65%;
@@ -29,24 +46,36 @@ body{
     padding-right: 20px;
     padding-left: 20px;
 }
-
 #bgcust{
     background-color: transparent;
 }
-
 #dSeccions{
     font-weight: bolder;
-
 }
-
+#fotologo{
+    width: 15%;
+}
+.cajasp{
+    border: 1px solid grey;
+    box-shadow: 4px 4px black;
+    background-color: white;
+}
+.imagenCajas{
+    border-radius: 100%;
+    width: 30%;
+}
+.cajasdiv{
+    background: url("../img/RegistrarBotigaTriangulo2.png") ;
+    background-size: cover;
+    min-height: 104vh;
+    padding-bottom: 20%;
+}
 #fotosSeccions{
         width: 95%;
         height: 100%;
         border-radius: 100%;
-        border: 7px solid #01E4FF;
-    
+        border: 7px solid #01E4FF;   
 }
-
 #fotosSeccions2{
     width: 95%;
     height: 100%;
@@ -102,7 +131,26 @@ body{
     padding: .5rem 1rem;
     margin-top:-16px;
 }
-
+.cardRed{
+    background-color: #FF0910;
+}
+.cardAmarilla{
+    background-color: #FDB402;
+}
+.cardBlue{
+    background-color: #01E4FF;
+}
+.cardGreen{
+    background-color: #07FB7F;
+}
+.tituloCard{
+    color: white;
+    text-decoration: none;
+}
+.tituloCard:hover{
+    text-decoration: none;
+    color: white;
+}
 .form-control {
     display: block;
     width: 100%;
@@ -117,13 +165,32 @@ body{
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-
-
+.titolRegistre{
+    text-decoration: none;
+    color: white;
+    background-color: #07FB7F;
+}
+.titolRegistre:hover{
+    color: white;
+}
 h1{
     color:black; filter:alpha(opacity=100); opacity:100%; 
     font-size:3.8vw;
 }
-
+.cardVerde{
+    background-color: #07FB7F;
+    border-color: #07FB7F;
+}
+.adv{
+    color: grey;
+}
+.numerosRegistro{
+    border: 1px solid grey;
+    border-radius: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
 .header {
     background: url("../img/FondoPrincipalWeb.jpg") no-repeat center;
     background-size: cover;
