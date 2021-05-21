@@ -20,16 +20,29 @@
 <body>
 
   <!--Header-->
-  <header class="">
-    <nav class="navbar navbar-light bgcust justify-content-between ">
-      <a class="navbar-brand ml-3"><img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logo" alt="Imatge Corporativa Small"></a>
-      <form class="form-inline d-flex justify-content-left">
-        <a href="" class="nav-linkes">Home</a>
-        <a href="" class="nav-linkes">Donar d'Alta Botiga</a>
-        <a href="" class="nav-linkes">Botigues</a>
-        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0 mr-3" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
-      </form>
-    </nav>
+  <header>
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light mt-1  ">
+  <a id="mq" class="navbar-brand ml-3"><img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logo2" alt="Imatge Corporativa Small"></a>
+    <button type="button" style="border-radius: 74%;
+    padding: 4%;
+    border:none;" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="fa fa-bars" aria-hidden="true"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center " id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Home</a>
+            <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Donar d'Alta Botiga</a>
+            <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Botigues</a>
+        </div>
+        <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
+            <a href="#" id="bcolor" >Iniciar Sessió </a>
+        </div>
+    </div>
+</nav>
+  
+
 
     <!-- Modal Iniciar Sessió -->
     <div class="modal fade" id="IniciSessio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -62,9 +75,9 @@
 
                 </div>
 
-
+                </form>
               </div>
-            </form>
+           
           </div>
 
         </div>
@@ -142,13 +155,13 @@
 
                 </div>
 
+                </form>
 
               </div>
-            </form>
           </div>
         </div>
       </div>
-    </div>
+</div>
 
      <!-- Modal Termes i  Condicions -->
 
@@ -319,33 +332,33 @@
       </div>
     </div>
    
-
-
   </header>
 
-   <body>
-   <div class="text-botiga text-center">
+
+  <main>
+
+  <div class="text-botiga text-center">
             <h4 class="mt-5"><strong>AFEGEIX LA TEVA BOTIGA DE MANERA FÀCIL</strong></h4>
             <p class="mb-5 pb-5">Veus que les teves vendes han disminuit notablement?<br> Incentiva el teu negoci amb nosaltres!</p>
-            </div>
+    </div>
     <div class="registre">
        <div class="container mb-5 pb-5">
             
-  <div id="accordion mb-5 pb-5">
+  
   <div class="card mb-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
-      <h5 class="mb-0 ">
-        <button class="btn titolRegistre" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Segueix els Següents Passos
-        </button>
+      <h5 style="color:white;" class="mb-0 ">
+      Segueix els Següents Passos
       </h5>
     </div>
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="container  adv">
-            <p class="ml-5 mt-4">*Qualsevol dada podrà modificar-se en un futur.</p>
             <div class="row mt-4 col-md-5 col-12">
-                <h4 class="numerosRegistro mr-2">1</h4><h4>Introdueix les teves Dades</h4>
+            <div id="circulo">
+             <p>1</p>
+             </div>
+             <h4>Introdueix les teves Dades</h4>
                 </div>
             
             
@@ -368,8 +381,11 @@
               </div>
 
             <div class="row mt-4 col-md-5 col-12">
-                <h4 class="numerosRegistro  mr-2">2</h4><h4>Introdueix les dades de la Botiga</h4>
-                </div>
+            <div id="circulo">
+             <p>2</p>
+             </div>
+                <h4>Introdueix les dades de la Botiga</h4>
+             </div>
             
 
 
@@ -404,7 +420,10 @@
               </div>
 
               <div class="row mt-4 col-md-5 col-12">
-                <h4 class="numerosRegistro mr-2">3</h4><h4>Dades Bancaries</h4>
+              <div id="circulo">
+             <p>3</p>
+             </div>
+             <h4>Dades Bancaries</h4>
                 </div>
             
             
@@ -525,10 +544,10 @@
     </div>
 
 
-
-   </body>
-
-   <footer>
+    
+  </main>
+  <!--Footer Small -->
+  <footer>
 
     <div class="container-fluid bgcontainer2">
 
@@ -610,5 +629,13 @@
 
 
   </footer>
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
 
 </html>

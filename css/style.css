@@ -4,8 +4,6 @@ html{
     scroll-behavior: smooth;
 }
 
-
-
 body{
 
         background-color: white;
@@ -24,7 +22,8 @@ a:hover{
 }
 .nav-linkes{
     color: #07FB7F;
-    margin-right: 40px;
+
+    font-size:20px;
     text-decoration: none;
 }
 .registre{
@@ -32,10 +31,16 @@ a:hover{
     background-size: cover;
     padding-bottom: 5%;
 }
+
 #logo{
 
     width:65%;
 
+}
+.fa{
+
+    border: none;
+    color: #07FB7F;
 }
 #bcolor{
     color: white;
@@ -184,6 +189,27 @@ h1{
 .adv{
     color: grey;
 }
+
+#circulo {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 100%;
+	background: white;
+    border:1px solid grey;
+    padding:0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+    margin-right:2%;
+}
+#circulo > p {
+    color: #07FB7F;
+    font-size: 1rem;
+    top: 7%;
+    padding-top: 15px;
+    font-weight: bold;
+}
 .numerosRegistro{
     border: 1px solid grey;
     border-radius: 100%;
@@ -330,6 +356,11 @@ h1{
     color:#07FB7F;
 
 }
+#logo2{
+
+    width:10em;
+    
+}
 
 /*Modals*/
 
@@ -375,3 +406,34 @@ h1{
 }
 
 /*Media Queries*/
+
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) {
+        #mq{
+            width: 60%;
+        }
+    
+     }
+
+     @media (min-width:320px)  { #mq{
+        width: 50%;
+    }}
+@media (min-width:480px)  { 
+    #mq{
+        width: 50%;
+    }
+}
+@media (min-width:641px)  { 
+
+    #mq{
+        width: 45%;
+    }
+
+
+
+ }
+
+ 
+  

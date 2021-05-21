@@ -29,7 +29,7 @@
       </form>
     </nav>
 
-    </div>
+ 
 
     <!-- Modal Iniciar Sessió -->
     <div class="modal fade" id="IniciSessio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
