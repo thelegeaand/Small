@@ -38,5 +38,11 @@ class SmallController extends CI_Controller {
         $this->load->view('IniciClient');
 
     }
+
+    public function IniciBotiga(){
+
+        $this->load->view('IniciBotiga');
+
+    }
     
 }
