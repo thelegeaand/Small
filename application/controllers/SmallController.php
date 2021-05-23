@@ -22,11 +22,21 @@ class SmallController extends CI_Controller {
 	}
 
     public function MainBotiguesPer(){
+
         $this->load->view('MainBotiguesPersona');
+
     }
 
     public function RegisterBotiga(){
+
         $this->load->view('RegistreBotigues');
+
+    }
+
+    public function IniciClient(){
+
+        $this->load->view('IniciClient');
+
     }
     
 }

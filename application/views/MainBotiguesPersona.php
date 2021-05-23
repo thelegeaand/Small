@@ -324,7 +324,7 @@
     <div class="container lletrero d-flex justify-content-center ">
       <div class="row ">
         <div class="Tlletrero text-center">
-          <h1 class="titol p-5">TOTES LES "tipus"</h1>
+          <h2 class="titol p-5">TOTES LES "tipus"</h2>
         </div>
       </div>
     </div>
@@ -354,7 +354,7 @@
 
 
   <main>
-
+   <!--Secció Botigues-Apartat amb  totes les botigues de la secció escollida -->
     <section id="Botigues">
 
 
@@ -436,9 +436,6 @@
 
     </section>
 
-
-
-
   </main>
   <!--Footer Small -->
   <footer>
@@ -457,7 +454,7 @@
                   <ul class="lista">
                     <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="#logo">Home</a></li>
                     <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Registre">Registre Client</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="#">RegistreBotiga</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;"  href="<?php echo base_url(); ?>index.php/SmallController/RegisterBotiga">RegistreBotiga</a></li>
                   </ul>
                 </div>
               </div>
@@ -479,9 +476,9 @@
                 <div class="card-body">
                   <h5 class="card-title t1">AJUDA</h5>
                   <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Contacte</a></li>
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Small-Inc@gmail.com</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;" href="#">+34 678930323</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;">Contacte</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;">Small-Inc@gmail.com</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;">+34 678930323</a></li>
                   </ul>
                 </div>
               </div>
