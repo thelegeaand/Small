@@ -9,13 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>js/scripts.js">
+  <script type="text/javascript" src="<?=base_url()?>js/scripts.js" ></script>
   <title>Pàgina Principal Small</title>
 </head>
+
+
 
 <body>
 
@@ -24,7 +27,7 @@
     <nav class="navbar navbar-light bgcust justify-content-between ">
       <a class="navbar-brand ml-3"><img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logo" alt="Imatge Corporativa Small"></a>
       <form class="form-inline d-flex justify-content-left">
-        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0 mr-3" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
+        <button  id="bcolor" class="btn btn-outline-success my-2 my-sm-0 mr-3" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
         <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0  mr-3" type="button" data-toggle="modal" data-target="#Registre">Registrar-se</button>
       </form>
     </nav>

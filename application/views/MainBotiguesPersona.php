@@ -10,10 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>js/scripts.js">
+  <script type="text/javascript" src="<?=base_url()?>js/scripts.js" ></script>
   <title>Pàgina Principal Small</title>
 </head>
 
@@ -356,7 +357,7 @@
   <main>
    <!--Secció Botigues-Apartat amb  totes les botigues de la secció escollida -->
     <section id="Botigues">
-
+ 
 
       <div class="container d-flex justify-content-center mt-5 bordeBot ">
         <div class="row mt-5 mb-5">
@@ -368,7 +369,7 @@
               </div>
               <div class="card-body bg-light text-center" style="padding-bottom:10%;">
                 <h4>CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
+                <button  type="button" class="btn" id="bcolor">Anar</button>
               </div>
             </div>
           </div>

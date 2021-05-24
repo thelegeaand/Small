@@ -78,5 +78,17 @@ class SmallController extends CI_Controller {
     }
 
 
+    /*Tancar Sessió*/
+    public function TancarSessio(){
+        
+        $this->session->sess_destroy();
+        $this->load->view('Home');
+         
+      
+        
+               
+    }
+
+
     
 }
