@@ -475,9 +475,6 @@ h1{
         width: 45%;
     }
 
-    
-
-
 
  }
   
@@ -537,13 +534,13 @@ li.slider {
 .menu li:nth-child(2):focus ~ .slider,
 .menu li:nth-child(2):active ~ .slider {
   left: 25%;
-  background-color: #01E4FF;
+  background-color: #FDB402;
 }
 .menu li:nth-child(3):hover ~ .slider,
 .menu li:nth-child(3):focus ~ .slider,
 .menu li:nth-child(3):active ~ .slider {
   left: 50%;
-  background-color: #FDB402;
+  background-color:#01E4FF ;
 }
 .menu li:nth-child(4):hover ~ .slider,
 .menu li:nth-child(4):focus ~ .slider,

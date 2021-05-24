@@ -35,14 +35,48 @@ class SmallController extends CI_Controller {
 
     public function IniciClient(){
 
+
         $this->load->view('IniciClient');
+
 
     }
 
+    public function HistorialClient(){
+
+
+        $this->load->view('HistorialClient');
+
+
+    }
+
+    public function CompteClient(){
+
+
+        $this->load->view('CompteClient');
+
+        
+    }
+
+    public function TramitarComanda(){
+
+
+        $this->load->view('TramitarComanda');
+
+
+    }
+
+    public function Contacte(){
+
+        $this->load->view('Contacte');
+
+    }
+ 
     public function IniciBotiga(){
 
         $this->load->view('IniciBotiga');
 
     }
+
+
     
 }
