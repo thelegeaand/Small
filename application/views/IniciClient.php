@@ -13,7 +13,7 @@
   <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
-  <script type="text/javascript" src="<?=base_url()?>js/scripts.js" ></script>
+  <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
   <title>Pàgina Principal Small</title>
 </head>
 
@@ -35,13 +35,74 @@
           <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Botigues</a>
           <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Historial</a>
           <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Compte</a>
-          <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Carrito</a>
+
+          <a href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Carrito</a>
         </div>
         <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
           <a href="#" id="bcolor">Tancar Sessió </a>
         </div>
       </div>
     </nav>
+
+    <!-- Modal Carrito -->
+    <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center ml-5" style="border-bottom:0px;">
+            <h5 class="modal-title" id="titol1">Carrito de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body ">
+
+
+            <div class="container">
+              <table class="table">
+
+
+                <tr style="border:1px solid green;" class="b">
+                  <th id="quantitat" scope="row">x3</th>
+                  <td><img src="<?php echo base_url(); ?>img/Carne.jpg" id="logo" alt="Imatge Producte Carrito" style="width=100px;height:100px;"></td>
+                  <td id="descripcio">Plàtan canari - a pes(500g aprox)</td>
+
+                </tr>
+
+                
+                <tr style="border:1px solid green;" class="b">
+                  <th id="quantitat" scope="row">x3</th>
+                  <td><img src="<?php echo base_url(); ?>img/Carne.jpg" id="logo" alt="Imatge Producte Carrito" style="width=100px;height:100px;"></td>
+                  <td id="descripcio">Plàtan canari - a pes(500g aprox)</td>
+
+                </tr>
+               
+
+              </table>
+
+              <div class="container preu text-right">
+
+              <p><strong>PREU TOTAL:</strong></p>
+
+              </div>
+
+          
+
+               
+
+            </div>
+
+            <div class="offset-4 text-center boton">
+              <button type="submit" id="bcolor" class="btn btn-outline-success">Tramitar</button>
+
+            </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
 
 
 
@@ -363,15 +424,15 @@
         <a href="#" id="bcolor1" class="ml-1 mt-2 text-center">Fruiteries </a>
       </div>
     </div>-->
-<div id="SEC">
-  <ul class="menu">
-  <li><a href="#" >Carn/Xarc.</a></li>
-  <li><a href="#" >Aviram </a></li>
-  <li><a href="#">Peixateries</a></li>
-  <li><a href="#">Fruiteries</a></li>
-  <li class="slider"></li>
-</ul>
-</div>
+    <div id="SEC">
+      <ul class="menu">
+        <li><a href="#">Carn/Xarc.</a></li>
+        <li><a href="#">Aviram </a></li>
+        <li><a href="#">Peixateries</a></li>
+        <li><a href="#">Fruiteries</a></li>
+        <li class="slider"></li>
+      </ul>
+    </div>
     <!--Secció Botigues-Apartat amb  totes les botigues de la secció escollida -->
     <section id="Botigues">
       <div class="container d-flex justify-content-right mt-2 mb-5  ">
@@ -543,7 +604,7 @@
     });
   </script>
 
-  
+
 
 
 

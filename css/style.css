@@ -558,3 +558,24 @@ h1{
     color: #fff;
     font-size: 1em;
 }
+
+#quantitat{
+    padding-top: 12%;
+}
+#descripcio{
+    padding-top: 8%;
+}
+
+.table{
+    border-collapse: unset;
+}
+.table th,.table td{
+    border:none;
+   
+}
+.table td{
+    border-bottom:1px solid #07FB7F;
+}
+#trcust{
+    border:none;
+}
