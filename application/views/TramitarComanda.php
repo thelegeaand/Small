@@ -396,7 +396,7 @@
     </div>
     </header>
 
-<main class="">
+<main class="tramitarComandafondo">
 <div class="text-botiga text-center">
             <h4 class="mt-5"><strong>Gairebé hem acabat!</strong></h4>
             <p class="mb-5 pb-5">Introdueix les teves dades de facturació aqui!</p>
@@ -496,6 +496,94 @@
        </div>
 </main>
 
+<footer>
+
+    <div class="container-fluid bgcontainer2">
+
+      <div class="container">
+
+        <div class="row pt-4 SmallScroll d-flex justify-content-center ">
+
+          <div class="row rowc">
+            <div class="col-sm-4 col-12 col-lg-4">
+              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+                <div class="card-body">
+                  <h5 class="card-title t1">SMALL</h5>
+                  <ul class="lista">
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="#logo">Home</a></li>
+                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Registre">Registre Client</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="#">RegistreBotiga</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-12 col-lg-4">
+              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+                <div class="card-body">
+                  <h5 class="card-title t1">LEGAL</h5>
+                  <ul class="lista">
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Condicions">Termes i Condicions</a></li>
+                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Privacitat">Privacitat</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Cookies">Cookies</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-12 col-lg-4">
+              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+                <div class="card-body">
+                  <h5 class="card-title t1">AJUDA</h5>
+                  <ul class="lista">
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Contacte</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Small-Inc@gmail.com</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;" href="#">+34 678930323</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container d-flex justify-content-center  mt-4 mb-4">
+
+            <div class="row">
+              <div>
+                <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-instagram">
+                  <span class="sr-only">Logo Instagram</span>
+                  <span class="fa fa-instagram fa-3x ICON"></span>
+                </a>
+
+              </div>
+
+              <div>
+                <a href="https://www.twitter.com/" class="btn btn-block btn-social btn-twitter">
+                  <span class="sr-only">Logo Twitter</span>
+                  <span class="fa fa-twitter fa-3x ICON"></span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.facebook.com/" class="btn btn-block btn-social btn-facebook">
+                  <span class="sr-only">Logo Facebook</span>
+                  <span class="fa fa-facebook fa-3x ICON"></span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="copy offset-8 ml-2 mb-4">Small 2021 &copy;</p>
+
+        </div>
+
+      </div>
+
+
+
+  </footer>
+
 </body>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
 </html>
