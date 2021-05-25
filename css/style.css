@@ -183,9 +183,9 @@ h1{
     font-size:3.8vw;
 }
 .tramitarComandafondo{
-    background: url("../img/TrianguloFondoTramitarComanada.png") no-repeat;
+    background: url("../img/TrianguloFondoTramitarComanda.png") no-repeat;
     background-size:cover;
-    
+
     padding-bottom: 5%;
 }
 .cardVerde{
