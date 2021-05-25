@@ -20,6 +20,7 @@
 
 
 
+
 <body>
 
   <!--Header-->
@@ -27,8 +28,8 @@
     <nav class="navbar navbar-light bgcust justify-content-between ">
       <a class="navbar-brand ml-3"><img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logo" alt="Imatge Corporativa Small"></a>
       <form class="form-inline d-flex justify-content-left">
-        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0 mr-3" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
-        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0  mr-3" type="button" data-toggle="modal" data-target="#Registre">Registrar-se</button>
+        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0 mr-3" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
+        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0  mr-3" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#Registre">Registrar-se</button>
       </form>
     </nav>
 
@@ -101,9 +102,9 @@
         </div>
       </div>
     </div>
-    <!-- Modal per Registrar-se -->
+  <!-- Modal per Registrar-se -->
 
-    <div class="modal fade mb-5" id="Registre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade mb-5" id="Registre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5 " style="border-bottom:0px;">
@@ -113,170 +114,68 @@
             </button>
           </div>
           <div class="modal-body ">
-            <?php
-            echo form_open('SmallController/registreclient');
-            ?>
-            <div class="form-row">
-              <div class="col-md-12 mb-3">
-                <label for="Nom">NOM</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'Nom',
-                  'type' => 'text',
-                  'class' => 'form-control',
-                  'value' => set_value('Nom')
-                ));
-                ?>
-              </div>
-              <div class="col-md-12 mb-3">
-                <label for="Cognom">PRIMER COGNOM</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'Cognom',
-                  'type' => 'text',
-                  'class' => 'form-control',
-                  'value' => set_value('Cognom')
-                ));
-                ?>
-
-              </div>
-              <div class="col-md-12 mb-3">
-                <label for="Cognom2">SEGON COGNOM</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'Cognom2',
-                  'type' => 'text',
-                  'class' => 'form-control',
-                  'value' => set_value('Cognom')
-                ));
-                ?>
-              </div>
-              <div class="col-md-12 mb-3">
-                <label for="Dni">DNI</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'Dni',
-                  'type' => 'text',
-                  'class' => 'form-control',
-                  'value' => set_value('Dni')
-                ));
-                ?>
-              </div>
-              <div class="col-md-12 mb-3">
-                <label for="datanaixement">DATA DE NAIXEMENT</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'datanaixement',
-                  'type' => 'text',
-                  'placeholder' => 'data',
-                  'class' => 'form-control textbox-n',
-                  'value' => set_value('Dni'),
-                  'onfocus' => "(this.type='date')",
-                  'id' => "date"
-                ));
-                ?>
-
-              </div>
-              <div class="col-md-12 mb-3">
-                <label for="Correu">CORREU ELECTRÒNIC</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'correu',
-                  'type' => 'email',
-                  'class' => 'form-control',
-                  'value' => set_value('correu')
-                ));
-                ?>
-              </div>
-              <div class="col-md-12 mb-3">
-                <div class="form-row">
-                  <div class="col-md-4">
-                    <label for="ciutat">CIUTAT</label>
-                    <?php
-                    echo form_input(array(
-                      'name' => 'ciutat',
-                      'type' => 'text',
-                      'class' => 'form-control',
-                      'value' => set_value('ciutat')
-                    ));
-                    ?>
-                  </div>
-                  <div class="col-md-4">
-                    <label for="provincia">PROVÍNCIA</label>
-                    <?php
-                    echo form_input(array(
-                      'name' => 'provincia',
-                      'type' => 'text',
-                      'class' => 'form-control',
-                      'value' => set_value('provincia')
-                    ));
-                    ?>
-                  </div>
-                  <div class="col-md-4">
-                    <label for="cpostal">C.POSTAL</label>
-                    <?php
-                    echo form_input(array(
-                      'name' => 'cpostal',
-                      'type' => 'text',
-                      'class' => 'form-control',
-                      'value' => set_value('cpostal')
-                    ));
-                    ?>
+            <form>
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label for="nom">NOM</label>
+                  <input type="text" class="form-control" id="Nom" >
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="Pcognom">PRIMER COGNOM</label>
+                  <input type="text" class="form-control" id="Cognom" >
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="Scognom">SEGON COGNOM</label>
+                  <input type="text" class="form-control" id="Cognom2">
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="dni">DNI</label>
+                  <input type="text" class="form-control" id="Dni">
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">DATA DE NAIXEMENT</label>
+                  <input type="date" class="form-control" id="Datanaixement" >
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">CORREU ELECTRÒNIC</label>
+                  <input type="email" class="form-control" id="Correu" >
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-row">
+                    <div class="col-md-4">
+                      <label for="validationDefault02">CIUTAT</label>
+                      <input type="text" class="form-control" id="Ciutat" >
+                    </div>
+                    <div class="col-md-4">
+                      <label for="validationDefault02">PROVÍNCIA</label>
+                      <input type="text" class="form-control" id="Provincia">
+                    </div>
+                    <div class="col-md-4">
+                      <label for="validationDefault02">C.POSTAL</label>
+                      <input type="text" class="form-control" id="Cpostal">
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-12 mb-3">
-                <label for="password">PASSWORD</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'password',
-                  'type' => 'password',
-                  'class' => 'form-control',
-                  'value' => set_value('password')
-                ));
-                ?>
-              </div>
-              <div class="col-md-12 mb-3">
-                <label for="password2">REPETEIX PASSWORD</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'password2',
-                  'type' => 'password',
-                  'class' => 'form-control',
-                  'value' => set_value('password')
-                ));
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">PASSWORD</label>
+                  <input type="password" class="form-control" id="Password">
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">REPETEIX PASSWORD</label>
+                  <input type="password"  class="form-control" id="Password2" >
+                </div>
 
+                <div class="offset-4 text-center boton">
+                  <button type="button" onclick="registreClient()" id="bcolor" class="btn btn-outline-success">Registra't</button>
 
+                </div>
+                <div class="offset-3 mt-2">
+                  <p>Si ja tens un Compte, <span id="registre">Inicia Sessió<span></p>
 
-                ?>
-              </div>
+                </div>
 
-              <div class="offset-4 text-center boton">
-
-                <?php
-
-                echo form_submit(array(
-                  'name' => 'afegir',
-                  'class' => 'btn btn-outline-success',
-                  'id' => 'bcolor',
-                  'value' => "Registra't",
-
-
-                ));
-
-
-                echo form_close();
-
-                ?>
 
               </div>
-              <div class="offset-3 mt-2">
-                <p>Si ja tens un Compte, <span id="registre">Inicia Sessió<span></p>
-
-              </div>
-
-
-            </div>
             </form>
           </div>
         </div>
