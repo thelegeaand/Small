@@ -71,10 +71,9 @@ a:hover{
     width: 30%;
 }
 .cajasdiv{
-    background: url("../img/RegistrarBotigaTriangulo2.png") ;
     background-size: cover;
-    min-height: 104vh;
-    padding-bottom: 20%;
+    padding-bottom: 5%;
+    background: url("../img/RegistrarBotigaTriangulo2.png") no-repeat;
 }
 #fotosSeccions{
         width: 95%;

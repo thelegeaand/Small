@@ -366,16 +366,13 @@
                 <div class="col-md-6 mb-3 text-center">
                   <input type="text" class="form-control mb-4" id="Usuari" placeholder="Nom Propietari">
                 </div>
-                <div class="col-md-6 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="DNI Propietari" required>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                 <input type="password" class="form-control mb-4" id="Password" placeholder="Nom Usuari" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                 <input type="password" class="form-control mb-4" id="Password" placeholder="Password" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                 <input type="password" class="form-control mb-4" id="Password" placeholder="Confirmar Password" required>
                 </div>
               </div>
@@ -455,69 +452,72 @@
                 <h4><strong>COM FUNCIONA?</strong></h4>
             </div>
             <div id="accordion">
-
   <div class="card">
-    <div class="card-header cardRed text-center">
-      <a class="card-link tituloCard" data-toggle="collapse" href="#collapseFour">
-        1.-Registre
-      </a>
+    <div class="card-header cardRed" id="headingOne">
+      <h5 class="mb-0 ">
+        <button class="btn btn-link tituloCard" data-toggle="collapse" data-target="#collapseUno" aria-expanded="true" aria-controls="collapseUno">
+          1.- Registre
+        </button>
+      </h5>
     </div>
-    <div id="collapseOne" class="collapse show" data-parent="#accordion">
-      <div class="">
-        Lorem ipsum..
-      </div>
+
+    <div id="collapseUno" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <p>AAAAAAAAAAAAAAAAAAAA</p>
     </div>
   </div>
-
   <div class="card">
-    <div class="card-header text-center cardAmarilla">
-      <a class="collapsed card-link tituloCard" data-toggle="collapse" href="#collapseTwo">
-       2.-Personalització
-      </a>
+    <div class="card-header cardAmarilla" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed tituloCard" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          2.- Personalització
+        </button>
+      </h5>
     </div>
-    <div id="collapseTwo" class="collapse" data-parent="#accordion">
-      <div class="card-body">
-        Lorem ipsum..
-      </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+    <p>AAAAAAAAAAAAAAAAAAAA</p>
+
     </div>
   </div>
-
   <div class="card">
-    <div class="card-header cardBlue text-center">
-      <a class="collapsed card-link tituloCard" data-toggle="collapse" href="#collapseThree">
-        3.-Afegir Productes
-      </a>
+    <div class="card-header cardBlue" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed tituloCard" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          3.- Afegir Productes
+        </button>
+      </h5>
     </div>
-    <div id="collapseThree" class="collapse" data-parent="#accordion">
-      <div class="card-body">
-        Lorem ipsum..
-      </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+    <p>AAAAAAAAAAAAAAAAAAAA</p>
+
     </div>
   </div>
-
-  <div class="card">
-    <div class="card-header cardGreen text-center">
-      <a class="collapsed card-link tituloCard" data-toggle="collapse" href="#collapseThree">
-        3.-Afegir Productes
-      </a>
+</div>
+<div class="card">
+    <div class="card-header cardGreen" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed tituloCard" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            4.- A vendre!
+        </button>
+      </h5>
     </div>
-    <div id="collapseThree" class="collapse" data-parent="#accordion">
-      <div class="card-body">
-        Lorem ipsum..
-      </div>
-    </div>
-    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+    <p>AAAAAAAAAAAAAAAAAAAA</p>
 
     </div>
+  </div>
+</div>
        </div>
    </div>
 
-    <div class="cajasdiv mt-5 pt-5">
-    <div class="registre3 mt-5 container ">
-    <div class="perque text-center">
+
+   <div class="perque text-center pt-5">
             <h4><strong>PERQUÈ NOSALTRES?</strong></h4>            
     </div>
-    <div class="d-flex justify-content-center">
+
+    <div class="cajasdiv">
+       <div class="container mb-5 pb-5">
+            
+       <div class="d-flex justify-content-center">
             <div class="cajasp text-center pl-5 pr-5 pt-5 mt-5 mb-5 col-md-6 pb-5">
               <h4><strong>Augmenta les teves vendes!</strong></h4>
               <img src="<?php echo base_url(); ?>img/pago-en-efectivo.png" class="imagenCajas" alt="">
@@ -540,8 +540,13 @@
             </div>
     </div>
     </div>
-</div>
-    </div>
+  
+       </div>
+       
+       </div>
+
+
+
 
 
     
