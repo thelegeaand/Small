@@ -17,7 +17,7 @@ class SmallController extends CI_Controller {
 	public function index()
 	{
 
-		$this->load->view('TramitarComanda');
+		$this->load->view('Home');
         
 	}
 
@@ -83,8 +83,7 @@ class SmallController extends CI_Controller {
         
         $this->session->sess_destroy();
         $this->load->view('Home');
-         
-      
+        
         
                
     }
