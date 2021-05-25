@@ -9,6 +9,7 @@ class SmallController extends CI_Controller {
             $this->load->helper(array('form', 'url'));
             $this->load->helper('form');
             $this->load->database();
+            $this->load->library('email');
             $this->load->library("session");
             $this->load->library('form_validation'); 
         
@@ -16,8 +17,10 @@ class SmallController extends CI_Controller {
 
 	public function index()
 	{
-
+        
+        
 		$this->load->view('Home');
+
         
 	}
 
