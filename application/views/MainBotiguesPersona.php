@@ -403,7 +403,7 @@
               </div>
               <div class="card-body bg-light text-center" style="padding-bottom:10%;">
                 <h4>CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
+                <button onclick="tancar()" type="button" class="btn" id="bcolor">Anar</button>
               </div>
             </div>
           </div>

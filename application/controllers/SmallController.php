@@ -9,6 +9,7 @@ class SmallController extends CI_Controller {
             $this->load->helper(array('form', 'url'));
             $this->load->helper('form');
             $this->load->database();
+            $this->load->library('email');
             $this->load->library("session");
             $this->load->library('form_validation'); 
         
@@ -16,10 +17,44 @@ class SmallController extends CI_Controller {
 
 	public function index()
 	{
+        
+        
+		$this->load->view('Home');
 
-		$this->load->view('Contacte');
         
 	}
+
+    public function registreclient(){
+
+        $Nom=$this->input->post('Nom');
+        $PrimerCognom=$this->input->post('Cognom');
+        $SegonCognom=$this->input->post('Cognom2');
+        $Dni=$this->input->post('Dni');
+        $DataNaixement=$this->input->post('datanaixement');
+        $Correu=$this->input->post('correu');
+        $Ciutat=$this->input->post('ciutat');
+        $Provinvia=$this->input->post('provincia');
+        $CodiPostal=$this->input->post('cpostal');
+        $Password=$this->input->post('password');
+        $passwordE=md5($Password);
+        $data['dada']=$this->input->post();
+
+      $this->form_validation->set_rules('Nom','Nom','required|max_length[50]',
+      array( 'required' => '<span id="errorForm">Camp Obligatori</span>',
+      'max_length'=>' <span id="errorForm">Nom massa llarg</span>'));
+
+      if($this->form_validation->run()==FALSE){
+
+        
+    
+        }
+
+
+   
+
+
+
+    }
 
     public function MainBotiguesPer(){
 
@@ -78,16 +113,6 @@ class SmallController extends CI_Controller {
     }
 
 
-    /*Tancar Sessió*/
-    public function TancarSessio(){
-        
-        $this->session->sess_destroy();
-        $this->load->view('Home');
-         
-      
-        
-               
-    }
 
 
     
