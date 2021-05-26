@@ -117,51 +117,54 @@
             <form>
               <div class="form-row">
                 <div class="col-md-12 mb-3">
-                  <label for="nom">NOM</label>
+                  <label for="Nom">NOM<span style='color:red;' class="ml-2" id="nomInc"></span></label>
                   <input type="text" class="form-control" id="Nom" >
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="Pcognom">PRIMER COGNOM</label>
+                  <label for="Cognom">PRIMER COGNOM<span style='color:red;' class="ml-2" id="cognomInc"></span></label>
                   <input type="text" class="form-control" id="Cognom" >
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="Scognom">SEGON COGNOM</label>
+                  <label for="Cognom2">SEGON COGNOM<span style='color:red;' class="ml-2" id="cognom2Inc"></span></label>
                   <input type="text" class="form-control" id="Cognom2">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="dni">DNI</label>
+                  <label for="Dni">DNI<span style='color:red;' class="ml-2" id="dniInc"></span></label>
                   <input type="text" class="form-control" id="Dni">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">DATA DE NAIXEMENT</label>
+                  <label for="Datanaixement">DATA DE NAIXEMENT<span style='color:red;' class="ml-2" id="dataInc"></span></label>
                   <input type="date" class="form-control" id="Datanaixement" >
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">CORREU ELECTRÒNIC</label>
+                  <label for="Correu">CORREU ELECTRÒNIC<span style='color:red;' class="ml-2" id="correuInc"></span></label>
                   <input type="email" class="form-control" id="Correu" >
                 </div>
                 <div class="col-md-12 mb-3">
                   <div class="form-row">
-                    <div class="col-md-4">
-                      <label for="validationDefault02">CIUTAT</label>
+                    <div class="col-md-4 mb-3">
+                      <label for="Ciutat">CIUTAT</label>
+                      <span style='color:red;' class="ml-2" id="ciutatInc"></span>
                       <input type="text" class="form-control" id="Ciutat" >
                     </div>
-                    <div class="col-md-4">
-                      <label for="validationDefault02">PROVÍNCIA</label>
+                    <div class="col-md-4 mb-3">
+                      <label for="Provincia">PROVÍNCIA</label>
+                      <span style='color:red;' class="ml-2" id="provinciaInc"></span>
                       <input type="text" class="form-control" id="Provincia">
                     </div>
-                    <div class="col-md-4">
-                      <label for="validationDefault02">C.POSTAL</label>
+                    <div class="col-md-4 ">
+                      <label for="CPostal">C.POSTAL</label>
+                      <span style='color:red;' class="ml-2" id="postalInc"></span>
                       <input type="text" class="form-control" id="Cpostal">
                     </div>
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">PASSWORD</label>
+                  <label for="Password">PASSWORD<span style='color:red;' class="ml-2" id="passwordInc"></span></label>
                   <input type="password" class="form-control" id="Password">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">REPETEIX PASSWORD</label>
+                  <label for="Password2">REPETEIX PASSWORD</label>
                   <input type="password"  class="form-control" id="Password2" >
                 </div>
 

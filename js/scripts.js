@@ -18,113 +18,236 @@ function registreClient(){
     var CodiPostal=document.getElementById("Cpostal").value;
     var Password=document.getElementById("Password").value;
     var Password2=document.getElementById("Password2").value;
+
     var CompNom=number(Nom);
     var CompCognom=number(Cognom);
     var CompCognom2=number(Cognom2);
     var missatge=false;
     var CompDni=ComprobarDni(Dni);
     var Edat=Anos(DataNaixement);
-    var ComEmail= ComprobarEmail(email);
+    var CompEmail= ComprobarEmail(Correu);
+    var CompCiutat=number(Ciutat);
+    var CompProvincia=number(Provincia);
+    var CompCP=ComprobarCodiPostal(CodiPostal);
+    var passwords=ComprobarContrasenyas(Password,Password2);
+    var formatContrasenya=validar_clave(Password);
+    alert(formatContrasenya);
 
     /*Nom*/
 
     if(Nom==""){
 
-        document.getElementById("Nom").style="border-color:red;"
+        document.getElementById("Nom").style="border-color:red;";
+        document.getElementById("nomInc").innerHTML="Camp en blanc";
         missatge=true;
 
     }else if(CompNom==false||Nom.length>50){
-
-        document.getElementById("Nom").style="border-color:red;"
+        document.getElementById("nomInc").innerHTML="Format incorrecte";
+        document.getElementById("Nom").style="border-color:red;";
         missatge=true;
 
     }
     else{
-
-        document.getElementById("Nom").style="border-color:#07FB7F;"
+        document.getElementById("nomInc").innerHTML="";
+        document.getElementById("Nom").style="border-color:#07FB7F;";
     }
     /*Cognom*/
 
     if(Cognom==""){
-
-        document.getElementById("Cognom").style="border-color:red;"
+        document.getElementById("cognomInc").innerHTML="Camp en blanc";
+        document.getElementById("Cognom").style="border-color:red;";
         missatge=true;
 
     }else if(CompCognom==false||Cognom.length>50){
-
-        document.getElementById("Cognom").style="border-color:red;"
+        document.getElementById("cognomInc").innerHTML="Format incorrecte";
+        document.getElementById("Cognom").style="border-color:red;";
         missatge=true;
 
     }
     else{
-
-        document.getElementById("Cognom").style="border-color:#07FB7F;"
+        document.getElementById("nomInc").innerHTML="";
+        document.getElementById("Cognom").style="border-color:#07FB7F;";
     }
 
     /*Cognom2*/
     
     if(Cognom2==""){
-
-        document.getElementById("Cognom2").style="border-color:red;"
+        document.getElementById("cognom2Inc").innerHTML="Camp en blanc";
+        document.getElementById("Cognom2").style="border-color:red;";
         missatge=true;
 
     }else if(CompCognom2==false||Cognom2.length>50){
-
-        document.getElementById("Cognom2").style="border-color:red;"
+        document.getElementById("cognom2Inc").innerHTML="Format incorrecte";
+        document.getElementById("Cognom2").style="border-color:red;";
         missatge=true;
 
     }
     else{
-
-        document.getElementById("Cognom2").style="border-color:#07FB7F;"
+        document.getElementById("cognom2Inc").innerHTML="";
+        document.getElementById("Cognom2").style="border-color:#07FB7F;";
     }
 
     /*Dni*/
 
     if(Dni==""){
-
-        document.getElementById("Dni").style="border-color:red;"
+        document.getElementById("dniInc").innerHTML="Camp en blanc";
+        document.getElementById("Dni").style="border-color:red;";
         missatge=true;
 
     }else if(CompDni==false){
-
-        document.getElementById("Dni").style="border-color:red;"
+        
+        document.getElementById("dniInc").innerHTML="Camp en blanc";
+        document.getElementById("Dni").style="border-color:red;";
         missatge=true;
 
     }
     else{
-
-        document.getElementById("Dni").style="border-color:#07FB7F;"
+        document.getElementById("dniInc").innerHTML="";
+        document.getElementById("Dni").style="border-color:#07FB7F;";
     }
 
-    /*Edat*/
-    if(Edat==""){
-
-        document.getElementById("Datanaixement").style="border-color:red;"
+    /*Data*/
+    if(DataNaixement==""){
+        document.getElementById("dataInc").innerHTML="Camp en blanc";
+        document.getElementById("Datanaixement").style="border-color:red;";
         missatge=true;
 
     }else if(Edat<18){
-
-        document.getElementById("Datanaixement").style="border-color:red;"
+        document.getElementById("dataInc").innerHTML="Has de ser major d'edat";
+        document.getElementById("Datanaixement").style="border-color:red;";
         missatge=true;
 
     }
     else{
-
-        document.getElementById("Datanaixement").style="border-color:#07FB7F;"
+        document.getElementById("dataInc").innerHTML="";
+        document.getElementById("Datanaixement").style="border-color:#07FB7F;";
     }
 
     /*Correu*/
 
-    
+    if(Correu==""){
+        document.getElementById("correuInc").innerHTML="Camp en blanc";
+        document.getElementById("Correu").style="border-color:red;";
+        missatge=true;
+
+    }else if(CompEmail!=true){
+        document.getElementById("correuInc").innerHTML="Format incorrecte";
+        document.getElementById("Correu").style="border-color:red;";
+        missatge=true;
+    }else{
+        document.getElementById("correuInc").innerHTML="";
+        document.getElementById("Correu").style="border-color:#07FB7F;";
+
+    }
+    /*Ciutat*/
+    if(Ciutat==""){
+        document.getElementById("ciutatInc").innerHTML="<br>Camp en blanc";
+        document.getElementById("Ciutat").style="border-color:red;";
+        missatge=true;
+
+    }else if(CompCiutat==false||Ciutat.length>50){
+        document.getElementById("ciutatInc").innerHTML="<br>Format incorrecte";
+        document.getElementById("Ciutat").style="border-color:red;";
+        missatge=true;
+
+    }
+    else{
+        document.getElementById("ciutatInc").innerHTML="";
+        document.getElementById("Ciutat").style="border-color:#07FB7F;";
+    }
+
+     /*Provincia*/
+     if(Provincia==""){
+        document.getElementById("provinciaInc").innerHTML="<br>Camp en blanc";
+        document.getElementById("Provincia").style="border-color:red;";
+        missatge=true;
+
+    }else if(CompProvincia==false||Provincia.length>50){
+        document.getElementById("provinciaInc").innerHTML="<br>Format incorrecte";
+        document.getElementById("Provincia").style="border-color:red;";
+        missatge=true;
+
+    }
+    else{
+        document.getElementById("provinciaInc").innerHTML="";
+        document.getElementById("cognom2Inc").innerHTML="";
+        document.getElementById("Provincia").style="border-color:#07FB7F;";
+    }
+/*CodiPostal*/
+    if(CodiPostal==""){
+        document.getElementById("postalInc").innerHTML="<br>Camp en blanc";
+        document.getElementById("Cpostal").style="border-color:red;";
+        missatge=true;
+
+    }else if(CompCP!=true){
+        document.getElementById("postalInc").innerHTML="<br>Format incorrecte";
+        document.getElementById("Cpostal").style="border-color:red;";
+        missatge=true;
+
+    }
+    else{
+        document.getElementById("postalInc").innerHTML="";
+        document.getElementById("Cpostal").style="border-color:#07FB7F;";
+    }
+
+    /*Passwords*/
+    if(passwords!=true){
+        document.getElementById("passwordInc").innerHTML="Contrasenyes no coincideixen";
+        document.getElementById("Password").style="border-color:red;";
+        document.getElementById("Password2").style="border-color:red;";
+        missatge=true;
+
+    }else if(Password=="" ||Password2==""){
+        document.getElementById("passwordInc").innerHTML="Algun camp està en blanc";
+        document.getElementById("Password").style="border-color:red;";
+        document.getElementById("Password2").style="border-color:red;";
+        missatge=true;
+
+    }else if(formatContrasenya!=true){
+        document.getElementById("passwordInc").innerHTML="<br>Ha de tenir almenys una Mayúscula,minúscula,caracter especial i maxim 6 caracters.";
+        document.getElementById("Password").style="border-color:red;";
+        document.getElementById("Password2").style="border-color:red;";
+        missatge=true;
+
+    }
+    else{
+        document.getElementById("passwordInc").innerHTML="";
+        document.getElementById("Password").style="border-color:#07FB7F;";
+        document.getElementById("Password2").style="border-color:#07FB7F;";
+        missatge=true;
+    }
+
+
 
    /*SweetAlert*/
    if(missatge==true){
     Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Algun Camp està buit o en format incorrecte!'
+        text: 'No s\'ha pogut dur a terme el registre correctament!'
       });
+
+   }else{
+
+    var Request= new XMLHttpRequest();
+    Request.onreadystatechange= function(){
+        console.log(this.readyState);
+        console.log(this.status);
+        if(this.readyState == 4 && this.status == 200){
+            var m=Request.responseText;
+
+           
+    }
+    
+          
+    };  
+}
+
+Request.open("POST","http://localhost/Small/index.php/SmallController/registreclient",true); 
+Request.setRequestHeader("Content-type","application/x-www-form-urlencoded"); 
+Request.send("Nom="+Nom+"&Cognom="+Cognom+"&Cognom2="+Cognom2+"&Dni="+Dni+"&datanaixement="+DataNaixement+
+"&correu="+Correu+"&ciutat="+Ciutat+"&provincia="+Provincia+"&cpostal="+CodiPostal+"&password="+Password);
+
 
    }
 
@@ -193,7 +316,7 @@ function ComprobarDni(Dni) {
      }
   }
 
-
+/* Calcular Edat*/
   function Anos(data){
  
     var fecha=new Date(data);
@@ -219,7 +342,7 @@ function ComprobarDni(Dni) {
      
        return edad;
     }
-
+/*Comprobar format Email*/
     function ComprobarEmail(email){
         
         if ( /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(email)){
@@ -232,6 +355,72 @@ function ComprobarDni(Dni) {
          return false;
         }
       }
+/*Comprobar Contrasenyas*/
+
+function ComprobarContrasenyas(pass1,pass2){
+
+    if(pass1==pass2){
+
+        return true;
+
+    }else{
+
+        return false;
+
+    }
+}
+
+/*Comprobar Format Contrasenya*/
+function validar_clave(c)
+{
+    if(c.length >= 6)
+    {		
+        var mayuscula = false;
+        var minuscula = false;
+        var numero = false;
+        var caracter_raro = false;
+        
+        for(var i = 0;i<c.length;i++)
+        {
+            if(c.charCodeAt(i) >= 65 && c.charCodeAt(i) <= 90)
+            {
+                mayuscula = true;
+            }
+            else if(c.charCodeAt(i) >= 97 && c.charCodeAt(i) <= 122)
+            {
+                minuscula = true;
+            }
+            else if(c.charCodeAt(i) >= 48 && c.charCodeAt(i) <= 57)
+            {
+                numero = true;
+            }
+            else
+            {
+                caracter_raro = true;
+            }
+        }
+        if(mayuscula == true && minuscula == true && caracter_raro == true && numero == true)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+/*Comprobar Codi Postal*/
+function ComprobarCodiPostal(Codi){
+
+
+      if(Codi.length == 5 && parseInt(Codi) >= 1000 && parseInt(Codi) <= 52999)
+      {
+        return true;
+      }
+      else{
+        return false;
+       }
+    
+
+}
 
     
 
