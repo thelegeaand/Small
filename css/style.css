@@ -31,7 +31,11 @@ a:hover{
     background-size: cover;
     padding-bottom: 5%;
 }
+.trianguloContacto{
+    background: url("../img/TrianguloContacto.png") no-repeat;
+    background-size: cover;
 
+}
 #logo{
 
     width:65%;
@@ -147,6 +151,9 @@ a:hover{
 }
 .cardGreen{
     background-color: #07FB7F;
+}
+.verde{
+    color: #07FB7F;
 }
 .tituloCard{
     color: white;
