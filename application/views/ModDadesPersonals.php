@@ -17,7 +17,7 @@
   <title>Pàgina Principal Small</title>
 </head>
 
-<body class="trianguloContacto">
+<body class="trianguloModificar">
 
   <!--Header-->
   <header class="">
@@ -399,7 +399,7 @@
 
     <main class="">
     <div class="text-botiga text-center ">
-            <h4 class="mt-5">Tens cap dubte o has tingut alguna incidència amb la teva comanda?</h4><h4 class="verde mb-5"> Contacta amb nosaltres!</h4>
+            <h4 class="mt-5">Vols modificar les teves dades?</h4><h4 class="verde mb-5"> </h4>
 
     </div>
 
@@ -410,7 +410,7 @@
   <div class="card mb-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
-      Formulari de Contacte
+      Dades Personals
       </h5>
     </div>
 
@@ -418,33 +418,62 @@
       <div class="container  adv">
 
               <div class="form-row ">
-                <div class="col-md-6">
-                  <input type="text" name="" id="" class="form-control mt-4" placeholder="Número Comanda*">
-                </div>  
-                <div class="col-md-6">
-                  <input type="text" class="form-control mt-4" placeholder="Correu">
-                </div>              
-              </div>
-
-              <div class="form-row ">
-                <div class="col-md-6">
+                <div class="col-md-4">
+                    <h4 class="mt-4">Nom</h4>
                   <input type="text" name="" id="" class="form-control mt-4" placeholder="Nom">
                 </div>  
+                <div class="col-md-4">
+                <h4 class="mt-4">Cognom</h4>
+                  <input type="text" class="form-control mt-4" placeholder="Primer Cognom">
+                </div>     
+                <div class="col-md-4">
+                <h4 class="mt-4">Segon Cognom</h4>
+                  <input type="text" class="form-control mt-4" placeholder="Segon Cognom">
+                </div>           
+              </div>
+
+              <div class="form-row ">
                 <div class="col-md-6">
-                  <input type="text" class="form-control mt-4" placeholder="Cognom">
+                <h4 class="mt-4">DNI</h4>
+                  <input type="text" name="" id="" class="form-control mt-4" placeholder="DNI">
+                </div>  
+                <div class="col-md-6">
+                <h4 class="mt-4">Data Naixement</h4>
+                  <input type="date" class="form-control mt-4" placeholder="Data Naixement">
                 </div>              
               </div>
 
               <div class="form-row ">
-                <div class="col-md-12">
-                  <textarea name="" class="form-control mt-4" placeholder="Incidència" id="" cols="30" rows="10"></textarea>
-              </div>               
+                <div class="col-md-4">
+                <h4 class="mt-4">Ciutat</h4>
+                <input type="text" name="" id="" class="form-control mt-4" placeholder="Ciutat">
+              </div>    
+              <div class="col-md-4">
+              <h4 class="mt-4">Província</h4>
+                <input type="text" name="" id="" class="form-control mt-4" placeholder="Província">
+              </div>  
+              <div class="col-md-4">
+              <h4 class="mt-4">Codi Postal</h4>
+                <input type="text" name="" id="" class="form-control mt-4" placeholder="Codi Postal">
+              </div>             
               </div>
 
-              <div class="offset-4 text-center boton">
-                  <button type="submit" id="bcolor" class="btn btn-outline-success mt-5 mb-5">Enviar Incidència</button>
+              
+                  <div class="row ">
+                  <div class="col-md-4 justify-content-center d-flex">
+                  <button type="submit" id="bcolor" class="btn  mt-5 mb-5">Modificar</button>
 
-                </div>
+                  </div>
+                  <div class="col-md-4 justify-content-center d-flex">
+                  <button type="submit" id="bcolor" class="btn mt-5 mb-5 ">Canviar Contrasenya</button>
+
+                  </div>
+                  <div class="col-md-4 justify-content-center d-flex">
+                  <button type="submit" id="brojo" class="btn mt-5 mb-5 ">Donar de Baixa</button>
+
+                  </div>
+                  </div>
+                
             </form>
             </div>
       </div>
