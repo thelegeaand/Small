@@ -34,7 +34,11 @@ a:hover{
 .trianguloContacto{
     background: url("../img/TrianguloContacto.png") no-repeat;
     background-size: cover;
-
+    
+}
+.trianguloModificar{
+    background: url("../img/ModificarDadesTriangulo.png") no-repeat;
+    background-size: cover;
 }
 #logo{
 
@@ -55,7 +59,38 @@ a:hover{
     padding-right: 20px;
     padding-left: 20px;
 }
+.cuerpoCarta{
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    width: 100%;
+    height: 350px;
+    background-color: #fff;
+}
+.cartaTotal{
+    border-radius: 2%;
+    width: 100%;
+    height: 400px;
+}
+.headerCarta{
+    border-radius: 2%;
 
+    background-color:#07FB7F ;
+    width: 100%;
+    height: 50px;
+}
+.tcomanda{
+    background: url("../img/RegistrarBotigaTriangulo2.png") no-repeat;
+    background-size: cover;
+}
+#brojo{
+    color: white;
+    background-color: #FF0910;
+    border-radius: 13px;
+    font-weight: bold;
+    padding: 11px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
 #bgcust{
     background-color: transparent;
 }

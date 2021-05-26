@@ -17,7 +17,7 @@
   <title>Pàgina Principal Small</title>
 </head>
 
-<body class="trianguloContacto">
+<body class="">
 
   <!--Header-->
   <header class="">
@@ -397,9 +397,9 @@
     </div>
     </header>
 
-    <main class="">
+    <main class="tcomanda">
     <div class="text-botiga text-center ">
-            <h4 class="mt-5">Tens cap dubte o has tingut alguna incidència amb la teva comanda?</h4><h4 class="verde mb-5"> Contacta amb nosaltres!</h4>
+            <h4 class="mt-5">Si la comanda no ha arribat o no està en bones condicions</h4><h4 class="verde mb-5">Contacte amb nosaltres! </h4>
 
     </div>
 
@@ -410,50 +410,42 @@
   <div class="card mb-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
-      Formulari de Contacte
+      Historial de Comandes
       </h5>
     </div>
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="container  adv">
 
-              <div class="form-row ">
-                <div class="col-md-6">
-                  <input type="text" name="" id="" class="form-control mt-4" placeholder="Número Comanda*">
-                </div>  
-                <div class="col-md-6">
-                  <input type="text" class="form-control mt-4" placeholder="Correu">
-                </div>              
-              </div>
+             
 
-              <div class="form-row ">
-                <div class="col-md-6">
-                  <input type="text" name="" id="" class="form-control mt-4" placeholder="Nom">
-                </div>  
-                <div class="col-md-6">
-                  <input type="text" class="form-control mt-4" placeholder="Cognom">
-                </div>              
-              </div>
-
-              <div class="form-row ">
-                <div class="col-md-12">
-                  <textarea name="" class="form-control mt-4" placeholder="Incidència" id="" cols="30" rows="10"></textarea>
-              </div>               
-              </div>
-
-              <div class="offset-4 text-center boton">
-                  <button type="submit" id="bcolor" class="btn btn-outline-success mt-5 mb-5">Enviar Incidència</button>
-
-                </div>
-            </form>
+              
+                
+            
             </div>
       </div>
     </div>
   </div>
 </div>
+
+                <div class="justify-content-center d-flex mb-5">
+                <div class="col-md-4 mb-5">
+                        <div class="cartaTotal border mb-5">
+                            <div class="cuerpoCarta border">
+
+                            </div>
+                            <div class="headerCarta border">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
        </div>
        
        </div>
+
+
 
     </main>
 
