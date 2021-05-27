@@ -437,7 +437,7 @@
     <section id="Botigues">
       <div class="container d-flex justify-content-right mt-2 mb-5  ">
         <div class="row mt-5 mb-5">
-
+                
           <div class="col-md-4 mt-2">
             <div class="card">
               <div>
