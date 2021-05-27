@@ -67,6 +67,9 @@ class SmallController extends CI_Controller {
         
         }
 
+        public function PantallaContacte(){
+            $this->load->view('Contacte');
+        }
 
    
     public function MainBotiguesPer(){

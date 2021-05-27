@@ -623,3 +623,37 @@ h1{
 #trcust{
     border:none;
 }
+.fondotienda{
+    background: url("../img/casaramirez.jpg") no-repeat;
+    background-size:cover;
+}
+.logoBotiga{
+    height: 450px;
+}
+.logoTienda{
+    width: 30%;
+    margin-top: 17%;
+}
+.InfoBotiga{
+    background-color:rgb(255, 255, 255, 0.7);
+    height: 450px;
+}
+.cercador{
+    background-color: #ECECEC;
+}
+.buscadorAmplada{
+    width: 250px;
+}
+.cartaProd{
+    width: 300px;
+    height: 450px;
+    border-radius: 0.5em;
+}
+.fotoProd{
+    width: 300px;
+    height: 300px;
+}
+.cuerpoProd{
+    width: 300px;
+    height: 150px;
+}
