@@ -270,9 +270,6 @@ function registreClient() {
                     Comunitat=arrayDeCadenas[3];
                     Pais=arrayDeCadenas[4];
                     
-
-
-                
                 }
 
                 if(Ciutat2==""||Provincia2==""){
@@ -280,7 +277,7 @@ function registreClient() {
                      Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'No s\'ha trobat cap ciutat com la introduida...',
+                        text: 'No s\'ha trobat cap ciutat com la introduida...(Especifica més)',
                      
                       })
 
@@ -357,7 +354,7 @@ function registreClient() {
             }
         });
 
-        xhr.open("GET", "https://forward-reverse-geocoding.p.rapidapi.com/v1/search?q=" + Ciutat+ " " + Provincia + " " + CodiPostal + "&format=json&accept-language=en&polygon_threshold=0.0");
+        xhr.open("GET", "https://forward-reverse-geocoding.p.rapidapi.com/v1/search?q="+Ciutat+" "+Provincia+" "+CodiPostal+"&format=json&accept-language=es&polygon_threshold=0.0");
         xhr.setRequestHeader("x-rapidapi-key", "5018451283msh0b39ed77f1b8c11p195cb7jsnf3a9897e0f1d");
         xhr.setRequestHeader("x-rapidapi-host", "forward-reverse-geocoding.p.rapidapi.com");
         xhr.send();
