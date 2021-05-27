@@ -1,135 +1,138 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class SmallController extends CI_Controller {
+class SmallController extends CI_Controller
+{
 
     public function __construct()
     {
-            parent::__construct();
-            $this->load->helper(array('form', 'url'));
-            $this->load->helper('form');
-            $this->load->database();
-            $this->load->library('email');
-            $this->load->library("session");
-            $this->load->library('form_validation'); 
-        
+        parent::__construct();
+        $this->load->helper(array('form', 'url'));
+        $this->load->helper('form');
+        $this->load->database();
+        $this->load->library('email');
+        $this->load->library("session");
+        $this->load->library('form_validation');
+        $this->load->model('SmallModel');
     }
 
-	public function index()
-	{
-        
-        
-		$this->load->view('Home');
+    public function index()
+    {
 
-        
-	}
+        $this->load->view('Home');
+    }
 
-    public function registreclient(){
+    public function registreclient()
+    {
 
-        $Nom=$this->input->post('Nom');
-        $PrimerCognom=$this->input->post('Cognom');
-        $SegonCognom=$this->input->post('Cognom2');
-        $Dni=$this->input->post('Dni');
-        $DataNaixement=$this->input->post('datanaixement');
-        $Correu=$this->input->post('correu');
-        $Ciutat=$this->input->post('ciutat');
-        $Provincia=$this->input->post('provincia');
-        $CodiPostal=$this->input->post('cpostal');
-        $Password=$this->input->post('password');
-        $NomUsuari=$this->input->post('NomUsuari');
-        $passwordE=md5($Password);
-        $data['dada']=$this->input->post();
+        $Nom = $this->input->post('Nom');
+        $PrimerCognom = $this->input->post('Cognom');
+        $SegonCognom = $this->input->post('Cognom2');
+        $Dni = $this->input->post('Dni');
+        $DataNaixement = $this->input->post('datanaixement');
+        $Correu = $this->input->post('correu');
+        $Ciutat = $this->input->post('ciutat');
+        $Provincia = $this->input->post('provincia');
+        $CodiPostal = $this->input->post('cpostal');
+        $Password = $this->input->post('password');
+        $NomUsuari = $this->input->post('NomUsuari');
+        $passwordE = md5($Password);
+        $data['dada'] = $this->input->post();
 
-      $this->form_validation->set_rules('correu','correu','is_unique[client.correu]');
-      
+        $this->form_validation->set_rules('correu', 'correu', 'is_unique[client.correu]');
 
-      if($this->form_validation->run()==FALSE){
+        if ($this->form_validation->run() == FALSE) {
 
-          echo "notunique";
+            echo "notunique";
+        } else {
 
-        }else{
+            $this->SmallModel->NouUsuari($NomUsuari, $passwordE, 1);
+
+            $dades = $this->SmallModel->CodiUsuari($NomUsuari);
+
+            $id = $dades[0]['id_usuari'];
+
+            $this->SmallModel->NouClient($id, $Nom, $PrimerCognom, $SegonCognom, $Dni, $DataNaixement, $Correu, $Ciutat, $CodiPostal, $Provincia);
+
+            echo "ok";
+        }
+    }
+
+    public function inicisessio(){
+
+        $NomUsuari = $this->input->post('NomUsuariIS');
+        $Password= $this->input->post('PasswordIS');
+        $PasswordE=md5($Password);
+
+        $cont=$this->SmallModel->InciarSessio($NomUsuari,$PasswordE);
+
+        if($cont!=0){
 
             echo "ok";
 
-            $this->load->model('SmallModel');
-            $this->SmallModel->NouUsuari($NomUsuari,$passwordE,1);
+        }else{
 
+           echo "no";
 
-            /*$dades=$this->SmallModel->CodiUsuari($NomUsuari);*/
-        
-          /*$this->SmallModel->NouClient($dades,$Nom,$PrimerCognom,$SegonCognom,$Dni,$DataNaixement,$Correu,$Ciutat,$CodiPostal,$Provincia);*/
-
-
-           
         }
 
-          
-        
-        }
+    }
 
-        public function PantallaContacte(){
-            $this->load->view('Contacte');
-        }
+    public function PantallaContacte()
+    {
+        $this->load->view('Contacte');
+    }
 
-   
-    public function MainBotiguesPer(){
+
+    public function MainBotiguesPer()
+    {
 
         $this->load->view('MainBotiguesPersona');
-
     }
 
-    public function RegisterBotiga(){
+    public function RegisterBotiga()
+    {
 
         $this->load->view('RegistreBotigues');
-
     }
 
-    public function IniciClient(){
+    public function IniciClient()
+    {
 
 
         $this->load->view('IniciClient');
-
-
     }
 
-    public function HistorialClient(){
+    public function HistorialClient()
+    {
 
 
         $this->load->view('HistorialClient');
-
-
     }
 
-    public function CompteClient(){
+    public function CompteClient()
+    {
 
 
         $this->load->view('CompteClient');
-
-        
     }
 
-    public function TramitarComanda(){
+    public function TramitarComanda()
+    {
 
 
         $this->load->view('TramitarComanda');
-
-
     }
 
-    public function Contacte(){
+    public function Contacte()
+    {
 
         $this->load->view('Contacte');
-
     }
- 
-    public function IniciBotiga(){
+
+    public function IniciBotiga()
+    {
 
         $this->load->view('IniciBotiga');
-
     }
-
-
-
-
-    
 }

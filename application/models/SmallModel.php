@@ -26,7 +26,7 @@ public function NouUsuari($NomUsuari,$Contrasenya,$Estat){
 public function NouClient($idUsuari,$Nom,$Cognom,$Cognom2,$Dni,$Data,$Correu,$Ciutat,$CodiPostal,$Provincia){
 
     $sql="insert into client(id_usuari,nom,primer_cognom,segon_cognom,dni,data_naixement,correu,ciutat,província,codi_postal)
-    values('".$idUsuari."','".$Nom."','".$Cognom."','".$Cognom2."','".$Dni."','".$Data."','".$Correu."','".$Ciutat."','".$Provincia."',".$CodiPostal.")";
+    values(".$idUsuari.",'".$Nom."','".$Cognom."','".$Cognom2."','".$Dni."','".$Data."','".$Correu."','".$Ciutat."','".$Provincia."','".$CodiPostal."')";
     
     $this->db->query($sql);
     
@@ -37,18 +37,29 @@ public function NouClient($idUsuari,$Nom,$Cognom,$Cognom2,$Dni,$Data,$Correu,$Ci
 
     public function CodiUsuari($NomUsuari){
     
-        $this->db->select('*');
-        $this->db->where('usuaris',$NomUsuari);
-        $query = $this->db->get('id_usuari');
-        return $query->result();
-       
-       
+        $sql="SELECT * FROM usuaris WHERE nom_usuari='".$NomUsuari."'";
+    
+        $dades=$this->db->query($sql);
+
+        return $dades->result_array();
+
+        
    }
 
+   public function InciarSessio($NomUsuari,$Password){
 
-    
+    $sql="SELECT * FROM usuaris WHERE nom_usuari='".$NomUsuari."' AND contrasenya='".$Password."'";
+    $query=$this->db->query($sql);
+    $count=$query->num_rows();
+
+    return $count;
+
+   }
+
+   public function IniciarSessioTipus(){
 
 
+   }
 }
     
 

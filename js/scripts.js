@@ -258,6 +258,7 @@ function registreClient() {
                    Comarca2=arrayDeCadenas[1];
                    Provincia2 = arrayDeCadenas[2];
                    Comunitat=arrayDeCadenas[3];
+                   CodiP=arrayDeCadenas[4];
                    Pais=arrayDeCadenas[5];
 
                    
@@ -273,6 +274,10 @@ function registreClient() {
                 }
 
                 if(Ciutat2==""||Provincia2==""){
+
+                    document.getElementById("Cpostal").style = "border-color:red;";
+                    document.getElementById("Ciutat").style = "border-color:red;";
+                    document.getElementById("Provincia").style = "border-color:red;";
 
                      Swal.fire({
                         icon: 'error',
@@ -306,6 +311,7 @@ function registreClient() {
                             
                             if (this.readyState == 4 && this.status == 200) {
                                 var m = Request.responseText;
+                        
                                 if (m == "ok") {
                                     document.getElementById("correuInc").innerHTML = "";
                                     document.getElementById("Correu").style = "border-color:#07FB7F;";
@@ -314,7 +320,13 @@ function registreClient() {
                                         icon: 'success',
                                         title: 'Registrat Correctament!',
                                         text: 'El teu Nom d\'usuari per iniciar sessió és ' + NomUsuari + '.'
-                                    });
+                                    }).then((value) => {
+
+
+                               
+                                        window.location.href="http://localhost/Small/index.php/SmallController/index";
+                                        
+                                      });
                                 } else if (m == "notunique") {
                     
                                     document.getElementById("correuInc").innerHTML = "Aquest correu ja existeix";
@@ -336,20 +348,14 @@ function registreClient() {
                         
                         Request.open("POST", "http://localhost/Small/index.php/SmallController/registreclient", true);
                         Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                        Request.send("Nom=" + Nom + "&Cognom=" + Cognom + "&Cognom2=" + Cognom2 + "&Dni=" + Dni + "&datanaixement=" + DataNaixement +
-                            "&correu=" + Correu + "&ciutat=" + Ciutat2 + "&provincia=" + Provincia2 + "&cpostal=" + CodiP + "&password=" + Password + "&NomUsuari=" + NomUsuari);
+                        Request.send("Nom=" + Nom + "&Cognom=" + Cognom + "&Cognom2=" + Cognom2 + "&Dni=" + Dni + "&datanaixement=" + DataNaixement +"&correu=" + Correu + "&ciutat=" + Ciutat2 + "&provincia=" + Provincia2 + "&cpostal=" + CodiP + "&password=" + Password + "&NomUsuari=" + NomUsuari);
                            
                     }else if (result.isDenied) {          
                     }
                     })     
-
-
                 }
-                    
-                    
-                   
+                       
                 }
-
 
             }
         });
@@ -367,6 +373,97 @@ function registreClient() {
         });
     }
 }
+
+function iniciarsessio(){
+
+    var NomUsuariIS=document.getElementById("NomUsuariIS").value;
+    var PasswordIS=document.getElementById("PasswordIS").value;
+    var comprobacio=true;
+    document.getElementById("NomUsuariIS").style = "border-color:none;";
+    document.getElementById("PasswordIS").style = "border-color:none;";
+    document.getElementById("PassInc").innerHTML = "";
+    document.getElementById("nomUsuariInc").innerHTML = "";
+
+    if(NomUsuariIS==""){
+
+    document.getElementById("NomUsuariIS").style = "border-color:red;";
+    document.getElementById("nomUsuariInc").innerHTML = "Camp en blanc";
+    comprobacio=false;
+
+
+    }
+    if(PasswordIS==""){
+
+        document.getElementById("PasswordIS").style = "border-color:red;";
+        document.getElementById("PassInc").innerHTML = "Camp en blanc";
+        comprobacio=false;
+
+    }
+
+    if(comprobacio!=true){
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Algun camp està en blanc!'
+        });
+
+
+    }else{
+
+    var Request = new XMLHttpRequest();
+      Request.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+            var m=this.responseText;
+      
+            if(m=="ok"){
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Credencials Correctes!'
+                }).then((value) => {
+
+                    window.location.href="http://localhost/Small/index.php/SmallController/IniciClient";
+                    
+                  });
+
+            }else{
+
+                document.getElementById("PasswordIS").style = "border-color:red;";
+                document.getElementById("NomUsuariIS").style = "border-color:red;";
+      
+              
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Nom d\'usuari o Contrasenya incorrecte!'
+              });
+      
+            }       
+    }
+     
+
+     
+  };
+
+ Request.open("POST", "http://localhost/Small/index.php/SmallController/inicisessio", true);
+ Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ Request.send("NomUsuariIS=" + NomUsuariIS +"&PasswordIS="+PasswordIS);
+
+
+}
+}
+
+
+
+
+
+
+
+
+
 
 /*Funcions*/
 /*No nunmeros o Caracters especials*/

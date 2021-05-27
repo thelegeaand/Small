@@ -335,7 +335,7 @@
           <div class="form-inline mt-2 d-flex justify-content-center ">
           
 
-            <a id="bcolor" class="btn btn-outline-success my-2 my-sm-0" href="<?php echo base_url(); ?>index.php/SmallController/index" type="submit">Home</a>
+            <a id="bcolor" class="btn btn-outline-success my-2 my-sm-0" href="http://localhost/Small/index.php/SmallController/index" type="submit">Home</a>
 
           </div>
           </form>
