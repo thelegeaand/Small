@@ -33,29 +33,42 @@ class SmallController extends CI_Controller {
         $DataNaixement=$this->input->post('datanaixement');
         $Correu=$this->input->post('correu');
         $Ciutat=$this->input->post('ciutat');
-        $Provinvia=$this->input->post('provincia');
+        $Provincia=$this->input->post('provincia');
         $CodiPostal=$this->input->post('cpostal');
         $Password=$this->input->post('password');
+        $NomUsuari=$this->input->post('NomUsuari');
         $passwordE=md5($Password);
         $data['dada']=$this->input->post();
 
-      $this->form_validation->set_rules('Nom','Nom','required|max_length[50]',
-      array( 'required' => '<span id="errorForm">Camp Obligatori</span>',
-      'max_length'=>' <span id="errorForm">Nom massa llarg</span>'));
+      $this->form_validation->set_rules('correu','correu','is_unique[client.correu]');
+      
 
       if($this->form_validation->run()==FALSE){
 
+          echo "notunique";
+
+        }else{
+
+            echo "ok";
+
+            $this->load->model('SmallModel');
+            $this->SmallModel->NouUsuari($NomUsuari,$passwordE,1);
+
+
+            /*$dades=$this->SmallModel->CodiUsuari($NomUsuari);*/
         
-    
+          /*$this->SmallModel->NouClient($dades,$Nom,$PrimerCognom,$SegonCognom,$Dni,$DataNaixement,$Correu,$Ciutat,$CodiPostal,$Provincia);*/
+
+
+           
+        }
+
+          
+        
         }
 
 
    
-
-
-
-    }
-
     public function MainBotiguesPer(){
 
         $this->load->view('MainBotiguesPersona');
