@@ -46,6 +46,53 @@ public function NouClient($idUsuari,$Nom,$Cognom,$Cognom2,$Dni,$Data,$Correu,$Ci
         
    }
 
+   public function compClient($CodiUsuari){
+
+    $sql="SELECT * FROM client WHERE id_usuari=".$CodiUsuari."";
+    $query=$this->db->query($sql);
+    $count=$query->num_rows();
+
+    return $count;
+
+   }
+   public function compAdmin($CodiUsuari){
+
+    $sql="SELECT * FROM administrador WHERE id_usuari=".$CodiUsuari."";
+    $query=$this->db->query($sql);
+    $count=$query->num_rows();
+
+    return $count;
+
+   }
+   public function compBotiga($CodiUsuari){
+
+    $sql="SELECT * FROM botiga WHERE id_usuari=".$CodiUsuari."";
+    $query=$this->db->query($sql);
+    $count=$query->num_rows();
+
+    return $count;
+
+   }
+   public function compRepartidor($CodiUsuari){
+
+    $sql="SELECT * FROM repartidor WHERE id_usuari=".$CodiUsuari."";
+    $query=$this->db->query($sql);
+    $count=$query->num_rows();
+
+    return $count;
+
+   }
+
+   public function compAtencio($CodiUsuari){
+
+    $sql="SELECT * FROM aclient WHERE id_usuari=".$CodiUsuari."";
+    $query=$this->db->query($sql);
+    $count=$query->num_rows();
+
+    return $count;
+
+   }
+
    public function InciarSessio($NomUsuari,$Password){
 
     $sql="SELECT * FROM usuaris WHERE nom_usuari='".$NomUsuari."' AND contrasenya='".$Password."'";
@@ -56,10 +103,7 @@ public function NouClient($idUsuari,$Nom,$Cognom,$Cognom2,$Dni,$Data,$Correu,$Ci
 
    }
 
-   public function IniciarSessioTipus(){
-
-
-   }
+   
 }
     
 

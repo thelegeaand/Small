@@ -418,14 +418,39 @@ function iniciarsessio(){
 
             var m=this.responseText;
       
-            if(m=="ok"){
+            if(m!="no"){
 
                 Swal.fire({
                     icon: 'success',
                     title: 'Credencials Correctes!'
                 }).then((value) => {
 
-                    window.location.href="http://localhost/Small/index.php/SmallController/IniciClient";
+                    if(m=="client"){
+
+                        window.location.href="http://localhost/Small/index.php/SmallController/IniciClient";
+
+                    }else if(m=="botiga"){
+
+                        window.location.href="http://localhost/Small/index.php/SmallController/IniciBotiga";
+
+
+                    }else if(m=="admin"){
+
+                        window.location.href="http://localhost/Small/index.php/SmallController/Administrador";
+
+
+
+                    }else if(m=="atencioclient"){
+
+                        window.location.href="http://localhost/Small/index.php/SmallController/AtencioClient";
+
+
+                    }else if(m=="repartidor"){
+                        window.location.href="http://localhost/Small/index.php/SmallController/Repartidor";
+
+                    }
+
+                    
                     
                   });
 
@@ -443,18 +468,20 @@ function iniciarsessio(){
       
             }       
     }
-     
-
-     
   };
 
  Request.open("POST", "http://localhost/Small/index.php/SmallController/inicisessio", true);
  Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
  Request.send("NomUsuariIS=" + NomUsuariIS +"&PasswordIS="+PasswordIS);
 
+}
+}
+
+function registrebotiga(){
+
 
 }
-}
+
 
 
 

@@ -62,17 +62,60 @@ class SmallController extends CI_Controller
 
         $NomUsuari = $this->input->post('NomUsuariIS');
         $Password= $this->input->post('PasswordIS');
+        $comp="";
         $PasswordE=md5($Password);
 
         $cont=$this->SmallModel->InciarSessio($NomUsuari,$PasswordE);
 
         if($cont!=0){
+          $comp="ok";
 
-            echo "ok";
+          $dades = $this->SmallModel->CodiUsuari($NomUsuari);
 
+          $idusuari = $dades[0]['id_usuari'];
+
+          $contClientsId=$this->SmallModel->compClient($idusuari);
+          $contAdminId=$this->SmallModel->compAdmin($idusuari);
+          $contBotigaId=$this->SmallModel->compBotiga($idusuari);
+          $contRepartidorId=$this->SmallModel->compRepartidor($idusuari);
+          $contAtencioId=$this->SmallModel->compAtencio($idusuari);
+
+          if($contClientsId!=0){
+              $comp="client";
+
+              echo $comp;
+
+          }else if($contAdminId!=0){
+
+            $comp="admin";
+
+            echo $comp;
+
+          }else if($contBotigaId!=0){
+
+            $comp="botiga";
+
+            echo $comp;
+
+
+          }else if($contRepartidorId!=0){
+
+            $comp="repartidor";
+
+            echo $comp;
+              
+
+          }else{
+
+            $comp="atencioclient";
+
+            echo $comp;
+
+
+          }
         }else{
-
-           echo "no";
+          $comp="no";
+          echo $comp;
 
         }
 
@@ -112,7 +155,6 @@ class SmallController extends CI_Controller
 
     public function CompteClient()
     {
-
 
         $this->load->view('CompteClient');
     }
