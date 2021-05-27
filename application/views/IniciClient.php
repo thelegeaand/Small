@@ -437,7 +437,7 @@
     <section id="Botigues">
       <div class="container d-flex justify-content-right mt-2 mb-5  ">
         <div class="row mt-5 mb-5">
-
+                
           <div class="col-md-4 mt-2">
             <div class="card">
               <div>
@@ -451,7 +451,7 @@
           </div>
           <div class="col-md-4 mt-2">
             <div class="card">
-              <div>
+              <div> 
                 <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
               </div>
               <div class="card-body bg-light text-center" style="padding-bottom:10%;">

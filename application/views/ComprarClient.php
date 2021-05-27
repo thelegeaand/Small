@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -18,20 +17,92 @@
   <title>Pàgina Principal Small</title>
 </head>
 
-
-
-
 <body>
 
   <!--Header-->
-  <header class="header">
-    <nav class="navbar navbar-light bgcust justify-content-between ">
-      <a class="navbar-brand ml-3"><img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logo" alt="Imatge Corporativa Small"></a>
-      <form class="form-inline d-flex justify-content-left">
-        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0 mr-3" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
-        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0  mr-3" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#Registre">Registrar-se</button>
-      </form>
+  <header class="">
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light mt-1  ">
+      <a id="mq" class="navbar-brand ml-3"><img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logo2" alt="Imatge Corporativa Small"></a>
+      <button type="button" style="border-radius: 74%;
+  padding: 4%;
+  border:none;" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="fa fa-bars" aria-hidden="true"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-center " id="navbarCollapse">
+        <div class="navbar-nav">
+          <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Botigues</a>
+          <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Historial</a>
+          <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Compte</a>
+
+          <a href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Carrito</a>
+        </div>
+        <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
+          <a href="#" id="bcolor">Tancar Sessió </a>
+        </div>
+      </div>
     </nav>
+
+    <!-- Modal Carrito -->
+    <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center ml-5" style="border-bottom:0px;">
+            <h5 class="modal-title" id="titol1">Carrito de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body ">
+
+
+            <div class="container">
+              <table class="table">
+
+
+                <tr style="border:1px solid green;" class="b">
+                  <th id="quantitat" scope="row">x3</th>
+                  <td><img src="<?php echo base_url(); ?>img/Carne.jpg" id="logo" alt="Imatge Producte Carrito" style="width=100px;height:100px;"></td>
+                  <td id="descripcio">Plàtan canari - a pes(500g aprox)</td>
+
+                </tr>
+
+                
+                <tr style="border:1px solid green;" class="b">
+                  <th id="quantitat" scope="row">x3</th>
+                  <td><img src="<?php echo base_url(); ?>img/Carne.jpg" id="logo" alt="Imatge Producte Carrito" style="width=100px;height:100px;"></td>
+                  <td id="descripcio">Plàtan canari - a pes(500g aprox)</td>
+
+                </tr>
+               
+
+              </table>
+
+              <div class="container preu text-right">
+
+              <p><strong>PREU TOTAL:</strong></p>
+
+              </div>
+
+          
+
+               
+
+            </div>
+
+            <div class="offset-4 text-center boton">
+              <button type="submit" id="bcolor" class="btn btn-outline-success">Tramitar</button>
+
+            </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
 
 
 
@@ -46,65 +117,37 @@
             </button>
           </div>
           <div class="modal-body ">
-            <?php
-            echo form_open('SmallController/incisessio');
-            ?>
-            <div class="form-row">
-              <div class="col-md-12 mb-3">
-                <label for="nomusuari">NOM USUARI</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'nomusuari',
-                  'type' => 'text',
-                  'class' => 'form-control',
-                  'value' => set_value('nomusuari')
-                ));
-                ?>
-              </div>
-              <div class="col-md-12 mb-3">
-                <label for="pass">PASSWORD</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'password',
-                  'type' => 'text',
-                  'class' => 'form-control',
-                  'value' => set_value('password')
-                ));
-                ?>
-              </div>
+            <form>
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault01">NOM USUARI</label>
+                  <input type="text" class="form-control" id="Usuari" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="validationDefault02">PASSWORD</label>
+                  <input type="password" class="form-control" id="Password" required>
+                </div>
 
-              <div class="offset-4 text-center boton">
-                <?php
+                <div class="offset-4 text-center boton">
+                  <button type="submit" id="bcolor" class="btn btn-outline-success">Iniciar Sessió</button>
 
-                echo form_submit(array(
-                  'name' => 'afegir',
-                  'class' => 'btn btn-outline-success',
-                  'id' => 'bcolor',
-                  'value' => "Iniciar Sessió",
+                </div>
+                <div class="offset-2 mt-2">
+                  <p>No ets <strong>Client</strong> o no tens <strong>Botiga</strong>? <span id="registre">Registra't</span></p>
 
-                ));
+                </div>
 
-                echo form_close();
-
-                ?>
-
-              </div>
-              <div class="offset-2 mt-2">
-                <p>No ets <strong>Client</strong> o no tens <strong>Botiga</strong>? <span id="registre">Registra't</span></p>
-
-              </div>
-
-
-            </div>
             </form>
           </div>
 
         </div>
+
       </div>
     </div>
-  <!-- Modal per Registrar-se -->
+    </div>
+    <!-- Modal per Registrar-se -->
 
-  <div class="modal fade mb-5" id="Registre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade mb-5" id="Registre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5 " style="border-bottom:0px;">
@@ -117,59 +160,56 @@
             <form>
               <div class="form-row">
                 <div class="col-md-12 mb-3">
-                  <label for="Nom">NOM<span style='color:red;' class="ml-2" id="nomInc"></span></label>
-                  <input type="text" class="form-control" id="Nom" >
+                  <label for="validationDefault01">NOM</label>
+                  <input type="text" class="form-control" id="Usuari" required>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="Cognom">PRIMER COGNOM<span style='color:red;' class="ml-2" id="cognomInc"></span></label>
-                  <input type="text" class="form-control" id="Cognom" >
+                  <label for="validationDefault02">PRIMER COGNOM</label>
+                  <input type="text" class="form-control" id="Cognom" required>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="Cognom2">SEGON COGNOM<span style='color:red;' class="ml-2" id="cognom2Inc"></span></label>
-                  <input type="text" class="form-control" id="Cognom2">
+                  <label for="validationDefault02">SEGON COGNOM</label>
+                  <input type="text" class="form-control" id="Cognom2" required>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="Dni">DNI<span style='color:red;' class="ml-2" id="dniInc"></span></label>
-                  <input type="text" class="form-control" id="Dni">
+                  <label for="validationDefault02">DNI</label>
+                  <input type="text" class="form-control" id="Dni" required>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="Datanaixement">DATA DE NAIXEMENT<span style='color:red;' class="ml-2" id="dataInc"></span></label>
-                  <input type="date" class="form-control" id="Datanaixement" >
+                  <label for="validationDefault02">DATA DE NAIXEMENT</label>
+                  <input type="date" class="form-control" id="dnaix" required>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="Correu">CORREU ELECTRÒNIC<span style='color:red;' class="ml-2" id="correuInc"></span></label>
-                  <input type="email" class="form-control" id="Correu" >
+                  <label for="validationDefault02">CORREU ELECTRÒNIC</label>
+                  <input type="mail" class="form-control" id="mail" required>
                 </div>
                 <div class="col-md-12 mb-3">
                   <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                      <label for="Ciutat">CIUTAT</label>
-                      <span style='color:red;' class="ml-2" id="ciutatInc"></span>
-                      <input type="text" class="form-control" id="Ciutat" >
+                    <div class="col-md-4">
+                      <label for="validationDefault02">CIUTAT</label>
+                      <input type="text" class="form-control" id="ciutat" required>
                     </div>
-                    <div class="col-md-4 mb-3">
-                      <label for="Provincia">PROVÍNCIA</label>
-                      <span style='color:red;' class="ml-2" id="provinciaInc"></span>
-                      <input type="text" class="form-control" id="Provincia">
+                    <div class="col-md-4">
+                      <label for="validationDefault02">PROVÍNCIA</label>
+                      <input type="mail" class="form-control" id="mail" required>
                     </div>
-                    <div class="col-md-4 ">
-                      <label for="CPostal">C.POSTAL</label>
-                      <span style='color:red;' class="ml-2" id="postalInc"></span>
-                      <input type="text" class="form-control" id="Cpostal">
+                    <div class="col-md-4">
+                      <label for="validationDefault02">C.POSTAL</label>
+                      <input type="mail" class="form-control" id="mail" required>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="Password">PASSWORD<span style='color:red;' class="ml-2" id="passwordInc"></span></label>
-                  <input type="password" class="form-control" id="Password">
+                  <label for="validationDefault02">PASSWORD</label>
+                  <input type="password" class="form-control" id="mail" required>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="Password2">REPETEIX PASSWORD</label>
-                  <input type="password"  class="form-control" id="Password2" >
+                  <label for="validationDefault02">REPETEIX PASSWORD</label>
+                  <input type="password" class="form-control" id="mail" required>
                 </div>
 
                 <div class="offset-4 text-center boton">
-                  <button type="button" onclick="registreClient()" id="bcolor" class="btn btn-outline-success">Registra't</button>
+                  <button type="submit" id="bcolor" class="btn btn-outline-success">Registra't</button>
 
                 </div>
                 <div class="offset-3 mt-2">
@@ -177,12 +217,12 @@
 
                 </div>
 
-
-              </div>
             </form>
+
           </div>
         </div>
       </div>
+    </div>
     </div>
 
     <!-- Modal Termes i  Condicions -->
@@ -354,178 +394,89 @@
         </div>
       </div>
     </div>
+    </header>
 
-    <!--Header amb Formulari Botigues per Secció -->
-    <div class="container lletrero d-flex justify-content-center ">
-      <div class="row ">
-        <div class="Tlletrero text-center">
-          <h1 class="titol p-5">EL MERCAT ONLINE JA HA ARRIBAT A LA TEVA CIUTAT</h1>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="seccions">
-        <form>
-          <div class="form-inline mt-2 d-flex justify-content-center ">
-            <select class="form-control mr-sm-2 col-sm-6" id="exampleFormControlSelect1">
-              <option>Aviram</option>
-              <option>Carnisseries</option>
-              <option>Peixateries</option>
-              <option>Fruiteria</option>
-            </select>
-
-            <a id="bcolor" class="btn btn-outline-success my-2 my-sm-0" href="<?php echo base_url(); ?>index.php/SmallController/MainBotiguesPer" type="submit">Buscar Botigues</a>
-
-          </div>
-      </div>
-      </form>
-    </div>
-
-    <!--Fletxa desplaçament al contingut-->
-    <div class="text-center mt-4">
-      <a href="#A">
-        <span class="fa fa-angle-down flecha"></span>
-        <span class="sr-only">Seccions</span>
-      </a>
-    </div>
-
-  </header>
-
-
-  <main>
-
-    <!--Secció A-Apartat amb Seccions -->
-    <section id="A">
-
-      <div class="container mt-5">
-        <div class="text-center">
-          <h2 id="dSeccions">DIFERENTS SECCIONS!</h2>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-12 col-12">
-            <div class="row mt-5">
-              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions" src="<?php echo base_url(); ?>img/pescado.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div class="text-center">
-                  <p id="seccio">PEIXATERIA</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions2" src="<?php echo base_url(); ?>img/fruta_verdura.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div>
-                  <p id="seccio" class="text-center">FRUITERIA</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions3" src="<?php echo base_url(); ?>img/Carne.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div>
-                  <p id="seccio" class="text-center">CARNISSERIA<br>XARCUTERIA</p>
-                </div>
-
-              </div>
-              <div class="col-md-6 col-lg-3 col-xs-6 col-6 mt-2 text-center">
-                <div class="mb-2">
-                  <img id="fotosSeccions4" src="<?php echo base_url(); ?>img/Aviram.jpg" alt="Imatge Fruiteria">
-                </div>
-                <div>
-                  <p id="seccio" class="text-center">AVIRAM</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Secció B-Apartat Info -->
-    <section id="B" class="mt-5">
-      <div class="container-fluid bgcontainer">
-        <div class="container text-center pt-5">
-          <h3 id="ProdBot">PRODUCTES DE LES BOTIGUES DE LA TEVA CIUTAT A CASA!</h3>
-          <div class="row pt-4">
-            <div class="col-md-4 col-lg-4 col-12 mt-2 text-center">
-              <div class="mb-2">
-                <img id="bot" src="<?php echo base_url(); ?>img/tienda.png" alt="Imatge Fruiteria">
-              </div>
-              <div class="text-center">
-                <h4 id="c">Les Botigues de Confiança</h4>
-                <p id="p">Varietat de Botigues amb diferents que podràs explorar....</p>
-              </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-12 mt-2 text-center">
-              <div class="mb-2">
-                <img id="bot" src="<?php echo base_url(); ?>img/productos-lacteos.png" alt="Imatge Fruiteria">
-              </div>
-              <div class="text-center">
-                <h4 id="c">Fes la Compra</h4>
-                <p id="p">Pots Trobar qualsevol aliment ,el quan Pots escollir entre diferents Botigues. </p>
-              </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-12 mt-2 text-center">
-              <div class="mb-2">
-                <img id="bot" src="<?php echo base_url(); ?>img/nuevo-producto.png" alt="Imatge Fruiteria">
-              </div>
-              <div class="text-center">
-                <h4 id="c">Entrega Globalitzada</h4>
-                <p id="p">Demana el que vulguis de diferents Establiments i nosaltres t'ho portem tot.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--Secció C-Apartat Cards -->
-    <section id="C d-flex justify-content-center">
-
-      <div class="container mb-5 mt-5 justify-content-center d-flex">
+<main class="">
+    <div class="col-md-12 fondotienda">
         <div class="row">
-          <div class="col-md-4 col-12 col-sm-12 col-lg-4 mb-4">
-            <div class="card1" style="width: 18rem;">
-              <div class="spacer-card">
+        <div class="col-md-6 logoBotiga ">
+                <div class="text-center justify-content-center d-flex">
+                <img src="<?php echo base_url(); ?>img/ramirezlogo.jpg" class="logoTienda" alt="">
+                </div>                
+    </div>
+        <div class="col-md-6 InfoBotiga">
+                <div class="container">
+                <div class="col-md-12 text-center">
+                <h1 class="mt-4 TitBotiga">TITOL BOTIGA</h1>
+                <p class="mt-4 DescBotiga">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur cum ea recusandae itaque inventore provident amet enim id, minima tenetur doloremque sit optio quaerat voluptas iure. Pariatur vero sunt aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, incidunt aut iste neque accusamus delectus non accusantium voluptatem autem. Ipsum tempora voluptatibus amet iure, labore fugiat nam ipsa doloremque eveniet!</p>
+                <p class="mt-4 DireccioBotiga">Carrer de la verge de l'assumpcio 57</p>    
+                <p class="mt-4 ContBotiga">Contacte: 666666666</p>    
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-12 cercador">
+        <div class="container justify-content-center d-flex pt-4 pb-4">
+                <form>
+                    <input type="text" placeholder="Buscar Producte..." class="form-control buscadorAmplada">
+                </form>
+        </div>
+    </div>
 
+    <div class="container d-flex justify-content-right mt-2 mb-5">
+        <div class="row mt-5 mb-5">
+        <div class="col-md-4 mt-2">
+            <div class="cartaProd border">
+                <div class="fotoProd">
+                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
+
+                </div>
+                <div class="cuerpoProd border">
+                <div class="row mt-2">
+                    <div class="DescProd text-center col-md-12">
+                        <h5>Jamón 5J 6kg</h5>
+                    </div>
+                </div>
+                <div class="row mb-4 mt-2">
+                    <div class="PrecioProd text-center col-md-12">
+                        <h5>Precio: 400€</h5>
+                    </div>
+                    <div class="PrecioProd col-md-12 text-center">
+                    <button type="button" class="btn mb-2" id="bcolor">+</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-2">
+            <div class="card">
+              <div>
+                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
               </div>
-              <div class="card-body card1-cuerpo">
-                <h5 class="card-title margin-div">BOTIGUES</h5>
-                <p class="card-text">Vols afegir la teva botiga i treballar amb nosaltres?<br> <strong>UNEIX-TE</strong> a nosaltres per aconseguir arribar a més clients!</p>
-                <a href="<?php echo base_url(); ?>index.php/SmallController/RegisterBotiga" class="btn" id="bcolor">BOTIGUES</a>
+              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
+                <h4 class="mb-3">CASA RAMIREZ</h4>
+                <button type="button" class="btn" id="bcolor">+</button>
               </div>
             </div>
           </div>
-          <div class="col-md-4 col-12 col-sm-12 col-lg-4 mb-4">
-            <div class="card2" style="width: 18rem;">
-              <div class="card-body ">
-                <h5 class="card-title">CLIENTS</h5>
-                <p class="card-text">Els clients podran fer <br>encàrregs només a la seva <br>ciutat o zones de la seva població. T'animes a provar?</p>
-                <a href="#" class="btn" id="bcolor" data-toggle="modal" data-target="#Registre">REGISTRA'T</a>
+          <div class="col-md-4 mt-2">
+            <div class="card">
+              <div>
+                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
               </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-12 col-sm-12 col-lg-4">
-            <div class="card3" style="width: 18rem;">
-              <div class="spacer-card">
-
-              </div>
-              <div class="card-body card1-cuerpo">
-                <h5 class="card-title margin-div">REPARTIDORS</h5>
-                <p class="card-text">Vols repartir amb nosaltres? Contacte'ns!</p>
-                <a href="<?php echo base_url(); ?>index.php/SmallController/PantallaContacte" class="btn" id="bcolor">CONTACTE</a>
+              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
+                <h4 class="mb-3">CASA RAMIREZ</h4>
+                <button type="button" class="btn" id="bcolor">+</button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
-    </section>
-  </main>
-  <!--Footer Small -->
-  <footer>
+</main>
+
+<footer>
 
     <div class="container-fluid bgcontainer2">
 
@@ -541,7 +492,7 @@
                   <ul class="lista">
                     <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="#logo">Home</a></li>
                     <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Registre">Registre Client</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="<?php echo base_url(); ?>index.php/SmallController/RegisterBotiga">RegistreBotiga</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="#">RegistreBotiga</a></li>
                   </ul>
                 </div>
               </div>
@@ -551,8 +502,8 @@
                 <div class="card-body">
                   <h5 class="card-title t1">LEGAL</h5>
                   <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Condicions">Termes i Condicions</a></li>
-                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Privacitat">Privacitat</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Condicions">Termes i Condicions</a></li>
+                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Privacitat">Privacitat</a></li>
                     <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Cookies">Cookies</a></li>
                   </ul>
                 </div>
@@ -563,9 +514,9 @@
                 <div class="card-body">
                   <h5 class="card-title t1">AJUDA</h5>
                   <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="<?php echo base_url(); ?>index.php/SmallController/PantallaContacte">Contacte</a></li>
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;">Small-Inc@gmail.com</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;">+34 678930323</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Contacte</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Small-Inc@gmail.com</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;" href="#">+34 678930323</a></li>
                   </ul>
                 </div>
               </div>
@@ -608,32 +559,11 @@
 
   </footer>
 
+</body>
 
-
-  <script>
-    $("a[href^='#']").click(function(e) {
-      e.preventDefault();
-
-      var position = $($(this).attr("href")).offset().top;
-
-      $("body, html").animate({
-        scrollTop: position
-      }, 1000);
-    });
-  </script>
-
-
-
-
-
-
-
-
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
-</body>
 
 </html>
