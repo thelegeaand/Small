@@ -19,7 +19,7 @@ class SmallController extends CI_Controller {
 	{
         
         
-		$this->load->view('Comanda');
+		$this->load->view('Home');
 
         
 	}

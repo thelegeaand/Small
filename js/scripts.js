@@ -252,7 +252,7 @@ Request.send("Nom="+Nom+"&Cognom="+Cognom+"&Cognom2="+Cognom2+"&Dni="+Dni+"&data
    }
 
 
-}
+
 
 /*Funcions*/
 /*No nunmeros o Caracters especials*/
