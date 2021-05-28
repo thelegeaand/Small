@@ -297,24 +297,24 @@ h1{
 .card1{
     background: url("../img/botigues.jpg");background-repeat: no-repeat;background-size: cover;
     width:100%;
-    height:500px;
+    height:550px;
 }
 
 .spacer-card{
-    height: 250px;
+    height: 50%;
     width: 100%;
 }
 
 .card2{
     background: url("../img/clients.jpg");background-repeat: no-repeat;background-size: cover;
     width:100%;
-    height:500px;
+    height:550px;
 }
 
 .card3{
     background: url("../img/reparto.jpg");background-repeat: no-repeat;background-size: cover;
     width:100%;
-    height:500px;
+    height:550px;
 }
 
 .bgcontainer2{
