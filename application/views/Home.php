@@ -428,7 +428,7 @@
               </div>
               <div class="text-center">
                 <h4 id="c">Les Botigues de Confiança</h4>
-                <p id="p">Varietat de Botigues amb diferents que podràs explorar....</p>
+                <p id="p">Varietat de Botigues que podràs explorar....</p>
               </div>
             </div>
             <div class="col-md-4 col-lg-4 col-12 mt-2 text-center">
@@ -437,7 +437,7 @@
               </div>
               <div class="text-center">
                 <h4 id="c">Fes la Compra</h4>
-                <p id="p">Pots Trobar qualsevol aliment ,el quan Pots escollir entre diferents Botigues. </p>
+                <p id="p">Pots Trobar qualsevol aliment, entre diferents Botigues. </p>
               </div>
             </div>
             <div class="col-md-4 col-lg-4 col-12 mt-2 text-center">
@@ -457,12 +457,11 @@
     <!--Secció C-Apartat Cards -->
     <section id="C d-flex justify-content-center">
 
-      <div class="container mb-5 mt-5 justify-content-center d-flex">
+      <div class="container mb-5 mt-5 justify-content-center">
         <div class="row">
-          <div class="col-md-4 col-12 col-sm-12 col-lg-4 mb-4">
-            <div class="card1" style="width: 18rem;">
+          <div class="col-md-4 col-12   col-sm-12 col-lg-4 mb-4">
+            <div class="card1">
               <div class="spacer-card">
-
               </div>
               <div class="card-body card1-cuerpo">
                 <h5 class="card-title margin-div">BOTIGUES</h5>
@@ -471,8 +470,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 col-12 col-sm-12 col-lg-4 mb-4">
-            <div class="card2" style="width: 18rem;">
+          <div class="col-md-4 col-12  col-sm-12 col-lg-4 mb-4">
+            <div class="card2">
               <div class="card-body ">
                 <h5 class="card-title">CLIENTS</h5>
                 <p class="card-text">Els clients podran fer <br>encàrregs només a la seva <br>ciutat o zones de la seva població. T'animes a provar?</p>
@@ -480,8 +479,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 col-12 col-sm-12 col-lg-4">
-            <div class="card3" style="width: 18rem;">
+          <div class="col-md-4 col-12 col-offset-4 col-sm-12 col-lg-4">
+            <div class="card3" >
               <div class="spacer-card">
 
               </div>
@@ -499,7 +498,6 @@
   </main>
   <!--Footer Small -->
   <footer>
-
     <div class="container-fluid bgcontainer2">
 
       <div class="container">
