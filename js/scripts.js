@@ -449,9 +449,7 @@ function iniciarsessio(){
                         window.location.href="http://localhost/Small/index.php/SmallController/Repartidor";
 
                     }
-
-                    
-                    
+   
                   });
 
             }else{
@@ -481,6 +479,7 @@ function registrebotiga(){
 
 
 }
+
 
 
 

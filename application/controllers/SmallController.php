@@ -82,37 +82,46 @@ class SmallController extends CI_Controller
 
           if($contClientsId!=0){
               $comp="client";
-
+              $this->load->library("session");
+              $this->session->set_userdata("validat",$idusuari);
+              $this->session->set_userdata("tipus",$comp);
               echo $comp;
 
           }else if($contAdminId!=0){
 
             $comp="admin";
-
+            $this->load->library("session");
+            $this->session->set_userdata("validat",$idusuari);
+            $this->session->set_userdata("tipus",$comp);
             echo $comp;
 
           }else if($contBotigaId!=0){
 
             $comp="botiga";
-
+            $this->load->library("session");
+            $this->session->set_userdata("validat",$idusuari);
+            $this->session->set_userdata("tipus",$comp);
             echo $comp;
 
-
-          }else if($contRepartidorId!=0){
+        }else if($contRepartidorId!=0){
 
             $comp="repartidor";
-
+            $this->load->library("session");
+            $this->session->set_userdata("validat",$idusuari);
+            $this->session->set_userdata("tipus",$comp);
             echo $comp;
               
 
-          }else{
+          }else if($contAtencioId){
 
             $comp="atencioclient";
-
+            $this->load->library("session");
+            $this->session->set_userdata("validat",$idusuari);
+            $this->session->set_userdata("tipus",$comp);
             echo $comp;
 
-
           }
+
         }else{
           $comp="no";
           echo $comp;
@@ -121,7 +130,7 @@ class SmallController extends CI_Controller
 
     }
 
-    public function PantallaContacte()
+    public function Contacte()
     {
         $this->load->view('Contacte');
     }
@@ -130,7 +139,8 @@ class SmallController extends CI_Controller
     public function MainBotiguesPer()
     {
 
-        $this->load->view('MainBotiguesPersona');
+        $this->load->view('MainBotiguesPersona',);
+
     }
 
     public function RegisterBotiga()
@@ -141,15 +151,11 @@ class SmallController extends CI_Controller
 
     public function IniciClient()
     {
-
-
         $this->load->view('IniciClient');
     }
 
     public function HistorialClient()
     {
-
-
         $this->load->view('HistorialClient');
     }
 
@@ -166,15 +172,11 @@ class SmallController extends CI_Controller
         $this->load->view('TramitarComanda');
     }
 
-    public function Contacte()
-    {
-
-        $this->load->view('Contacte');
-    }
 
     public function IniciBotiga()
     {
 
         $this->load->view('IniciBotiga');
     }
+    
 }
