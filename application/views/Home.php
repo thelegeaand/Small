@@ -46,56 +46,28 @@
             </button>
           </div>
           <div class="modal-body ">
-            <?php
-            echo form_open('SmallController/incisessio');
-            ?>
-            <div class="form-row">
-              <div class="col-md-12 mb-3">
-                <label for="nomusuari">NOM USUARI</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'nomusuari',
-                  'type' => 'text',
-                  'class' => 'form-control',
-                  'value' => set_value('nomusuari')
-                ));
-                ?>
-              </div>
-              <div class="col-md-12 mb-3">
-                <label for="pass">PASSWORD</label>
-                <?php
-                echo form_input(array(
-                  'name' => 'password',
-                  'type' => 'text',
-                  'class' => 'form-control',
-                  'value' => set_value('password')
-                ));
-                ?>
-              </div>
+            <form>
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label for="NomUsuariIS">NOM USUARI<span style='color:red;' class="ml-2" id="nomUsuariInc"></span></label>
+                  <input type="text" class="form-control" id="NomUsuariIS" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="PasswordIS">PASSWORD<span style='color:red;' class="ml-2" id="PassInc"></span></label>
+                  <input type="password" class="form-control" id="PasswordIS" required>
+                </div>
 
-              <div class="offset-4 text-center boton">
-                <?php
+                <div class="offset-4 text-center boton">
+                  <button type="button" onclick="iniciarsessio()" id="bcolor" class="btn btn-outline-success">Iniciar Sessió</button>
 
-                echo form_submit(array(
-                  'name' => 'afegir',
-                  'class' => 'btn btn-outline-success',
-                  'id' => 'bcolor',
-                  'value' => "Iniciar Sessió",
+                </div>
+                <div class="offset-2 mt-2">
+                  <p>No ets <strong>Client</strong> o no tens <strong>Botiga</strong>? <span id="registre">Registra't</span></p>
 
-                ));
+                </div>
 
-                echo form_close();
-
-                ?>
 
               </div>
-              <div class="offset-2 mt-2">
-                <p>No ets <strong>Client</strong> o no tens <strong>Botiga</strong>? <span id="registre">Registra't</span></p>
-
-              </div>
-
-
-            </div>
             </form>
           </div>
 
@@ -374,7 +346,7 @@
               <option>Fruiteria</option>
             </select>
 
-            <a id="bcolor" class="btn btn-outline-success my-2 my-sm-0" href="<?php echo base_url(); ?>index.php/SmallController/MainBotiguesPer" type="submit">Buscar Botigues</a>
+            <a id="bcolor" class="btn btn-outline-success my-2 my-sm-0" href="http://localhost/Small/index.php/SmallController/MainBotiguesPer" type="submit">Buscar Botigues</a>
 
           </div>
       </div>

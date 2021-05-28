@@ -229,29 +229,74 @@ function registreClient() {
             if (this.readyState === this.DONE) {
                 var data = JSON.parse(this.responseText);
 
-                if (data == "") {
+                if (data.length==undefined) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'No s\'ha trobat cap ciutat com la introduida...',
+                     
+                      })
 
                 } else {
+
                     var coma = ",";
                     var string = data[0]['display_name'];
                     var arrayDeCadenas = "";
                     arrayDeCadenas = string.split(coma);
+                    var Ciutat2="";
+                    var Comarca2="";
+                    var Provincia2="";
+                    var Comunitat="";
+                    var CodiP="null";
+                    var Pais="";
 
-                    var Ciutat2 = arrayDeCadenas[0];
-                    var Comarca2 = arrayDeCadenas[1];
-                    var Provincia2 = arrayDeCadenas[2];
-                    var Comunitat = arrayDeCadenas[3];
-                    var CodiP = arrayDeCadenas[4];
-                    var Pais = arrayDeCadenas[5];
+                    var longStringAPI=arrayDeCadenas.length;
 
+                if(longStringAPI==6){
+
+                   Ciutat2 = arrayDeCadenas[0];
+                   Comarca2=arrayDeCadenas[1];
+                   Provincia2 = arrayDeCadenas[2];
+                   Comunitat=arrayDeCadenas[3];
+                   CodiP=arrayDeCadenas[4];
+                   Pais=arrayDeCadenas[5];
+
+                   
+
+                }else if(longStringAPI==5){
+
+                    Ciutat2 = arrayDeCadenas[0];
+                    Comarca2 = arrayDeCadenas[1];
+                    Provincia2=arrayDeCadenas[2];
+                    Comunitat=arrayDeCadenas[3];
+                    Pais=arrayDeCadenas[4];
+                    
+                }
+
+                if(Ciutat2==""||Provincia2==""){
+
+                    document.getElementById("Cpostal").style = "border-color:red;";
+                    document.getElementById("Ciutat").style = "border-color:red;";
+                    document.getElementById("Provincia").style = "border-color:red;";
+
+                     Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'No s\'ha trobat cap ciutat com la introduida...(Especifica més)',
+                     
+                      })
+
+                }else{
 
                     Swal.fire({
-                        title: 'Ciutat registrada...',
-                        text: "Ciutat: " + Ciutat2 + "," + CodiP + "," + Provincia2 + ". En el cas que no sigui podràs canviar-la més tard...",
-                        icon: 'warning',
+                        title: 'És aquesta ciutat la teva?',
+                        text: "" + Ciutat2 + ","+ Provincia2 + ","+Comunitat+","+Comarca2+","+Pais+".",
+                        showDenyButton: true,
                         showCancelButton: false,
-                        confirmButtonText: 'Ok!'
-                    }).then((result) => {
+                        confirmButtonText: `Si`,
+                        denyButtonText: `No`,
+                      }).then((result) => {
+                        if (result.isConfirmed) {
                         var num1 = Math.round(Math.random() * 9);
                         var num2 = Math.round(Math.random() * 9);
                         var num3 = Math.round(Math.random() * 9);
@@ -266,7 +311,7 @@ function registreClient() {
                             
                             if (this.readyState == 4 && this.status == 200) {
                                 var m = Request.responseText;
-                              alert(m);
+                        
                                 if (m == "ok") {
                                     document.getElementById("correuInc").innerHTML = "";
                                     document.getElementById("Correu").style = "border-color:#07FB7F;";
@@ -275,7 +320,13 @@ function registreClient() {
                                         icon: 'success',
                                         title: 'Registrat Correctament!',
                                         text: 'El teu Nom d\'usuari per iniciar sessió és ' + NomUsuari + '.'
-                                    });
+                                    }).then((value) => {
+
+
+                               
+                                        window.location.href="http://localhost/Small/index.php/SmallController/index";
+                                        
+                                      });
                                 } else if (m == "notunique") {
                     
                                     document.getElementById("correuInc").innerHTML = "Aquest correu ja existeix";
@@ -294,38 +345,152 @@ function registreClient() {
                             }
                         };
                     
-                    
+                        
                         Request.open("POST", "http://localhost/Small/index.php/SmallController/registreclient", true);
                         Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                        Request.send("Nom=" + Nom + "&Cognom=" + Cognom + "&Cognom2=" + Cognom2 + "&Dni=" + Dni + "&datanaixement=" + DataNaixement +
-                            "&correu=" + Correu + "&ciutat=" + Ciutat2 + "&provincia=" + Provincia2 + "&cpostal=" + CodiP + "&password=" + Password + "&NomUsuari=" + NomUsuari);
+                        Request.send("Nom=" + Nom + "&Cognom=" + Cognom + "&Cognom2=" + Cognom2 + "&Dni=" + Dni + "&datanaixement=" + DataNaixement +"&correu=" + Correu + "&ciutat=" + Ciutat2 + "&provincia=" + Provincia2 + "&cpostal=" + CodiP + "&password=" + Password + "&NomUsuari=" + NomUsuari);
                            
-
-                    })
-
+                    }else if (result.isDenied) {          
+                    }
+                    })     
                 }
-
+                       
+                }
 
             }
         });
 
-        xhr.open("GET", "https://forward-reverse-geocoding.p.rapidapi.com/v1/search?q=" + Provincia + " " + Ciutat + " " + CodiPostal + "&format=json&accept-language=en&polygon_threshold=0.0");
+        xhr.open("GET", "https://forward-reverse-geocoding.p.rapidapi.com/v1/search?q="+Ciutat+" "+Provincia+" "+CodiPostal+"&format=json&accept-language=es&polygon_threshold=0.0");
         xhr.setRequestHeader("x-rapidapi-key", "5018451283msh0b39ed77f1b8c11p195cb7jsnf3a9897e0f1d");
         xhr.setRequestHeader("x-rapidapi-host", "forward-reverse-geocoding.p.rapidapi.com");
         xhr.send();
 
-
     } else {
-
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'No s\'ha pogut dur a terme el registre correctament!'
         });
+    }
+}
+
+function iniciarsessio(){
+
+    var NomUsuariIS=document.getElementById("NomUsuariIS").value;
+    var PasswordIS=document.getElementById("PasswordIS").value;
+    var comprobacio=true;
+    document.getElementById("NomUsuariIS").style = "border-color:none;";
+    document.getElementById("PasswordIS").style = "border-color:none;";
+    document.getElementById("PassInc").innerHTML = "";
+    document.getElementById("nomUsuariInc").innerHTML = "";
+
+    if(NomUsuariIS==""){
+
+    document.getElementById("NomUsuariIS").style = "border-color:red;";
+    document.getElementById("nomUsuariInc").innerHTML = "Camp en blanc";
+    comprobacio=false;
 
 
     }
+    if(PasswordIS==""){
+
+        document.getElementById("PasswordIS").style = "border-color:red;";
+        document.getElementById("PassInc").innerHTML = "Camp en blanc";
+        comprobacio=false;
+
+    }
+
+    if(comprobacio!=true){
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Algun camp està en blanc!'
+        });
+
+
+    }else{
+
+    var Request = new XMLHttpRequest();
+      Request.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+            var m=this.responseText;
+      
+            if(m!="no"){
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Credencials Correctes!'
+                }).then((value) => {
+
+                    if(m=="client"){
+
+                        window.location.href="http://localhost/Small/index.php/SmallController/IniciClient";
+
+                    }else if(m=="botiga"){
+
+                        window.location.href="http://localhost/Small/index.php/SmallController/IniciBotiga";
+
+
+                    }else if(m=="admin"){
+
+                        window.location.href="http://localhost/Small/index.php/SmallController/Administrador";
+
+
+
+                    }else if(m=="atencioclient"){
+
+                        window.location.href="http://localhost/Small/index.php/SmallController/AtencioClient";
+
+
+                    }else if(m=="repartidor"){
+                        window.location.href="http://localhost/Small/index.php/SmallController/Repartidor";
+
+                    }
+
+                    
+                    
+                  });
+
+            }else{
+
+                document.getElementById("PasswordIS").style = "border-color:red;";
+                document.getElementById("NomUsuariIS").style = "border-color:red;";
+      
+              
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Nom d\'usuari o Contrasenya incorrecte!'
+              });
+      
+            }       
+    }
+  };
+
+ Request.open("POST", "http://localhost/Small/index.php/SmallController/inicisessio", true);
+ Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+ Request.send("NomUsuariIS=" + NomUsuariIS +"&PasswordIS="+PasswordIS);
+
 }
+}
+
+function registrebotiga(){
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
 /*Funcions*/
 /*No nunmeros o Caracters especials*/
