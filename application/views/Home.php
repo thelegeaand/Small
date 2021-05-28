@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Poppins:wght@800&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -17,10 +19,6 @@
   <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
   <title>Pàgina Principal Small</title>
 </head>
-
-
-
-
 <body>
 
   <!--Header-->
@@ -28,8 +26,8 @@
     <nav class="navbar navbar-light bgcust justify-content-between ">
       <a class="navbar-brand ml-3"><img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logo" alt="Imatge Corporativa Small"></a>
       <form class="form-inline d-flex justify-content-left">
-        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0 mr-3" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
-        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0  mr-3" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#Registre">Registrar-se</button>
+        <button id="bcolor" class="btn  my-2 my-sm-0 mr-3" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
+        <button id="bcolor" class="btn  my-2 my-sm-0  mr-3" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#Registre">Registrar-se</button>
       </form>
     </nav>
 
@@ -59,7 +57,7 @@
                 </div>
 
                 <div class="offset-4 text-center boton">
-                  <button type="button" onclick="iniciarsessio()" id="bcolor" class="btn btn-outline-success">Iniciar Sessió</button>
+                  <button type="button" onclick="iniciarsessio()" id="bcolor" class="btn">Iniciar Sessió</button>
 
                 </div>
                 <div class="offset-2 mt-2">
@@ -142,7 +140,7 @@
                 </div>
 
                 <div class="offset-4 text-center boton">
-                  <button type="button" onclick="registreClient()" id="bcolor" class="btn btn-outline-success">Registra't</button>
+                  <button type="button" onclick="registreClient()" id="bcolor" class="btn">Registra't</button>
 
                 </div>
                 <div class="offset-3 mt-2">
@@ -329,25 +327,26 @@
     </div>
 
     <!--Header amb Formulari Botigues per Secció -->
-    <div class="container lletrero d-flex justify-content-center ">
+    <div class="container mt-2 d-flex justify-content-left ">
       <div class="row ">
-        <div class="Tlletrero text-center">
-          <h1 class="titol p-5">EL MERCAT ONLINE JA HA ARRIBAT A LA TEVA CIUTAT</h1>
+        <div class="NouTitol">
+          <h1 class="titol">MERCAT ONLINE</h1>
+          <p class="ml-2 subtitol">A LA TEVA CIUTAT!</p>
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container ">
       <div class="seccions">
         <form>
-          <div class="form-inline mt-2 d-flex justify-content-center ">
-            <select class="form-control mr-sm-2 col-sm-6" id="exampleFormControlSelect1">
+          <div class="form-inline cust-form mt-1">
+            <select  class="form-control mr-sm-2 col-sm-6" id="select">
               <option>Aviram</option>
               <option>Carnisseries</option>
               <option>Peixateries</option>
               <option>Fruiteria</option>
             </select>
 
-            <a id="bcolor" class="btn btn-outline-success my-2 my-sm-0" href="http://localhost/Small/index.php/SmallController/MainBotiguesPer" type="submit">Buscar Botigues</a>
+            <a id="bcolorC" class="btn my-2 my-sm-0" href="http://localhost/Small/index.php/SmallController/MainBotiguesPer" type="submit">Buscar</a>
 
           </div>
       </div>
@@ -355,7 +354,7 @@
     </div>
 
     <!--Fletxa desplaçament al contingut-->
-    <div class="text-center mt-4">
+    <div class="text-center mt-5">
       <a href="#A">
         <span class="fa fa-angle-down flecha"></span>
         <span class="sr-only">Seccions</span>

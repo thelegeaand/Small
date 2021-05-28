@@ -200,7 +200,7 @@ a:hover{
 }
 .form-control {
     display: block;
-    width: 100%;
+    width: 50%;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -211,6 +211,26 @@ a:hover{
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+.cust-form{
+    width: 36%;
+    margin-left: -1%;
+}
+.subtitol{
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1em;
+
+}
+#bcolorC{
+    color: white;
+    background-color: #07FB7F;
+    border-radius: 11px;
+    font-weight: bold;
+    padding: 7px;
+    padding-right: 11px;
+    padding-left: 11px;
+}
+
 
 .titolRegistre{
     text-decoration: none;
@@ -451,6 +471,14 @@ h1{
     width: 95%;
 }
 
+.titol{
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 5.2em;
+}
+.NouTitol{
+    width:30%;
+    margin-top: 10%;
+}
 
 /*Modals*/
 
@@ -595,8 +623,11 @@ h1{
     left: 75%;
     background-color: #07FB7F;
   }
+
+
+
   
-  /*sweet alert estilo */
+/*sweet alert estilo */
   .swal2-styled.swal2-confirm {
     border: 0;
     border-radius: .25em;
@@ -605,6 +636,7 @@ h1{
     color: #fff;
     font-size: 1em;
 }
+/*----*/
 #quantitat{
     padding-top: 12%;
 }
