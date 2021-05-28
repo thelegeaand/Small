@@ -33,8 +33,8 @@
       <div class="collapse navbar-collapse text-center " id="navbarCollapse">
         <div class="navbar-nav">
           <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Botigues</a>
-          <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Historial</a>
-          <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Compte</a>
+          <a href="http://localhost/Small/index.php/SmallController/HistorialComandes" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Historial</a>
+          <a href="http://localhost/Small/index.php/SmallController/ModDadesPersonaRed" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Compte</a>
 
           <a href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Carrito</a>
         </div>
@@ -92,8 +92,7 @@
             </div>
 
             <div class="offset-4 text-center boton">
-              <button type="submit" id="bcolor" class="btn btn-outline-success">Tramitar</button>
-
+              <a href="http://localhost/Small/index.php/SmallController/TramitarComandaRed" class="btn" id="bcolor">Tramitar</a>
             </div>
             </form>
           </div>
@@ -445,7 +444,7 @@
               </div>
               <div class="card-body bg-light text-center" style="padding-bottom:10%;">
                 <h4 class="mb-3">CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
+                <button type="button" class="btn" id="bcolor" href="">Anar</button>
               </div>
             </div>
           </div>

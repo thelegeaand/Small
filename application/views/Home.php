@@ -473,7 +473,7 @@
             <div class="card2">
               <div class="card-body ">
                 <h5 class="card-title">CLIENTS</h5>
-                <p class="card-text">Els clients podran fer <br>encàrregs només a la seva <br>ciutat o zones de la seva població. T'animes a provar?</p>
+                <p class="card-text">Els clients podran fer <br>encàrregs només a la seva <br>ciutat o zones de la seva població.<br> T'animes a provar?</p>
                 <a href="#" class="btn" id="bcolor" data-toggle="modal" data-target="#Registre">REGISTRA'T</a>
               </div>
             </div>

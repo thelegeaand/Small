@@ -22,6 +22,17 @@ class SmallController extends CI_Controller
         $this->load->view('Home');
     }
 
+    public function TramitarComandaRed(){
+        $this->load->view('TramitarComanda');
+    }
+
+    public function HistorialComandes(){
+        $this->load->view('Comanda');
+    }
+
+    public function ModDadesPersonaRed(){
+        $this->load->view('ModDadesPersonals');
+    }
     public function registreclient()
     {
 
