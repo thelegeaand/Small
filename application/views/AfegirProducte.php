@@ -103,8 +103,49 @@
       </div>
     </div>
     </div>
+<!--Modal Afegir Producte-->
+    <div class="modal fade" id="AfegirProd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center ml-5" style="border-bottom:0px;">
+            <h5 class="modal-title" id="titol1">Entra a <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          <form>
+            <div class="col-md-12">
+            <label for="">Nom Producte</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Stock</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Preu Kg</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Imatge</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Descripció</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12 justify-content-center d-flex">
+            <input type="submit" class="btn" id="bcolor" value="Afegir Producte">
+            </div>
+          </form>
+          </div>
 
+        </div>
 
+      </div>
+    </div>
+    </div>
 
     <!-- Modal Iniciar Sessió -->
     <div class="modal fade" id="IniciSessio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -398,7 +439,7 @@
 
 <main class="">
     <div class="col-md-12 fondotienda">
-        <div class="row justify-content-center d-flex">
+        <div class="row">
         <div class="col-md-6 logoBotiga ">
                 <div class="justify-content-center d-flex">
                 <img src="<?php echo base_url(); ?>img/ramirezlogo.jpg" style="margin-top:8rem;border-radius:10%;" class="w-25" alt="">
@@ -424,11 +465,10 @@
         </div>
     </div>
 
-    <div class="justify-content-center d-flex">
-    <div class="container row mt-2 mb-5">
+    <div class="container d-flex justify-content-right mt-2 mb-5">
        
-        <div class="col-md-4 mt-2 col-12 col-sm-12">
-            <div class="cartaProd border">
+        <div class="col-md-4 mt-2">
+        <div class="cartaProd border">
                 <div class="fotoProd">
                 <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
 
@@ -437,20 +477,19 @@
                 <div class="row mt-2">
                     <div class="DescProd text-center col-md-12">
                         <h5>Jamón 5J 6kg</h5>
-                    </div>
+                    </div>q
                 </div>
                 <div class="row mb-4 mt-2">
                     <div class="PrecioProd text-center col-md-12">
                         <h5>Precio: 400€</h5>
                     </div>
                     <div class="PrecioProd col-md-12 text-center">
-                    <button type="button" class="btn mb-2" id="bcolor">+</button>
-                    </div>
+                    <a class="btn " id="bcolor" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#AfegirProd">Afegir Producte</a>                    </div>
                 </div>
                 </div>
             </div>
           </div>
-          <div class="col-md-4 mt-2 col-12 col-sm-12">
+          <div class="col-md-4 mt-2">
           <div class="cartaProd border">
                 <div class="fotoProd">
                 <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
@@ -467,13 +506,12 @@
                         <h5>Precio: 400€</h5>
                     </div>
                     <div class="PrecioProd col-md-12 text-center">
-                    <button type="button" class="btn mb-2" id="bcolor">+</button>
-                    </div>
+                    <a class="btn " id="bcolor" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#AfegirProd">Afegir Producte</a>                    </div>
                 </div>
                 </div>
             </div>
           </div>
-          <div class="col-md-4 mt-2 col-12 col-sm-12">
+          <div class="col-md-4 mt-2">
           <div class="cartaProd border">
                 <div class="fotoProd">
                 <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
@@ -490,14 +528,13 @@
                         <h5>Precio: 400€</h5>
                     </div>
                     <div class="PrecioProd col-md-12 text-center">
-                    <button type="button" class="btn mb-2" id="bcolor">+</button>
+                    <a class="btn " id="bcolor" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#AfegirProd">Afegir Producte</a>                    </div>
                     </div>
                 </div>
                 </div>
             </div>
           </div>
         
-    </div>
     </div>
 
 </main>

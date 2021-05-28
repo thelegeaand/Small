@@ -400,8 +400,8 @@
     <div class="col-md-12 fondotienda">
         <div class="row">
         <div class="col-md-6 logoBotiga ">
-                <div class="text-center justify-content-center d-flex">
-                <img src="<?php echo base_url(); ?>img/ramirezlogo.jpg" class="logoTienda" alt="">
+                <div class="justify-content-center d-flex">
+                <img src="<?php echo base_url(); ?>img/ramirezlogo.jpg" style="margin-top:8rem;border-radius:10%;" class="w-25" alt="">
                 </div>                
     </div>
         <div class="col-md-6 InfoBotiga">
@@ -425,7 +425,7 @@
     </div>
 
     <div class="container d-flex justify-content-right mt-2 mb-5">
-        <div class="row mt-5 mb-5">
+       
         <div class="col-md-4 mt-2">
             <div class="cartaProd border">
                 <div class="fotoProd">
@@ -450,28 +450,52 @@
             </div>
           </div>
           <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4 class="mb-3">CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">+</button>
-              </div>
+          <div class="cartaProd border">
+                <div class="fotoProd">
+                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
+
+                </div>
+                <div class="cuerpoProd border">
+                <div class="row mt-2">
+                    <div class="DescProd text-center col-md-12">
+                        <h5>Jamón 5J 6kg</h5>
+                    </div>
+                </div>
+                <div class="row mb-4 mt-2">
+                    <div class="PrecioProd text-center col-md-12">
+                        <h5>Precio: 400€</h5>
+                    </div>
+                    <div class="PrecioProd col-md-12 text-center">
+                    <button type="button" class="btn mb-2" id="bcolor">+</button>
+                    </div>
+                </div>
+                </div>
             </div>
           </div>
           <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4 class="mb-3">CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">+</button>
-              </div>
+          <div class="cartaProd border">
+                <div class="fotoProd">
+                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
+
+                </div>
+                <div class="cuerpoProd border">
+                <div class="row mt-2">
+                    <div class="DescProd text-center col-md-12">
+                        <h5>Jamón 5J 6kg</h5>
+                    </div>
+                </div>
+                <div class="row mb-4 mt-2">
+                    <div class="PrecioProd text-center col-md-12">
+                        <h5>Precio: 400€</h5>
+                    </div>
+                    <div class="PrecioProd col-md-12 text-center">
+                    <button type="button" class="btn mb-2" id="bcolor">+</button>
+                    </div>
+                </div>
+                </div>
             </div>
           </div>
-        </div>
+        
     </div>
 
 </main>

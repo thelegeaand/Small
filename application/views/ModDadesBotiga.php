@@ -398,7 +398,7 @@
 
 <main class="">
     <div class="col-md-12 fondotienda">
-        <div class="row justify-content-center d-flex">
+        <div class="row">
         <div class="col-md-6 logoBotiga ">
                 <div class="justify-content-center d-flex">
                 <img src="<?php echo base_url(); ?>img/ramirezlogo.jpg" style="margin-top:8rem;border-radius:10%;" class="w-25" alt="">
@@ -406,99 +406,24 @@
     </div>
         <div class="col-md-6 InfoBotiga">
                 <div class="container">
-                <div class="col-md-12 text-center">
-                <h1 class="mt-4 TitBotiga">TITOL BOTIGA</h1>
-                <p class="mt-4 DescBotiga">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur cum ea recusandae itaque inventore provident amet enim id, minima tenetur doloremque sit optio quaerat voluptas iure. Pariatur vero sunt aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, incidunt aut iste neque accusamus delectus non accusantium voluptatem autem. Ipsum tempora voluptatibus amet iure, labore fugiat nam ipsa doloremque eveniet!</p>
-                <p class="mt-4 DireccioBotiga">Carrer de la verge de l'assumpcio 57</p>    
-                <p class="mt-4 ContBotiga">Contacte: 666666666</p>    
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-    <div class="col-md-12 cercador">
-        <div class="container justify-content-center d-flex pt-4 pb-4">
+                <div class="col-md-12 text-center mt-5">
                 <form>
-                    <input type="text" placeholder="Buscar Producte..." class="form-control buscadorAmplada">
-                </form>
+                <input type="text" class="form-control mt-5 mb-5" placeholder="Nom Botiga">
+                <input type="text" class="form-control mt-5 mb-5" placeholder="Descripció">
+                <input type="text" class="form-control mt-5 mb-5" placeholder="Direcció">
+                <input type="text" class="form-control mt-5 mb-5" placeholder="Contacte">
+                </form>   
+            </div>
+            </div>
+        </div>
         </div>
     </div>
 
-    <div class="justify-content-center d-flex">
-    <div class="container row mt-2 mb-5">
-       
-        <div class="col-md-4 mt-2 col-12 col-sm-12">
-            <div class="cartaProd border">
-                <div class="fotoProd">
-                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-
-                </div>
-                <div class="cuerpoProd border">
-                <div class="row mt-2">
-                    <div class="DescProd text-center col-md-12">
-                        <h5>Jamón 5J 6kg</h5>
-                    </div>
-                </div>
-                <div class="row mb-4 mt-2">
-                    <div class="PrecioProd text-center col-md-12">
-                        <h5>Precio: 400€</h5>
-                    </div>
-                    <div class="PrecioProd col-md-12 text-center">
-                    <button type="button" class="btn mb-2" id="bcolor">+</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2 col-12 col-sm-12">
-          <div class="cartaProd border">
-                <div class="fotoProd">
-                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-
-                </div>
-                <div class="cuerpoProd border">
-                <div class="row mt-2">
-                    <div class="DescProd text-center col-md-12">
-                        <h5>Jamón 5J 6kg</h5>
-                    </div>
-                </div>
-                <div class="row mb-4 mt-2">
-                    <div class="PrecioProd text-center col-md-12">
-                        <h5>Precio: 400€</h5>
-                    </div>
-                    <div class="PrecioProd col-md-12 text-center">
-                    <button type="button" class="btn mb-2" id="bcolor">+</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2 col-12 col-sm-12">
-          <div class="cartaProd border">
-                <div class="fotoProd">
-                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-
-                </div>
-                <div class="cuerpoProd border">
-                <div class="row mt-2">
-                    <div class="DescProd text-center col-md-12">
-                        <h5>Jamón 5J 6kg</h5>
-                    </div>
-                </div>
-                <div class="row mb-4 mt-2">
-                    <div class="PrecioProd text-center col-md-12">
-                        <h5>Precio: 400€</h5>
-                    </div>
-                    <div class="PrecioProd col-md-12 text-center">
-                    <button type="button" class="btn mb-2" id="bcolor">+</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-          </div>
+   <div class="container justify-content-center d-flex">
+        <button class="btn mt-5 mb-5" id="bcolor">Guardar Canvis</button>
+   </div>
         
-    </div>
-    </div>
+    
 
 </main>
 
