@@ -179,4 +179,5 @@ class SmallController extends CI_Controller
         $this->load->view('IniciBotiga');
     }
     
+    
 }

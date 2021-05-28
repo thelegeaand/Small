@@ -502,22 +502,18 @@
     </div>
     <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
     <p>AAAAAAAAAAAAAAAAAAAA</p>
-
     </div>
   </div>
 </div>
        </div>
    </div>
-
-
    <div class="perque text-center pt-5">
             <h4><strong>PERQUÈ NOSALTRES?</strong></h4>            
     </div>
-
     <div class="cajasdiv">
        <div class="container mb-5 pb-5">
             
-       <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center">
             <div class="cajasp text-center pl-5 pr-5 pt-5 mt-5 mb-5 col-md-6 pb-5">
               <h4><strong>Augmenta les teves vendes!</strong></h4>
               <img src="<?php echo base_url(); ?>img/pago-en-efectivo.png" class="imagenCajas" alt="">
@@ -529,7 +525,7 @@
             <div class="cajasp text-center pl-5 pr-5 pt-5 mt-5 mb-5 pb-5">
               <h4><strong>Abarca nous nínxols</strong></h4>
               <img src="<?php echo base_url(); ?>img/mujer.png" class="imagenCajas" alt="">
-              <p class="mt-4">Arriba a més gent i consegueix clients nous.<br></p>
+              <p class="mt-4">Arriba a més gent i aconsegueix clients nous.<br></p>
             </div>
     </div>
     <div class="d-flex justify-content-center col-md-6">
