@@ -9,13 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Poppins:wght@800&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
-  <script type="text/javascript" src="<?=base_url()?>js/scripts.js" ></script>
-  <title>Pàgina Principal Small</title>
+  <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
+  <title>Pàgina Botigues</title>
 </head>
 
 <body>
@@ -25,8 +27,8 @@
     <nav class="navbar navbar-light bgcust justify-content-between ">
       <a class="navbar-brand ml-3"><img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logo" alt="Imatge Corporativa Small"></a>
       <form class="form-inline d-flex justify-content-left">
-        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0 mr-3" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
-        <button id="bcolor" class="btn btn-outline-success my-2 my-sm-0  mr-3" type="button" data-toggle="modal" data-target="#Registre">Registrar-se</button>
+      <button id="bcolor" class="btn  my-2 my-sm-0 mr-3" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
+        <button id="bcolor" class="btn  my-2 my-sm-0  mr-3" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#Registre">Registrar-se</button>
       </form>
     </nav>
 
@@ -46,16 +48,16 @@
             <form>
               <div class="form-row">
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault01">NOM USUARI</label>
-                  <input type="text" class="form-control" id="Usuari" required>
+                  <label for="NomUsuariIS">NOM USUARI<span style='color:red;' class="ml-2" id="nomUsuariInc"></span></label>
+                  <input type="text" class="form-control" id="NomUsuariIS" required>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">PASSWORD</label>
-                  <input type="password" class="form-control" id="Password" required>
+                  <label for="PasswordIS">PASSWORD<span style='color:red;' class="ml-2" id="PassInc"></span></label>
+                  <input type="password" class="form-control" id="PasswordIS" required>
                 </div>
 
                 <div class="offset-4 text-center boton">
-                  <button type="submit" id="bcolor" class="btn btn-outline-success">Iniciar Sessió</button>
+                  <button type="button" onclick="iniciarsessio()" id="bcolor" class="btn">Iniciar Sessió</button>
 
                 </div>
                 <div class="offset-2 mt-2">
@@ -71,9 +73,9 @@
         </div>
       </div>
     </div>
-    <!-- Modal per Registrar-se -->
+  <!-- Modal per Registrar-se -->
 
-    <div class="modal fade mb-5" id="Registre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade mb-5" id="Registre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5 " style="border-bottom:0px;">
@@ -86,56 +88,59 @@
             <form>
               <div class="form-row">
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault01">NOM</label>
-                  <input type="text" class="form-control" id="Usuari" required>
+                  <label for="Nom">NOM<span style='color:red;' class="ml-2" id="nomInc"></span></label>
+                  <input type="text" class="form-control" id="Nom" >
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">PRIMER COGNOM</label>
-                  <input type="text" class="form-control" id="Cognom" required>
+                  <label for="Cognom">PRIMER COGNOM<span style='color:red;' class="ml-2" id="cognomInc"></span></label>
+                  <input type="text" class="form-control" id="Cognom" >
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">SEGON COGNOM</label>
-                  <input type="text" class="form-control" id="Cognom2" required>
+                  <label for="Cognom2">SEGON COGNOM<span style='color:red;' class="ml-2" id="cognom2Inc"></span></label>
+                  <input type="text" class="form-control" id="Cognom2">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">DNI</label>
-                  <input type="text" class="form-control" id="Dni" required>
+                  <label for="Dni">DNI<span style='color:red;' class="ml-2" id="dniInc"></span></label>
+                  <input type="text" class="form-control" id="Dni">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">DATA DE NAIXEMENT</label>
-                  <input type="date" class="form-control" id="dnaix" required>
+                  <label for="Datanaixement">DATA DE NAIXEMENT<span style='color:red;' class="ml-2" id="dataInc"></span></label>
+                  <input type="date" class="form-control" id="Datanaixement" >
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">CORREU ELECTRÒNIC</label>
-                  <input type="mail" class="form-control" id="mail" required>
+                  <label for="Correu">CORREU ELECTRÒNIC<span style='color:red;' class="ml-2" id="correuInc"></span></label>
+                  <input type="email" class="form-control" id="Correu" >
                 </div>
                 <div class="col-md-12 mb-3">
                   <div class="form-row">
-                    <div class="col-md-4">
-                      <label for="validationDefault02">CIUTAT</label>
-                      <input type="text" class="form-control" id="ciutat" required>
+                    <div class="col-md-4 mb-3">
+                      <label for="Ciutat">CIUTAT</label>
+                      <span style='color:red;' class="ml-2" id="ciutatInc"></span>
+                      <input type="text" class="form-control" id="Ciutat" >
                     </div>
-                    <div class="col-md-4">
-                      <label for="validationDefault02">PROVÍNCIA</label>
-                      <input type="mail" class="form-control" id="mail" required>
+                    <div class="col-md-4 mb-3">
+                      <label for="Provincia">PROVÍNCIA</label>
+                      <span style='color:red;' class="ml-2" id="provinciaInc"></span>
+                      <input type="text" class="form-control" id="Provincia">
                     </div>
-                    <div class="col-md-4">
-                      <label for="validationDefault02">C.POSTAL</label>
-                      <input type="mail" class="form-control" id="mail" required>
+                    <div class="col-md-4 ">
+                      <label for="CPostal">C.POSTAL</label>
+                      <span style='color:red;' class="ml-2" id="postalInc"></span>
+                      <input type="text" class="form-control" id="Cpostal">
                     </div>
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">PASSWORD</label>
-                  <input type="password" class="form-control" id="mail" required>
+                  <label for="Password">PASSWORD<span style='color:red;' class="ml-2" id="passwordInc"></span></label>
+                  <input type="password" class="form-control" id="Password">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">REPETEIX PASSWORD</label>
-                  <input type="password" class="form-control" id="mail" required>
+                  <label for="Password2">REPETEIX PASSWORD</label>
+                  <input type="password"  class="form-control" id="Password2" >
                 </div>
 
                 <div class="offset-4 text-center boton">
-                  <button type="submit" id="bcolor" class="btn btn-outline-success">Registra't</button>
+                  <button type="button" onclick="registreClient()" id="bcolor" class="btn">Registra't</button>
 
                 </div>
                 <div class="offset-3 mt-2">
@@ -321,28 +326,23 @@
       </div>
     </div>
 
-    <!--Header amb Formulari Botigues per Secció -->
-    <div class="container lletrero d-flex justify-content-center ">
-      <div class="row ">
-        <div class="Tlletrero text-center">
-          <h2 class="titol p-5">TOTES LES "tipus"</h2>
+     <!--Header  -->
+     <div class="container mt-2 justify-content-left ">
+      <div class="row ml-2">
+        <div class="NouTitol">
+        <?php
+
+     echo "<h2 class='titol2'>".$titol."</h2>";
+     echo"<p class='ml-2 subtitol'>DE PROXIMITAT! </p>"
+        
+        ?>
+          
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="seccions">
-        <form>
-          <div class="form-inline mt-2 d-flex justify-content-center ">
-          
-
-            <a id="bcolor" class="btn btn-outline-success my-2 my-sm-0" href="http://localhost/Small/index.php/SmallController/index" type="submit">Home</a>
-
-          </div>
-          </form>
-      </div>
-     
+    <div class="container ">
+          <a id="bcolorC" class="btn my-2 ml-2 my-sm-0" href="http://localhost/Small/index.php/SmallController/index" >Home</a>
     </div>
-
     <!--Fletxa desplaçament al contingut-->
     <div class="text-center mt-4">
       <a href="#Botigues">
@@ -350,92 +350,57 @@
         <span class="sr-only">Botigues</span>
       </a>
     </div>
-
   </header>
-
-
   <main>
    <!--Secció Botigues-Apartat amb  totes les botigues de la secció escollida -->
+
+   
     <section id="Botigues">
- 
-
-      <div class="container d-flex justify-content-center mt-5 bordeBot ">
+      <div class="container d-flex justify-content-center mt-5 mb-5 bordeBot ">
         <div class="row mt-5 mb-5">
+        <?php
 
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4>CASA RAMIREZ</h4>
-                <button  type="button" class="btn" id="bcolor">Anar</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4>CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4>CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
-              </div>
-            </div>
-          </div>
+        if(!empty($dades)){
 
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4>CASA RAMIREZ</h4>
-                <button onclick="tancar()" type="button" class="btn" id="bcolor">Anar</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4>CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4>CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
-              </div>
-            </div>
-          </div>
+          foreach($dades as $fila){
+            echo"<div class='col-md-4 mt-2'>";
+              echo"<div class='card'>";
+                echo"<div><img style='height:199px;padding:0px;margin: 0px;width: 100%;'src='http://localhost/Small/img/r.jpg' class='card-img img-fluid' alt='Imatge Botiga'>
+                </div>";
+                echo"<div class='card-body bg-light text-center' style='padding-bottom:10%;'>";
+                  echo"<h4>".$fila['nom_botiga']."</h4>";
+                  echo "<button  type='button' class='btn' id='bcolor'>Anar</button>";
+                echo"</div>";
+              echo"</div>";
+            echo"</div>";
+          }
 
-        
+        }else{
+          ?>
 
+<div class="container mb-5">
+  <div class='row'>
+    <div class="alert-box" style="float: none; margin: 0 auto;">
+    <div class="alert alert-success">
+      <div class="alert-icon text-center">
+      <img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logoM2" alt="Imatge Corporativa Small">
+      </div>
+      <div class="alert-message text-center">
+        <p><strong>Disculpi les molèsties...<br>No hi han Botigues disponibles de la categoria seleccionada.</strong></p> 
+      </div>
+    
+    </div>
+  </div>
+  </div>
+</div>
+<?php
+        }
+          ?>
         </div>
       </div>
 
     </section>
+    
 
   </main>
   <!--Footer Small -->
@@ -453,9 +418,9 @@
                 <div class="card-body">
                   <h5 class="card-title t1">SMALL</h5>
                   <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="#logo">Home</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="http://localhost/Small/index.php/SmallController/index">Home</a></li>
                     <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Registre">Registre Client</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;"  href="<?php echo base_url(); ?>index.php/SmallController/RegisterBotiga">RegistreBotiga</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;"  href="http://localhost/Small/index.php/SmallController/RegistreBotiga">RegistreBotiga</a></li>
                   </ul>
                 </div>
               </div>
@@ -477,9 +442,9 @@
                 <div class="card-body">
                   <h5 class="card-title t1">AJUDA</h5>
                   <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;">Contacte</a></li>
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;">Small-Inc@gmail.com</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;">+34 678930323</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="http://localhost/Small/index.php/SmallController/Contacte">Contacte</a></li>
+                    <li class="pt-3"><span class="card-text" style="text-decoration:none;color:white;">Small-Inc@gmail.com</span></li>
+                    <li class="pt-3"> <span class="card-text " style="text-decoration:none;color:white;">+34 678930323</span></li>
                   </ul>
                 </div>
               </div>

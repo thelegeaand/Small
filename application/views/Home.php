@@ -330,27 +330,36 @@
     <div class="container mt-2 d-flex justify-content-left ">
       <div class="row ">
         <div class="NouTitol">
-          <h1 class="titol">MERCAT ONLINE</h1>
+          <h1 class="titol2">MERCAT ONLINE</h1>
           <p class="ml-2 subtitol">A LA TEVA CIUTAT!</p>
         </div>
       </div>
     </div>
     <div class="container ">
       <div class="seccions">
-        <form>
+       <?php
+       echo form_open('SmallController/TipusBotiga');
+       ?>
           <div class="form-inline cust-form mt-1">
-            <select  class="form-control mr-sm-2 col-sm-6" id="select">
-              <option>Aviram</option>
-              <option>Carnisseries</option>
-              <option>Peixateries</option>
-              <option>Fruiteria</option>
+            <select  class="form-control mr-sm-2 col-sm-6" id="select" name="select">
+              <option value="Aviram">Aviram</option>
+              <option value="Carn">Carnisseries</option>
+              <option value="Peix">Peixateries</option>
+              <option value="Fruita">Fruiteria</option>
             </select>
+            <?php
+          echo form_submit(array(
+              'name' => 'botoC',
+              'class' => 'btn mt-2 mt-sm-0 mt-xl-0 mt-md-0',
+              'value' =>"Buscar",
+              'id' => "bcolorC"
+               ));
 
-            <a id="bcolorC" class="btn my-2 my-sm-0" href="http://localhost/Small/index.php/SmallController/MainBotiguesPer" type="submit">Buscar</a>
-
-          </div>
+          echo "</div>";
+          echo form_close();
+          ?>
       </div>
-      </form>
+     
     </div>
 
     <!--Fletxa desplaçament al contingut-->
@@ -465,7 +474,7 @@
               <div class="card-body card1-cuerpo">
                 <h5 class="card-title margin-div">BOTIGUES</h5>
                 <p class="card-text">Vols afegir la teva botiga i treballar amb nosaltres?<br> <strong>UNEIX-TE</strong> a nosaltres per aconseguir arribar a més clients!</p>
-                <a href="<?php echo base_url(); ?>index.php/SmallController/RegisterBotiga" class="btn" id="bcolor">BOTIGUES</a>
+                <a href="http://localhost/Small/index.php/SmallController/RegistreBotiga" class="btn" id="bcolor">BOTIGUES</a>
               </div>
             </div>
           </div>
@@ -486,7 +495,7 @@
               <div class="card-body card1-cuerpo">
                 <h5 class="card-title margin-div">REPARTIDORS</h5>
                 <p class="card-text">Vols repartir amb nosaltres? Contacte'ns!</p>
-                <a href="<?php echo base_url(); ?>index.php/SmallController/PantallaContacte" class="btn" id="bcolor">CONTACTE</a>
+                <a href=" http://localhost/Small/index.php/SmallController/Contacte" class="btn" id="bcolor">CONTACTE</a>
               </div>
             </div>
           </div>
@@ -509,9 +518,9 @@
                 <div class="card-body">
                   <h5 class="card-title t1">SMALL</h5>
                   <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="#logo">Home</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="http://localhost/Small/index.php/SmallController/index">Home</a></li>
                     <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Registre">Registre Client</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="<?php echo base_url(); ?>index.php/SmallController/RegisterBotiga">RegistreBotiga</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="http://localhost/Small/index.php/SmallController/RegistreBotiga">Registre Botiga</a></li>
                   </ul>
                 </div>
               </div>
@@ -533,9 +542,9 @@
                 <div class="card-body">
                   <h5 class="card-title t1">AJUDA</h5>
                   <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="<?php echo base_url(); ?>index.php/SmallController/PantallaContacte">Contacte</a></li>
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;">Small-Inc@gmail.com</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;">+34 678930323</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="http://localhost/Small/index.php/SmallController/Contacte">Contacte</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;">Small-Inc@gmail.com</span></li>
+                    <li class="pt-3"> <span class="card-text " style="text-decoration:none;color:white;">+34 678930323</span></li>
                   </ul>
                 </div>
               </div>

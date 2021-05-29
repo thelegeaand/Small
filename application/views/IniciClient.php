@@ -14,8 +14,83 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
   <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
-  <title>Pàgina Principal Small</title>
+  <title>Pàgina Principal Client</title>
 </head>
+
+<style>
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 120px;
+    margin: auto;
+    position: relative;
+    background-color: #f5f5f5;
+  
+    z-index: 7;
+  }
+  .menu li {
+    float: left;
+    width: 25%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .menu a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    font-size: 18px;
+    z-index: 9;
+  }
+  a.active {
+    background-color: #e74c3c;
+    pointer-events: none;
+  }
+  li.slider {
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #FF0910;
+    z-index: 8;
+    transition: left 0.4s, background-color 0.4s;
+  }
+  .menu li:nth-child(1):hover ~ .slider,
+  .menu li:nth-child(1):focus ~ .slider,
+  .menu li:nth-child(1):active ~ .slider {
+    left: 0;
+    background-color: #FF0910;
+  }
+  .menu li:nth-child(2):hover ~ .slider,
+  .menu li:nth-child(2):focus ~ .slider,
+  .menu li:nth-child(2):active ~ .slider {
+    left: 25%;
+    background-color: #FDB402;
+  }
+  .menu li:nth-child(3):hover ~ .slider,
+  .menu li:nth-child(3):focus ~ .slider,
+  .menu li:nth-child(3):active ~ .slider {
+    left: 50%;
+    background-color:#01E4FF ;
+  }
+  .menu li:nth-child(4):hover ~ .slider,
+  .menu li:nth-child(4):focus ~ .slider,
+  .menu li:nth-child(4):active ~ .slider {
+    left: 75%;
+    background-color: #07FB7F;
+  }
+
+
+</style>
 
 <body>
 
@@ -39,7 +114,7 @@
           <a href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Carrito</a>
         </div>
         <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
-          <a href="#" id="bcolor">Tancar Sessió </a>
+        <a href="http://localhost/Small/index.php/SmallController/TancarSessio" id="bcolor" class="btn">Tancar Sessió</a>
         </div>
       </div>
     </nav>
@@ -54,6 +129,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+         
           <div class="modal-body ">
 
 

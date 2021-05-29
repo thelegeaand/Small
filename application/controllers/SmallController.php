@@ -22,15 +22,50 @@ class SmallController extends CI_Controller
         $this->load->view('Home');
     }
 
-    public function TramitarComandaRed(){
-        $this->load->view('TramitarComanda');
+    public function TramitarComandaRed()
+    {
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+        } else {
+
+
+            if ($session == "client") {
+
+                $this->load->view('TramitarComanda');
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
     }
 
-    public function HistorialComandes(){
-        $this->load->view('Comanda');
+    public function HistorialComandes()
+    {
+
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+        } else {
+
+            if ($session == "client") {
+
+                $this->load->view('Comanda');
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
     }
 
-    public function ModDadesPersonaRed(){
+    public function ModDadesPersonaRed()
+    {
         $this->load->view('ModDadesPersonals');
     }
     public function registreclient()
@@ -69,78 +104,106 @@ class SmallController extends CI_Controller
         }
     }
 
-    public function inicisessio(){
+    public function inicisessio()
+    {
 
         $NomUsuari = $this->input->post('NomUsuariIS');
-        $Password= $this->input->post('PasswordIS');
-        $comp="";
-        $PasswordE=md5($Password);
+        $Password = $this->input->post('PasswordIS');
+        $comp = "";
+        $PasswordE = md5($Password);
 
-        $cont=$this->SmallModel->InciarSessio($NomUsuari,$PasswordE);
+        $cont = $this->SmallModel->InciarSessio($NomUsuari, $PasswordE);
 
-        if($cont!=0){
-          $comp="ok";
+        if ($cont != 0) {
+            $comp = "ok";
 
-          $dades = $this->SmallModel->CodiUsuari($NomUsuari);
+            $dades = $this->SmallModel->CodiUsuari($NomUsuari);
 
-          $idusuari = $dades[0]['id_usuari'];
+            $idusuari = $dades[0]['id_usuari'];
 
-          $contClientsId=$this->SmallModel->compClient($idusuari);
-          $contAdminId=$this->SmallModel->compAdmin($idusuari);
-          $contBotigaId=$this->SmallModel->compBotiga($idusuari);
-          $contRepartidorId=$this->SmallModel->compRepartidor($idusuari);
-          $contAtencioId=$this->SmallModel->compAtencio($idusuari);
+            $contClientsId = $this->SmallModel->compClient($idusuari);
+            $contAdminId = $this->SmallModel->compAdmin($idusuari);
+            $contBotigaId = $this->SmallModel->compBotiga($idusuari);
+            $contRepartidorId = $this->SmallModel->compRepartidor($idusuari);
+            $contAtencioId = $this->SmallModel->compAtencio($idusuari);
 
-          if($contClientsId!=0){
-              $comp="client";
-              $this->load->library("session");
-              $this->session->set_userdata("validat",$idusuari);
-              $this->session->set_userdata("tipus",$comp);
-              echo $comp;
+            if ($contClientsId != 0) {
+                $comp = "client";
+                $this->load->library("session");
+                $this->session->set_userdata("validat", $idusuari);
+                $this->session->set_userdata("tipus", $comp);
+                echo $comp;
+            } else if ($contAdminId != 0) {
 
-          }else if($contAdminId!=0){
+                $comp = "admin";
+                $this->load->library("session");
+                $this->session->set_userdata("validat", $idusuari);
+                $this->session->set_userdata("tipus", $comp);
+                echo $comp;
+            } else if ($contBotigaId != 0) {
 
-            $comp="admin";
-            $this->load->library("session");
-            $this->session->set_userdata("validat",$idusuari);
-            $this->session->set_userdata("tipus",$comp);
+                $comp = "botiga";
+                $this->load->library("session");
+                $this->session->set_userdata("validat", $idusuari);
+                $this->session->set_userdata("tipus", $comp);
+                echo $comp;
+            } else if ($contRepartidorId != 0) {
+
+                $comp = "repartidor";
+                $this->load->library("session");
+                $this->session->set_userdata("validat", $idusuari);
+                $this->session->set_userdata("tipus", $comp);
+                echo $comp;
+            } else if ($contAtencioId) {
+
+                $comp = "atencioclient";
+                $this->load->library("session");
+                $this->session->set_userdata("validat", $idusuari);
+                $this->session->set_userdata("tipus", $comp);
+                echo $comp;
+            }
+        } else {
+            $comp = "no";
             echo $comp;
-
-          }else if($contBotigaId!=0){
-
-            $comp="botiga";
-            $this->load->library("session");
-            $this->session->set_userdata("validat",$idusuari);
-            $this->session->set_userdata("tipus",$comp);
-            echo $comp;
-
-        }else if($contRepartidorId!=0){
-
-            $comp="repartidor";
-            $this->load->library("session");
-            $this->session->set_userdata("validat",$idusuari);
-            $this->session->set_userdata("tipus",$comp);
-            echo $comp;
-              
-
-          }else if($contAtencioId){
-
-            $comp="atencioclient";
-            $this->load->library("session");
-            $this->session->set_userdata("validat",$idusuari);
-            $this->session->set_userdata("tipus",$comp);
-            echo $comp;
-
-          }
-
-        }else{
-          $comp="no";
-          echo $comp;
-
         }
-
     }
 
+    public function TipusBotiga(){
+
+        $tipus = $this->input->post('select');
+    
+        if($tipus=="Carn"){
+
+            $titol="LA CARN";
+            $dades=$this->SmallModel->MostrarBotiguesPer("Carn");
+            $this->load->view('MainBotiguesPersona',array('dades'=>$dades,'titol'=>$titol));
+
+        }else if($tipus=="Peix"){
+
+            $titol="EL PEIX";
+            $dades=$this->SmallModel->MostrarBotiguesPer("Peix");
+            $this->load->view('MainBotiguesPersona',array('dades'=>$dades,'titol'=>$titol));
+
+
+        }else if($tipus=="Aviram"){
+            
+            $titol="AVIRAM";
+            $dades=$this->SmallModel->MostrarBotiguesPer("Aviram");
+            $this->load->view('MainBotiguesPersona',array('dades'=>$dades,'titol'=>$titol));
+
+
+        }else if($tipus=="Fruita"){
+
+            $titol="LA FRUITA";
+            $dades=$this->SmallModel->MostrarBotiguesPer("Fruita");
+            $this->load->view('MainBotiguesPersona',array('dades'=>$dades,'titol'=>$titol));
+
+        }else{
+
+            $this->load->view('Home');
+        }
+        
+    }
     public function Contacte()
     {
         $this->load->view('Contacte');
@@ -151,10 +214,9 @@ class SmallController extends CI_Controller
     {
 
         $this->load->view('MainBotiguesPersona',);
-
     }
 
-    public function RegisterBotiga()
+    public function RegistreBotiga()
     {
 
         $this->load->view('RegistreBotigues');
@@ -162,33 +224,141 @@ class SmallController extends CI_Controller
 
     public function IniciClient()
     {
-        $this->load->view('IniciClient');
+
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+        } else {
+
+            if ($session == "client") {
+
+                $session = $this->session->userdata('validat');
+
+
+
+                $this->load->view('IniciClient');
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
     }
 
-    public function HistorialClient()
+    public function IniciClient2()
     {
-        $this->load->view('HistorialClient');
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+        } else {
+
+            if ($session == "client") {
+
+                $session = $this->session->userdata('validat');
+
+            
+                $this->load->view('IniciClient2');
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+    }
+    public function IniciClient3()
+    {
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+        } else {
+
+            if ($session == "client") {
+
+                $session = $this->session->userdata('validat');
+
+            
+                $this->load->view('IniciClient3');
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+    }
+    public function IniciClient4()
+    {
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "client") {
+
+                $session = $this->session->userdata('validat');
+
+                $this->load->view('IniciClient4');
+
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
     }
 
     public function CompteClient()
     {
 
-        $this->load->view('CompteClient');
-    }
+        $session = $this->session->userdata('tipus');
 
-    public function TramitarComanda()
-    {
+        if (empty($session)) {
 
+            $this->load->view('Home');
+        } else {
 
-        $this->load->view('TramitarComanda');
+            if ($session == "client") {
+
+                $this->load->view('ModDadesPersonals');
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
     }
 
 
     public function IniciBotiga()
     {
+        $session = $this->session->userdata('tipus');
 
-        $this->load->view('IniciBotiga');
+        if (empty($session)) {
+
+            $this->load->view('Home');
+        } else {
+
+            if ($session == "botiga") {
+
+                $this->load->view('IniciBotiga');
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
     }
-    
-    
+
+
+
+    public function TancarSessio()
+    {
+
+        $this->session->sess_destroy();
+
+        $this->load->view('MissatgeTS');
+    }
 }

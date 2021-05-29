@@ -1,8 +1,11 @@
-function Tancar() {
 
-    sessionStorage.clear();
-    Swal.fire("S'ha tancat la sessió correctament!");
 
+function Tancar(){
+    Swal.fire({
+        icon: 'Success',
+        title: 'S\'ha tancat la sessió correctament!'
+     
+      })
 }
 
 function registreClient() {

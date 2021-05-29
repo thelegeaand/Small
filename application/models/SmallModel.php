@@ -103,6 +103,16 @@ public function NouClient($idUsuari,$Nom,$Cognom,$Cognom2,$Dni,$Data,$Correu,$Ci
 
    }
 
+   public function MostrarBotiguesPer($tipus){
+
+    $sql="SELECT * FROM botiga b LEFT JOIN usuaris u ON b.id_usuari=u.id_usuari 
+    WHERE u.estat=1 AND b.tipus='".$tipus."'";
+    
+        $dades=$this->db->query($sql);
+
+        return $dades->result_array();
+
+   }
    
 }
     
