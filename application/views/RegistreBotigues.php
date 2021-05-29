@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="ca">
-
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -157,8 +156,6 @@
                   <p>Si ja tens un Compte, <span id="registre">Inicia Sessió<span></p>
 
                 </div>
-
-
               </div>
             </form>
           </div>
@@ -357,95 +354,116 @@
           </div>
 
           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="container  adv">
-              <div class="row mt-4 col-md-5 col-12">
-                <div id="circulo">
-                  <p>1</p>
+            <form>
+              <div class="container  adv">
+                <div class="row mt-4 col-md-5 col-12">
+                  <div id="circulo">
+                    <p>1</p>
+                  </div>
+                  <h4>Introdueix les teves Dades</h4>
                 </div>
-                <h4>Introdueix les teves Dades</h4>
-              </div>
 
 
-              <div class="form-row mt-4">
-                <div class="col-md-6 mb-3 text-center">
-                  <input type="text" class="form-control mb-4" id="Usuari" placeholder="Nom Propietari">
+                <div class="form-row mt-4">
+                  <div class="col-md-6 ">
+                   <span style='color:red;' id="NomPropInc"></span>
+                    <input type="text" class="form-control mb-4" id="NPropietari" placeholder="Nom Propietari">
+                  </div>
+                  <div class="col-md-6">
+                  <span style='color:red;'id="NomUsuariInc"></span>
+                  <input type="text" class="form-control mb-4" id="NUsuari" placeholder="Nom Usuari(Màx.10 caràcters)" required>
+                  </div>
+                  <div class="col-md-6">
+                  <span style='color:red;' id="PasswInc"></span>
+                    <input type="password" class="form-control mb-4" id="P" placeholder="Password" required>
+                  </div>
+                  <div class="col-md-6">
+                  <span style='color:red;' id="PasswInc2"></span>
+                    <input type="password" class="form-control mb-4" id="P2" placeholder="Confirmar Password" required>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Nom Usuari" required>
+                <div class="row mt-4 col-md-5 col-12">
+                  <div id="circulo">
+                    <p>2</p>
+                  </div>
+                  <h4>Introdueix les dades de la Botiga</h4>
                 </div>
-                <div class="col-md-6">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Password" required>
+                <div class="form-row mt-4">
+                  <div class="col-md-12 mb-4  ">
+                  <span style='color:red;' id="NBotigaInc"></span>
+                    <input type="text" class="form-control" id="NBotiga" placeholder="Nom Botiga">
+                  </div>
+                  <div class="col-md-12   ">
+                  <span style='color:red;' id="NEmpresaInc"></span>
+                    <input type="text" class="form-control mb-4" id="NEmpresa" placeholder="Nom Empresa" required>
+                  </div>
+                  <div class="col-md-6 mb-3  ">
+                  <span style='color:red;' id="TBotigaInc"></span>
+                  <select class="form-control " id="TipusBotiga" placeholder="Tipus">
+                  <option selected  disabled>Tipus Botiga</option>
+                  <option>Aviram</option>
+                  <option>Carn</option>
+                  <option>Peix</option>
+                  <option>Fruita</option>
+                  </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                  <span style='color:red;' id="CifBotigaInc"></span>
+                    <input type="text" class="form-control " id="Cif" placeholder="CIF" required>
+                  </div>
+                  <div class="col-md-6 ">
+                  <span style='color:red;' id="CorreuBotigaInc"></span>
+                    <input type="text" class="form-control" id="CElectronic" placeholder="Correu Electrònic Empresa" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                  <span style='color:red;' id="ProvinciaBotigaInc"></span>
+                    <input type="text" class="form-control " id="Prov" placeholder="Província" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                  <span style='color:red;' id="CiutatBotigaInc"></span>
+                    <input type="text" class="form-control " id="Ciut" placeholder="Ciutat" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                  <span style='color:red;' id="CodiPBotigaInc"></span>
+                    <input type="text" class="form-control " id="CodiPost" placeholder="Codi Postal" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                  <span style='color:red;' id="CarrerBotigaInc"></span>
+                    <input type="text" class="form-control" id="Carrer" placeholder="Carrer" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                  <span style='color:red;' id="NumeroBotigaInc"></span>
+                    <input type="number" class="form-control " id="Numero" placeholder="Número" required>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Confirmar Password" required>
-                </div>
-              </div>
 
-              <div class="row mt-4 col-md-5 col-12">
-                <div id="circulo">
-                  <p>2</p>
+                <div class="row mt-4 col-md-5 col-12">
+                  <div id="circulo">
+                    <p>3</p>
+                  </div>
+                  <h4>Dades Bancaries</h4>
                 </div>
-                <h4>Introdueix les dades de la Botiga</h4>
-              </div>
 
 
+                <div class="form-row mt-4">
+                  <div class="col-md-3 mb-3 text-center">
+                  <span style='color:red;' id="IbanBotigaInc"></span>
+                    <input type="text" class="form-control" id="CodiIban" placeholder="ES 21" readonly>
+                  </div>
+                  <div class="col-md-9 mb-3">
+                    <input type="text" class="form-control" id="Iban" placeholder="IBAN" required>
+                  </div>
+                </div>
 
-              <div class="form-row mt-4">
-                <div class="col-md-6 mb-3 text-center">
-                  <input type="text" class="form-control" id="Usuari" placeholder="Nom Botiga">
-                </div>
-                <div class="col-md-6 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Nom Empresa" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="CIF" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Correu Electrònic Empresa" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Provincia" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Ciutat" required>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Codi Postal" required>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Carrer" required>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Número" required>
-                </div>
-              </div>
+                <div class="offset-4 text-center boton">
+                  <button type="button" onclick="registrebotiga()" id="bcolor" class="btn">Registra't</button>
 
-              <div class="row mt-4 col-md-5 col-12">
-                <div id="circulo">
-                  <p>3</p>
                 </div>
-                <h4>Dades Bancaries</h4>
-              </div>
-
-
-              <div class="form-row mt-4">
-                <div class="col-md-3 mb-3 text-center">
-                  <input type="text" class="form-control" id="Usuari" placeholder="ES 21" readonly>
-                </div>
-                <div class="col-md-9 mb-3">
-                  <input type="password" class="form-control" id="Password" placeholder="IBAN*" required>
-                </div>
-              </div>
-
-              <div class="offset-4 text-center boton">
-                <button type="submit" id="bcolor" class="btn mt-5 mb-5">Afegir Botiga</button>
-
-              </div>
-              </form>
-            </div>
+            </form>
           </div>
         </div>
       </div>
+    </div>
     </div>
     </div>
 

@@ -332,7 +332,7 @@
         <div class="NouTitol">
         <?php
 
-     echo "<h2 class='titol2'>".$titol."</h2>";
+     echo "<h2 class='titol2'><strong>".$titol."</strong></h2>";
      echo"<p class='ml-2 subtitol'>DE PROXIMITAT! </p>"
         
         ?>
@@ -365,8 +365,21 @@
           foreach($dades as $fila){
             echo"<div class='col-md-4 mt-2'>";
               echo"<div class='card'>";
+              $tipus=$fila["tipus_banner"];
+              $banner=$fila["img_banner"];
+
+              if(empty($tipus)||empty($banner)){
+
                 echo"<div><img style='height:199px;padding:0px;margin: 0px;width: 100%;'src='http://localhost/Small/img/r.jpg' class='card-img img-fluid' alt='Imatge Botiga'>
                 </div>";
+
+              }else{
+                echo'<div><img style="height:199px;padding:0px;margin: 0px;width: 100%;"class="card-img img-fluid" alt="Imatge Botiga" src="data:'.$tipus.';base64,'.base64_encode($banner).'"></div>';
+
+
+              }
+                
+               
                 echo"<div class='card-body bg-light text-center' style='padding-bottom:10%;'>";
                   echo"<h4>".$fila['nom_botiga']."</h4>";
                   echo "<button  type='button' class='btn' id='bcolor'>Anar</button>";

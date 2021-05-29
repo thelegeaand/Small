@@ -1,13 +1,5 @@
 
 
-function Tancar(){
-    Swal.fire({
-        icon: 'Success',
-        title: 'S\'ha tancat la sessió correctament!'
-     
-      })
-}
-
 function registreClient() {
 
     var Nom = document.getElementById("Nom").value;
@@ -175,7 +167,6 @@ function registreClient() {
     }
     else {
         document.getElementById("provinciaInc").innerHTML = "";
-        document.getElementById("cognom2Inc").innerHTML = "";
         document.getElementById("Provincia").style = "border-color:#07FB7F;";
     }
     /*CodiPostal*/
@@ -480,6 +471,188 @@ function iniciarsessio(){
 
 function registrebotiga(){
 
+    var NomPropietari=document.getElementById("NPropietari").value;
+    var NomUsuari=document.getElementById("NUsuari").value;
+    var Password=document.getElementById("P").value;
+    var Password2=document.getElementById("P2").value;
+    var Cif=document.getElementById("Cif").value;
+    var NomBotiga=document.getElementById("NBotiga").value;
+    var NomEmpresa=document.getElementById("NEmpresa").value;
+    var CorreuE=document.getElementById("CElectronic").value;
+    var Provincia=document.getElementById("Prov").value;
+    var Ciutat=document.getElementById("Ciut").value;
+    var CodiPost=document.getElementById("Carrer").value;
+    var Carrer=document.getElementById("Numero").value;
+    var TipusBotiga=document.getElementById("TipusBotiga").value;
+    var IBAN=document.getElementById("Iban").value;
+    missatge=false;
+
+    var CompNomProp = number(NomPropietari);
+    var CompNomUsu=number(NomUsuari);
+    var passwords = ComprobarContrasenyas(Password, Password2);
+    var formatContrasenya = validar_clave(Password);
+    var CompNomBot = number(NomBotiga);
+    var CompNomEmp = number(NomEmpresa);    
+    var CompCif=ValidaCIF(Cif);
+    var CompEmail = ComprobarEmail(CorreuE);
+
+    /*NomPropietari*/
+
+    if (NomPropietari == "") {
+
+        document.getElementById("NPropietari").style = "border-color:red;";
+        document.getElementById("NomPropInc").innerHTML = "Camp en blanc";
+        missatge = true;
+
+    } else if (CompNomProp == false || NomPropietari.length > 50) {
+        document.getElementById("nomInc").innerHTML = "Format incorrecte";
+        document.getElementById("NPropInc").style = "border-color:red;";
+        missatge = true;
+
+    }
+    else {
+        document.getElementById("NomPropInc").innerHTML = "";
+        document.getElementById("NPropietari").style = "border-color:#07FB7F;";
+    }
+    /*Nom Usuari*/
+    if (NomUsuari == "") {
+
+        document.getElementById("NUsuari").style = "border-color:red;";
+        document.getElementById("NomUsuariInc").innerHTML = "Camp en blanc";
+        missatge = true;
+
+    } else if (CompNomUsu == false || NomUsuari.length > 50) {
+        document.getElementById("NomUsuariInc").innerHTML = "Format incorrecte";
+        document.getElementById("NUsuari").style = "border-color:red;";
+        missatge = true;
+
+    }
+    else {
+        document.getElementById("NomUsuariInc").innerHTML = "";
+        document.getElementById("NUsuari").style = "border-color:#07FB7F;";
+    }
+
+    /*Passwords*/
+    if (passwords != true) {
+        document.getElementById("PasswInc").innerHTML = "Contrasenyes no coincideixen";
+        document.getElementById("P").style = "border-color:red;";
+        document.getElementById("P2").style = "border-color:red;";
+        missatge = true;
+
+    } else if (Password == "" || Password2 == "") {
+        document.getElementById("PasswInc").innerHTML = "Algun camp està en blanc";
+        document.getElementById("P").style = "border-color:red;";
+        document.getElementById("P2").style = "border-color:red;";
+        missatge = true;
+
+    } else if (formatContrasenya != true) {
+        document.getElementById("PasswInc").innerHTML = "<br>Ha de tenir almenys una majúscula, minúscula, caràcter especial i màxim 6 caràcters.";
+        document.getElementById("P").style = "border-color:red;";
+        document.getElementById("P2").style = "border-color:red;";
+        missatge = true;
+
+    }
+    else {
+        document.getElementById("PasswInc").innerHTML = "";
+        document.getElementById("P").style = "border-color:#07FB7F;";
+        document.getElementById("P2").style = "border-color:#07FB7F;";
+
+    }
+
+    /*Nom Botiga*/
+    if (NomBotiga == "") {
+
+        document.getElementById("NBotiga").style = "border-color:red;";
+        document.getElementById("NBotigaInc").innerHTML = "Camp en blanc";
+        missatge = true;
+
+    } else if (CompNomBot== false || NomBotiga.length > 50) {
+        document.getElementById("NBotigaInc").innerHTML = "Format incorrecte";
+        document.getElementById("NBotiga").style = "border-color:red;";
+        missatge = true;
+
+    }
+    else {
+        document.getElementById("NBotigaInc").innerHTML = "";
+        document.getElementById("NBotiga").style = "border-color:#07FB7F;";
+    }
+
+    /*Nom Empresa*/
+    if (NomEmpresa == "") {
+
+        document.getElementById("NEmpresa").style = "border-color:red;";
+        document.getElementById("NEmpresaInc").innerHTML = "Camp en blanc";
+        missatge = true;
+
+    } else if (CompNomEmp== false || NomEmpresa.length > 50) {
+        document.getElementById("NEmpresaInc").innerHTML = "Format incorrecte";
+        document.getElementById("NEmpresa").style = "border-color:red;";
+        missatge = true;
+
+    }
+    else {
+        document.getElementById("NEmpresaInc").innerHTML = "";
+        document.getElementById("NEmpresa").style = "border-color:#07FB7F;";
+    }
+
+    /*Tipus Botiga*/
+    if (TipusBotiga=="Tipus Botiga")  {
+        document.getElementById("TBotigaInc").innerHTML = "Has de seleccionar una opció";
+        document.getElementById("TipusBotiga").style = "border-color:red;";
+        missatge = true;
+    }
+    else {
+        document.getElementById("TBotigaInc").innerHTML = "";
+        document.getElementById("TipusBotiga").style = "border-color:#07FB7F;";
+    }
+    /*Cif*/
+    if (Cif=="") {
+
+        document.getElementById("Cif").style = "border-color:red;";
+        document.getElementById("CifBotigaInc").innerHTML = "Camp en blanc";
+        missatge = true;
+
+    } else if (CompCif != true) {
+        document.getElementById("CifBotigaInc").innerHTML = "Format incorrecte";
+        document.getElementById("Cif").style = "border-color:red;";
+        missatge = true;
+    }
+    else {
+        document.getElementById("CifBotigaInc").innerHTML = "";
+        document.getElementById("Cif").style = "border-color:#07FB7F;";
+    }
+
+    /*Correu*/
+    if (CorreuE == "") {
+        document.getElementById("CorreuBotigaInc").innerHTML = "Camp en blanc";
+        document.getElementById("CElectronic").style = "border-color:red;";
+        missatge = true;
+
+    } else if (CompEmail != true) {
+        document.getElementById("CorreuBotigaInc").innerHTML = "Format incorrecte";
+        document.getElementById("CElectronic").style = "border-color:red;";
+        missatge = true;
+    } else {
+        document.getElementById("CorreuBotigaInc").innerHTML = "";
+        document.getElementById("CElectronic").style = "border-color:#07FB7F;";
+    }
+    /*Provincia*/
+    if (Provincia == "") {
+        document.getElementById("ProvinciaBotigaInc").innerHTML = "<br>Camp en blanc";
+        document.getElementById("Prov").style = "border-color:red;";
+        missatge = true;
+
+    } else if (Provincia.length > 50) {
+        document.getElementById("ProvinciaBotigaInc").innerHTML = "<br>Format incorrecte";
+        document.getElementById("Prov").style = "border-color:red;";
+        missatge = true;
+    }
+    else {
+        document.getElementById("ProvinciaBotigaInc").innerHTML = "";
+        document.getElementById("Prov").style = "border-color:#07FB7F;";
+    }
+
+
 
 }
 
@@ -664,8 +837,34 @@ function dividirCadena(cadenaADividir, separador) {
     }
 }
 
+/*Validar Cif*/
+function ValidaCIF(F) {
+
+    var v1 = new Array(0, 2, 4, 6, 8, 1, 3, 5, 7, 9);
+    var temp = 0;
+    var temp1;
+
+
+    for (i = 2; i <= 6; i += 2) {
+        var resul = false;
+        var temp = F.toUpperCase(); // pasar a mayúsculas
+        if (!/^[A-Za-z0-9]{9}$/.test(temp)) { // Son 9 dígitos? 
+            resul = false;
+        } else if (!/^[ABCDEFGHKLMNPQS]/.test(temp)) { // Es una letra de las admitidas ?
+            resul = false
+        } else {
+            resul = true;
+
+
+        }
+
+
+        return resul;
+
+    }
 
 
 
+}
 
 

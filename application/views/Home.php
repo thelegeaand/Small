@@ -330,7 +330,7 @@
     <div class="container mt-2 d-flex justify-content-left ">
       <div class="row ">
         <div class="NouTitol">
-          <h1 class="titol2">MERCAT ONLINE</h1>
+          <h1 class="titol2"><strong>MERCAT ONLINE</strong></h1>
           <p class="ml-2 subtitol">A LA TEVA CIUTAT!</p>
         </div>
       </div>
