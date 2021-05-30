@@ -102,6 +102,12 @@ a:hover{
 #logoM{
     width:100%;
 }
+.TitBotiga{
+    color:white;
+    font-weight: bold;
+    font-size:4rem;
+     text-shadow: black 0.1em 0.1em 0.2em;
+}
 .titolbot{
     font-family: 'Montserrat', sans-serif !important;
     font-size: 4.2rem;

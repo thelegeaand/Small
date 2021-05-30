@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Poppins:wght@800&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -467,10 +470,13 @@
     </div>
 
     <!--Header -->
-    <div class="container lletrero d-flex justify-content-center ">
+    <div class="container mt-5 d-flex justify-content-left ">
       <div class="row ">
-        <div class="Tlletrero text-center">
-          <h2 class="titol p-5">BOTIGUES DE "ciutat"</h2>
+        <div class="NouTitol">
+        <?php
+          echo"<h2 class='titolbot'><strong>".$ciutat."</strong></h2>";
+          echo"<p class='subtitol'>".$botiga."</p>";
+        ?>
         </div>
       </div>
     </div>
@@ -497,10 +503,10 @@
     </div>-->
     <div id="SEC">
       <ul class="menu">
-      <li><a href="#">Fruiteries</a></li>
-      <li><a href="#">Carn/Xarc.</a></li>
-      <li><a href="#">Aviram </a></li>
-      <li><a href="#">Peixateries</a></li>
+      <li><a href="http://localhost/Small/index.php/SmallController/IniciClient4">Fruiteries</a></li>
+      <li><a href="http://localhost/Small/index.php/SmallController/IniciClient">Carn/Xarc.</a></li>
+      <li><a href="http://localhost/Small/index.php/SmallController/IniciClient2">Aviram </a></li>
+      <li><a href="http://localhost/Small/index.php/SmallController/IniciClient3">Peixateries</a></li>
     
      
       <li class="slider"></li>
@@ -508,78 +514,62 @@
     </div>
     <!--Secció Botigues-Apartat amb  totes les botigues de la secció escollida -->
     <section id="Botigues">
-      <div class="container d-flex justify-content-right mt-2 mb-5  ">
+      <div class="container d-flex justify-content-center mt-5 mb-5 bordeBot ">
         <div class="row mt-5 mb-5">
-                
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4 class="mb-3">CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor" href="">Anar</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div> 
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4 class="mb-3">CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4 class="mb-3">CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
-              </div>
-            </div>
-          </div>
+        <?php
 
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4 class="mb-3">CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4 class="mb-3">CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card">
-              <div>
-                <img style="height:199px;padding:0px;margin: 0px;width: 100%;" src="<?php echo base_url(); ?>img/r.jpg" class="card-img img-fluid" alt="Imatge Botiga">
-              </div>
-              <div class="card-body bg-light text-center" style="padding-bottom:10%;">
-                <h4 class="mb-3">CASA RAMIREZ</h4>
-                <button type="button" class="btn" id="bcolor">Anar</button>
-              </div>
-            </div>
-          </div>
+        if(!empty($dades)){
+
+          foreach($dades as $fila){
+            echo"<div class='col-md-4 mt-2'>";
+              echo"<div class='card'>";
+              $tipus=$fila["tipus_banner"];
+              $banner=$fila["img_banner"];
+
+              if(empty($tipus)||empty($banner)){
+
+                echo"<div><img style='height:199px;padding:0px;margin: 0px;width: 100%;'src='http://localhost/Small/img/r.jpg' class='card-img img-fluid' alt='Imatge Botiga'>
+                </div>";
+
+              }else{
+                echo'<div><img style="height:199px;padding:0px;margin: 0px;width: 100%;"class="card-img img-fluid" alt="Imatge Botiga" src="data:'.$tipus.';base64,'.base64_encode($banner).'"></div>';
+
+
+              }
+                
+               
+                echo"<div class='card-body bg-light text-center' style='padding-bottom:10%;'>";
+                  echo"<h4>".$fila['nom_botiga']."</h4>";
+                  echo "<button  type='button' class='btn' id='bcolor'>Anar</button>";
+                echo"</div>";
+              echo"</div>";
+            echo"</div>";
+          }
+
+        }else{
+          ?>
+
+<div class="container mb-5">
+  <div class='row'>
+    <div class="alert-box" style="float: none; margin: 0 auto;">
+    <div class="alert alert-success">
+      <div class="alert-icon text-center">
+      <img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logoM2" alt="Imatge Corporativa Small">
+      </div>
+      <div class="alert-message text-center">
+        <p><strong>Disculpi les molèsties...<br>No hi han Botigues disponibles de la categoria seleccionada.</strong></p> 
+      </div>
+    
+    </div>
+  </div>
+  </div>
+</div>
+<?php
+        }
+          ?>
         </div>
       </div>
+
     </section>
   </main>
   <!--Footer Small -->

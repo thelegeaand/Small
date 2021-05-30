@@ -147,6 +147,17 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
         return $dades->result_array();
 
    }
+
+   public function Botiga($idbotiga){
+
+    $sql="SELECT * FROM botiga 
+    WHERE id_botiga=".$idbotiga."";
+    
+        $dades=$this->db->query($sql);
+
+        return $dades->result_array();
+
+   }
    
 }
     

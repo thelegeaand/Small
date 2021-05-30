@@ -437,7 +437,7 @@
     </div>
     </header>
 
-<main class="">
+<main >
     <div class="col-md-12 fondotienda">
         <div class="row">
         <div class="col-md-6 logoBotiga ">

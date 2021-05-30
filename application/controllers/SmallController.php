@@ -310,10 +310,18 @@ class SmallController extends CI_Controller
 
             if ($session == "client") {
 
-                $session = $this->session->userdata('validat');
+                $sessionid = $this->session->userdata('validat');
 
-            
-                $this->load->view('IniciClient2');
+                $dades = $this->SmallModel->CiutatClient($sessionid);
+
+                $ciutat = $dades[0]['ciutat'];
+                $ciutatMajus = mb_strtoupper($ciutat);
+                $tipus="Aviram";
+                $botiga="L'AVIRAM";
+
+                $data = $this->SmallModel->MostrarBotiguesCiutat($tipus,$ciutat);
+
+                $this->load->view('IniciClient2',array('ciutat'=>$ciutatMajus,'botiga'=>$botiga,'dades'=>$data));
             } else {
 
                 $this->load->view('Home');
@@ -331,10 +339,18 @@ class SmallController extends CI_Controller
 
             if ($session == "client") {
 
-                $session = $this->session->userdata('validat');
+             $sessionid = $this->session->userdata('validat');
 
-            
-                $this->load->view('IniciClient3');
+                $dades = $this->SmallModel->CiutatClient($sessionid);
+
+                $ciutat = $dades[0]['ciutat'];
+                $ciutatMajus = mb_strtoupper($ciutat);
+                $tipus="Peix";
+                $botiga="PEIXATERIES";
+
+                $data = $this->SmallModel->MostrarBotiguesCiutat($tipus,$ciutat);
+                
+                $this->load->view('IniciClient3',array('ciutat'=>$ciutatMajus,'botiga'=>$botiga,'dades'=>$data));
             } else {
 
                 $this->load->view('Home');
@@ -353,9 +369,18 @@ class SmallController extends CI_Controller
 
             if ($session == "client") {
 
-                $session = $this->session->userdata('validat');
+                $sessionid = $this->session->userdata('validat');
 
-                $this->load->view('IniciClient4');
+                $dades = $this->SmallModel->CiutatClient($sessionid);
+
+                $ciutat = $dades[0]['ciutat'];
+                $ciutatMajus = mb_strtoupper($ciutat);
+                $tipus="Fruita";
+                $botiga="FRUITERIES";
+
+                $data = $this->SmallModel->MostrarBotiguesCiutat($tipus,$ciutat);
+                
+                $this->load->view('IniciClient4',array('ciutat'=>$ciutatMajus,'botiga'=>$botiga,'dades'=>$data));
 
             } else {
 
@@ -394,7 +419,7 @@ class SmallController extends CI_Controller
             $this->load->view('Home');
         } else {
 
-            if ($session == "botiga") {
+            if ($session == "Botiga") {
 
                 $this->load->view('IniciBotiga');
             } else {
@@ -402,6 +427,30 @@ class SmallController extends CI_Controller
                 $this->load->view('Home');
             }
         }
+    }
+
+    public function Botiga($idbotiga){
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "client") {
+
+                $data = $this->SmallModel->Botiga($idbotiga);
+                
+                $this->load->view('Botiga',array('Abotiga'=>$data));
+
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
     }
 
 

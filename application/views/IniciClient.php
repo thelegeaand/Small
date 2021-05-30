@@ -510,10 +510,10 @@
     </div>-->
     <div id="SEC">
       <ul class="menu">
-        <li><a href="#">Carn/Xarc.</a></li>
-        <li><a href="#">Aviram </a></li>
-        <li><a href="#">Peixateries</a></li>
-        <li><a href="#">Fruiteries</a></li>
+        <li><a href="http://localhost/Small/index.php/SmallController/IniciClient">Carn/Xarc.</a></li>
+        <li><a href="http://localhost/Small/index.php/SmallController/IniciClient2">Aviram </a></li>
+        <li><a href="http://localhost/Small/index.php/SmallController/IniciClient3">Peixateries</a></li>
+        <li><a href="http://localhost/Small/index.php/SmallController/IniciClient4">Fruiteries</a></li>
         <li class="slider"></li>
       </ul>
     </div>
@@ -527,6 +527,7 @@
           foreach($dades as $fila){
             echo"<div class='col-md-4 mt-2'>";
               echo"<div class='card'>";
+              $idbotiga=$fila['id_botiga'];
               $tipus=$fila["tipus_banner"];
               $banner=$fila["img_banner"];
 
@@ -540,11 +541,9 @@
 
 
               }
-                
-               
                 echo"<div class='card-body bg-light text-center' style='padding-bottom:10%;'>";
                   echo"<h4>".$fila['nom_botiga']."</h4>";
-                  echo "<button  type='button' class='btn' id='bcolor'>Anar</button>";
+                  echo "<a  type='button' class='btn' id='bcolor' href='".base_url()."index.php/SmallController/Botiga/".$idbotiga."'>Anar</a>";
                 echo"</div>";
               echo"</div>";
             echo"</div>";
