@@ -537,9 +537,10 @@ $imgprod=$fila["img_prod"];
 $tipusprod=$fila["tipus_prod"];
 
 ?>
-  <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-      <div class="card mt-2">
-      <?php
+ <?php
+  echo"<div class='col-12 col-sm-6 col-md-4 col-lg-4'>";
+      echo"<div class='card mt-2'>";
+     
           echo'<img class="card-img-top" style="height:20rem;" src="data:'.$tipusprod.';base64,'.base64_encode($imgprod).'"" alt="Producte Botiga">';
           echo"<div class='card-body' style='padding-bottom:5%; background-color: #ECECEC!important;''>";
           echo"<h3 class='card-title'>".$fila["nom"]."</h3>";
@@ -549,6 +550,10 @@ $tipusprod=$fila["tipus_prod"];
           echo" <div class='buy justify-content-center align-items-center'>";
           echo"<a href='" . base_url() . "index.php/SmallController/AfegirCarrito/".$fila["id_producte"] ."/1' class='btn mt-3' id='bcolor'>Afegir</a>";
           echo"</div>";
+          echo"</div>";
+          echo"</div>";
+          echo"</div>";
+              
 }
 }else{
 
@@ -571,8 +576,8 @@ $tipusprod=$fila["tipus_prod"];
 </div>
 <?php
         }
-          ?>   
-        </div>
+          ?>  
+          
       </div>
     </div>
   </div>
