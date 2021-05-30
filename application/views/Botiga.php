@@ -502,9 +502,9 @@
              echo "<div class='container'>";
                   echo "<div class='col-md-12 text-center'>";
                        echo "<h1 class='mt-4 TitBotiga'>".mb_strtoupper($fila['nom_botiga'])."</h1>";
-                       echo "<p class='mt-4 DescBotiga'></p>";
-                       echo "<p class='mt-4 DireccioBotiga'>Carrer de la verge de l'assumpcio 57</p>";
-                       echo "<p class='mt-4 ContBotiga'>Contacte:</p>";
+                       echo "<p class='mt-4 DescBotiga'>".$fila['descripció']."</p>";
+                       echo "<p class='mt-4 DireccioBotiga'>Direcció:".$fila['província'].",".$fila['ciutat'].",".$fila['carrer']." ".$fila['numero']."</p>";
+                       echo "<p class='mt-4 ContBotiga'>Contacte:".$fila['contacte']."</p>";
              echo "</div>";
             echo "</div>";
            echo "</div>";
@@ -520,76 +520,39 @@
         </div>
     </div>
 
-    <div class="container d-flex justify-content-right mt-2 mb-5">
-       
-        <div class="col-md-4 mt-2">
-        <div class="cartaProd border">
-                <div class="fotoProd">
-                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
+<div class="container mt-5 mb-5">
+<div class="row mb-2">
+<?php
 
-                </div>
-                <div class="cuerpoProd border">
-                <div class="row mt-2">
-                    <div class="DescProd text-center col-md-12">
-                        <h5>Jamón 5J 6kg</h5>
-                    </div>
-                </div>
-                <div class="row mb-4 mt-2">
-                    <div class="PrecioProd text-center col-md-12">
-                        <h5>Precio: 400€</h5>
-                    </div>
-                    <div class="PrecioProd col-md-12 text-center">
-                    <a class="btn " id="bcolor" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#AfegirProd">Afegir Producte</a>                    </div>
-                </div>
-                </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-          <div class="cartaProd border">
-                <div class="fotoProd">
-                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
+foreach($Pbotiga as $fila){
 
-                </div>
-                <div class="cuerpoProd border">
-                <div class="row mt-2">
-                    <div class="DescProd text-center col-md-12">
-                        <h5>Jamón 5J 6kg</h5>
-                    </div>
-                </div>
-                <div class="row mb-4 mt-2">
-                    <div class="PrecioProd text-center col-md-12">
-                        <h5>Precio: 400€</h5>
-                    </div>
-                    <div class="PrecioProd col-md-12 text-center">
-                    <a class="btn " id="bcolor" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#AfegirProd">Afegir Producte</a>                    </div>
-                </div>
-                </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-          <div class="cartaProd border">
-                <div class="fotoProd">
-                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
+    
+$imgprod=$fila["img_prod"];
+$tipusprod=$fila["tipus_prod"];
 
-                </div>
-                <div class="cuerpoProd border">
-                <div class="row mt-2">
-                    <div class="DescProd text-center col-md-12">
-                        <h5>Jamón 5J 6kg</h5>
-                    </div>
-                </div>
-                <div class="row mb-4 mt-2">
-                    <div class="PrecioProd text-center col-md-12">
-                        <h5>Precio: 400€</h5>
-                    </div>
-                    <div class="PrecioProd col-md-12 text-center">
-                    <a class="btn " id="bcolor" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#AfegirProd">Afegir Producte</a>                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-          </div>
-        
+
+?>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="card mt-2">
+      <?php
+          echo'<img class="card-img-top" style="height:20rem;" src="data:'.$tipusprod.';base64,'.base64_encode($imgprod).'"" alt="Producte Botiga">';
+          echo"<div class='card-body' style='padding-bottom:5% !important;''>";
+          echo"<h3 class='card-title'>".$fila["nom"]."</h3>";
+          echo"<p class='card-text'>".$fila["descripció"]."</p>";
+          echo"<h5 class='card-subtitle mb-2'><strong>Preu:".$fila["preu_kg"]." €</strong></h6>";
+         
+          echo" <div class='buy justify-content-center align-items-center'>";
+          echo"<a href='#' class='btn mt-3' id='bcolor'>Afegir</a>";
+          echo"</div>";
+          
+
+}
+   ?>
+          
+        </div>
+      </div>
+    </div>
+  </div>
     </div>
 
   </main>

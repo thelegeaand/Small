@@ -442,8 +442,9 @@ class SmallController extends CI_Controller
             if ($session == "client") {
 
                 $data = $this->SmallModel->Botiga($idbotiga);
+                $data2 = $this->SmallModel->Productes($idbotiga);
                 
-                $this->load->view('Botiga',array('Abotiga'=>$data));
+                $this->load->view('Botiga',array('Abotiga'=>$data,'Pbotiga'=>$data2));
 
             } else {
 
