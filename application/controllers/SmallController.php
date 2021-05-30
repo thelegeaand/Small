@@ -104,9 +104,49 @@ class SmallController extends CI_Controller
         }
     }
 
+    public function registrebotigues()
+    {
+        $Numero = $this->input->post('Number');
+        $NomPropietari = $this->input->post('NomPropietari');
+        $NomUsuari = $this->input->post('NomUsuari');
+        $Password = $this->input->post('Password');
+        $NomBotiga = $this->input->post('NomBotiga');
+        $NomEmpresa = $this->input->post('NomEmpresa');
+        $TipusBotiga = $this->input->post('TipusBotiga');
+        $CIF = $this->input->post('Cif');
+        $CorreuEmpresa = $this->input->post('CorreuE');
+        $Ciutat = $this->input->post('Ciutat');
+        $Carrer = $this->input->post('Carrer');
+        $Provincia = $this->input->post('Provincia');
+        $CodiPostal = $this->input->post('cpostal');
+        
+        $Iban = $this->input->post('IbanComplet');
+        $passwordE = md5($Password);
+        $data['dada'] = $this->input->post();
+
+        $this->form_validation->set_rules('CorreuE', 'CorreuE', 'is_unique[botiga.correu]');
+        $this->form_validation->set_rules('NomUsuari', 'NomUsuari', 'is_unique[usuaris.nom_usuari]');
+
+        if ($this->form_validation->run() == FALSE) {
+
+            echo "notunique";
+
+        } else {
+
+            $this->SmallModel->NouUsuari($NomUsuari, $passwordE, 0);
+
+            $dades = $this->SmallModel->CodiUsuari($NomUsuari);
+
+            $id = $dades[0]['id_usuari'];
+
+            $this->SmallModel->NovaBotiga($id, $NomPropietari,$NomBotiga, $TipusBotiga,$NomEmpresa, $CIF, $CorreuEmpresa, $Ciutat, $Carrer,$Provincia,$CodiPostal,$Iban,$Numero);
+
+            echo "ok";
+        }
+    }
+
     public function inicisessio()
     {
-
         $NomUsuari = $this->input->post('NomUsuariIS');
         $Password = $this->input->post('PasswordIS');
         $comp = "";
@@ -235,11 +275,23 @@ class SmallController extends CI_Controller
 
             if ($session == "client") {
 
-                $session = $this->session->userdata('validat');
+                $sessionid = $this->session->userdata('validat');
+
+                $dades = $this->SmallModel->CiutatClient($sessionid);
+
+                $ciutat = $dades[0]['ciutat'];
+                $ciutatMajus = mb_strtoupper($ciutat);
+                $tipus="Carn";
+                $botiga="CARNISSERIES/XARCUTERIES";
+
+                $data = $this->SmallModel->MostrarBotiguesCiutat($tipus,$ciutat);
+
+
+    
 
 
 
-                $this->load->view('IniciClient');
+                $this->load->view('IniciClient',array('ciutat'=>$ciutatMajus,'botiga'=>$botiga,'dades'=>$data));
             } else {
 
                 $this->load->view('Home');

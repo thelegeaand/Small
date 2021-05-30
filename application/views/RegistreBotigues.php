@@ -411,7 +411,7 @@
                   <span style='color:red;' id="CifBotigaInc"></span>
                     <input type="text" class="form-control " id="Cif" placeholder="CIF" required>
                   </div>
-                  <div class="col-md-6 ">
+                  <div class="col-md-6 mb-3 ">
                   <span style='color:red;' id="CorreuBotigaInc"></span>
                     <input type="text" class="form-control" id="CElectronic" placeholder="Correu Electrònic Empresa" required>
                   </div>
@@ -446,9 +446,9 @@
 
 
                 <div class="form-row mt-4">
-                  <div class="col-md-3 mb-3 text-center">
+                  <div class="col-md-3 mb-3">
                   <span style='color:red;' id="IbanBotigaInc"></span>
-                    <input type="text" class="form-control" id="CodiIban" placeholder="ES 21" readonly>
+                    <input type="text" class="form-control" id="CodiIban" placeholder="ES" value="ES" disabled>
                   </div>
                   <div class="col-md-9 mb-3">
                     <input type="text" class="form-control" id="Iban" placeholder="IBAN" required>

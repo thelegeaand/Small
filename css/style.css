@@ -102,6 +102,11 @@ a:hover{
 #logoM{
     width:100%;
 }
+.titolbot{
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 4.2rem;
+
+}
 
 #logoM2{
     width:60%;

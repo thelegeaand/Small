@@ -481,11 +481,16 @@ function registrebotiga(){
     var CorreuE=document.getElementById("CElectronic").value;
     var Provincia=document.getElementById("Prov").value;
     var Ciutat=document.getElementById("Ciut").value;
-    var CodiPost=document.getElementById("Carrer").value;
-    var Carrer=document.getElementById("Numero").value;
+    var CodiPost=document.getElementById("CodiPost").value;
+    var Carrer=document.getElementById("Carrer").value;
+    var Numero=document.getElementById("Numero").value;
     var TipusBotiga=document.getElementById("TipusBotiga").value;
     var IBAN=document.getElementById("Iban").value;
+    var PIban=document.getElementById("CodiIban").value;
+    var IbanComplet=PIban+""+IBAN;
     missatge=false;
+
+    
 
     var CompNomProp = number(NomPropietari);
     var CompNomUsu=number(NomUsuari);
@@ -495,6 +500,11 @@ function registrebotiga(){
     var CompNomEmp = number(NomEmpresa);    
     var CompCif=ValidaCIF(Cif);
     var CompEmail = ComprobarEmail(CorreuE);
+    var CompCP = ComprobarCodiPostal(CodiPost);
+    var CompIban=ValidateIBAN(IbanComplet);
+
+
+ 
 
     /*NomPropietari*/
 
@@ -546,7 +556,7 @@ function registrebotiga(){
         missatge = true;
 
     } else if (formatContrasenya != true) {
-        document.getElementById("PasswInc").innerHTML = "<br>Ha de tenir almenys una majúscula, minúscula, caràcter especial i màxim 6 caràcters.";
+        document.getElementById("PasswInc").innerHTML = "Ha de tenir almenys una majúscula, minúscula, caràcter especial i màxim 6 caràcters.";
         document.getElementById("P").style = "border-color:red;";
         document.getElementById("P2").style = "border-color:red;";
         missatge = true;
@@ -636,14 +646,15 @@ function registrebotiga(){
         document.getElementById("CorreuBotigaInc").innerHTML = "";
         document.getElementById("CElectronic").style = "border-color:#07FB7F;";
     }
+
     /*Provincia*/
     if (Provincia == "") {
-        document.getElementById("ProvinciaBotigaInc").innerHTML = "<br>Camp en blanc";
+        document.getElementById("ProvinciaBotigaInc").innerHTML = "Camp en blanc";
         document.getElementById("Prov").style = "border-color:red;";
         missatge = true;
 
     } else if (Provincia.length > 50) {
-        document.getElementById("ProvinciaBotigaInc").innerHTML = "<br>Format incorrecte";
+        document.getElementById("ProvinciaBotigaInc").innerHTML = "Format incorrecte";
         document.getElementById("Prov").style = "border-color:red;";
         missatge = true;
     }
@@ -652,8 +663,259 @@ function registrebotiga(){
         document.getElementById("Prov").style = "border-color:#07FB7F;";
     }
 
+    /*Ciutat*/
+    if (Ciutat == "") {
+        document.getElementById("CiutatBotigaInc").innerHTML = "Camp en blanc";
+        document.getElementById("Ciut").style = "border-color:red;";
+        missatge = true;
+
+    } else if (Ciutat.length > 50) {
+
+        document.getElementById("CiutatBotigaInc").innerHTML = "Format incorrecte";
+        document.getElementById("Ciut").style = "border-color:red;";
+        missatge = true;
+
+    }
+    else {
+        document.getElementById("CiutatBotigaInc").innerHTML = "";
+        document.getElementById("Ciut").style = "border-color:#07FB7F;";
+    }
+
+    /*CodiPostal*/
+    if (CodiPost == "") {
+        document.getElementById("CodiPBotigaInc").innerHTML = "Camp en blanc";
+        document.getElementById("CodiPost").style = "border-color:red;";
+        missatge = true;
+
+    } else if (CompCP != true) {
+        document.getElementById("CodiPBotigaInc").innerHTML = "Format incorrecte";
+        document.getElementById("CodiPost").style = "border-color:red;";
+        missatge = true;
+
+    }
+    else {
+        document.getElementById("CodiPBotigaInc").innerHTML = "";
+        document.getElementById("CodiPost").style = "border-color:#07FB7F;";
+    }
+
+     /*Carrer*/
+     if (Carrer == "") {
+        document.getElementById("CarrerBotigaInc").innerHTML = "Camp en blanc";
+        document.getElementById("Carrer").style = "border-color:red;";
+        missatge = true;
+
+    } else if (Carrer.length > 50) {
+
+        document.getElementById("CarrerBotigaInc").innerHTML = "Format incorrecte";
+        document.getElementById("Carrer").style = "border-color:red;";
+        missatge = true;
+
+    }
+    else {
+        document.getElementById("CarrerBotigaInc").innerHTML = "";
+        document.getElementById("Carrer").style = "border-color:#07FB7F;";
+    }
+
+    /*Numero*/
+    if(Numero==""){
+
+        document.getElementById("NumeroBotigaInc").innerHTML = "Camp en blanc";
+        document.getElementById("Numero").style = "border-color:red;";
+        missatge = true;
+
+    }else if(Numero <= 0){
+
+        document.getElementById("NumeroBotigaInc").innerHTML = "Format incorrecte";
+        document.getElementById("Numero").style = "border-color:red;";
+        missatge = true;
 
 
+    }else{
+        document.getElementById("NumeroBotigaInc").innerHTML = "";
+        document.getElementById("Numero").style = "border-color:#07FB7F;";
+
+    }
+
+    /*IBAN*/
+/*Numero*/
+if(IBAN==""){
+
+    document.getElementById("IbanBotigaInc").innerHTML = "Camp en blanc";
+    document.getElementById("Iban").style = "border-color:red;";
+    missatge = true;
+
+}else if(CompIban!=true){
+
+    document.getElementById("IbanBotigaInc").innerHTML = "Format incorrecte";
+    document.getElementById("Iban").style = "border-color:red;";
+    missatge = true;
+
+
+}else{
+    document.getElementById("IbanBotigaInc").innerHTML = "";
+    document.getElementById("Iban").style = "border-color:#07FB7F;";
+
+}
+
+ /*SweetAlert*/
+ if (missatge != true) {
+
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === this.DONE) {
+            var data = JSON.parse(this.responseText);
+
+            if (data.length==undefined) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'No s\'ha trobat cap ciutat com la introduida...',
+                 
+                  })
+
+            } else {
+
+                var coma = ",";
+                var string = data[0]['display_name'];
+                var arrayDeCadenas = "";
+                arrayDeCadenas = string.split(coma);
+                var Ciutat2="";
+                var Comarca2="";
+                var Provincia2="";
+                var Comunitat="";
+                var CodiP="null";
+                var Pais="";
+
+                var longStringAPI=arrayDeCadenas.length;
+
+            if(longStringAPI==6){
+
+               Ciutat2 = arrayDeCadenas[0];
+               Comarca2=arrayDeCadenas[1];
+               Provincia2 = arrayDeCadenas[2];
+               Comunitat=arrayDeCadenas[3];
+               CodiP=arrayDeCadenas[4];
+               Pais=arrayDeCadenas[5];
+
+               
+
+            }else if(longStringAPI==5){
+
+                Ciutat2 = arrayDeCadenas[0];
+                Comarca2 = arrayDeCadenas[1];
+                Provincia2=arrayDeCadenas[2];
+                Comunitat=arrayDeCadenas[3];
+                Pais=arrayDeCadenas[4];
+                
+            }
+
+            if(Ciutat2==""||Provincia2==""){
+
+                document.getElementById("CodiPost").style = "border-color:red;";
+                document.getElementById("Ciut").style = "border-color:red;";
+                document.getElementById("Prov").style = "border-color:red;";
+
+                 Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'No s\'ha trobat cap ciutat com la introduida...(Especifica més)',
+                 
+                  })
+
+            }else{
+
+                Swal.fire({
+                    title: 'És aquesta ciutat la teva?',
+                    text: "" + Ciutat2 + ","+ Provincia2 + ","+Comunitat+","+Comarca2+","+Pais+".",
+                    showDenyButton: true,
+                    showCancelButton: false,
+                    confirmButtonText: `Si`,
+                    denyButtonText: `No`,
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                   
+                    var Request = new XMLHttpRequest();
+                    Request.onreadystatechange = function () {
+                        console.log(this.readyState);
+                        console.log(this.status);
+                        
+                        if (this.readyState == 4 && this.status == 200) {
+                            var m = Request.responseText;
+                            alert(m);
+                    
+                            if (m == "ok") {
+                                document.getElementById("correuInc").innerHTML = "";
+                                document.getElementById("Correu").style = "border-color:#07FB7F;";
+                
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Registrat Correctament!',
+                                    text: 'El teu Nom d\'usuari per iniciar sessió és ' + NomUsuari + '.'
+                                }).then((value) => {
+
+
+                           
+                                    window.location.href="http://localhost/Small/index.php/SmallController/index";
+                                    
+                                  });
+                            } else if (m == "notunique") {
+                
+                                document.getElementById("correuInc").innerHTML = "Aquest correu ja existeix";
+                                document.getElementById("Correu").style = "border-color:red;";
+                
+                            } else {
+                                document.getElementById("correuInc").innerHTML = "";
+                                document.getElementById("Correu").style = "border-color:#07FB7F;";
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'Disculpa les molèsties, això no hauria d\'estar passant'
+                                });
+                
+                            }
+                        }
+                    };
+                
+                    
+                    Request.open("POST", "http://localhost/Small/index.php/SmallController/registrebotigues", true);
+                    Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    Request.send("Number=" + Numero + "&NomUsuari=" + NomUsuari + "&Password=" 
+                    + Password+ "&NomBotiga=" + NomBotiga + "&NomEmpresa=" + NomEmpresa +"&TipusBotiga="+TipusBotiga+"&Cif="+Cif+"&Provincia="+Provincia2+"&cpostal="+CodiP+"&Ciutat="+Ciutat2+"&Carrer="+Carrer+"&NomPropietari=" + NomPropietari+"&IbanComplet="+IbanComplet+"&CorreuE="+CorreuE);
+                }else if (result.isDenied) {          
+                }
+                })     
+            }       
+            }
+        }
+    });
+    xhr.open("GET", "https://forward-reverse-geocoding.p.rapidapi.com/v1/search?q="+Ciutat+" "+Provincia+" "+CodiPost+"&format=json&accept-language=es&polygon_threshold=0.0");
+    xhr.setRequestHeader("x-rapidapi-key", "5018451283msh0b39ed77f1b8c11p195cb7jsnf3a9897e0f1d");
+    xhr.setRequestHeader("x-rapidapi-host", "forward-reverse-geocoding.p.rapidapi.com");
+    xhr.send();
+
+
+
+   
+}else{
+
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No s\'ha pogut dur a terme el registre correctament!'
+    });
+    
+}
+
+
+
+
+
+    
+
+
+     
 }
 
 
@@ -865,6 +1127,59 @@ function ValidaCIF(F) {
 
 
 
+}
+
+/*Validar Iban*/
+
+function ValidateIBAN(IBAN) {
+
+    //Se pasa a Mayusculas
+    IBAN = IBAN.toUpperCase();
+    //Se quita los blancos de principio y final.
+    IBAN = IBAN.trim();
+    IBAN = IBAN.replace(/\s/g, ""); //Y se quita los espacios en blanco dentro de la cadena
+
+    var letra1,letra2,num1,num2;
+    var isbanaux;
+    var numeroSustitucion;
+    //La longitud debe ser siempre de 24 caracteres
+    if (IBAN.length != 24) {
+        return false;
+    }
+
+    // Se coge las primeras dos letras y se pasan a números
+    letra1 = IBAN.substring(0, 1);
+    letra2 = IBAN.substring(1, 2);
+    num1 = getnumIBAN(letra1);
+    num2 = getnumIBAN(letra2);
+    //Se sustituye las letras por números.
+    isbanaux = String(num1) + String(num2) + IBAN.substring(2);
+    // Se mueve los 6 primeros caracteres al final de la cadena.
+    isbanaux = isbanaux.substring(6) + isbanaux.substring(0,6);
+
+    //Se calcula el resto, llamando a la función modulo97, definida más abajo
+    resto = modulo97(isbanaux);
+    if (resto == 1){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function modulo97(iban) {
+    var parts = Math.ceil(iban.length/7);
+    var remainer = "";
+
+    for (var i = 1; i <= parts; i++) {
+        remainer = String(parseFloat(remainer+iban.substr((i-1)*7, 7))%97);
+    }
+
+    return remainer;
+}
+
+function getnumIBAN(letra) {
+    ls_letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    return ls_letras.search(letra) + 10;
 }
 
 

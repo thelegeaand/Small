@@ -35,6 +35,19 @@ public function NouClient($idUsuari,$Nom,$Cognom,$Cognom2,$Dni,$Data,$Correu,$Ci
     return $num_files;
     }
 
+public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpresa,$CIF,$CorreuEmpresa,$Ciutat,$Carrer,$Provincia,$CodiPostal,$Iban,$Numero){
+   
+    $sql="insert into botiga(id_usuari,nom_propietari,nom_botiga,nom_empresa,cif,correu,tipus,iban,província,ciutat,codi_postal,carrer,numero)
+    values(".$id.",'".$NomPropietari."','".$NomBotiga."','".$NomEmpresa."','".$CIF."','".$CorreuEmpresa."','".$TipusBotiga."','".$Iban."','".$Provincia."','".$Ciutat."','".$CodiPostal."','".$Carrer."',".$Numero.")";
+    
+    $this->db->query($sql);
+    
+    $num_files=$this->db->affected_rows();
+    
+    return $num_files;
+
+}
+
     public function CodiUsuari($NomUsuari){
     
         $sql="SELECT * FROM usuaris WHERE nom_usuari='".$NomUsuari."'";
@@ -95,7 +108,7 @@ public function NouClient($idUsuari,$Nom,$Cognom,$Cognom2,$Dni,$Data,$Correu,$Ci
 
    public function InciarSessio($NomUsuari,$Password){
 
-    $sql="SELECT * FROM usuaris WHERE nom_usuari='".$NomUsuari."' AND contrasenya='".$Password."'";
+    $sql="SELECT * FROM usuaris WHERE nom_usuari='".$NomUsuari."' AND contrasenya='".$Password."' AND estat=1 ";
     $query=$this->db->query($sql);
     $count=$query->num_rows();
 
@@ -107,6 +120,27 @@ public function NouClient($idUsuari,$Nom,$Cognom,$Cognom2,$Dni,$Data,$Correu,$Ci
 
     $sql="SELECT * FROM botiga b LEFT JOIN usuaris u ON b.id_usuari=u.id_usuari 
     WHERE u.estat=1 AND b.tipus='".$tipus."'";
+    
+        $dades=$this->db->query($sql);
+
+        return $dades->result_array();
+
+   }
+
+   public function CiutatClient($idUsuari){
+    $sql="SELECT * FROM client c LEFT JOIN usuaris u ON c.id_usuari=u.id_usuari 
+    WHERE u.id_usuari=".$idUsuari."";
+    
+    $dades=$this->db->query($sql);
+
+    return $dades->result_array();
+
+   } 
+
+   public function MostrarBotiguesCiutat($tipus,$ciutat){
+
+    $sql="SELECT * FROM botiga b LEFT JOIN usuaris u ON b.id_usuari=u.id_usuari 
+    WHERE u.estat=1 AND b.tipus='".$tipus."' AND b.ciutat='".$ciutat."'";
     
         $dades=$this->db->query($sql);
 
