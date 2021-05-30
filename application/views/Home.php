@@ -331,11 +331,6 @@
       <div class="row ">
         <div class="NouTitol">
           <h1 class="titol2"><strong>MERCAT ONLINE</strong></h1>
-          <?php foreach ($this->cart->contents() as $items){
-
-            
-          }
-            ?>
           <p class="ml-2 subtitol">A LA TEVA CIUTAT!</p>
         </div>
       </div>

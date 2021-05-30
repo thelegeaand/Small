@@ -455,19 +455,76 @@ class SmallController extends CI_Controller
 
     }
 
-    public function AfegirCarrito(){
+    public function AfegirCarrito($id,$quantitat){
 
-        $data = array(
-            'id'      => 'sku_123ABC',
-            'qty'     => 1,
-            'price'   => 39.95,
-            'name'    => 'T-Shirt',
-            'options' => array('Size' => 'L', 'Color' => 'Red')
-    );
+        $session = $this->session->userdata('tipus');
 
-    $this->cart->insert($data);
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "client") {
+                $ProdInfo = $this->SmallModel->ControlProductes($id);
+                $preu = $ProdInfo[0]['preu_kg'];
+                $img= $ProdInfo[0]['img_prod'];
+                $tipus=$ProdInfo[0]['tipus_prod'];
+                $nom=$ProdInfo[0]['nom'];
+
+                    $data = array(
+                        'id'      => $id,
+                        'qty'     => $quantitat,
+                        'price'   => $preu,
+                        'name'    => $nom,
+                        'options' => array('img' => $img, 'tipus' => $tipus)
+                );
+                
+            
+                 $this->cart->insert($data);
+                 $this->load->view('MissatgeAfegir');
+
+
+                 
+
     
-    $this->load->view('Home');
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
+      
+
+     
+    }
+
+    public function BuidarCarrito(){
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "client") {
+
+                $this->cart->destroy();
+                $this->load->view('BuidarCarrito');
+    
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
+      
+        
+    }
+
+    public function TramitarCarrito(){
 
     }
 

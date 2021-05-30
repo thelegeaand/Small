@@ -170,6 +170,17 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
 
    }
 
+   public function ControlProductes($id){
+
+    $sql="SELECT * FROM producte
+    WHERE id_producte=".$id."";
+    
+        $dades=$this->db->query($sql);
+
+        return $dades->result_array();
+
+   }
+
    
 }
     

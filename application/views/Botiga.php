@@ -547,7 +547,7 @@ $tipusprod=$fila["tipus_prod"];
           echo"<h5 class='card-subtitle mb-2'><strong>Preu:".$fila["preu_kg"]." €</strong></h6>";
          
           echo" <div class='buy justify-content-center align-items-center'>";
-          echo"<a href='#' class='btn mt-3' id='bcolor'>Afegir</a>";
+          echo"<a href='" . base_url() . "index.php/SmallController/AfegirCarrito/".$fila["id_producte"] ."/1' class='btn mt-3' id='bcolor'>Afegir</a>";
           echo"</div>";
 }
 }else{
