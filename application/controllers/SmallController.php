@@ -14,6 +14,7 @@ class SmallController extends CI_Controller
         $this->load->library("session");
         $this->load->library('form_validation');
         $this->load->model('SmallModel');
+        $this->load->library('cart');
     }
 
     public function index()
@@ -451,6 +452,22 @@ class SmallController extends CI_Controller
                 $this->load->view('Home');
             }
         }
+
+    }
+
+    public function AfegirCarrito(){
+
+        $data = array(
+            'id'      => 'sku_123ABC',
+            'qty'     => 1,
+            'price'   => 39.95,
+            'name'    => 'T-Shirt',
+            'options' => array('Size' => 'L', 'Color' => 'Red')
+    );
+
+    $this->cart->insert($data);
+    
+    $this->load->view('Home');
 
     }
 

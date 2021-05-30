@@ -491,12 +491,18 @@
     $tipuslogo=$fila["tipus_logo"];
     $logo=$fila["img_logo"];
     
-    echo "<div class='col-md-12' style='background: url(data:".$tipus.";base64,$base64image);background-repeat:no-repeat;background-size:cover;'>";
+    if($tipus==""||$tipus=="NULL"||empty($tipus)){
+    }else{
+        echo "<div class='col-md-12' style='background: url(data:".$tipus.";base64,$base64image);background-repeat:no-repeat;background-size:cover;'>";
+    }
         echo "<div class='row'>";
         echo "<div class='col-md-6 logoBotiga'>";
         echo "<div class='justify-content-center d-flex'>";
+        if($tipuslogo==""||$tipuslogo=="NULL"||empty($tipuslogo)){
+        }else{
         echo '<img src="data:'.$tipuslogo.';base64,'.base64_encode($logo).'" style="margin-top:8rem;border-radius:10%;"" class="w-25" alt="Logo Botiga">';
-          echo "</div>";
+        }
+        echo "</div>";
         echo "</div>";
           echo "<div class='col-md-6 InfoBotiga'>";
              echo "<div class='container'>";
@@ -524,19 +530,18 @@
 <div class="row mb-2">
 <?php
 
+if(!empty($Pbotiga)){
 foreach($Pbotiga as $fila){
 
-    
 $imgprod=$fila["img_prod"];
 $tipusprod=$fila["tipus_prod"];
-
 
 ?>
   <div class="col-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card mt-2">
       <?php
           echo'<img class="card-img-top" style="height:20rem;" src="data:'.$tipusprod.';base64,'.base64_encode($imgprod).'"" alt="Producte Botiga">';
-          echo"<div class='card-body' style='padding-bottom:5% !important;''>";
+          echo"<div class='card-body' style='padding-bottom:5%; background-color: #ECECEC!important;''>";
           echo"<h3 class='card-title'>".$fila["nom"]."</h3>";
           echo"<p class='card-text'>".$fila["descripció"]."</p>";
           echo"<h5 class='card-subtitle mb-2'><strong>Preu:".$fila["preu_kg"]." €</strong></h6>";
@@ -544,27 +549,40 @@ $tipusprod=$fila["tipus_prod"];
           echo" <div class='buy justify-content-center align-items-center'>";
           echo"<a href='#' class='btn mt-3' id='bcolor'>Afegir</a>";
           echo"</div>";
-          
-
 }
-   ?>
-          
+}else{
+
+ ?>
+
+<div class="container mb-5">
+  <div class='row'>
+    <div class="alert-box" style="float: none; margin: 0 auto;">
+    <div class="alert alert-success">
+      <div class="alert-icon text-center">
+      <img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logoM2" alt="Imatge Corporativa Small">
+      </div>
+      <div class="alert-message text-center">
+        <p><strong>Disculpi les molèsties...<br>No hi han Productes disponibles de la botiga actual.</strong></p> 
+      </div>
+    
+    </div>
+  </div>
+  </div>
+</div>
+<?php
+        }
+          ?>   
         </div>
       </div>
     </div>
   </div>
     </div>
-
   </main>
   <!--Footer Small -->
   <footer>
-
     <div class="container-fluid bgcontainer2">
-
       <div class="container">
-
         <div class="row pt-4 SmallScroll d-flex justify-content-center ">
-
           <div class="row rowc">
             <div class="col-sm-4 col-12 col-lg-4">
               <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
