@@ -29,7 +29,7 @@
       <img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logoM" alt="Imatge Corporativa Small">
       </div>
       <div class="alert-message text-center">
-        <p><strong>Has Afegit un producte al Carrito!</strong></p>
+        <p><strong>Has afegit un producte al carrito!</strong></p>
         
       
       </div>
