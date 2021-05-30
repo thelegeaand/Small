@@ -109,7 +109,7 @@
 
       <div class="collapse navbar-collapse text-center " id="navbarCollapse">
         <div class="navbar-nav">
-          <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Botigues</a>
+          <a href="http://localhost/Small/index.php/SmallController/IniciClient" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Botigues</a>
           <a href="http://localhost/Small/index.php/SmallController/HistorialComandes" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Historial</a>
           <a href="http://localhost/Small/index.php/SmallController/ModDadesPersonaRed" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Compte</a>
 
@@ -121,8 +121,8 @@
       </div>
     </nav>
 
-    <!-- Modal Carrito -->
-    <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <!-- Modal Carrito -->
+     <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5" style="border-bottom:0px;">
@@ -131,7 +131,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-         
+
           <div class="modal-body ">
 
 
@@ -139,38 +139,52 @@
               <table class="table">
 
 
-                <tr style="border:1px solid green;" class="b">
-                  <th id="quantitat" scope="row">x3</th>
-                  <td><img src="<?php echo base_url(); ?>img/Carne.jpg" id="logo" alt="Imatge Producte Carrito" style="width=100px;height:100px;"></td>
-                  <td id="descripcio">Plàtan canari - a pes(500g aprox)</td>
 
-                </tr>
 
-                
-                <tr style="border:1px solid green;" class="b">
-                  <th id="quantitat" scope="row">x3</th>
-                  <td><img src="<?php echo base_url(); ?>img/Carne.jpg" id="logo" alt="Imatge Producte Carrito" style="width=100px;height:100px;"></td>
-                  <td id="descripcio">Plàtan canari - a pes(500g aprox)</td>
+                <?php
 
-                </tr>
-               
+                if (empty($this->cart->contents())) {
+                  echo "<p class='text-center'>No hi han productes encara!</p>";
+                } else {
+
+
+
+                  foreach ($this->cart->contents() as $items) {
+
+                    $img = base64_encode($items['options']['img']);
+                    $tipus = $items['options']['tipus'];
+
+            
+
+
+                    echo "<tr style='border:1px solid green;' class='b'>";
+                    echo "<th id='quantitat' scope='row'> X" . $items["qty"] . "</th>";
+                    echo '<td><img class="ml-5" src="data:' . $tipus . ';base64,' . $img . '" id="logo" alt="Imatge Producte Carrito" style="width:63px;height:70px;"></td>';
+                    echo "<td id='descripcio'>" . $items["name"] . "</td>";
+
+                    echo "</tr>";
+                  }
+                }
+
+
+                ?>
+
+
 
               </table>
 
               <div class="container preu text-right">
 
-              <p><strong>PREU TOTAL:</strong></p>
+                <p><strong>TOTAL: <?php echo $this->cart->format_number($this->cart->total()); ?> € </strong></p>
 
               </div>
-
-          
-
-               
 
             </div>
 
             <div class="offset-4 text-center boton">
+            <a  href="http://localhost/Small/index.php/SmallController/BuidarCarrito"  id="bcolor" style="background-color:#FF0910 !important;color: white !important;"  class="btn mr-2 ">Buidar</a>
               <a href="http://localhost/Small/index.php/SmallController/TramitarComandaRed" class="btn" id="bcolor">Tramitar</a>
+          
             </div>
             </form>
           </div>
@@ -180,7 +194,6 @@
       </div>
     </div>
     </div>
-
 
 
     <!-- Modal Iniciar Sessió -->

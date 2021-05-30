@@ -181,7 +181,7 @@
 
               <div class="container preu text-right">
 
-                <p><strong>TOTAL: 0 € </strong></p>
+                <p><strong>TOTAL: <?php echo $this->cart->format_number($this->cart->total()); ?> € </strong></p>
 
               </div>
 
