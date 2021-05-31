@@ -241,6 +241,23 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
     
    }
 
+   function Consultes(){
+
+    $sql1="SELECT * FROM consultes";
+
+    $dades=$this->db->query($sql1);
+     
+    return $dades->result_array();
+
+   }
+   function TancarCI($id){
+
+    $tancada="Tancada";
+    $sql="UPDATE consultes SET estat='".$tancada."' WHERE id_consulta=".$id."";
+    $query=$this->db->query($sql);
+
+   }
+
 
 
 

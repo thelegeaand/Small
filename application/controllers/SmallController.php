@@ -653,7 +653,9 @@ class SmallController extends CI_Controller
 
             if ($session == "atencioclient") {
 
-                $this->load->view('Consultes');
+                $dades=$this->SmallModel->Consultes();
+
+                $this->load->view('Consultes',array('consultes'=>$dades));
     
             } else {
 
@@ -700,7 +702,31 @@ class SmallController extends CI_Controller
 
     }
 
-    public function TancarConsulta(){
+
+    public function TancarConsulta($idconsulta){
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "atencioclient") {
+
+
+                $this->SmallModel->TancarCI($idconsulta);
+            
+                $this->load->view('ConsultaTancada');
+    
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
+
+
 
 
     }

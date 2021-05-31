@@ -436,7 +436,7 @@ function iniciarsessio(){
 
                     }else if(m=="atencioclient"){
 
-                        window.location.href="http://localhost/Small/index.php/SmallController/AtencioClient";
+                        window.location.href="http://localhost/Small/index.php/SmallController/Atencio";
 
 
                     }else if(m=="repartidor"){
