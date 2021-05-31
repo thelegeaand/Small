@@ -506,7 +506,7 @@
 
             foreach ($dades as $fila) {
               echo "<div class='col-md-4 mt-2'>";
-              echo "<div class='card'>";
+              echo "<div class='card' style='max-width:95%';>";
               $idbotiga = $fila['id_botiga'];
               $tipus = $fila["tipus_banner"];
               $banner = $fila["img_banner"];

@@ -531,56 +531,51 @@
     <section id="Botigues">
       <div class="container d-flex justify-content-center mt-5 mb-5 bordeBot ">
         <div class="row mt-5 mb-5">
-        <?php
+          <?php
 
-        if(!empty($dades)){
+          if (!empty($dades)) {
 
-          foreach($dades as $fila){
-            echo"<div class='col-md-4 mt-2'>";
-              echo"<div class='card'>";
-              $tipus=$fila["tipus_banner"];
-              $banner=$fila["img_banner"];
+            foreach ($dades as $fila) {
+              echo "<div class='col-md-4 mt-2'>";
+              echo "<div class='card' style='max-width:95%';> ";
+              $idbotiga = $fila['id_botiga'];
+              $tipus = $fila["tipus_banner"];
+              $banner = $fila["img_banner"];
 
-              if(empty($tipus)||empty($banner)){
+              if (empty($tipus) || empty($banner)) {
 
-                echo"<div><img style='height:199px;padding:0px;margin: 0px;width: 100%;'src='http://localhost/Small/img/r.jpg' class='card-img img-fluid' alt='Imatge Botiga'>
+                echo "<div><img style='height:199px;padding:0px;margin: 0px;width: 100%;'src='http://localhost/Small/img/r.jpg' class='card-img img-fluid' alt='Imatge Botiga'>
                 </div>";
-
-              }else{
-                echo'<div><img style="height:199px;padding:0px;margin: 0px;width: 100%;"class="card-img img-fluid" alt="Imatge Botiga" src="data:'.$tipus.';base64,'.base64_encode($banner).'"></div>';
-
-
+              } else {
+                echo '<div><img style="height:199px;padding:0px;margin: 0px;width: 100%;"class="card-img img-fluid" alt="Imatge Botiga" src="data:' . $tipus . ';base64,' . base64_encode($banner) . '"></div>';
               }
-                
-               
-                echo"<div class='card-body bg-light text-center' style='padding-bottom:10%;'>";
-                  echo"<h4>".$fila['nom_botiga']."</h4>";
-                  echo "<button  type='button' class='btn' id='bcolor'>Anar</button>";
-                echo"</div>";
-              echo"</div>";
-            echo"</div>";
-          }
-
-        }else{
+              echo "<div class='card-body bg-light text-center' style='padding-bottom:10%;'>";
+              echo "<h4>" . $fila['nom_botiga'] . "</h4>";
+              echo "<a  type='button' class='btn' id='bcolor' href='" . base_url() . "index.php/SmallController/Botiga/" . $idbotiga . "'>Anar</a>";
+              echo "</div>";
+              echo "</div>";
+              echo "</div>";
+            }
+          } else {
           ?>
 
-<div class="container mb-5">
-  <div class='row'>
-    <div class="alert-box" style="float: none; margin: 0 auto;">
-    <div class="alert alert-success">
-      <div class="alert-icon text-center">
-      <img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logoM2" alt="Imatge Corporativa Small">
-      </div>
-      <div class="alert-message text-center">
-        <p><strong>Disculpi les molèsties...<br>No hi han Botigues disponibles de la categoria seleccionada.</strong></p> 
-      </div>
-    
-    </div>
-  </div>
-  </div>
-</div>
-<?php
-        }
+            <div class="container mb-5">
+              <div class='row'>
+                <div class="alert-box" style="float: none; margin: 0 auto;">
+                  <div class="alert alert-success">
+                    <div class="alert-icon text-center">
+                      <img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logoM2" alt="Imatge Corporativa Small">
+                    </div>
+                    <div class="alert-message text-center">
+                      <p><strong>Disculpi les molèsties...<br>No hi han Botigues disponibles de la categoria seleccionada.</strong></p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php
+          }
           ?>
         </div>
       </div>

@@ -292,11 +292,8 @@
       <h4 class="verde mb-5"> Contacta amb nosaltres!</h4>
 
     </div>
-
     <div class="">
       <div class="container mb-5 pb-5">
-
-
         <div class="card mb-5 pb-5">
           <div class="card-header text-center cardVerde" id="headingOne">
             <h5 style="color:white;" class="mb-0 ">

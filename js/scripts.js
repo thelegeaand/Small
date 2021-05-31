@@ -430,7 +430,7 @@ function iniciarsessio(){
 
                     }else if(m=="admin"){
 
-                        window.location.href="http://localhost/Small/index.php/SmallController/Administrador";
+                        window.location.href="http://localhost/Small/index.php/SmallController/Administracio";
 
 
 
