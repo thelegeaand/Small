@@ -2,25 +2,22 @@
 <html lang="ca">
 
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Poppins:wght@800&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
   <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
-  <title>Historial Comandes</title>
+  <title>Pàgina Principal Small</title>
 </head>
 
-<body class="">
+<body>
 
   <!--Header-->
   <header class="">
@@ -42,10 +39,54 @@
           <a href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Carrito</a>
         </div>
         <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
-        <a  href="http://localhost/Small/index.php/SmallController/TancarSessio"  id="bcolor" class="btn">Tancar Sessió</a>
+          <a href="#" id="bcolor">Tancar Sessió </a>
         </div>
       </div>
     </nav>
+
+<!--Modal Afegir Producte-->
+<div class="modal fade" id="AfegirProd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center ml-5" style="border-bottom:0px;">
+            <h5 class="modal-title" id="titol1">Entra a <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          <form>
+            <div class="col-md-12">
+            <label for="">Nom Producte</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Stock</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Preu Kg</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Imatge</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Descripció</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12 justify-content-center d-flex">
+            <input type="submit" class="btn" id="bcolor" value="Afegir Producte">
+            </div>
+          </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
 
     <!-- Modal Carrito -->
     <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -58,7 +99,6 @@
             </button>
           </div>
           <div class="modal-body ">
-
 
 
             <div class="container">
@@ -96,7 +136,7 @@
             </div>
 
             <div class="offset-4 text-center boton">
-              <button type="submit" id="bcolor" class="btn ">Tramitar</button>
+              <button type="submit" id="bcolor" class="btn btn-outline-success">Tramitar</button>
 
             </div>
             </form>
@@ -107,7 +147,6 @@
       </div>
     </div>
     </div>
-
 
 
     <!-- Modal Iniciar Sessió -->
@@ -400,165 +439,201 @@
     </div>
     </header>
 
-    <main class="tcomanda">
-    <div class="text-botiga text-center ">
-            <h4 class="mt-5">Si la comanda no ha arribat o no està en bones condicions</h4><h4 class="verde mb-5">Contacte amb nosaltres! </h4>
-
+<main >
+    <div class="col-md-12 fondotienda">
+        <div class="row">
+        <div class="col-md-6 logoBotiga ">
+                <div class="justify-content-center d-flex">
+                <img src="<?php echo base_url(); ?>img/ramirezlogo.jpg" style="margin-top:8rem;border-radius:10%;" class="w-25" alt="">
+                </div>                
     </div>
-
-    <div class="">
-       <div class="container mb-5 pb-5">
-            
-  
-  <div class="card mb-5 pb-5">
-    <div class="card-header text-center cardVerde" id="headingOne">
-      <h5 style="color:white;" class="mb-0 ">
-      Historial de Comandes
-      </h5>
+        <div class="col-md-6 InfoBotiga">
+                <div class="container">
+                <div class="col-md-12 text-center">
+                <h1 class="mt-4 TitBotiga">TITOL BOTIGA</h1>
+                <p class="mt-4 DescBotiga">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur cum ea recusandae itaque inventore provident amet enim id, minima tenetur doloremque sit optio quaerat voluptas iure. Pariatur vero sunt aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, incidunt aut iste neque accusamus delectus non accusantium voluptatem autem. Ipsum tempora voluptatibus amet iure, labore fugiat nam ipsa doloremque eveniet!</p>
+                <p class="mt-4 DireccioBotiga">Carrer de la verge de l'assumpcio 57</p>    
+                <p class="mt-4 ContBotiga">Contacte: 666666666</p>    
+            </div>
+            </div>
+        </div>
+        </div>
     </div>
-
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="container  adv">
-        <table class="table">
-          <thead>
-          <tr>
-                <th>Codi</th>
-                <th>Data</th>
-                <th>Estat</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
-
-                <div class="justify-content-center d-flex mb-5">
-                <div class="col-md-4 mb-5">
-                        <div class="cartaTotal border mb-5">
-                            <div class="cuerpoCarta border">
-
-                            </div>
-                            <div class="headerCarta border">
-
-                            </div>
-                        </div>
+    <div class="col-md-12 cercador">
+        <div class="container justify-content-center d-flex pt-4 pb-4">
+                <div class="row">
+                    <div class="col-md-6">
+                    <button class="btn" id="bcolor" style="width:200px;">Afegir Nou Producte</button>
+                    </div>
+                    <div class="col-md-6">
+                    <button class="btn" id="bcolor" style="width:200px;">Auditoria</button>
                     </div>
                 </div>
-
-       </div>
-       
-       </div>
-
-
-
-    </main>
-
-    <footer>
-
-<div class="container-fluid bgcontainer2">
-
-  <div class="container">
-
-    <div class="row pt-4 SmallScroll d-flex justify-content-center ">
-
-      <div class="row rowc">
-        <div class="col-sm-4 col-12 col-lg-4">
-          <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
-            <div class="card-body">
-              <h5 class="card-title t1">SMALL</h5>
-              <ul class="lista">
-                <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="#logo">Home</a></li>
-                <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Registre">Registre Client</a></li>
-                <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="#">RegistreBotiga</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
-        <div class="col-sm-4 col-12 col-lg-4">
-          <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
-            <div class="card-body">
-              <h5 class="card-title t1">LEGAL</h5>
-              <ul class="lista">
-                <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Condicions">Termes i Condicions</a></li>
-                <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Privacitat">Privacitat</a></li>
-                <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Cookies">Cookies</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 col-12 col-lg-4">
-          <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
-            <div class="card-body">
-              <h5 class="card-title t1">AJUDA</h5>
-              <ul class="lista">
-                <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Contacte</a></li>
-                <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Small-Inc@gmail.com</a></li>
-                <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;" href="#">+34 678930323</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container d-flex justify-content-center  mt-4 mb-4">
-
-        <div class="row">
-          <div>
-            <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-instagram">
-              <span class="sr-only">Logo Instagram</span>
-              <span class="fa fa-instagram fa-3x ICON"></span>
-            </a>
-
-          </div>
-
-          <div>
-            <a href="https://www.twitter.com/" class="btn btn-block btn-social btn-twitter">
-              <span class="sr-only">Logo Twitter</span>
-              <span class="fa fa-twitter fa-3x ICON"></span>
-            </a>
-          </div>
-          <div>
-            <a href="https://www.facebook.com/" class="btn btn-block btn-social btn-facebook">
-              <span class="sr-only">Logo Facebook</span>
-              <span class="fa fa-facebook fa-3x ICON"></span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <p class="copy offset-8 ml-2 mb-4">Small 2021 &copy;</p>
-
     </div>
 
-  </div>
+    <div class="container d-flex justify-content-right mt-2 mb-5">
+       
+        <div class="col-md-4 mt-2">
+        <div class="cartaProd border">
+                <div class="fotoProd">
+                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
+
+                </div>
+                <div class="cuerpoProd border">
+                <div class="row mt-2">
+                    <div class="DescProd text-center col-md-12">
+                        <h5>Jamón 5J 6kg</h5>
+                    </div>
+                </div>
+                <div class="row mb-4 mt-2">
+                    <div class="PrecioProd text-center col-md-12">
+                        <h5>Precio: 400€</h5>
+                    </div>
+                    <div class="PrecioProd col-md-12 text-center">
+                    <a class="btn " id="bcolor" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#AfegirProd">Modificar</a>                    </div>
+                </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-2">
+          <div class="cartaProd border">
+                <div class="fotoProd">
+                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
+
+                </div>
+                <div class="cuerpoProd border">
+                <div class="row mt-2">
+                    <div class="DescProd text-center col-md-12">
+                        <h5>Jamón 5J 6kg</h5>
+                    </div>
+                </div>
+                <div class="row mb-4 mt-2">
+                    <div class="PrecioProd text-center col-md-12">
+                        <h5>Precio: 400€</h5>
+                    </div>
+                    <div class="PrecioProd col-md-12 text-center">
+                    <a class="btn " id="bcolor" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#AfegirProd">Modificar</a>                    </div>
+                </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-2">
+          <div class="cartaProd border">
+                <div class="fotoProd">
+                <img style="padding:0px;margin: 0px;width: 99%;" src="<?php echo base_url(); ?>img/jamon.jpg" class="card-img img-fluid" alt="Imatge Botiga">
+
+                </div>
+                <div class="cuerpoProd border">
+                <div class="row mt-2">
+                    <div class="DescProd text-center col-md-12">
+                        <h5>Jamón 5J 6kg</h5>
+                    </div>
+                </div>
+                <div class="row mb-4 mt-2">
+                    <div class="PrecioProd text-center col-md-12">
+                        <h5>Precio: 400€</h5>
+                    </div>
+                    <div class="PrecioProd col-md-12 text-center">
+                    <a class="btn " id="bcolor" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#AfegirProd">Modificar</a>                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+          </div>
+        
+    </div>
+
+</main>
+
+<footer>
+
+    <div class="container-fluid bgcontainer2">
+
+      <div class="container">
+
+        <div class="row pt-4 SmallScroll d-flex justify-content-center ">
+
+          <div class="row rowc">
+            <div class="col-sm-4 col-12 col-lg-4">
+              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+                <div class="card-body">
+                  <h5 class="card-title t1">SMALL</h5>
+                  <ul class="lista">
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="#logo">Home</a></li>
+                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Registre">Registre Client</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="#">RegistreBotiga</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-12 col-lg-4">
+              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+                <div class="card-body">
+                  <h5 class="card-title t1">LEGAL</h5>
+                  <ul class="lista">
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Condicions">Termes i Condicions</a></li>
+                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Privacitat">Privacitat</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Cookies">Cookies</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-12 col-lg-4">
+              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+                <div class="card-body">
+                  <h5 class="card-title t1">AJUDA</h5>
+                  <ul class="lista">
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Contacte</a></li>
+                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Small-Inc@gmail.com</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;" href="#">+34 678930323</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container d-flex justify-content-center  mt-4 mb-4">
+
+            <div class="row">
+              <div>
+                <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-instagram">
+                  <span class="sr-only">Logo Instagram</span>
+                  <span class="fa fa-instagram fa-3x ICON"></span>
+                </a>
+
+              </div>
+
+              <div>
+                <a href="https://www.twitter.com/" class="btn btn-block btn-social btn-twitter">
+                  <span class="sr-only">Logo Twitter</span>
+                  <span class="fa fa-twitter fa-3x ICON"></span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.facebook.com/" class="btn btn-block btn-social btn-facebook">
+                  <span class="sr-only">Logo Facebook</span>
+                  <span class="fa fa-facebook fa-3x ICON"></span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="copy offset-8 ml-2 mb-4">Small 2021 &copy;</p>
+
+        </div>
+
+      </div>
 
 
 
-</footer>
+  </footer>
 
-    </body>
-    </html>
+</body>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</html>
