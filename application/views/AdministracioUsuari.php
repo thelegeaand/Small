@@ -460,7 +460,7 @@
   <div class="card mb-5 mt-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
-       Usuari
+       <strong>Usuari</strong>
       </h5>
     </div>
 <?php 

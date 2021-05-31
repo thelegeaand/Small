@@ -457,7 +457,7 @@
   <div class="card mb-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
-       Clients
+       <strong>Clients</strong>
       </h5>
     </div>
 <?php 
@@ -521,7 +521,7 @@ foreach($clients as $fila){
   <div class="card mb-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
-       Botigues
+       <strong>Botigues</strong>
       </h5>
     </div>
 <?php 

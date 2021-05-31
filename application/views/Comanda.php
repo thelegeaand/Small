@@ -468,7 +468,6 @@
     </div>
   </div>
 </div>
-
                 <div class="justify-content-center d-flex mb-5">
                 <div class="col-md-4 mb-5">
                         <div class="cartaTotal border mb-5">

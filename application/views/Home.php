@@ -19,6 +19,62 @@
   <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
   <title>Pàgina Principal Small</title>
 </head>
+<style>
+
+#cookiesms:target {
+    display: none;
+}
+
+.cookiesms{    
+    width:100%;
+    height:43px;
+    margin:0 auto;
+    padding-left:1%;
+        padding-top:5px;
+        font-size: 1.2em;
+    clear:both;
+        font-weight: strong;
+color: #333;
+bottom:0px;
+position:fixed;
+left: 0px;
+background-color: #FFF;
+opacity:0.7;
+filter:alpha(opacity=70); /* For IE8 and earlier */
+transition: bottom 1s;
+-webkit-transition:bottom 1s; /* Safari */
+-webkit-box-shadow: 3px -3px 1px rgba(50, 50, 50, 0.56);
+-moz-box-shadow:    3px -3px 1px rgba(50, 50, 50, 0.56);
+box-shadow:         3px -3px 1px rgba(50, 50, 50, 0.56);
+z-index:999999999;
+}
+ 
+.cookiesms:hover{
+bottom:0px;
+}
+.cookies2{
+background-color: #FFF;
+display:inline;
+opacity:0.95;
+filter:alpha(opacity=95);
+position:absolute;
+left:1%;
+top:-30px;
+font-size:15px;
+height:30px;
+padding-left:25px;
+padding-right:25px;
+-webkit-border-top-right-radius: 15px;
+-webkit-border-top-left-radius: 15px;
+-moz-border-radius-topright: 15px;
+-moz-border-radius-topleft: 15px;
+border-top-right-radius: 15px;
+border-top-left-radius: 15px;
+-webkit-box-shadow: 3px -3px 1px rgba(50, 50, 50, 0.56);
+-moz-box-shadow:    3px -3px 1px rgba(50, 50, 50, 0.56);
+box-shadow:         3px -3px 1px rgba(50, 50, 50, 0.56);
+}
+</style>
 <body>
 
   <!--Header-->
@@ -601,7 +657,28 @@
     });
   </script>
 
+<script type="text/javascript">
+  function controlcookies() {
+    // si variable no existe se crea (al clicar en Aceptar)
+    localStorage.controlcookie = (localStorage.controlcookie || 0);
 
+    localStorage.controlcookie++; // incrementamos cuenta de la cookie
+    cookie1.style.display = 'none'; // Esconde la política de cookies
+  }
+</script>
+
+
+<div class="cookiesms" id="cookie1">
+Aquesta web utilitza cookies, pots veure  <a href="#"style="cursor:pointer;"type="button" data-toggle="modal" data-target="#Cookies">la política de cookies aquí.</a>
+Si contínues navegant estàs acceptant-la.
+<button onclick="controlcookies()">Aceptar</button>
+<div  class="cookies2" onmouseover="document.getElementById('cookie1').style.bottom = '0px';">Política de cookies + </div>
+</div>
+<script type="text/javascript">
+if (localStorage.controlcookie>0){
+document.getElementById('cookie1').style.bottom = '-50px';
+}
+</script>
 
 
 

@@ -226,6 +226,23 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
 
    }
 
+   function NovaConsulta($CodiC,$Nom,$Cognom,$Correu,$Motiu){
+
+    if($CodiC==""){
+        $CodiC="null";
+    }
+    $Estat="Pendent";
+
+    $sql="insert into consultes(correu,nom,cognom,codi_comanda,estat,motiu)
+    values('".$Correu."','".$Nom."','".$Cognom."','".$CodiC."','".$Estat."','".$Motiu."')";
+
+    $this->db->query($sql);
+
+    
+   }
+
+
+
 
 
    

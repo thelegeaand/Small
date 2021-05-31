@@ -300,37 +300,101 @@
               <strong>Formulari de Contacte</strong>
             </h5>
           </div>
+ <?php
+          echo form_open('SmallController/RebreIncidencia');
 
+ ?>
           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="container  adv">
 
               <div class="form-row ">
                 <div class="col-md-6">
-                  <input type="text" name="" id="" class="form-control mt-4" placeholder="Número Comanda*">
+                  <?php
+                  echo form_input(array(
+                      'name' => 'comanda',
+                      'type' => 'text',
+                      'class'=>'form-control mt-4',
+                      'placeholder'=>'NºComanda',
+                      'value' => set_value('comanda')
+                      ));
+                  ?>
                 </div>
                 <div class="col-md-6">
-                  <input type="text" class="form-control mt-4" placeholder="Correu">
+                <?php echo form_error('correu'); ?>
+                  <?php
+                  echo form_input(array(
+                      'name' => 'correu',
+                      'type' => 'text',
+                      'class'=>'form-control mt-4',
+                      'placeholder'=>'Correu',
+                      'value' => set_value('correu')
+                      ));
+                  ?>
                 </div>
               </div>
 
               <div class="form-row ">
                 <div class="col-md-6">
-                  <input type="text" name="" id="" class="form-control mt-4" placeholder="Nom">
+                <?php echo form_error('nom'); ?>
+                <?php
+                  echo form_input(array(
+                      'name' => 'nom',
+                      'type' => 'text',
+                      'class'=>'form-control mt-4',
+                      'placeholder'=>'Nom',
+                      'value' => set_value('nom')
+                      ));
+                  ?>
+                  
                 </div>
                 <div class="col-md-6">
-                  <input type="text" class="form-control mt-4" placeholder="Cognom">
+                <?php echo form_error('cognom'); ?>
+                  <?php
+                  echo form_input(array(
+                      'name' => 'cognom',
+                      'type' => 'text',
+                      'class'=>'form-control mt-4',
+                      'placeholder'=>'Cognom',
+                      'value' => set_value('cognom')
+                      ));
+                  ?>
                 </div>
               </div>
 
               <div class="form-row ">
                 <div class="col-md-12">
-                  <textarea name="" class="form-control mt-4" placeholder="Incidència" id="" cols="30" rows="10"></textarea>
+              
+               <?php echo form_error('motiu'); ?>
+                  <?php
+                   $txt = array(
+                    'name'        => 'motiu',
+                    'value'       => set_value('motiu'),
+                    'rows'        => '10',
+                    'cols'        => '30',
+                    'placeholder'=>'Incidència',
+                    'class'       => 'form-control mt-4'
+                );
+            
+                echo form_textarea($txt);
+                  ?>
                 </div>
               </div>
 
               <div class="offset-4 text-center boton">
-                <button type="button" id="bcolor" class="btn mt-5 mb-5">Enviar Incidència</button>
+                <?php
+             
+                 echo form_submit(array(
+                  'name' => 'enviar',
+                  'class' => 'btn mt-5 mb-5',
+                  'value' =>'Enviar',
+                  'id'=>'bcolor'
+                  
+                  ));
 
+                  echo form_close();
+
+                ?>
+               
               </div>
               </form>
             </div>

@@ -663,6 +663,48 @@ class SmallController extends CI_Controller
     }
 
 
+
+
+
+
+    public function RebreIncidencia(){
+
+        $CodiC=$this->input->post('comanda');
+        $Nom=$this->input->post('nom');
+        $Cognom=$this->input->post('cognom');
+        $Correu=$this->input->post('correu');
+        $Motiu=$this->input->post('motiu');
+
+        $data['dades']=$this->input->post();
+
+        $this->form_validation->set_rules('nom','nom','required',array( 'required' => '<span id="error" style="color:red;">Camp en blanc</span>'));
+        $this->form_validation->set_rules('cognom','cognom','required',array( 'required' => '<span id="error" style="color:red;">Camp en blanc</span>'));
+        $this->form_validation->set_rules('correu','correu','required|valid_email',array( 'required' => '<span id="error" style="color:red;">*Camp en blanc</span>','valid_email' => '<span id="error" style="color:red;">Introdueix un Correu</span>'));
+        $this->form_validation->set_rules('motiu','motiu','required',array( 'required' => '<span id="error" style="color:red;">Camp en blanc</span>'));
+
+
+                   
+    if($this->form_validation->run()==FALSE){
+        
+        $this->load->view('Contacte',$data);
+       
+        
+        
+    }else{
+            
+        $this->SmallModel->NovaConsulta($CodiC,$Nom,$Cognom,$Correu,$Motiu);
+        $this->load->view('ConsultaOK');
+           
+        }   
+
+
+    }
+
+    public function TancarConsulta(){
+
+
+    }
+    
     public function TancarSessio()
     {
 
@@ -670,4 +712,6 @@ class SmallController extends CI_Controller
 
         $this->load->view('MissatgeTS');
     }
+
+
 }
