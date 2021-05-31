@@ -181,6 +181,53 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
 
    }
 
+   public function Clients(){
+
+
+    $sql1="SELECT * FROM client";
+
+    $dades=$this->db->query($sql1);
+     
+    return $dades->result_array();
+    
+
+   }
+
+   public function Botigues(){
+
+    $sql1="SELECT * FROM botiga";
+
+    $dades=$this->db->query($sql1);
+     
+    return $dades->result_array();
+
+
+   }
+   public function Usuari($id){
+
+    $sql1="SELECT * FROM usuaris WHERE id_usuari=".$id."";
+
+    $dades=$this->db->query($sql1);
+     
+    return $dades->result_array();
+
+
+   }
+
+   function DesactivarUsuari($id){
+    $sql="UPDATE usuaris SET estat=0 WHERE id_usuari=".$id."";
+    $query=$this->db->query($sql);
+   }
+
+   function ActivarUsuari($id){
+
+    $sql="UPDATE usuaris SET estat=1 WHERE id_usuari=".$id."";
+    $query=$this->db->query($sql);
+
+   }
+
+
+
    
 }
     

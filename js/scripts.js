@@ -843,7 +843,7 @@ if(IBAN==""){
                         
                         if (this.readyState == 4 && this.status == 200) {
                             var m = Request.responseText;
-                            alert(m);
+                        
                     
                             if (m == "ok") {
                                 document.getElementById("correuInc").innerHTML = "";
@@ -852,7 +852,7 @@ if(IBAN==""){
                                 Swal.fire({
                                     icon: 'success',
                                     title: 'Registrat Correctament!',
-                                    text: 'El teu Nom d\'usuari per iniciar sessió és ' + NomUsuari + '.'
+                                    text: 'Rebras un correu en 24/48 hores amb la confirmació d\'activació.'
                                 }).then((value) => {
 
 

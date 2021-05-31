@@ -536,6 +536,8 @@ class SmallController extends CI_Controller
 
     public function TramitarCarrito(){
 
+
+
     }
 
     public function Administracio(){
@@ -550,13 +552,93 @@ class SmallController extends CI_Controller
 
             if ($session == "admin") {
 
-                $this->load->view('Administrador');
+
+                $clients = $this->SmallModel->Clients();
+                $botigues= $this->SmallModel->Botigues();
+
+
+                $this->load->view('Administrador',array('clients'=>$clients,'botigues'=>$botigues));
     
             } else {
 
                 $this->load->view('Home');
             }
         }
+    }
+
+    public function AdministracioUsuari($id){
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "admin") {
+
+
+                $usuari=$this->SmallModel->Usuari($id);
+            
+
+                $this->load->view('AdministracioUsuari',array('usuari'=>$usuari));
+    
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
+    }
+
+    public function DesactivarUsuari($id){
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "admin") {
+
+
+                $this->SmallModel->DesactivarUsuari($id);
+            
+                $this->load->view('CanviEstat');
+    
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
+    }
+    public function ActivarUsuari($id){
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "admin") {
+
+
+                $this->SmallModel->ActivarUsuari($id);
+            
+                $this->load->view('CanviEstat');
+    
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
     }
 
     public function Atencio(){

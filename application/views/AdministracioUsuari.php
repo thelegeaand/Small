@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
   <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
-  <title>Pàgina Principal Administrador</title>
+  <title>Pàgina Administració Usuari</title>
 </head>
 
 <style>
@@ -460,30 +460,25 @@
   <div class="card mb-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
-       Clients
+       Usuari
       </h5>
     </div>
 <?php 
-if(empty($clients)){
-  echo"<p><strong>No hi han clients encara!</strong></p>";
+if(empty($usuari)){
+  echo"<p><strong>Error al Carregar Usuari!!!</strong></p>";
 }else{
 echo"<div class='table-responsive'>";
 echo"<table class='table table-bordered'>";
-foreach($clients as $fila){
+foreach($usuari as $fila){
 
     ?>
       <thead>
         <tr>
           <th>Id</th>
-          <th>Id_usuari</th>
-          <th>Nom</th>
-          <th>Cognoms</th>
-          <th>Dni</th>
-          <th>Data Naixement</th>
-          <th>Correu</th>
-          <th>Ciutat</th>
-          <th>Província</th>
-          <th>CP</th>
+          <th>Nom_Usuari</th>
+          <th>Contrasenya</th>
+          <th>Estat</th>
+          <th></th>
           <th></th>
       
 
@@ -492,17 +487,17 @@ foreach($clients as $fila){
       <tbody>
         <tr>
         <?php 
-          echo"<td>".$fila["id_client"]."</td>";
           echo"<td>".$fila["id_usuari"]."</td>";
-          echo"<td>".$fila["nom"]."</td>";
-          echo"<td>".$fila["primer_cognom"]." ".$fila["segon_cognom"]."</td>";
-          echo"<td>".$fila["dni"]."</td>";
-          echo"<td>".$fila["data_naixement"]."</td>";
-          echo"<td>".$fila["correu"]."</td>";
-          echo"<td>".$fila["ciutat"]."</td>";
-          echo"<td>".$fila["província"]."</td>";
-          echo"<td>".$fila["codi_postal"]."</td>";
-          echo"<td><a href='" . base_url() . "index.php/SmallController/AdministracioUsuari/" . $fila["id_usuari"] . "' id='bcolor21' class='btn'>Administrar</button></td>";
+          echo"<td>".$fila["nom_usuari"]."</td>";
+          echo"<td>".$fila["contrasenya"]."</td>";
+          echo"<td>".$fila["estat"]."</td>";
+          if($fila["estat"]==1){
+            echo"<td><a href='" . base_url() . "index.php/SmallController/DesactivarUsuari/" . $fila["id_usuari"] . "' id='bcolor20' class='btn'>Descativar</button></td>";
+          }else{
+            echo"<td><a href='" . base_url() . "index.php/SmallController/ActivarUsuari/" . $fila["id_usuari"] . "' id='bcolor21' class='btn'>Activar</button></td>";
+          }
+         
+          
           
         echo"</tr>";
 
@@ -518,78 +513,7 @@ foreach($clients as $fila){
   </div>
 </div>
 
-<div class="">
-       <div class="container mb-5 pb-5 text-center">
-            
-  
-  <div class="card mb-5 pb-5">
-    <div class="card-header text-center cardVerde" id="headingOne">
-      <h5 style="color:white;" class="mb-0 ">
-       Botigues
-      </h5>
-    </div>
-<?php 
-if(empty($botigues)){
-  echo"<p><strong>No hi han Botigues encara!</strong></p>";
-}else{
-echo"<div class='table-responsive'>";
-echo"<table class='table table-bordered'>";
-foreach($botigues as $fila){
 
-    ?>
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Id_botiga</th>
-          <th>Propietari</th>
-          <th>Botiga</th>
-          <th>Empresa</th>
-          <th>Cif</th>
-          <th>Correu</th>
-          <th>Tipus</th>
-          <th>Iban</th>
-          <th>Província</th>
-          <th>Ciutat</th>
-          <th>CP</th>
-          <th>Carrer</th>
-          <th>Nº</th>
-          <th></th>
-      
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-        <?php 
-          echo"<td>".$fila["id_usuari"]."</td>";
-          echo"<td>".$fila["id_botiga"]."</td>";
-          echo"<td>".$fila["nom_propietari"]."</td>";
-          echo"<td>".$fila["nom_botiga"]."</td>";
-          echo"<td>".$fila["nom_empresa"]."</td>";
-          echo"<td>".$fila["cif"]."</td>";
-          echo"<td>".$fila["correu"]."</td>";
-          echo"<td>".$fila["id_usuari"]."</td>";
-          echo"<td>".$fila["iban"]."</td>";
-          echo"<td>".$fila["província"]."</td>";
-          echo"<td>".$fila["ciutat"]."</td>";
-          echo"<td>".$fila["codi_postal"]."</td>";
-          echo"<td>".$fila["carrer"]."</td>";
-          echo"<td>".$fila["numero"]."</td>";
-          echo"<td><a href='" . base_url() . "index.php/SmallController/AdministracioUsuari/" . $fila["id_usuari"] . "' id='bcolor21' class='btn'>Administrar</button></td>";
-          
-        echo"</tr>";
-
-
-      echo"</tbody>";
-}
-      
-    echo"</table>";
-}
-    ?>
-  </div>
-    </div>
-  </div>
-</div>
 
    
   </main>
