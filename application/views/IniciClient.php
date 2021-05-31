@@ -499,7 +499,7 @@
     </div>
     <section id="Botigues">
       <div class="container d-flex justify-content-center mt-5 mb-5 bordeBot ">
-        <div class="row mt-5 mb-5">
+        <div class="row justify-content-center mt-5 mb-5">
           <?php
 
           if (!empty($dades)) {

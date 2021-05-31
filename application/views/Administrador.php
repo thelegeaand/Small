@@ -452,11 +452,8 @@
       </div>
     </div>
   <main>
-
   <div class="">
-       <div class="container mb-2 pb-5 text-center">
-            
-  
+       <div class="container mt-5 mb-2 pb-5 text-center">
   <div class="card mb-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
@@ -470,7 +467,6 @@ if(empty($clients)){
 echo"<div class='table-responsive'>";
 echo"<table class='table table-bordered'>";
 foreach($clients as $fila){
-
     ?>
       <thead>
         <tr>
@@ -502,7 +498,7 @@ foreach($clients as $fila){
           echo"<td>".$fila["ciutat"]."</td>";
           echo"<td>".$fila["província"]."</td>";
           echo"<td>".$fila["codi_postal"]."</td>";
-          echo"<td><a href='" . base_url() . "index.php/SmallController/AdministracioUsuari/" . $fila["id_usuari"] . "' id='bcolor21' class='btn'>Administrar</button></td>";
+          echo"<td><a href='" . base_url() . "index.php/SmallController/AdministracioUsuari/" . $fila["id_usuari"] . "' id='bcolor21' class='btn'>Administrar</a></td>";
           
         echo"</tr>";
 
@@ -519,7 +515,7 @@ foreach($clients as $fila){
 </div>
 
 <div class="">
-       <div class="container mb-5 pb-5 text-center">
+       <div class="container  mb-5 pb-5 text-center">
             
   
   <div class="card mb-5 pb-5">
@@ -575,7 +571,7 @@ foreach($botigues as $fila){
           echo"<td>".$fila["codi_postal"]."</td>";
           echo"<td>".$fila["carrer"]."</td>";
           echo"<td>".$fila["numero"]."</td>";
-          echo"<td><a href='" . base_url() . "index.php/SmallController/AdministracioUsuari/" . $fila["id_usuari"] . "' id='bcolor21' class='btn'>Administrar</button></td>";
+          echo"<td><a href='" . base_url() . "index.php/SmallController/AdministracioUsuari/" . $fila["id_usuari"] . "' id='bcolor21' class='btn'>Administrar</a></td>";
           
         echo"</tr>";
 

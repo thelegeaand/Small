@@ -457,7 +457,7 @@
        <div class="container mb-2 pb-5 text-center">
             
   
-  <div class="card mb-5 pb-5">
+  <div class="card mb-5 mt-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
        Usuari
@@ -490,11 +490,13 @@ foreach($usuari as $fila){
           echo"<td>".$fila["id_usuari"]."</td>";
           echo"<td>".$fila["nom_usuari"]."</td>";
           echo"<td>".$fila["contrasenya"]."</td>";
-          echo"<td>".$fila["estat"]."</td>";
+          
           if($fila["estat"]==1){
-            echo"<td><a href='" . base_url() . "index.php/SmallController/DesactivarUsuari/" . $fila["id_usuari"] . "' id='bcolor20' class='btn'>Descativar</button></td>";
+            echo"<td>Activat</td>";
+            echo"<td><a href='" . base_url() . "index.php/SmallController/DesactivarUsuari/" . $fila["id_usuari"] . "' id='bcolor20' class='btn'>Descativar</a></td>";
           }else{
-            echo"<td><a href='" . base_url() . "index.php/SmallController/ActivarUsuari/" . $fila["id_usuari"] . "' id='bcolor21' class='btn'>Activar</button></td>";
+            echo"<td>Desactivat</td>";
+            echo"<td><a href='" . base_url() . "index.php/SmallController/ActivarUsuari/" . $fila["id_usuari"] . "' id='bcolor21' class='btn'>Activar</a></td>";
           }
          
           
@@ -503,9 +505,11 @@ foreach($usuari as $fila){
 
 
       echo"</tbody>";
+     
 }
       
     echo"</table>";
+    echo"<a href='http://localhost/Small/index.php/SmallController/Administracio' id='bcolor21' class='btn'>Tornar</a>";
 }
     ?>
   </div>
