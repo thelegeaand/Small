@@ -67,7 +67,25 @@ class SmallController extends CI_Controller
 
     public function ModDadesPersonaRed()
     {
-        $this->load->view('ModDadesPersonals');
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+        } else {
+
+            if ($session == "client") {
+
+                $this->load->view('ModDadesPersonals');
+
+                
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+     
     }
     public function registreclient()
     {
@@ -266,7 +284,6 @@ class SmallController extends CI_Controller
     public function IniciClient()
     {
 
-
         $session = $this->session->userdata('tipus');
 
         if (empty($session)) {
@@ -286,11 +303,6 @@ class SmallController extends CI_Controller
                 $botiga="CARNISSERIES/XARCUTERIES";
 
                 $data = $this->SmallModel->MostrarBotiguesCiutat($tipus,$ciutat);
-
-
-    
-
-
 
                 $this->load->view('IniciClient',array('ciutat'=>$ciutatMajus,'botiga'=>$botiga,'dades'=>$data));
             } else {
@@ -418,14 +430,16 @@ class SmallController extends CI_Controller
         if (empty($session)) {
 
             $this->load->view('Home');
+
         } else {
 
-            if ($session == "Botiga") {
+            if ($session == "botiga") {
 
-                $this->load->view('IniciBotiga');
+            $this->load->view('IniciBotiga');
+
             } else {
 
-                $this->load->view('Home');
+            $this->load->view('Home');
             }
         }
     }
@@ -484,10 +498,6 @@ class SmallController extends CI_Controller
                  $this->cart->insert($data);
                  $this->load->view('MissatgeAfegir');
 
-
-                 
-
-    
             } else {
 
                 $this->load->view('Home');
@@ -528,6 +538,47 @@ class SmallController extends CI_Controller
 
     }
 
+    public function Administracio(){
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "admin") {
+
+                $this->load->view('Administrador');
+    
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+    }
+
+    public function Atencio(){
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "atencioclient") {
+
+                $this->load->view('Consultes');
+    
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+    }
 
 
     public function TancarSessio()
