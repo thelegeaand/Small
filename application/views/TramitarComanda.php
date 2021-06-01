@@ -2,13 +2,16 @@
 <html lang="ca">
 
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Poppins:wght@800&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -39,7 +42,7 @@
           <a href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Carrito</a>
         </div>
         <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
-          <a href="#" id="bcolor">Tancar Sessió </a>
+        <a href="http://localhost/Small/index.php/SmallController/TancarSessio" id="bcolor" class="btn">Tancar Sessió</a>
         </div>
       </div>
     </nav>
@@ -411,9 +414,9 @@
     </header>
 
 <main class="tramitarComandafondo">
-<div class="text-botiga text-center">
+    <div class="text-botiga text-center">
             <h4 class="mt-5"><strong>Gairebé hem acabat!</strong></h4>
-            <p class="mb-5 pb-5">Introdueix les teves dades de facturació aqui!</p>
+            <p class="mb-5 pb-5">Introdueix les teves dades de facturació i direcció aqui!</p>
     </div>
 
     <div class="">
@@ -423,7 +426,7 @@
   <div class="card mb-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
-      Tramitar Comanda
+        <strong>Tramitar Comanda</strong>
       </h5>
     </div>
 
@@ -436,20 +439,20 @@
              </div>
              <h4>Introdueix Dades de Pagament</h4>
                 </div>
-
+            <span style='color:red;' id="pagamentD"></span>
             <div class="form-row mt-5">
             <div class="col-md-6 mb-3 text-center">
-                  <input type="text" class="form-control mb-4" id="Usuari" placeholder="Número de Tarjeta">
+                  <input type="text" class="form-control mb-4" id="numtarjeta" placeholder="Número de Tarjeta">
                 </div>
                 <div class="col-md-2 mb-3 text-center">
-                  <input type="text" class="form-control" id="Usuari" placeholder="Mes Caducitat">
+                  <input type="text" class="form-control" id="mescaducitat" placeholder="Mes Caducitat">
                 </div>
                 
                 <div class="col-md-2 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Any Caducitat" required>
+                  <input type="text" class="form-control mb-4" id="anycaducitat" placeholder="Any Caducitat" required>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="CVV" required>
+                  <input type="text" class="form-control mb-4" id="cvv" placeholder="CVV" required>
                 </div>
             </div>
             
@@ -459,22 +462,22 @@
              </div>
              <h4>Introdueix les Dades d'Enviament</h4>
                 </div>
-
+                
 
               <div class="form-row mt-4">
-                
-                
                 <div class="col-md-6 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Carrer" required>
+                <span style='color:red;' id="carrerD"></span>
+                  <input type="text" class="form-control mb-4" id="carrer" placeholder="Carrer" required>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Número" required>
+                <span style='color:red;' id="numeroD"></span>
+                  <input type="number" class="form-control mb-4" id="numero"  placeholder="Numero" required>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Pis" required>
+                  <input type="text" class="form-control mb-4" id="pis" placeholder="Pis*" required>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input type="password" class="form-control mb-4" id="Password" placeholder="Escala" required>
+                  <input type="text" class="form-control mb-4" id="escala" placeholder="Escala*" required>
                 </div>
               </div>
 
@@ -487,16 +490,17 @@
             
             
               <div class="form-row mt-4">
-                <div class="col-md-3 mb-3 text-center">
-                  <input type="text" class="form-control" id="Usuari" placeholder="Telèfon" >
+                <div class="col-md-3 mb-3 ">
+                <span style='color:red;' id="telefonD"></span>
+                  <input type="text" class="form-control" id="telefon" placeholder="Telèfon" >
                 </div>
                 <div class="col-md-9 mb-3">
-                  <input type="password" class="form-control" id="Password" placeholder="Comentari" required>
+                  <input type="text" class="form-control" id="comentaris" placeholder="Comentari" required>
                 </div>
               </div>
 
               <div class="offset-4 text-center boton">
-                  <button type="submit" id="bcolor" class="btn btn-outline-success mt-5 mb-5">Tramitar Comanda</button>
+                  <button type="button" onclick="TramitarComanda()"; id="bcolor" class="btn mt-5 mb-5">Tramitar Comanda</button>
 
                 </div>
             </form>
@@ -524,9 +528,9 @@
                 <div class="card-body">
                   <h5 class="card-title t1">SMALL</h5>
                   <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="#logo">Home</a></li>
+                  <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="http://localhost/Small/index.php/SmallController/index">Home</a></li>
                     <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Registre">Registre Client</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="#">RegistreBotiga</a></li>
+                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="<?php echo base_url(); ?>index.php/SmallController/RegistreBotiga">Registre Botiga</a></li>
                   </ul>
                 </div>
               </div>
@@ -536,8 +540,8 @@
                 <div class="card-body">
                   <h5 class="card-title t1">LEGAL</h5>
                   <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Condicions">Termes i Condicions</a></li>
-                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Privacitat">Privacitat</a></li>
+                  <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Condicions">Termes i Condicions</a></li>
+                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Privacitat">Privacitat</a></li>
                     <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Cookies">Cookies</a></li>
                   </ul>
                 </div>
@@ -548,9 +552,9 @@
                 <div class="card-body">
                   <h5 class="card-title t1">AJUDA</h5>
                   <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Contacte</a></li>
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Small-Inc@gmail.com</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;" href="#">+34 678930323</a></li>
+                  <li class="pt-3"><a href="http://localhost/Small/index.php/SmallController/Contacte" class="card-text" style="text-decoration:none;color:white;">Contacte</a></li>
+                    <li class="pt-3"><span class="card-text" style="text-decoration:none;color:white;">Small-Inc@gmail.com</span></li>
+                    <li class="pt-3"> <span class="card-text " style="text-decoration:none;color:white;">+34 678930323</span></li>
                   </ul>
                 </div>
               </div>

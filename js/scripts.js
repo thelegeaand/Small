@@ -844,7 +844,6 @@ if(IBAN==""){
                         if (this.readyState == 4 && this.status == 200) {
                             var m = Request.responseText;
                         
-                    
                             if (m == "ok") {
                                 document.getElementById("correuInc").innerHTML = "";
                                 document.getElementById("Correu").style = "border-color:#07FB7F;";
@@ -906,8 +905,138 @@ if(IBAN==""){
         text: 'No s\'ha pogut dur a terme el registre correctament!'
     });
     
+}    
 }
 
+
+function TramitarComanda (){
+    /*Preparat per incorporació Pagament*/
+    var NumTarjeta=document.getElementById("numtarjeta").value;
+    var MesCaducitat=document.getElementById("mescaducitat").value;
+    var AnyCaducitat=document.getElementById("anycaducitat").value;
+    var CVV=document.getElementById("cvv").value;
+    CVV="123";
+    NumTarjeta="5540500001000004";
+    MesCaducitat="12";
+    AnyCaducitat="20";
+    /*-------------------------*/
+
+    var Carrer=document.getElementById("carrer").value;
+    var Numero=document.getElementById("numero").value;
+    var Pis=document.getElementById("pis").value;
+    var Escala=document.getElementById("escala").value;
+    var Telefon=document.getElementById("telefon").value;
+    var Comentaris=document.getElementById("comentaris").value;
+
+    var CompCarrer = number(Carrer);
+    var CompTel=validarTel(Telefon);
+    var missatge=false;
+
+    if(Comentaris==""){
+
+        Comentaris="null";
+    }
+    if(Pis==""){
+
+        Pis="null";
+    }
+    if(Escala=="null"){
+
+        Escala="null";
+    }
+
+    if (Carrer == "") {
+
+        document.getElementById("carrer").style = "border-color:red;";
+        document.getElementById("carrerD").innerHTML = "Camp en blanc";
+        missatge = true;
+
+    } else if (CompCarrer == false || Carrer.length > 50) {
+        document.getElementById("carrerD").innerHTML = "Format incorrecte";
+        document.getElementById("carrer").style = "border-color:red;";
+        missatge = true;
+
+    }
+    else {
+        document.getElementById("carrerD").innerHTML = "";
+        document.getElementById("carrer").style = "border-color:#07FB7F;";
+    }
+
+    if(Numero=="" || Numero==0){
+        document.getElementById("numeroD").innerHTML = "Camp en blanc";
+        document.getElementById("numero").style = "border-color:red;";
+        missatge = true;
+
+    }else if(Numero<=0){
+        document.getElementById("numero").style = "border-color:red;";
+        document.getElementById("numeroD").innerHTML = "Format incorrecte";
+        missatge = true;
+    }else{
+        document.getElementById("numeroD").innerHTML = "";
+        document.getElementById("numero").style = "border-color:#07FB7F;";
+    }
+
+    if(Telefon==""){
+        document.getElementById("telefonD").innerHTML = "Camp en blanc";
+        document.getElementById("telefon").style = "border-color:red;";
+        missatge = true;
+
+    }else if(CompTel!=true){
+        document.getElementById("telefon").style = "border-color:red;";
+        document.getElementById("telefonD").innerHTML = "Format incorrecte";
+        missatge = true;
+
+    }else{
+        document.getElementById("telefonD").innerHTML = "";
+        document.getElementById("telefon").style = "border-color:#07FB7F;";
+
+    }
+
+    if (missatge != true) {
+
+        var Request = new XMLHttpRequest();
+        Request.onreadystatechange = function () {
+            console.log(this.readyState);
+            console.log(this.status);
+            
+            if (this.readyState == 4 && this.status == 200) {
+                var m = Request.responseText;
+            
+                if (m == "ok") {
+    
+                        window.location.href="http://localhost/Small/index.php/SmallController/Success";
+                        
+                   
+                }else if(m=="NoRep"){
+
+                        window.location.href="http://localhost/Small/index.php/SmallController/ErrorRepartidor";
+                }
+                
+                else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Disculpa les molèsties, això no hauria d\'estar passant'
+                    });
+    
+                }
+            }
+        };
+    
+        
+        Request.open("POST", "http://localhost/Small/index.php/SmallController/Tramitar", true);
+        Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        Request.send("Carrer="+Carrer+"&Numero="+Numero+"&Pis="+Pis+"&Comentaris="+Comentaris+"&Escala="+Escala+"&Telefon="+Telefon);
+
+    }else{
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No s\'ha pogut tramitar la comanda!'
+        });
+
+    }
 
 
 
@@ -915,7 +1044,6 @@ if(IBAN==""){
     
 
 
-     
 }
 
 
@@ -1180,6 +1308,15 @@ function modulo97(iban) {
 function getnumIBAN(letra) {
     ls_letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     return ls_letras.search(letra) + 10;
+}
+
+function validarTel(tel){
+        var comp=true;
+    if( !(/^\d{9}$/.test(tel)) ) {
+        comp=false;
+      }
+
+      return comp;
 }
 
 

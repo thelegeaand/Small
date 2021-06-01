@@ -127,6 +127,16 @@ a:hover{
     padding-right: 9px;
     padding-left: 10px;
 }
+#bc10{
+    color: white;
+    background-color: red;
+    margin-top: 3%;
+    border-radius: 13px;
+    font-weight: bold;
+    padding: 4px;
+    padding-right: 9px;
+    padding-left: 10px;
+}
 
 .swal2-title {
     position: relative;
@@ -621,6 +631,7 @@ h1{
     padding-right: 20px;
     padding-left: 20px;
 }
+
 #bcolor21{
     color: white;
     background-color: #07FB7F;

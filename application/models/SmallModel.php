@@ -250,6 +250,31 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
     return $dades->result_array();
 
    }
+   function InsertarComanda($CodiComanda,$idprod,$idRep,$id,$DireccioEntrega,$Estat,$Telefon){
+
+    $data = array(
+        'id_producte'=>$idprod,
+        'id_repartidor'=>$idRep,
+        'id_client'=>$id,
+        'direccio_entrega'=>$DireccioEntrega,
+        'estat'=>$Estat,
+        'codi_comanda'=>$CodiComanda,
+        'telefon'=>$Telefon,
+    );
+
+    $this->db->insert('comanda',$data);
+   }
+
+   function CompRep($ciutat){
+
+    $sql="SELECT * FROM repartidor WHERE ciutat='".$ciutat."'";
+
+    $dades=$this->db->query($sql);
+     
+    return $dades->result_array();
+
+
+   }
    function TancarCI($id){
 
     $tancada="Tancada";

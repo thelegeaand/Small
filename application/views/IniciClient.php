@@ -189,7 +189,7 @@
 
             <div class="offset-4 text-center boton">
             <a  href="http://localhost/Small/index.php/SmallController/BuidarCarrito"  id="bcolor" style="background-color:#FF0910 !important;color: white !important;"  class="btn mr-2 ">Buidar</a>
-              <a href="http://localhost/Small/index.php/SmallController/TramitarComandaRed" class="btn" id="bcolor">Tramitar</a>
+              <a href="http://localhost/Small/index.php/SmallController/TramitarCarrito" class="btn" id="bcolor">Tramitar</a>
           
             </div>
             </form>

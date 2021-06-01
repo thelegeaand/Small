@@ -148,7 +148,7 @@ class SmallController extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
 
-            echo "notunique";
+             echo "notunique";
 
         } else {
 
@@ -159,8 +159,10 @@ class SmallController extends CI_Controller
             $id = $dades[0]['id_usuari'];
 
             $this->SmallModel->NovaBotiga($id, $NomPropietari,$NomBotiga, $TipusBotiga,$NomEmpresa, $CIF, $CorreuEmpresa, $Ciutat, $Carrer,$Provincia,$CodiPostal,$Iban,$Numero);
-
+            
             echo "ok";
+
+            
         }
     }
 
@@ -502,11 +504,7 @@ class SmallController extends CI_Controller
 
                 $this->load->view('Home');
             }
-        }
-
-      
-
-     
+        }  
     }
 
     public function BuidarCarrito(){
@@ -536,7 +534,154 @@ class SmallController extends CI_Controller
 
     public function TramitarCarrito(){
 
+        $session = $this->session->userdata('tipus');
 
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "client") {
+
+
+                if($this->cart->total_items()==0){
+
+                    $this->load->view('ErrorTramitar');
+
+                }else{
+
+                    $this->load->view('TramitarComanda');
+                }
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+    }
+
+    public function Tramitar(){
+
+        $session = $this->session->userdata('tipus');
+        $id = $this->session->userdata('validat');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "client") {
+
+                $Carrer = $this->input->post('Carrer');
+                $Numero = $this->input->post('Numero');
+                $Pis = $this->input->post('Pis');
+                $Comentaris = $this->input->post('Comentaris');
+                $Escala = $this->input->post('Escala');
+                $Telefon = $this->input->post('Telefon');
+                $Estat="Preparant";
+
+                $Info = $this->SmallModel->CiutatClient($id);
+                $Ciutat = $Info[0]['ciutat'];
+                $Provincia = $Info[0]['província'];
+
+                $DireccioEntrega="".$Ciutat.",".$Provincia."/".$Carrer.",".$Numero.",".$Pis.",".$Escala;
+
+                $compRep = $this->SmallModel->CompRep($Ciutat);
+
+                if(empty($compRep)){
+
+                    echo"NoRep";
+
+                }else{
+                    $idRep = $compRep[0]['id_repartidor'];
+
+                    $num1=$aleat = rand(0,9); 
+                    $num2=$aleat = rand(0,9);
+                    $num3=$aleat = rand(0,9); 
+                    $num4=$aleat = rand(0,9); 
+                    $num5=$aleat = rand(0,9); 
+                    $num6=$aleat = rand(0,9);  
+                    $num7=$aleat = rand(0,9); 
+                    $num8=$aleat = rand(0,9); 
+                    $num9=$aleat = rand(0,9); 
+                    $num10=$aleat = rand(0,9); 
+
+                    $DesdeLetra = "a";
+                    $HastaLetra = "z";
+                    $lletra = mb_strtoupper(chr(rand(ord($DesdeLetra), ord($HastaLetra))));
+
+                    $CodiComanda=$num1."".$num2."".$num3."".$num4."".$num5."".$num6."".$num7."".$num8."".$num9."".$num10."".$lletra;
+                    
+                    foreach ($this->cart->contents() as $items) {
+
+                        $qty=$items["qty"];
+                        $idprod=$items["id"];
+
+                        for($i=0;$i<$qty;$i++){
+
+                         $this->SmallModel->InsertarComanda($CodiComanda,$idprod,$idRep,$id,$DireccioEntrega,$Estat,$Telefon);
+                        
+                        }
+                     
+                      }
+ 
+                      echo "ok";
+                }
+                
+               
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+    }
+
+    public function ErrorRepartidor(){
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "client") {
+
+
+                $this->load->view('NoRep');
+
+
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
+    }
+
+
+    public function Success(){
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "client") {
+
+
+                $this->load->view('Success');
+
+
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
 
     }
 
@@ -664,11 +809,6 @@ class SmallController extends CI_Controller
         }
     }
 
-
-
-
-
-
     public function RebreIncidencia(){
 
         $CodiC=$this->input->post('comanda');
@@ -724,11 +864,6 @@ class SmallController extends CI_Controller
                 $this->load->view('Home');
             }
         }
-
-
-
-
-
     }
     
     public function TancarSessio()

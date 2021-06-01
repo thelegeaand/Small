@@ -495,12 +495,7 @@ foreach($consultes as $fila){
           if($fila["estat"]=="Pendent"){
             echo"<td><a href='" . base_url() . "index.php/SmallController/TancarConsulta/" . $fila["id_consulta"] . "' id='bcolor20' class='btn'>Tancar</a></td>";
           }
-   
-         
-          
         echo"</tr>";
-
-
       echo"</tbody>";
 }
       
