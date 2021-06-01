@@ -296,6 +296,18 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
 
    }
 
+   function DadesComandes(){
+
+    $sql="SELECT * FROM comanda";
+
+    $dades=$this->db->query($sql);
+     
+    return $dades->result_array();
+
+
+
+   }
+
    function CompRep($ciutat){
 
     $sql="SELECT * FROM repartidor WHERE ciutat='".$ciutat."'";
