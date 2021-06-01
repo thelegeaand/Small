@@ -1,5 +1,14 @@
 
+function noestoc(){
 
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No es pot afegir el producte'
+    });
+
+
+}
 function registreClient() {
 
     var Nom = document.getElementById("Nom").value;
@@ -1021,8 +1030,7 @@ function TramitarComanda (){
                 }
             }
         };
-    
-        
+          
         Request.open("POST", "http://localhost/Small/index.php/SmallController/Tramitar", true);
         Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         Request.send("Carrer="+Carrer+"&Numero="+Numero+"&Pis="+Pis+"&Comentaris="+Comentaris+"&Escala="+Escala+"&Telefon="+Telefon);

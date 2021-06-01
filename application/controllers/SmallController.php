@@ -632,7 +632,7 @@ class SmallController extends CI_Controller
                         }
 
                     }
-                    
+
                     if($compEstoc!=true){
 
                         $qty=$items["qty"];
@@ -642,8 +642,7 @@ class SmallController extends CI_Controller
                         for($i=0;$i<$qty;$i++){
 
                             $this->SmallModel->RestarEstocProducte($idproducte);
-                            $this->SmallModel->InsertarComanda($CodiComanda,$idprod,$idRep,$ClientId,$DireccioEntrega,$Estat,$Telefon);
-                        
+                            $this->SmallModel->InsertarComanda($CodiComanda,$idprod,$idRep,$ClientId,$DireccioEntrega,$Estat,$Telefon);  
                         }
                     }
 
