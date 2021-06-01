@@ -15,6 +15,7 @@ class SmallController extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('SmallModel');
         $this->load->library('cart');
+        $this->CI = & get_instance();
     }
 
     public function index()
@@ -588,6 +589,9 @@ class SmallController extends CI_Controller
                 $DireccioEntrega="".$Ciutat.",".$Provincia."/".$Carrer.",".$Numero.",".$Pis.",".$Escala;
 
                 $compRep = $this->SmallModel->CompRep($Ciutat);
+                $Client = $this->SmallModel->IdClient($id);
+                $ClientId = $Client[0]['id_client'];
+
 
                 if(empty($compRep)){
 
@@ -612,24 +616,47 @@ class SmallController extends CI_Controller
                     $lletra = mb_strtoupper(chr(rand(ord($DesdeLetra), ord($HastaLetra))));
 
                     $CodiComanda=$num1."".$num2."".$num3."".$num4."".$num5."".$num6."".$num7."".$num8."".$num9."".$num10."".$lletra;
-                    
+                    $compEstoc=false;
                     foreach ($this->cart->contents() as $items) {
+
+                       
+                        $qty2=$items["qty"];
+                        $idproducte=$items["id"];
+
+                        $pro=$this->SmallModel->CompEstoc($idproducte);
+                        $quant = $pro[0]['estoc'];
+
+                        if($qty2>$quant){
+                            $compEstoc=true;
+
+                        }
+
+                    }
+                    
+                    if($compEstoc!=true){
 
                         $qty=$items["qty"];
                         $idprod=$items["id"];
 
+                    foreach ($this->cart->contents() as $items) {
                         for($i=0;$i<$qty;$i++){
 
-                         $this->SmallModel->InsertarComanda($CodiComanda,$idprod,$idRep,$id,$DireccioEntrega,$Estat,$Telefon);
+                            $this->SmallModel->RestarEstocProducte($idproducte);
+                            $this->SmallModel->InsertarComanda($CodiComanda,$idprod,$idRep,$ClientId,$DireccioEntrega,$Estat,$Telefon);
                         
                         }
-                     
-                      }
- 
-                      echo "ok";
+                    }
+
+                        echo"ok";
+
+                    }else{
+
+                        echo"no";
+
+                    }   
+
                 }
-                
-               
+                         
             } else {
 
                 $this->load->view('Home');
@@ -637,6 +664,31 @@ class SmallController extends CI_Controller
         }
     }
 
+    public function AvisEstoc(){
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "client") {
+
+
+                $this->load->view('NoEstoc');
+
+
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
+    }
+
+   
     public function ErrorRepartidor(){
         $session = $this->session->userdata('tipus');
 
@@ -684,6 +736,28 @@ class SmallController extends CI_Controller
         }
 
     }
+
+    public function enviar(){
+        $config = array(
+           'protocol' => 'smtp',
+           'smtp_host' => 'smtp.googlemail.com',
+           'smtp_user' => 'smallinc58@gmail.com', 
+           'smtp_pass' => 'Asd.1234', 
+           'smtp_port' => '465',
+           'smtp_crypto' => 'ssl',
+           'mailtype' => 'html',
+           'wordwrap' => TRUE,
+           'charset' => 'utf-8'
+           );
+           $this->load->library('email', $config);
+           $this->email->set_newline("\r\n");
+           $this->email->from('smallinc58@gmail.com');
+           $this->email->subject('Compra Realitzada!!!');
+           $this->email->message('Hola');
+           $this->email->to('thelegeaand@gmail.com');
+           $this->email->send();
+           
+      }
 
     public function Administracio(){
 

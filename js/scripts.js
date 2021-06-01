@@ -1010,13 +1010,12 @@ function TramitarComanda (){
                 }else if(m=="NoRep"){
 
                         window.location.href="http://localhost/Small/index.php/SmallController/ErrorRepartidor";
-                }
-                
+                } 
                 else {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Disculpa les molèsties, això no hauria d\'estar passant'
+                        text: 'Disculpa les molèsties,alguna botiga no disposa de suficient estoc d\'algun producte seleccionat!'
                     });
     
                 }

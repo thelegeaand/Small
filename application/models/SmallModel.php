@@ -264,6 +264,37 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
 
     $this->db->insert('comanda',$data);
    }
+   function IdClient($id){
+
+    $sql1="SELECT * FROM client WHERE id_usuari=".$id."";
+
+    $dades=$this->db->query($sql1);
+     
+    return $dades->result_array();
+
+   }
+
+   public function CompEstoc($idproducte){
+
+    $sql1="SELECT * FROM producte WHERE id_producte=".$idproducte."";
+
+    $dades=$this->db->query($sql1);
+     
+    return $dades->result_array();
+
+
+   }
+
+   public function RestarEstocProducte($idproducte){
+    $restar=1;
+
+    $data = array(
+        'estoc' => $restar  
+    );
+    $this->db->where('id_producte', $idproducte);
+    $this->db->update('producte', $data);
+
+   }
 
    function CompRep($ciutat){
 
