@@ -44,6 +44,51 @@
       </div>
     </nav>
 
+<!--Modal Afegir Producte-->
+<div class="modal fade" id="AfegirProd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center ml-5" style="border-bottom:0px;">
+            <h5 class="modal-title" id="titol1">Entra a <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          <form>
+            <div class="col-md-12">
+            <label for="">Nom Producte</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Stock</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Preu Kg</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Imatge</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12">
+            <label for="">Descripció</label>
+                <input type="text" class="form-control  mb-4" name="" id="">
+            </div>
+            <div class="col-md-12 justify-content-center d-flex">
+            <input type="submit" class="btn" id="bcolor" value="Afegir Producte">
+            </div>
+          </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+
+
     <!-- Modal Carrito -->
     <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
