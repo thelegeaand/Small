@@ -490,17 +490,24 @@ foreach($comandes as $fila){
           echo"<td>".$fila["direccio_entrega"]."</td>";
           if($fila["estat"]=="Preparant"){
             echo"<td class='text-warning'>".$fila["estat"]."</td>";
-          }else{
+          }else if($fila["estat"]=="Cancel·lada"){
+            echo"<td style='color:red;'>".$fila["estat"]."</td>";
+        
+          }else {
             echo"<td class='text-success'>".$fila["estat"]."</td>";
+            
+
           }
          
           echo"<td>".$fila["telefon"]."</td>";
           if($fila["estat"]=="Entregada"){
+          }else if($fila["estat"]=="Cancel·lada"){
+
           }else{
 
           echo"<td><a href='http://localhost/Small/index.php/SmallController/ComandaEntregada/$codi' class='btn' id='bcolor'>Entregat</a></td>";
           
-        }
+          }
     
         echo"</tr>";
 

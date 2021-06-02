@@ -47,23 +47,48 @@ class SmallController extends CI_Controller
 
     public function HistorialComandes()
     {
-
-
         $session = $this->session->userdata('tipus');
+        $idusuari= $this->session->userdata('validat');
 
         if (empty($session)) {
-
             $this->load->view('Home');
         } else {
-
             if ($session == "client") {
 
-                $this->load->view('Comanda');
+                $Client = $this->SmallModel->IdClient($idusuari);
+                $idclient = $Client[0]['id_client'];
+
+                $dades=$this->SmallModel->DadesComandesUsuari($idclient);
+
+                $this->load->view('Comanda',array('comandes'=>$dades));
+
             } else {
 
                 $this->load->view('Home');
             }
         }
+    }
+
+    public function CancelEntrega($idcomanda){
+        $session = $this->session->userdata('tipus');
+       
+
+        if (empty($session)) {
+            $this->load->view('Home');
+        } else {
+            if ($session == "client") {
+
+             
+                $this->SmallModel->Cancel($idcomanda);
+
+                $this->load->view('ComandaCancel·lada');
+
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
     }
 
     public function ModDadesPersonaRed()
@@ -461,10 +486,12 @@ class SmallController extends CI_Controller
 *
 * @param int $idproducte id del producte afegir.
 */
-    public function AfegirProducte($idproducte){
+
+    public function AfegirProducte(){
 
         $session = $this->session->userdata('tipus');
         $idusuari = $this->session->userdata('validat');
+        $idproducte=$NomUsuari = $this->input->post('idproducte');
 
         if (empty($session)) {
 
@@ -480,7 +507,7 @@ class SmallController extends CI_Controller
                 $EstocActual = $pro[0]['estoc'];
                 $this->SmallModel->AfegirEstocProducte($EstocActual,$idproducte);
                
-                $this->load->view('ProducteAfegit');
+                echo"ok";
 
             } else {
 
@@ -693,11 +720,8 @@ class SmallController extends CI_Controller
                         }
                     }
                         echo"ok";
-
                     }else{
-
                         echo"no";
-
                     }   
 
                 }

@@ -333,6 +333,29 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
 
 
    }
+   function Cancel($idcomanda){
+
+    $r="Cancel·lada";
+    $data = array(
+        'estat' => $r  
+    );
+    $this->db->where('codi_comanda', $idcomanda);
+    $this->db->update('comanda', $data);
+
+
+   }
+   function DadesComandesUsuari($idclient){
+
+    $sql="SELECT * FROM comanda WHERE id_client=".$idclient." GROUP BY codi_comanda";
+
+    $dades=$this->db->query($sql);
+     
+    return $dades->result_array();
+
+
+
+   }
+
    function IdBotiga($idusuari){
     $sql="SELECT * FROM botiga WHERE id_usuari=".$idusuari."";
 

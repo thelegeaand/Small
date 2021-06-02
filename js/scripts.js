@@ -1080,9 +1080,38 @@ Request.open("POST", "http://localhost/Small/index.php/SmallController/AfegirCar
 Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 Request.send("id="+id+"&quantitat="+quantitat);
 
+}
 
+function AfegirEstoc(idproducte){
 
+    var Request = new XMLHttpRequest();
+    Request.onreadystatechange = function () {
 
+      if (this.readyState == 4 && this.status == 200) {
+
+          var m=this.responseText;
+
+          if(m=="ok"){
+
+            Swal.fire({
+                icon: 'success',
+                text: 'Estoc del producte afegit',
+            }).then((value) => {
+                location.reload();
+            });    
+          }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'No s\'ha pogut afegir estoc del producte'
+            });
+          } 
+       }
+};
+
+Request.open("POST", "http://localhost/Small/index.php/SmallController/AfegirProducte", true);
+Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+Request.send("idproducte="+idproducte);
 
 
 

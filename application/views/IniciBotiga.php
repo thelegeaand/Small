@@ -146,14 +146,15 @@
                     $img = base64_encode($items['options']['img']);
                     $tipus = $items['options']['tipus'];
 
-
                     echo "<tr style='border:1px solid green;' class='b'>";
                     echo "<th id='quantitat' scope='row'> X" . $items["qty"] . "</th>";
                     echo '<td><img class="ml-5" src="data:' . $tipus . ';base64,' . $img . '" id="logo" alt="Imatge Producte Carrito" style="width:63px;height:70px;"></td>';
                     echo "<td id='descripcio'>" . $items["name"] . "</td>";
-
                     echo "</tr>";
+
                   }
+
+
                 }
 
 
@@ -559,7 +560,7 @@ $tipusprod=$fila["tipus_prod"];
           }
 
           echo" <div class='buy justify-content-center align-items-center'>";
-          echo"<a href='" . base_url() . "index.php/SmallController/AfegirProducte/".$fila["id_producte"] ."' class='btn mt-3' id='bcolor'>+</a>";
+          echo"<button onclick='AfegirEstoc(".$fila["id_producte"].")' class='btn mt-3' id='bcolor'>+</a>";
  
           echo"</div>";
           echo"</div>";

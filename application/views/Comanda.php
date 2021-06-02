@@ -417,71 +417,69 @@
     </div>
 
     <div class="">
-       <div class="container mb-5 pb-5">
-            
-  
+       <div id="contacom" class="container  mt-5 mb-2 pb-5 text-center">
   <div class="card mb-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
-      Historial de Comandes
+       <strong>Comandes</strong>
       </h5>
     </div>
+<?php 
+if(empty($comandes)){
+  echo"<p><strong>No tens Comandes encara!!!</strong></p>";
+}else{
+echo"<div class='table-responsive'>";
+echo"<table class='table table-bordered'>";
+foreach($comandes as $fila){
+    ?>
+      <thead>
+        <tr>
+          <th>Codi Comanda</th>
+          <th>Data Hora</th>
+          <th>Direcció Entrega</th>
+          <th>Estat</th>
+          <th>Telefon</th>
+          <th></th>
+      
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <?php 
+        $codi=$fila["codi_comanda"];
+          echo"<td>".$fila["codi_comanda"]."</td>";
+          echo"<td>".$fila["data_hora"]."</td>";
+          echo"<td>".$fila["direccio_entrega"]."</td>";
+          if($fila["estat"]=="Preparant"){
+            echo"<td class='text-warning'>".$fila["estat"]."</td>";
+          }else if($fila["estat"]=="Cancel·lada"){
+            echo"<td style='color:red;'>".$fila["estat"]."</td>";
+        
+          }else {
+            echo"<td class='text-success'>".$fila["estat"]."</td>";
+            
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="container  adv">
-        <table class="table">
-          <thead>
-          <tr>
-                <th>Codi</th>
-                <th>Data</th>
-                <th>Estat</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+          }
+          echo"<td>".$fila["telefon"]."</td>";
+          if($fila["estat"]=="Entregada"){
+          }else if($fila["estat"]=="Entregat"){
+          echo"<td><a href='http://localhost/Small/index.php/SmallController/CancelEntrega/$codi' class='btn' id='bcolor20'>Cancel·lar</a></td>";
+          }
+    
+        echo"</tr>";
+
+
+      echo"</tbody>";
+}
+      
+    echo"</table>";
+}
+    ?>
+  </div>
     </div>
   </div>
 </div>
-                <div class="justify-content-center d-flex mb-5">
-                <div class="col-md-4 mb-5">
-                        <div class="cartaTotal border mb-5">
-                            <div class="cuerpoCarta border">
-
-                            </div>
-                            <div class="headerCarta border">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-       </div>
-       
-       </div>
-
 
 
     </main>
