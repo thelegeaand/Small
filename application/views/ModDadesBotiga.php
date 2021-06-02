@@ -406,12 +406,38 @@
     </div>
         <div class="col-md-6 InfoBotiga">
                 <div class="container">
-                <div class="col-md-12 text-center mt-5">
+                <div class="col-md-12 ">
                 <form>
-                <input type="text" class="form-control mt-5 mb-5" placeholder="Nom Botiga">
-                <input type="text" class="form-control mt-5 mb-5" placeholder="Descripció">
-                <input type="text" class="form-control mt-5 mb-5" placeholder="Direcció">
-                <input type="text" class="form-control mt-5 mb-5" placeholder="Contacte">
+                <div class="row">
+                  <div class="col-md-6 col-6 col-sm-6" >
+                  <h5 class="font-weight-bold mt-5 mb-4">Nom Botiga</h5>
+                  <input type="text" class="form-control" placeholder="Nom Botiga">
+                  </div>
+                  <div class="col-md-6 col-6 col-sm-6">
+                  <h5 class="font-weight-bold mt-5 mb-4">Descripció Botiga</h5>
+                  <input type="text" class="form-control" placeholder="Descripció">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-6 col-sm-6">
+                  <h5 class="font-weight-bold mt-5 mb-4">Direcció</h5>
+                  <input type="text" class="form-control " placeholder="Direcció">
+                  </div>
+                  <div class="col-md-6 col-6 col-sm-6">
+                  <h5 class="font-weight-bold mt-5 mb-4">Contacte</h5>
+                  <input type="text" class="form-control" placeholder="Contacte">
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-6 col-sm-6">
+                  <h5 class="font-weight-bold mt-5 mb-4">Imatge de Perfil</h5>
+                  <input type="file" class="form-control " placeholder="Imatge Perfil">
+                  </div>
+                  <div class="col-md-6 col-6 col-sm-6">
+                  <h5 class="font-weight-bold mt-5 mb-4">Imatge Botiga</h5>
+                  <input type="file" class="form-control" placeholder="Imatge Botiga">
+                  </div>
+                </div>
                 </form>   
             </div>
             </div>
