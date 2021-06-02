@@ -285,8 +285,9 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
 
    }
 
-   public function RestarEstocProducte($idproducte){
-    $restar=1;
+
+   public function RestarEstocProducte($estocActual,$idproducte){
+    $restar=$estocActual-1;
 
     $data = array(
         'estoc' => $restar  
@@ -305,6 +306,33 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
     return $dades->result_array();
 
 
+
+   }
+   function IdBotiga($idusuari){
+    $sql="SELECT * FROM botiga WHERE id_usuari=".$idusuari."";
+
+    $dades=$this->db->query($sql);
+     
+    return $dades->result_array();
+
+   }
+   function EliminarProducte($idProducte){
+
+      $this->db->where('id_producte', $idProducte);
+      $this->db->delete('producte');
+
+
+   }
+
+   function AfegirEstocProducte($estocActual,$idproducte){
+
+    $sumar=$estocActual+1;
+
+    $data = array(
+        'estoc' => $sumar  
+    );
+    $this->db->where('id_producte', $idproducte);
+    $this->db->update('producte', $data);
 
    }
 

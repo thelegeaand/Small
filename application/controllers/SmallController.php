@@ -429,6 +429,9 @@ class SmallController extends CI_Controller
     public function IniciBotiga()
     {
         $session = $this->session->userdata('tipus');
+        $idusuari = $this->session->userdata('validat');
+        $botiga= $this->SmallModel->IdBotiga($idusuari);
+        $idbotiga=$botiga[0]["id_botiga"];
 
         if (empty($session)) {
 
@@ -438,7 +441,12 @@ class SmallController extends CI_Controller
 
             if ($session == "botiga") {
 
-            $this->load->view('IniciBotiga');
+                $data = $this->SmallModel->Botiga($idbotiga);
+                $data2 = $this->SmallModel->Productes($idbotiga);
+                
+                $this->load->view('IniciBotiga',array('Abotiga'=>$data,'Pbotiga'=>$data2));
+
+          
 
             } else {
 
@@ -447,9 +455,41 @@ class SmallController extends CI_Controller
         }
     }
 
+    
+
+    public function AfegirProducte($idproducte){
+
+        $session = $this->session->userdata('tipus');
+        $idusuari = $this->session->userdata('validat');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "botiga") {
+
+                $pro=$this->SmallModel->CompEstoc($idproducte);
+                $EstocActual = $pro[0]['estoc'];
+                $this->SmallModel->AfegirEstocProducte($EstocActual,$idproducte);
+               
+                $this->load->view('ProducteAfegit');
+
+          
+
+            } else {
+
+            $this->load->view('Home');
+            }
+        }
+
+    }
+
     public function Botiga($idbotiga){
 
         $session = $this->session->userdata('tipus');
+
 
         if (empty($session)) {
 
@@ -634,18 +674,17 @@ class SmallController extends CI_Controller
                     }
 
                     if($compEstoc!=true){
-
+                    foreach ($this->cart->contents() as $items) {
                         $qty=$items["qty"];
                         $idprod=$items["id"];
-
-                    foreach ($this->cart->contents() as $items) {
                         for($i=0;$i<$qty;$i++){
 
-                            $this->SmallModel->RestarEstocProducte($idproducte);
+                            $produ= $this->SmallModel->CompEstoc($idprod);
+                            $EstocActual = $produ[0]['estoc'];
+                            $this->SmallModel->RestarEstocProducte($EstocActual,$idprod);
                             $this->SmallModel->InsertarComanda($CodiComanda,$idprod,$idRep,$ClientId,$DireccioEntrega,$Estat,$Telefon);  
                         }
                     }
-
                         echo"ok";
 
                     }else{
