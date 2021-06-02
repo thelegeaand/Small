@@ -677,8 +677,6 @@ $tipusprod=$fila["tipus_prod"];
 
       </div>
 
-
-
   </footer>
   <script>
     $("a[href^='#']").click(function(e) {

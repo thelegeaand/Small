@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
   <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
-  <title>Pàgina Principal Small</title>
+  <title>Modificar Dades Botiga</title>
 </head>
 
 <body class="trianguloModificar">

@@ -9,6 +9,8 @@ function noestoc(){
 
 
 }
+
+
 function registreClient() {
 
     var Nom = document.getElementById("Nom").value;
@@ -456,11 +458,10 @@ function iniciarsessio(){
                   });
 
             }else{
-
+                
                 document.getElementById("PasswordIS").style = "border-color:red;";
                 document.getElementById("NomUsuariIS").style = "border-color:red;";
-      
-              
+
               Swal.fire({
                   icon: 'error',
                   title: 'Oops...',
@@ -1126,7 +1127,7 @@ function ComprobarDni(Dni) {
     }
 }
 
-/* Calcular Edat*/
+/*Calcular Edat*/
 function Anos(data) {
 
     var fecha = new Date(data);

@@ -938,6 +938,53 @@ class SmallController extends CI_Controller
             }
         }
     }
+
+    public function Repartidor(){
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "repartidor") {
+
+                $dades=$this->SmallModel->DadesComandes();
+
+                $this->load->view('Repartidor',array('comandes'=>$dades));
+    
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
+    }
+
+    public function DetallsComanda($CodiComanda){
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "repartidor") {
+
+
+                $this->load->view('Detalls');
+    
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
+    }
+
     
     public function TancarSessio()
     {
