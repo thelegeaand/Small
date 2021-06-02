@@ -19,6 +19,7 @@
   <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
   <title>Estoc Afegit</title>
 </head>
+
 <body>
 
 <div class="container mt-5">
@@ -29,7 +30,7 @@
       <img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logoM" alt="Imatge Corporativa Small">
       </div>
       <div class="alert-message text-center">
-        <p><strong>S'ha Afegit estoc del producte correctament!</strong></p>
+        <p><strong>Afegit l'estoc del producte correctament!</strong></p>
         
       
       </div>

@@ -456,7 +456,11 @@ class SmallController extends CI_Controller
     }
 
     
-
+/**
+* Afegir estoc  producte a la botiga.
+*
+* @param int $idproducte id del producte afegir.
+*/
     public function AfegirProducte($idproducte){
 
         $session = $this->session->userdata('tipus');
@@ -470,13 +474,13 @@ class SmallController extends CI_Controller
 
             if ($session == "botiga") {
 
+                
+
                 $pro=$this->SmallModel->CompEstoc($idproducte);
                 $EstocActual = $pro[0]['estoc'];
                 $this->SmallModel->AfegirEstocProducte($EstocActual,$idproducte);
                
                 $this->load->view('ProducteAfegit');
-
-          
 
             } else {
 
@@ -485,7 +489,6 @@ class SmallController extends CI_Controller
         }
 
     }
-
     public function Botiga($idbotiga){
 
         $session = $this->session->userdata('tipus');
@@ -512,9 +515,11 @@ class SmallController extends CI_Controller
 
     }
 
-    public function AfegirCarrito($id,$quantitat){
+    public function AfegirCarrito(){
 
         $session = $this->session->userdata('tipus');
+        $id = $this->input->post('id');
+        $quantitat = $this->input->post('quantitat');
 
         if (empty($session)) {
 
@@ -539,7 +544,10 @@ class SmallController extends CI_Controller
                 
             
                  $this->cart->insert($data);
-                 $this->load->view('MissatgeAfegir');
+
+                
+
+                echo"ok";
 
             } else {
 
@@ -586,7 +594,7 @@ class SmallController extends CI_Controller
             if ($session == "client") {
 
 
-                if($this->cart->total_items()==0){
+                if(empty($this->cart->total_items())){
 
                     $this->load->view('ErrorTramitar');
 
@@ -617,7 +625,6 @@ class SmallController extends CI_Controller
                 $Carrer = $this->input->post('Carrer');
                 $Numero = $this->input->post('Numero');
                 $Pis = $this->input->post('Pis');
-                $Comentaris = $this->input->post('Comentaris');
                 $Escala = $this->input->post('Escala');
                 $Telefon = $this->input->post('Telefon');
                 $Estat="Preparant";
@@ -1002,6 +1009,30 @@ class SmallController extends CI_Controller
 
     }
 
+    public function ComandaEntregada($codiComanda){
+
+        $session = $this->session->userdata('tipus');
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "repartidor") {
+
+
+                $dades=$this->SmallModel->Entregada($codiComanda);
+
+                $this->load->view('EntregaRealitzada');
+    
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+    }
+
     public function DetallsComanda($CodiComanda){
         $session = $this->session->userdata('tipus');
 
@@ -1014,7 +1045,9 @@ class SmallController extends CI_Controller
             if ($session == "repartidor") {
 
 
-                $this->load->view('Detalls');
+                $dades=$this->SmallModel->detalls($CodiComanda);
+
+                $this->load->view('Detalls',array("detalls"=>$dades));
     
             } else {
 

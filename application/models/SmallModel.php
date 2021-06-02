@@ -181,6 +181,19 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
 
    }
 
+   public function Entregada($CodiComanda){
+
+    $complete="Entregada";
+
+    $data = array(
+        'estat' => $complete 
+    );
+    $this->db->where('codi_comanda', $CodiComanda);
+    $this->db->update('comanda', $data);
+
+
+   }
+
    public function Clients(){
 
 
@@ -297,9 +310,21 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
 
    }
 
+   function detalls($CodiComanda){
+
+    $sql="SELECT * FROM comanda c LEFT JOIN producte p ON c.id_producte=p.id_producte LEFT JOIN botiga b ON p.id_botiga=b.id_botiga  WHERE codi_comanda='".$CodiComanda."' GROUP BY (b.id_botiga)";
+
+    $dades=$this->db->query($sql);
+     
+    return $dades->result_array();
+
+
+
+   }
+
    function DadesComandes(){
 
-    $sql="SELECT * FROM comanda";
+    $sql="SELECT * FROM comanda GROUP BY codi_comanda";
 
     $dades=$this->db->query($sql);
      
@@ -323,7 +348,12 @@ public function NovaBotiga($id,$NomPropietari,$NomBotiga,$TipusBotiga,$NomEmpres
 
 
    }
-
+/**
+* Afegir estoc  producte a la botiga.
+*
+*@param int $idproducte id del producte afegir.
+*@param int $estocActual estoc actual del producte afegir.
+*/
    function AfegirEstocProducte($estocActual,$idproducte){
 
     $sumar=$estocActual+1;

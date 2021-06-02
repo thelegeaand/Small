@@ -936,16 +936,11 @@ function TramitarComanda (){
     var Pis=document.getElementById("pis").value;
     var Escala=document.getElementById("escala").value;
     var Telefon=document.getElementById("telefon").value;
-    var Comentaris=document.getElementById("comentaris").value;
 
     var CompCarrer = number(Carrer);
     var CompTel=validarTel(Telefon);
     var missatge=false;
 
-    if(Comentaris==""){
-
-        Comentaris="null";
-    }
     if(Pis==""){
 
         Pis="null";
@@ -961,7 +956,7 @@ function TramitarComanda (){
         document.getElementById("carrerD").innerHTML = "Camp en blanc";
         missatge = true;
 
-    } else if (CompCarrer == false || Carrer.length > 50) {
+    } else if (Carrer.length > 50) {
         document.getElementById("carrerD").innerHTML = "Format incorrecte";
         document.getElementById("carrer").style = "border-color:red;";
         missatge = true;
@@ -1034,7 +1029,7 @@ function TramitarComanda (){
           
         Request.open("POST", "http://localhost/Small/index.php/SmallController/Tramitar", true);
         Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        Request.send("Carrer="+Carrer+"&Numero="+Numero+"&Pis="+Pis+"&Comentaris="+Comentaris+"&Escala="+Escala+"&Telefon="+Telefon);
+        Request.send("Carrer="+Carrer+"&Numero="+Numero+"&Pis="+Pis+"&Escala="+Escala+"&Telefon="+Telefon);
 
     }else{
 
@@ -1046,10 +1041,49 @@ function TramitarComanda (){
 
     }
 
+}
 
+function AfegirProd(id,quantitat){
+    var Request = new XMLHttpRequest();
+    Request.onreadystatechange = function () {
 
+      if (this.readyState == 4 && this.status == 200) {
 
+          var m=this.responseText;
+
+          if(m=="ok"){
+
+            Swal.fire({
+                icon: 'success',
+                text: 'Producte afegit a la cistella',
+            }).then((value) => {
+
+                location.reload();
+
+            });
+              
+          }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'No s\'ha pogut afegir el producte a la cistella'
+            });
     
+
+          }
+    
+         
+       }
+};
+
+Request.open("POST", "http://localhost/Small/index.php/SmallController/AfegirCarrito", true);
+Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+Request.send("id="+id+"&quantitat="+quantitat);
+
+
+
+
+
 
 
 }

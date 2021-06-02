@@ -45,12 +45,12 @@
       </div>
     </nav>
 
-     <!-- Modal Carrito -->
-     <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- Modal Carrito -->
+      <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5" style="border-bottom:0px;">
-            <h5 class="modal-title" id="titol1">Carrito de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
+            <h5 class="modal-title" id="titol1">Cistella de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -107,18 +107,15 @@
 
             <div class="offset-4 text-center boton">
             <a  href="http://localhost/Small/index.php/SmallController/BuidarCarrito"  id="bcolor" style="background-color:#FF0910 !important;color: white !important;"  class="btn mr-2 ">Buidar</a>
-              <a href="http://localhost/Small/index.php/SmallController/TramitarComandaRed" class="btn" id="bcolor">Tramitar</a>
+            <a href="http://localhost/Small/index.php/SmallController/TramitarCarrito" class="btn" id="bcolor">Tramitar</a>
           
             </div>
             </form>
           </div>
-
         </div>
-
       </div>
     </div>
     </div>
-
 
 
     <!-- Modal Iniciar Sessió -->
@@ -491,9 +488,6 @@
                 <div class="col-md-3 mb-3 ">
                 <span style='color:red;' id="telefonD"></span>
                   <input type="text" class="form-control" id="telefon" placeholder="Telèfon" >
-                </div>
-                <div class="col-md-9 mb-3">
-                  <input type="text" class="form-control" id="comentaris" placeholder="Comentari" required>
                 </div>
               </div>
 

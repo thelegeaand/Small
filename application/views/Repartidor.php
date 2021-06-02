@@ -476,12 +476,15 @@ foreach($comandes as $fila){
           <th>Estat</th>
           <th>Telefon</th>
           <th></th>
+          <th></th>
+          
         </tr>
       </thead>
       <tbody>
         <tr>
         <?php 
-          echo"<td><a src='Detalls Comanda' href='URI'>".$fila["codi_comanda"]."</a></td>";
+        $codi=$fila["codi_comanda"];
+          echo"<td><a src='Detalls Comanda' href='http://localhost/Small/index.php/SmallController/DetallsComanda/".$codi."'>".$fila["codi_comanda"]."</a></td>";
           echo"<td>".$fila["id_client"]."</td>";
           echo"<td>".$fila["data_hora"]."</td>";
           echo"<td>".$fila["direccio_entrega"]."</td>";
@@ -492,9 +495,13 @@ foreach($comandes as $fila){
           }
          
           echo"<td>".$fila["telefon"]."</td>";
+          if($fila["estat"]=="Entregada"){
+          }else{
 
-         
+          echo"<td><a href='http://localhost/Small/index.php/SmallController/ComandaEntregada/$codi' class='btn' id='bcolor'>Entregat</a></td>";
           
+        }
+    
         echo"</tr>";
 
 

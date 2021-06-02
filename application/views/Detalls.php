@@ -460,39 +460,34 @@
   <div class="card mb-5 mt-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
-       <strong>Usuari</strong>
+       <strong>Detalls Comanda</strong>
       </h5>
     </div>
 <?php 
-if(empty($usuari)){
-  echo"<p><strong>Error al Carregar Usuari!!!</strong></p>";
+if(empty($detalls)){
+  echo"<p><strong>Error al Carregar Detalls Comanda!!!</strong></p>";
 }else{
 echo"<div class='table-responsive'>";
 echo"<table class='table table-bordered'>";
-foreach($usuari as $fila){
+foreach($detalls as $fila){
 
     ?>
       <thead>
         <tr>
-          <th>Id</th>
-          <th>Nom_Usuari</th>
-          <th>Contrasenya</th>
-          <th>Estat</th>
+          <th>IdBotiga</th>
+          <th>Nom Botiga</th>
+          <th>Direcció a recollir</th>
           <th></th>
-          <th></th>
-      
 
         </tr>
       </thead>
       <tbody>
         <tr>
         <?php 
-          echo"<td></td>";
-          echo"<td></td>";
-          echo"<td></td>";
+          echo"<td>".$fila["id_botiga"]."</td>";
+          echo"<td>".$fila["nom_botiga"]."</td>";
+          echo"<td>".$fila["província"].",".$fila["ciutat"].",".$fila["carrer"].",".$fila["numero"]."</td>";
         
-            echo"<td>Activat</td>";
-            echo"<td><a href='' id='bcolor20' class='btn'>Descativar</a></td>";
           
            
         echo"</tr>";
