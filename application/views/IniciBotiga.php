@@ -109,7 +109,7 @@
       <div class="collapse navbar-collapse text-center " id="navbarCollapse">
         <div class="navbar-nav">
           <a href="http://localhost/Small/index.php/SmallController/IniciBotiga" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes "> La Meva Botiga</a>
-          <a href="http://localhost/Small/index.php/SmallController/Apariencia" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Apariència</a>
+          <a href="http://localhost/Small/index.php/SmallController/apariencia" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Apariència</a>
           <a href="http://localhost/Small/index.php/SmallController/ElsMeusProductes" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Els Meus Productes</a>
         </div>
         <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">

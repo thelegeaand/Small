@@ -775,6 +775,10 @@ class SmallController extends CI_Controller
 
     }
 
+    public function apariencia(){
+        $this->load->view('ModDadesBotiga');
+    }
+
     public function enviar(){
         $config = array(
            'protocol' => 'smtp',

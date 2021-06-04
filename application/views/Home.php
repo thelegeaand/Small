@@ -443,7 +443,7 @@ box-shadow:         3px -3px 1px rgba(50, 50, 50, 0.56);
             <div class="row mt-5">
               <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
                 <div class="mb-2">
-                  <img id="fotosSeccions" src="<?php echo base_url(); ?>img/pescado.jpg" alt="Imatge Fruiteria">
+                  <img id="fotosSeccions" src="<?php echo base_url(); ?>img/pescado.jpg" alt="Imatge Peixateria">
                 </div>
                 <div class="text-center">
                   <p id="seccio">PEIXATERIA</p>
@@ -460,7 +460,7 @@ box-shadow:         3px -3px 1px rgba(50, 50, 50, 0.56);
 
               <div class="col-md-6 col-lg-3 col-6 col-xs-6 mt-2 text-center">
                 <div class="mb-2">
-                  <img id="fotosSeccions3" src="<?php echo base_url(); ?>img/Carne.jpg" alt="Imatge Fruiteria">
+                  <img id="fotosSeccions3" src="<?php echo base_url(); ?>img/Carne.jpg" alt="Imatge Carnisseria">
                 </div>
                 <div>
                   <p id="seccio" class="text-center">CARNISSERIA<br>XARCUTERIA</p>
@@ -469,7 +469,7 @@ box-shadow:         3px -3px 1px rgba(50, 50, 50, 0.56);
               </div>
               <div class="col-md-6 col-lg-3 col-xs-6 col-6 mt-2 text-center">
                 <div class="mb-2">
-                  <img id="fotosSeccions4" src="<?php echo base_url(); ?>img/Aviram.jpg" alt="Imatge Fruiteria">
+                  <img id="fotosSeccions4" src="<?php echo base_url(); ?>img/Aviram.jpg" alt="Imatge Aviram">
                 </div>
                 <div>
                   <p id="seccio" class="text-center">AVIRAM</p>
