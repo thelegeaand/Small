@@ -29,7 +29,7 @@
       <img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logoM" alt="Imatge Corporativa Small">
       </div>
       <div class="alert-message text-center">
-        <p><strong>No pots tramitar amb el carrito buit!</strong></p>
+        <p><strong>No pots tramitar amb la cistella buida!</strong></p>
         
       
       </div>

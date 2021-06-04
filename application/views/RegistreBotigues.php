@@ -36,7 +36,7 @@
         <div class="navbar-nav">
           <a href="http://localhost/Small/index.php/SmallController/index" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Home</a>
           <a href="http://localhost/Small/index.php/SmallController/RegistreBotiga" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Donar d'Alta Botiga</a>
-          <a href="http://localhost/Small/index.php/SmallController/MainBotiguesPer" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Botigues</a>
+          <a href="http://localhost/Small/index.php/SmallController/TipusBotiga" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Botigues</a>
         </div>
         <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
           <button id="bcolor" class="btn  my-2 my-sm-0 mr-3" data-backdrop="static" data-keyboard="false" type="button" data-toggle="modal" data-target="#IniciSessio">Iniciar Sessió</button>
@@ -270,8 +270,7 @@
           <div class="container text-right pb-2">
 
             <span><img id="imgModal" src="<?php echo base_url(); ?>img/privacy.png"></span>
-
-
+            
           </div>
 
         </div>
@@ -456,6 +455,7 @@
                 </div>
 
                 <div class="offset-4 text-center boton">
+                  
                   <button type="button" onclick="registrebotiga()" id="bcolor" class="btn">Registra't</button>
 
                 </div>

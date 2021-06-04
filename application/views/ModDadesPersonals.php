@@ -2,19 +2,21 @@
 <html lang="ca">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Poppins:wght@800&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
   <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
-  <title>Modificar Dades Botiga</title>
+  <title>Modificar Dades Personals</title>
 </head>
 
 <body class="trianguloModificar">
@@ -22,7 +24,7 @@
   <!--Header-->
   <header class="">
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light mt-1  ">
+  <nav class="navbar navbar-expand-md navbar-light bg-light mt-1  ">
       <a id="mq" class="navbar-brand ml-3"><img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logo2" alt="Imatge Corporativa Small"></a>
       <button type="button" style="border-radius: 74%;
   padding: 4%;
@@ -36,20 +38,21 @@
           <a href="http://localhost/Small/index.php/SmallController/HistorialComandes" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Historial</a>
           <a href="http://localhost/Small/index.php/SmallController/ModDadesPersonaRed" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Compte</a>
 
-          <a href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Carrito</a>
+          <a href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Cistella</a>
         </div>
         <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
-          <a href="#" id="bcolor">Tancar Sessió </a>
+          <a href="http://localhost/Small/index.php/SmallController/TancarSessio" id="bcolor" class="btn">Tancar Sessió</a>
         </div>
       </div>
     </nav>
 
-     <!-- Modal Carrito -->
-     <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+   <!-- Modal Carrito -->
+   <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5" style="border-bottom:0px;">
-            <h5 class="modal-title" id="titol1">Carrito de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
+            <h5 class="modal-title" id="titol1">Cistella de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -91,9 +94,6 @@
 
 
                 ?>
-
-
-
               </table>
 
               <div class="container preu text-right">
@@ -106,7 +106,7 @@
 
             <div class="offset-4 text-center boton">
             <a  href="http://localhost/Small/index.php/SmallController/BuidarCarrito"  id="bcolor" style="background-color:#FF0910 !important;color: white !important;"  class="btn mr-2 ">Buidar</a>
-              <a href="http://localhost/Small/index.php/SmallController/TramitarComandaRed" class="btn" id="bcolor">Tramitar</a>
+            <a href="http://localhost/Small/index.php/SmallController/TramitarCarrito" class="btn" id="bcolor">Tramitar</a>
           
             </div>
             </form>
@@ -474,15 +474,15 @@
               
                   <div class="row ">
                   <div class="col-md-4 justify-content-center d-flex">
-                  <button type="submit" id="bcolor" class="btn  mt-5 mb-5">Modificar</button>
+                  <button type="button" onclick="error()" id="bcolor" class="btn  mt-5 mb-5">Modificar</button>
 
                   </div>
                   <div class="col-md-4 justify-content-center d-flex">
-                  <button type="submit" id="bcolor" class="btn mt-5 mb-5 ">Canviar Contrasenya</button>
+                  <button type="button" onclick="error()" id="bcolor" class="btn mt-5 mb-5 ">Canviar Contrasenya</button>
 
                   </div>
                   <div class="col-md-4 justify-content-center d-flex">
-                  <button type="submit" id="brojo" class="btn mt-5 mb-5 ">Donar de Baixa</button>
+                  <button type="button" onclick="error()" id="brojo" class="btn mt-5 mb-5 ">Donar de Baixa</button>
 
                   </div>
                   </div>

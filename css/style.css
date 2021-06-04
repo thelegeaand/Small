@@ -127,6 +127,9 @@ a:hover{
     padding-right: 9px;
     padding-left: 10px;
 }
+#contacom{
+    padding-bottom: 35rem!important;
+}
 #bc10{
     color: white;
     background-color: red;

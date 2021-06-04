@@ -382,7 +382,7 @@
                
                 echo"<div class='card-body bg-light text-center' style='padding-bottom:10%;'>";
                   echo"<h4>".$fila['nom_botiga']."</h4>";
-                  echo "<button  type='button' class='btn' id='bcolor'>Anar</button>";
+                  echo "<button onclick='regis()'  type='button' class='btn' id='bcolor'>Anar</button>";
                 echo"</div>";
               echo"</div>";
             echo"</div>";

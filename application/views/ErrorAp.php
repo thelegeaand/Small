@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
   <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
-  <title>Producte Afegit</title>
+  <title>Error Afegir Producte</title>
 </head>
 <body>
 
@@ -26,15 +26,15 @@
     <div class="alert-box" style="float: none; margin: 0 auto;">
     <div class="alert alert-success">
       <div class="alert-icon text-center">
-      <img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logoM" alt="Imatge Corporativa Small">
+      <img style='width: 66%;' src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logoM" alt="Imatge Corporativa Small">
       </div>
       <div class="alert-message text-center">
-        <p><strong>Has afegit un producte al carrito!</strong></p>
+        <p><strong>Error-El format de dades es incorrecte o camp està buit!</strong></p>
         
       
       </div>
       <div class=" d-flex  justify-content-center">
-      <a  href="http://localhost/Small/index.php/SmallController/IniciClient"  id="bcolor10" class="btn">Tornar</a>
+      <a  href="http://localhost/Small/index.php/SmallController/ElsMeusProductes"  id="bcolor10" class="btn ml-2">Tornar</a>
       </div>
     </div>
   </div>

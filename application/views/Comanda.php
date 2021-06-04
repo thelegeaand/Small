@@ -24,8 +24,7 @@
 
   <!--Header-->
   <header class="">
-
-    <nav class="navbar navbar-expand-md navbar-light bg-light mt-1  ">
+  <nav class="navbar navbar-expand-md navbar-light bg-light mt-1  ">
       <a id="mq" class="navbar-brand ml-3"><img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logo2" alt="Imatge Corporativa Small"></a>
       <button type="button" style="border-radius: 74%;
   padding: 4%;
@@ -35,24 +34,25 @@
 
       <div class="collapse navbar-collapse text-center " id="navbarCollapse">
         <div class="navbar-nav">
-        <a href="http://localhost/Small/index.php/SmallController/IniciClient" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Botigues</a>
-        <a href="http://localhost/Small/index.php/SmallController/HistorialComandes" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Historial</a>
-        <a href="http://localhost/Small/index.php/SmallController/ModDadesPersonaRed" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Compte</a>
+          <a href="http://localhost/Small/index.php/SmallController/IniciClient" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Botigues</a>
+          <a href="http://localhost/Small/index.php/SmallController/HistorialComandes" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Historial</a>
+          <a href="http://localhost/Small/index.php/SmallController/ModDadesPersonaRed" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Compte</a>
 
-          <a href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Carrito</a>
+          <a href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Cistella</a>
         </div>
         <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
-        <a  href="http://localhost/Small/index.php/SmallController/TancarSessio"  id="bcolor" class="btn">Tancar Sessió</a>
+          <a href="http://localhost/Small/index.php/SmallController/TancarSessio" id="bcolor" class="btn">Tancar Sessió</a>
         </div>
       </div>
     </nav>
 
-       <!-- Modal Carrito -->
+
+     <!-- Modal Carrito -->
     <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5" style="border-bottom:0px;">
-            <h5 class="modal-title" id="titol1">Carrito de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
+            <h5 class="modal-title" id="titol1">Cistella de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -94,9 +94,6 @@
 
 
                 ?>
-
-
-
               </table>
 
               <div class="container preu text-right">
@@ -109,7 +106,7 @@
 
             <div class="offset-4 text-center boton">
             <a  href="http://localhost/Small/index.php/SmallController/BuidarCarrito"  id="bcolor" style="background-color:#FF0910 !important;color: white !important;"  class="btn mr-2 ">Buidar</a>
-              <a href="http://localhost/Small/index.php/SmallController/TramitarComandaRed" class="btn" id="bcolor">Tramitar</a>
+            <a href="http://localhost/Small/index.php/SmallController/TramitarCarrito" class="btn" id="bcolor">Tramitar</a>
           
             </div>
             </form>
@@ -420,71 +417,69 @@
     </div>
 
     <div class="">
-       <div class="container mb-5 pb-5">
-            
-  
+       <div id="contacom" class="container  mt-5 mb-2 pb-5 text-center">
   <div class="card mb-5 pb-5">
     <div class="card-header text-center cardVerde" id="headingOne">
       <h5 style="color:white;" class="mb-0 ">
-      Historial de Comandes
+       <strong>Comandes</strong>
       </h5>
     </div>
+<?php 
+if(empty($comandes)){
+  echo"<p><strong>No tens Comandes encara!!!</strong></p>";
+}else{
+echo"<div class='table-responsive'>";
+echo"<table class='table table-bordered'>";
+foreach($comandes as $fila){
+    ?>
+      <thead>
+        <tr>
+          <th>Codi Comanda</th>
+          <th>Data Hora</th>
+          <th>Direcció Entrega</th>
+          <th>Estat</th>
+          <th>Telefon</th>
+          <th></th>
+      
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <?php 
+        $codi=$fila["codi_comanda"];
+          echo"<td>".$fila["codi_comanda"]."</td>";
+          echo"<td>".$fila["data_hora"]."</td>";
+          echo"<td>".$fila["direccio_entrega"]."</td>";
+          if($fila["estat"]=="Preparant"){
+            echo"<td class='text-warning'>".$fila["estat"]."</td>";
+          }else if($fila["estat"]=="Cancel·lada"){
+            echo"<td style='color:red;'>".$fila["estat"]."</td>";
+        
+          }else {
+            echo"<td class='text-success'>".$fila["estat"]."</td>";
+            
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="container  adv">
-        <table class="table">
-          <thead>
-          <tr>
-                <th>Codi</th>
-                <th>Data</th>
-                <th>Estat</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          <tr>
-                <td>12345678910A</td>
-                <td>15/05/2021</td>
-                <td>En Preparació</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+          }
+          echo"<td>".$fila["telefon"]."</td>";
+          if($fila["estat"]=="Entregada"){
+          }else if($fila["estat"]=="Entregat"){
+          echo"<td><a href='http://localhost/Small/index.php/SmallController/CancelEntrega/$codi' class='btn' id='bcolor20'>Cancel·lar</a></td>";
+          }
+    
+        echo"</tr>";
+
+
+      echo"</tbody>";
+}
+      
+    echo"</table>";
+}
+    ?>
+  </div>
     </div>
   </div>
 </div>
-                <div class="justify-content-center d-flex mb-5">
-                <div class="col-md-4 mb-5">
-                        <div class="cartaTotal border mb-5">
-                            <div class="cuerpoCarta border">
-
-                            </div>
-                            <div class="headerCarta border">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-       </div>
-       
-       </div>
-
 
 
     </main>

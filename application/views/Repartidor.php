@@ -117,7 +117,7 @@
           <a style="display:none;" href="http://localhost/Small/index.php/SmallController/HistorialComandes" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Historial</a>
           <a style="display:none;" href="http://localhost/Small/index.php/SmallController/ModDadesPersonaRed" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Compte</a>
 
-          <a style="display:none;" href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Carrito</a>
+          <a style="display:none;" href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Cistella</a>
         </div>
         <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
           <a href="http://localhost/Small/index.php/SmallController/TancarSessio" id="bcolor" class="btn">Tancar Sessió</a>
@@ -131,7 +131,7 @@
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5" style="border-bottom:0px;">
-            <h5 class="modal-title" id="titol1">Carrito de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
+            <h5 class="modal-title" id="titol1">Cistella de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -476,25 +476,39 @@ foreach($comandes as $fila){
           <th>Estat</th>
           <th>Telefon</th>
           <th></th>
+          <th></th>
+          
         </tr>
       </thead>
       <tbody>
         <tr>
         <?php 
-          echo"<td><a src='Detalls Comanda' href='URI'>".$fila["codi_comanda"]."</a></td>";
+        $codi=$fila["codi_comanda"];
+          echo"<td><a src='Detalls Comanda' href='http://localhost/Small/index.php/SmallController/DetallsComanda/".$codi."'>".$fila["codi_comanda"]."</a></td>";
           echo"<td>".$fila["id_client"]."</td>";
           echo"<td>".$fila["data_hora"]."</td>";
           echo"<td>".$fila["direccio_entrega"]."</td>";
           if($fila["estat"]=="Preparant"){
             echo"<td class='text-warning'>".$fila["estat"]."</td>";
-          }else{
+          }else if($fila["estat"]=="Cancel·lada"){
+            echo"<td style='color:red;'>".$fila["estat"]."</td>";
+        
+          }else {
             echo"<td class='text-success'>".$fila["estat"]."</td>";
+            
+
           }
          
           echo"<td>".$fila["telefon"]."</td>";
+          if($fila["estat"]=="Entregada"){
+          }else if($fila["estat"]=="Cancel·lada"){
 
-         
+          }else{
+
+          echo"<td><a href='http://localhost/Small/index.php/SmallController/ComandaEntregada/$codi' class='btn' id='bcolor'>Entregat</a></td>";
           
+          }
+    
         echo"</tr>";
 
 

@@ -109,7 +109,7 @@
       <div class="collapse navbar-collapse text-center " id="navbarCollapse">
         <div class="navbar-nav">
           <a href="http://localhost/Small/index.php/SmallController/IniciBotiga" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes "> La Meva Botiga</a>
-          <a href="http://localhost/Small/index.php/SmallController/apariencia" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Apariència</a>
+          <a href="http://localhost/Small/index.php/SmallController/ModificarApariencia" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Apariència</a>
           <a href="http://localhost/Small/index.php/SmallController/ElsMeusProductes" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Els Meus Productes</a>
         </div>
         <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
@@ -122,7 +122,7 @@
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
         <div class="modal-content">
           <div class="modal-header text-center ml-5" style="border-bottom:0px;">
-            <h5 class="modal-title" id="titol1">Carrito de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
+            <h5 class="modal-title" id="titol1">Cistella de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -133,10 +133,6 @@
 
             <div class="container">
               <table class="table">
-
-
-
-
                 <?php
 
                 if (empty($this->cart->contents())) {
@@ -150,16 +146,15 @@
                     $img = base64_encode($items['options']['img']);
                     $tipus = $items['options']['tipus'];
 
-            
-
-
                     echo "<tr style='border:1px solid green;' class='b'>";
                     echo "<th id='quantitat' scope='row'> X" . $items["qty"] . "</th>";
                     echo '<td><img class="ml-5" src="data:' . $tipus . ';base64,' . $img . '" id="logo" alt="Imatge Producte Carrito" style="width:63px;height:70px;"></td>';
                     echo "<td id='descripcio'>" . $items["name"] . "</td>";
-
                     echo "</tr>";
+
                   }
+
+
                 }
 
 
@@ -176,7 +171,7 @@
 
             <div class="offset-4 text-center boton">
             <a  href="http://localhost/Small/index.php/SmallController/BuidarCarrito"  id="bcolor" style="background-color:#FF0910 !important;color: white !important;"  class="btn mr-2 ">Buidar</a>
-              <a href="http://localhost/Small/index.php/SmallController/TramitarComandaRed" class="btn" id="bcolor">Tramitar</a>
+            <a href="http://localhost/Small/index.php/SmallController/TramitarCarrito" class="btn" id="bcolor">Tramitar</a>
           
             </div>
             </form>
@@ -544,7 +539,7 @@ $imgprod=$fila["img_prod"];
 $tipusprod=$fila["tipus_prod"];
 
 ?>
- <?php
+<?php
   echo"<div class='col-12 col-sm-6 col-md-4 col-lg-4'>";
       echo"<div class='card mt-2'>";
      
@@ -565,7 +560,7 @@ $tipusprod=$fila["tipus_prod"];
           }
 
           echo" <div class='buy justify-content-center align-items-center'>";
-          echo"<a href='" . base_url() . "index.php/SmallController/AfegirProducte/".$fila["id_producte"] ."' class='btn mt-3' id='bcolor'>+</a>";
+          echo"<button onclick='AfegirEstoc(".$fila["id_producte"].")' class='btn mt-3' id='bcolor'>+</a>";
  
           echo"</div>";
           echo"</div>";
