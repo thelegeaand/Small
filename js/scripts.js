@@ -1055,7 +1055,7 @@ function AfegirProd(id,quantitat){
 
             Swal.fire({
                 icon: 'success',
-                text: 'Producte afegit a la cistella',
+                title: 'Producte afegit a la cistella',
             }).then((value) => {
 
                 location.reload();
@@ -1079,9 +1079,7 @@ function AfegirProd(id,quantitat){
 Request.open("POST", "http://localhost/Small/index.php/SmallController/AfegirCarrito", true);
 Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 Request.send("id="+id+"&quantitat="+quantitat);
-
 }
-
 function AfegirEstoc(idproducte){
 
     var Request = new XMLHttpRequest();
@@ -1095,7 +1093,7 @@ function AfegirEstoc(idproducte){
 
             Swal.fire({
                 icon: 'success',
-                text: 'Estoc del producte afegit',
+                title: 'Estoc del producte afegit',
             }).then((value) => {
                 location.reload();
             });    
@@ -1114,6 +1112,34 @@ Request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 Request.send("idproducte="+idproducte);
 
 
+
+}
+
+function error(){
+
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Funció no disponible temporalment'
+    });
+
+}
+function regis(){
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Has d\'estar registrat!'
+    });
+
+}
+
+function auditoria(){
+
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Funció no disponible temporalment'
+    });
 
 }
 

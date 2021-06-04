@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
   <script type="text/javascript" src="<?= base_url() ?>js/scripts.js"></script>
-  <title>Pàgina Error Tramit</title>
+  <title>Canvi Dades</title>
 </head>
 <body>
 
@@ -29,22 +29,18 @@
       <img src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png" id="logoM" alt="Imatge Corporativa Small">
       </div>
       <div class="alert-message text-center">
-        <p><strong>No pots tramitar amb la cistella buida!</strong></p>
+        <p><strong>S'han canviat les dades correctament!</strong></p>
         
       
       </div>
       <div class=" d-flex  justify-content-center">
-      <a  href="http://localhost/Small/index.php/SmallController/IniciClient"  id="bcolor10" class="btn">Tornar</a>
+      <a  href="http://localhost/Small/index.php/SmallController/ModificarApariencia"  id="bcolor10" class="btn">Tornar</a>
       </div>
     </div>
   </div>
   </div>
 </div>
 	
-		
-      
-
-
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

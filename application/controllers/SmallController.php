@@ -91,6 +91,34 @@ class SmallController extends CI_Controller
 
     }
 
+public function ModificarApariencia(){
+
+        $session = $this->session->userdata('tipus');
+        $idusuari = $this->session->userdata('validat');
+        $botiga= $this->SmallModel->IdBotiga($idusuari);
+        $idbotiga=$botiga[0]["id_botiga"];
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+        } else {
+
+            if ($session == "botiga") {
+
+                $data = $this->SmallModel->Botiga($idbotiga);
+                       
+                $this->load->view('ModDadesBotiga',array('Abotiga'=>$data));
+  
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+
+
+
+    }
+
     public function ModDadesPersonaRed()
     {
 
@@ -148,7 +176,6 @@ class SmallController extends CI_Controller
             echo "ok";
         }
     }
-
     public function registrebotigues()
     {
         $Numero = $this->input->post('Number');
@@ -255,9 +282,203 @@ class SmallController extends CI_Controller
         }
     }
 
+    public function ModificarABotiga(){
+
+        $session = $this->session->userdata('tipus');
+        $idusuari = $this->session->userdata('validat');
+        $botiga= $this->SmallModel->IdBotiga($idusuari);
+        $idbotiga=$botiga[0]["id_botiga"];
+
+        
+        if (empty($session)) {
+
+            $this->load->view('Home');
+        } else {
+
+            if ($session == "botiga") {
+
+                $nombotiga=$this->input->post('nombotiga');
+                $desc=$this->input->post('descripcio');
+                $contacte=$this->input->post('contacte');
+                $data['dades']=$this->input->post();
+                $this->form_validation->set_rules('nombotiga','nombotiga','required|max_length[50]',
+                array('required'=>'<span id="error">*Obligatori</span>'
+                ,'max_length'=>' <span id="error">*Max.10 caràcters</span>'
+                ));
+                $this->form_validation->set_rules('descripcio','descripcio','required|max_length[200]',
+                array('required'=>'<span id="error">*Obligatori</span>'
+                ,'max_length'=>' <span id="error">*Max.200 caràcters</span>'
+                ));
+                $this->form_validation->set_rules('contacte','contacte','required|max_length[50]',
+                array('required'=>'<span id="error">*Obligatori</span>'
+                ,'max_length'=>' <span id="error">*Max.200 caràcters</span>'
+                ));
+
+                if($this->form_validation->run()==FALSE){
+        
+                    $missatge="Algun camp incorrecte!!!";
+                    $this->load->view('ErrorCanvis');
+
+                }else{
+
+                    $this->SmallModel->ModificarBotiga($idbotiga,$nombotiga,$contacte,$desc);
+
+                    $this->load->view('CanvisCorrectes');
+
+                }  
+              
+                
+            } else {
+
+                $this->load->view('Home');
+            }
+        }
+    }
+        public function ModificarLogo(){
+
+            $session = $this->session->userdata('tipus');
+            $idusuari = $this->session->userdata('validat');
+            $botiga= $this->SmallModel->IdBotiga($idusuari);
+            $idbotiga=$botiga[0]["id_botiga"];
+    
+            
+            if (empty($session)) {
+    
+                $this->load->view('Home');
+            } else {
+    
+                if ($session == "botiga") {
+    
+                    $config['upload_path']          = './uploads/';
+                    $config['allowed_types']        = 'jpg|png';
+                    $config['max_size']             = 1000;
+                    $config['max_width']            = 1920;
+                    $config['max_height']           = 1080;
+    
+                    $this->load->library('upload', $config);
+    
+                    if ( ! $this->upload->do_upload('perfil'))
+                    {
+                            $error = array('error' => $this->upload->display_errors());
+    
+                            $this->load->view('ErrorCanvis', $error);
+                    }
+                    else
+                    {
+                        $data = array('upload_data' => $this->upload->data());
+                    
+                        foreach($data as $key){
+                            
+                            echo "<script>console.log('Debug Objects:aqui " . $key['file_name'] . "' );</script>";
+                             echo "<script>console.log('Debug Objects:aqui " . $key['file_type'] . "' );</script>";
+                           
+                           
+                            
+                            $nomF=$key['file_name'];
+                            $tipusF=$key['file_type'];
+                            
+                        
+                            
+                        }
+                        
+                        
+                         $CodiU=$this->session->userdata('validat');
+                         $this->SmallModel->PujarnouLogo($idbotiga,$nomF,$tipusF);
+                         $this->load->view('CanvisCorrectes');
+                        
+                    }
+                  
+                    
+                } else {
+    
+                    $this->load->view('Home');
+                }
+            }
+        }
+
+            public function ModificarBanner(){
+
+                $session = $this->session->userdata('tipus');
+                $idusuari = $this->session->userdata('validat');
+                $botiga= $this->SmallModel->IdBotiga($idusuari);
+                $idbotiga=$botiga[0]["id_botiga"];
+        
+                
+                if (empty($session)) {
+        
+                    $this->load->view('Home');
+                } else {
+        
+                    if ($session == "botiga") {
+        
+                        $config['upload_path']          = './uploads/';
+                        $config['allowed_types']        = 'jpg|png';
+                        $config['max_size']             = 1000;
+                        $config['max_width']            = 1920;
+                        $config['max_height']           = 1080;
+        
+                        $this->load->library('upload', $config);
+        
+                        if ( ! $this->upload->do_upload('banner'))
+                        {
+                                $error = array('error' => $this->upload->display_errors());
+        
+                                $this->load->view('ErrorCanvis', $error);
+                        }
+                        else
+                        {
+                            $data = array('upload_data' => $this->upload->data());
+                        
+                            foreach($data as $key){
+                                
+                                echo "<script>console.log('Debug Objects:aqui " . $key['file_name'] . "' );</script>";
+                                 echo "<script>console.log('Debug Objects:aqui " . $key['file_type'] . "' );</script>";
+                               
+                               
+                                
+                                $nomF=$key['file_name'];
+                                $tipusF=$key['file_type'];
+                                
+                            
+                                
+                            }
+                            
+                             $CodiU=$this->session->userdata('validat');
+                             $this->SmallModel->PujarnouBanner($idbotiga,$nomF,$tipusF);
+                             $this->load->view('CanvisCorrectes');
+                            
+                        }
+                      
+                        
+        } else {
+        
+                    $this->load->view('Home');
+        }
+        }
+    
+
+
+
+
+
+
+
+     
+
+
+
+
+  
+    }
+
     public function TipusBotiga(){
 
         $tipus = $this->input->post('select');
+
+        if($tipus==""||empty($tipus)){
+
+            $tipus="Carn";
+        }
     
         if($tipus=="Carn"){
 
@@ -1076,6 +1297,121 @@ class SmallController extends CI_Controller
             } else {
 
                 $this->load->view('Home');
+            }
+        }
+
+    }
+
+    public function AfegirProducteBotiga(){
+
+        $session = $this->session->userdata('tipus');
+        $idusuari = $this->session->userdata('validat');
+        $botiga= $this->SmallModel->IdBotiga($idusuari);
+        $idbotiga=$botiga[0]["id_botiga"];
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "botiga") {
+
+                $nomproducte=$this->input->post('nomproducte');
+                $estoc=$this->input->post('estoc');
+                $preu=$this->input->post('preu');
+                $desc=$this->input->post('descripcio');
+        
+                $data['dades']=$this->input->post();
+        
+                $this->form_validation->set_rules('nomproducte','nomproducte','required',array( 'required' => '<span id="error" style="color:red;">Camp en blanc</span>'));
+                $this->form_validation->set_rules('estoc','estoc','required',array( 'required' => '<span id="error" style="color:red;">Camp en blanc</span>'));
+                $this->form_validation->set_rules('preu','preu','required|greater_than_equal_to[1]|less_than_equal_to[500]',array( 'required' => '<span id="error" style="color:red;">*Camp en blanc</span>','valid_email' => '<span id="error" style="color:red;">Introdueix un Correu</span>'));
+                $this->form_validation->set_rules('descripcio','descripcio','required|max_length[200]',array( 'required' => '<span id="error" style="color:red;">Camp en blanc</span>'));
+
+                $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'jpg|png';
+                $config['max_size']             = 1000;
+                $config['max_width']            = 1920;
+                $config['max_height']           = 1080;
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('imatge'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        $this->load->view('ErrorAp', $error);
+                }
+                else if($this->form_validation->run()==FALSE){
+
+                    $this->load->view('ErrorAp');
+
+                }else{
+
+                    $num1=$aleat = rand(0,9); 
+                    $num2=$aleat = rand(0,9);
+                    $num3=$aleat = rand(0,9); 
+                    $num4=$aleat = rand(0,9); 
+
+                    $CodiProducte="PROD"."".$num1."".$num2."".$num3."".$num4;
+
+                    $data = array('upload_data' => $this->upload->data());
+                    
+                        foreach($data as $key){
+                            
+                           
+                           
+            
+                            $nomF=$key['file_name'];
+                            $tipusF=$key['file_type'];
+                            
+                        
+                            
+                        }
+
+                    $this->SmallModel->PujarnouProducte($idbotiga, $nomproducte, $estoc,$desc,$preu,$CodiProducte,$nomF,$tipusF);
+
+
+
+                    $this->load->view('ProdCor');
+                }
+                
+
+            } else {
+
+            $this->load->view('Home');
+            }
+        }
+
+
+
+    }
+
+    public function ElsMeusProductes(){
+
+        $session = $this->session->userdata('tipus');
+        $idusuari = $this->session->userdata('validat');
+        $botiga= $this->SmallModel->IdBotiga($idusuari);
+        $idbotiga=$botiga[0]["id_botiga"];
+
+        if (empty($session)) {
+
+            $this->load->view('Home');
+
+        } else {
+
+            if ($session == "botiga") {
+
+                $data = $this->SmallModel->Botiga($idbotiga);
+                $data2 = $this->SmallModel->Productes($idbotiga);
+                
+                $this->load->view('ElsMeusProductes',array('Abotiga'=>$data,'Pbotiga'=>$data2));
+
+        
+            } else {
+
+            $this->load->view('Home');
             }
         }
 

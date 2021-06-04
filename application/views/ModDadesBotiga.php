@@ -2,13 +2,15 @@
 <html lang="ca">
 
 <head>
-  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Poppins:wght@800&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="<?php echo base_url(); ?>img/LogoSmallSinFondo.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -18,7 +20,6 @@
 </head>
 
 <body>
-
   <!--Header-->
   <header class="">
 
@@ -29,83 +30,17 @@
   border:none;" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="fa fa-bars" aria-hidden="true"></span>
       </button>
-
       <div class="collapse navbar-collapse text-center " id="navbarCollapse">
         <div class="navbar-nav">
-          <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Botigues</a>
-          <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Historial</a>
-          <a href="#" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Compte</a>
-
-          <a href="#" data-toggle="modal" data-target="#Carrito" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Carrito</a>
+          <a href="http://localhost/Small/index.php/SmallController/IniciBotiga" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes "> La Meva Botiga</a>
+          <a href="http://localhost/Small/index.php/SmallController/ModificarApariencia" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Apariència</a>
+          <a href="http://localhost/Small/index.php/SmallController/ElsMeusProductes" class="nav-item mt-md-0 mt-lg-0 mt-4 pr-md-5 pr-lg-5 pr-xl-5 pr-0  nav-linkes ">Els Meus Productes</a>
         </div>
         <div class="navbar-nav text-center  mt-lg-0 mt-md-0 mt-xl-0 mt-5 ml-auto">
-          <a href="#" id="bcolor">Tancar Sessió </a>
+          <a href="http://localhost/Small/index.php/SmallController/TancarSessio" id="bcolor" class="btn">Tancar Sessió</a>
         </div>
       </div>
     </nav>
-
-    <!-- Modal Carrito -->
-    <div class="modal fade" id="Carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
-        <div class="modal-content">
-          <div class="modal-header text-center ml-5" style="border-bottom:0px;">
-            <h5 class="modal-title" id="titol1">Cistella de <span><img id="imgModal" src="<?php echo base_url(); ?>img/LogoSmallSinFondo.png"></span></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body ">
-
-
-            <div class="container">
-              <table class="table">
-
-
-                <tr style="border:1px solid green;" class="b">
-                  <th id="quantitat" scope="row">x3</th>
-                  <td><img src="<?php echo base_url(); ?>img/Carne.jpg" id="logo" alt="Imatge Producte Carrito" style="width=100px;height:100px;"></td>
-                  <td id="descripcio">Plàtan canari - a pes(500g aprox)</td>
-
-                </tr>
-
-                
-                <tr style="border:1px solid green;" class="b">
-                  <th id="quantitat" scope="row">x3</th>
-                  <td><img src="<?php echo base_url(); ?>img/Carne.jpg" id="logo" alt="Imatge Producte Carrito" style="width=100px;height:100px;"></td>
-                  <td id="descripcio">Plàtan canari - a pes(500g aprox)</td>
-
-                </tr>
-               
-
-              </table>
-
-              <div class="container preu text-right">
-
-              <p><strong>PREU TOTAL:</strong></p>
-
-              </div>
-
-          
-
-               
-
-            </div>
-
-            <div class="offset-4 text-center boton">
-              <button type="submit" id="bcolor" class="btn btn-outline-success">Tramitar</button>
-
-            </div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-    </div>
-
-
-
     <!-- Modal Iniciar Sessió -->
     <div class="modal fade" id="IniciSessio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog d-flex justify-content-center " style="width: 100%;margin:auto;margin-top:10%;" role="document">
@@ -120,16 +55,16 @@
             <form>
               <div class="form-row">
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault01">NOM USUARI</label>
-                  <input type="text" class="form-control" id="Usuari" required>
+                  <label for="NomUsuariIS">NOM USUARI<span style='color:red;' class="ml-2" id="nomUsuariInc"></span></label>
+                  <input type="text" class="form-control" id="NomUsuariIS" required>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">PASSWORD</label>
-                  <input type="password" class="form-control" id="Password" required>
+                  <label for="PasswordIS">PASSWORD<span style='color:red;' class="ml-2" id="PassInc"></span></label>
+                  <input type="password" class="form-control" id="PasswordIS" required>
                 </div>
 
                 <div class="offset-4 text-center boton">
-                  <button type="submit" id="bcolor" class="btn btn-outline-success">Iniciar Sessió</button>
+                  <button type="button" onclick="iniciarsessio()" id="bcolor" class="btn">Iniciar Sessió</button>
 
                 </div>
                 <div class="offset-2 mt-2">
@@ -137,13 +72,13 @@
 
                 </div>
 
+
+              </div>
             </form>
           </div>
 
         </div>
-
       </div>
-    </div>
     </div>
     <!-- Modal per Registrar-se -->
 
@@ -160,56 +95,59 @@
             <form>
               <div class="form-row">
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault01">NOM</label>
-                  <input type="text" class="form-control" id="Usuari" required>
+                  <label for="Nom">NOM<span style='color:red;' class="ml-2" id="nomInc"></span></label>
+                  <input type="text" class="form-control" id="Nom">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">PRIMER COGNOM</label>
-                  <input type="text" class="form-control" id="Cognom" required>
+                  <label for="Cognom">PRIMER COGNOM<span style='color:red;' class="ml-2" id="cognomInc"></span></label>
+                  <input type="text" class="form-control" id="Cognom">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">SEGON COGNOM</label>
-                  <input type="text" class="form-control" id="Cognom2" required>
+                  <label for="Cognom2">SEGON COGNOM<span style='color:red;' class="ml-2" id="cognom2Inc"></span></label>
+                  <input type="text" class="form-control" id="Cognom2">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">DNI</label>
-                  <input type="text" class="form-control" id="Dni" required>
+                  <label for="Dni">DNI<span style='color:red;' class="ml-2" id="dniInc"></span></label>
+                  <input type="text" class="form-control" id="Dni">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">DATA DE NAIXEMENT</label>
-                  <input type="date" class="form-control" id="dnaix" required>
+                  <label for="Datanaixement">DATA DE NAIXEMENT<span style='color:red;' class="ml-2" id="dataInc"></span></label>
+                  <input type="date" class="form-control" id="Datanaixement">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">CORREU ELECTRÒNIC</label>
-                  <input type="mail" class="form-control" id="mail" required>
+                  <label for="Correu">CORREU ELECTRÒNIC<span style='color:red;' class="ml-2" id="correuInc"></span></label>
+                  <input type="email" class="form-control" id="Correu">
                 </div>
                 <div class="col-md-12 mb-3">
                   <div class="form-row">
-                    <div class="col-md-4">
-                      <label for="validationDefault02">CIUTAT</label>
-                      <input type="text" class="form-control" id="ciutat" required>
+                    <div class="col-md-4 mb-3">
+                      <label for="Ciutat">CIUTAT</label>
+                      <span style='color:red;' class="ml-2" id="ciutatInc"></span>
+                      <input type="text" class="form-control" id="Ciutat">
                     </div>
-                    <div class="col-md-4">
-                      <label for="validationDefault02">PROVÍNCIA</label>
-                      <input type="mail" class="form-control" id="mail" required>
+                    <div class="col-md-4 mb-3">
+                      <label for="Provincia">PROVÍNCIA</label>
+                      <span style='color:red;' class="ml-2" id="provinciaInc"></span>
+                      <input type="text" class="form-control" id="Provincia">
                     </div>
-                    <div class="col-md-4">
-                      <label for="validationDefault02">C.POSTAL</label>
-                      <input type="mail" class="form-control" id="mail" required>
+                    <div class="col-md-4 ">
+                      <label for="CPostal">C.POSTAL</label>
+                      <span style='color:red;' class="ml-2" id="postalInc"></span>
+                      <input type="text" class="form-control" id="Cpostal">
                     </div>
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">PASSWORD</label>
-                  <input type="password" class="form-control" id="mail" required>
+                  <label for="Password">PASSWORD<span style='color:red;' class="ml-2" id="passwordInc"></span></label>
+                  <input type="password" class="form-control" id="Password">
                 </div>
                 <div class="col-md-12 mb-3">
-                  <label for="validationDefault02">REPETEIX PASSWORD</label>
-                  <input type="password" class="form-control" id="mail" required>
+                  <label for="Password2">REPETEIX PASSWORD</label>
+                  <input type="password" class="form-control" id="Password2">
                 </div>
 
                 <div class="offset-4 text-center boton">
-                  <button type="submit" id="bcolor" class="btn btn-outline-success">Registra't</button>
+                  <button type="button" onclick="registreClient()" id="bcolor" class="btn">Registra't</button>
 
                 </div>
                 <div class="offset-3 mt-2">
@@ -217,12 +155,12 @@
 
                 </div>
 
-            </form>
 
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </div>
     </div>
 
     <!-- Modal Termes i  Condicions -->
@@ -394,153 +332,250 @@
         </div>
       </div>
     </div>
-    </header>
+  </header>
+  <?php
 
-<main class="">
-    <div class="col-md-12 fondotienda">
-        <div class="row">
+  foreach ($Abotiga as $fila) {
+
+    $NomBotiga = $fila["nom_botiga"];
+    $tipus = $fila["tipus_banner"];
+    $banner = $fila["img_banner"];
+    $base64image = base64_encode($banner);
+    $tipuslogo = $fila["tipus_logo"];
+    $logo = $fila["img_logo"];
+  ?>
+    <main class="">
+      <?php
+      if ($tipus == "" || $tipus == "NULL" || empty($tipus)) {
+      } else {
+        echo "<div class='col-md-12 text-center' style='background: url(data:" . $tipus . ";base64,$base64image);background-repeat:no-repeat;background-size:cover;'>";
+      }
+      ?>
+      <div class="row">
         <div class="col-md-6 logoBotiga ">
-                <div class="justify-content-center d-flex">
-                <img src="<?php echo base_url(); ?>img/ramirezlogo.jpg" style="margin-top:8rem;border-radius:10%;" class="w-25" alt="">
-                </div>                
-    </div>
+          <div class="justify-content-center d-flex">
+            <?php
+
+            if ($tipuslogo == "" || $tipuslogo == "NULL" || empty($tipuslogo)) {
+            } else {
+              echo '<img src="data:' . $tipuslogo . ';base64,' . base64_encode($logo) . '" style="margin-top:8rem;border-radius:10%;"" class="w-25" alt="Logo Botiga">';
+            }
+            ?>
+          </div>
+        </div>
+
+
         <div class="col-md-6 InfoBotiga">
-                <div class="container">
-                <div class="col-md-12 ">
-                <form>
-                <div class="row">
-                  <div class="col-md-6 col-6 col-sm-6" >
-                  <h5 class="font-weight-bold mt-5 mb-4">Nom Botiga</h5>
-                  <input type="text" class="form-control" placeholder="Nom Botiga">
-                  </div>
-                  <div class="col-md-6 col-6 col-sm-6">
-                  <h5 class="font-weight-bold mt-5 mb-4">Descripció Botiga</h5>
-                  <input type="text" class="form-control" placeholder="Descripció">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6 col-6 col-sm-6">
-                  <h5 class="font-weight-bold mt-5 mb-4">Direcció</h5>
-                  <input type="text" class="form-control " placeholder="Direcció">
-                  </div>
-                  <div class="col-md-6 col-6 col-sm-6">
-                  <h5 class="font-weight-bold mt-5 mb-4">Contacte</h5>
-                  <input type="text" class="form-control" placeholder="Contacte">
-                    </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6 col-6 col-sm-6">
+          <div class="container">
+            <div class="col-md-12 ">
+              <?php
+              echo form_open_multipart('SmallController/ModificarLogo');
+              ?>
+
+
+              <div class="row">
+                <div class="col-md-6 col-6 col-sm-6">
                   <h5 class="font-weight-bold mt-5 mb-4">Imatge de Perfil</h5>
-                  <input type="file" class="form-control " placeholder="Imatge Perfil">
+                  <?php
+                  echo "<input type='file' class='form-control' name='perfil'>";
+
+                  ?>
+                  <div class="row d-flex justify-content-center">
+                    <?php
+                    echo form_submit(array(
+                      'name' => 'mod',
+                      'class' => 'btn  mt-5 mb-5',
+                      'value' => "Canviar Logo",
+                      'id' => "bcolor"
+
+                    ));
+                    echo "<br><br>";
+
+                    echo form_close();
+                    ?>
                   </div>
-                  <div class="col-md-6 col-6 col-sm-6">
+                </div>
+                <div class="col-md-6 col-6 col-sm-6">
+                  <?php
+                  echo form_open_multipart('SmallController/ModificarBanner');
+                  ?>
                   <h5 class="font-weight-bold mt-5 mb-4">Imatge Botiga</h5>
-                  <input type="file" class="form-control" placeholder="Imatge Botiga">
+                  <input type="file" class="form-control" name="banner" placeholder="banner">
+
+                  <div class="row d-flex justify-content-center">
+                    <?php
+                    echo form_submit(array(
+                      'name' => 'mod',
+                      'class' => 'btn  mt-5 mb-5',
+                      'value' => "Canviar Banner",
+                      'id' => "bcolor"
+
+                    ));
+                    echo form_close();
+                    echo "<br><br>";
+                    ?>
                   </div>
                 </div>
-                </form>   
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-
-   <div class="container justify-content-center d-flex">
-        <button class="btn mt-5 mb-5" id="bcolor">Guardar Canvis</button>
-   </div>
-        
-    
-
-</main>
-
-<footer>
-
-    <div class="container-fluid bgcontainer2">
-
-      <div class="container">
-
-        <div class="row pt-4 SmallScroll d-flex justify-content-center ">
-
-          <div class="row rowc">
-            <div class="col-sm-4 col-12 col-lg-4">
-              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
-                <div class="card-body">
-                  <h5 class="card-title t1">SMALL</h5>
-                  <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="#logo">Home</a></li>
-                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Registre">Registre Client</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="#">RegistreBotiga</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 col-12 col-lg-4">
-              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
-                <div class="card-body">
-                  <h5 class="card-title t1">LEGAL</h5>
-                  <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Condicions">Termes i Condicions</a></li>
-                    <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;"  type="button" data-toggle="modal" data-target="#Privacitat">Privacitat</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Cookies">Cookies</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 col-12 col-lg-4">
-              <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
-                <div class="card-body">
-                  <h5 class="card-title t1">AJUDA</h5>
-                  <ul class="lista">
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Contacte</a></li>
-                    <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;" href="#">Small-Inc@gmail.com</a></li>
-                    <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;" href="#">+34 678930323</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container d-flex justify-content-center  mt-4 mb-4">
-
-            <div class="row">
-              <div>
-                <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-instagram">
-                  <span class="sr-only">Logo Instagram</span>
-                  <span class="fa fa-instagram fa-3x ICON"></span>
-                </a>
-
-              </div>
-
-              <div>
-                <a href="https://www.twitter.com/" class="btn btn-block btn-social btn-twitter">
-                  <span class="sr-only">Logo Twitter</span>
-                  <span class="fa fa-twitter fa-3x ICON"></span>
-                </a>
-              </div>
-              <div>
-                <a href="https://www.facebook.com/" class="btn btn-block btn-social btn-facebook">
-                  <span class="sr-only">Logo Facebook</span>
-                  <span class="fa fa-facebook fa-3x ICON"></span>
-                </a>
               </div>
             </div>
 
           </div>
-
-          <p class="copy offset-8 ml-2 mb-4">Small 2021 &copy;</p>
-
         </div>
-
+      </div>
+      </div>
       </div>
 
+      <div class="container justify-content-center ">
+
+        <?php
+        echo form_open('SmallController/ModificarABotiga');
+        ?>
+        <div class="row">
+          <div class="col-md-4 col-4 col-sm-4">
+            <?php
+            echo "<h5 class=' mt-5 mb-4'><strong>Nom</strong></h5>";
 
 
-  </footer>
+            echo form_input(array(
+
+              'name' => 'nombotiga',
+              'type' => 'text',
+              'placeholder' => 'Nom Botiga',
+              'class' => 'form-control'
+            ));
+            ?>
+          </div>
+          <div class="col-md-4 col-4 col-sm-4">
+            <h5 class="font-weight-bold mt-5 mb-4">Descripció </h5>
+            <?php
+            echo form_input(array(
+              'name' => 'descripcio',
+              'type' => 'text',
+              'placeholder' => 'Descripció',
+              'class' => 'form-control'
+            ));
+            ?>
+          </div>
+
+          <div class="col-md-4 col-4 col-sm-4">
+            <h5 class="font-weight-bold mt-5 mb-4 ">Contacte</h5>
+            <?php
+            echo form_input(array(
+              'name' => 'contacte',
+              'type' => 'text',
+              'placeholder' => 'Contacte',
+              'class' => 'form-control'
+            ));
+            ?>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <?php
+            echo form_submit(array(
+              'name' => 'mod',
+              'class' => 'btn  mt-5 mb-5',
+              'value' => "Guardar Canvis",
+              'id' => "bcolor"
+
+            ));
+            echo "<br><br>";
+            ?>
+          </div>
+        </div>
+      </div>
+
+    <?php
+    echo form_close();
+  }
+    ?>
+
+    </main>
+
+    <!--Footer Small -->
+    <footer>
+      <div class="container-fluid bgcontainer2">
+        <div class="container">
+          <div class="row pt-4 SmallScroll d-flex justify-content-center ">
+            <div class="row rowc">
+              <div class="col-sm-4 col-12 col-lg-4">
+                <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+                  <div class="card-body">
+                    <h5 class="card-title t1">SMALL</h5>
+                    <ul class="lista">
+                      <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" href="http://localhost/Small/index.php/SmallController/index">Home</a></li>
+                      <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Registre">Registre Client</a></li>
+                      <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" href="<?php echo base_url(); ?>index.php/SmallController/RegistreBotiga">Registre Botiga</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-12 col-lg-4">
+                <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+                  <div class="card-body">
+                    <h5 class="card-title t1">LEGAL</h5>
+                    <ul class="lista">
+                      <li class="pt-3"><a class="card-text" style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Condicions">Termes i Condicions</a></li>
+                      <li class="pt-3"><a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Privacitat">Privacitat</a></li>
+                      <li class="pt-3"> <a class="card-text " style="text-decoration:none;color:white;cursor:pointer;" type="button" data-toggle="modal" data-target="#Cookies">Cookies</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-12 col-lg-4">
+                <div class="card" style="background-color:#4B4B4B;color:white;margin-top: 3%;">
+                  <div class="card-body">
+                    <h5 class="card-title t1">AJUDA</h5>
+                    <ul class="lista">
+                      <li class="pt-3"><a href="http://localhost/Small/index.php/SmallController/Contacte" class="card-text" style="text-decoration:none;color:white;">Contacte</a></li>
+                      <li class="pt-3"><span class="card-text" style="text-decoration:none;color:white;">Small-Inc@gmail.com</span></li>
+                      <li class="pt-3"> <span class="card-text " style="text-decoration:none;color:white;">+34 678930323</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container d-flex justify-content-center  mt-4 mb-4">
+
+              <div class="row">
+                <div>
+                  <a href="https://www.instagram.com/" class="btn btn-block btn-social btn-instagram">
+                    <span class="sr-only">Logo Instagram</span>
+                    <span class="fa fa-instagram fa-3x ICON"></span>
+                  </a>
+
+                </div>
+
+                <div>
+                  <a href="https://www.twitter.com/" class="btn btn-block btn-social btn-twitter">
+                    <span class="sr-only">Logo Twitter</span>
+                    <span class="fa fa-twitter fa-3x ICON"></span>
+                  </a>
+                </div>
+                <div>
+                  <a href="https://www.facebook.com/" class="btn btn-block btn-social btn-facebook">
+                    <span class="sr-only">Logo Facebook</span>
+                    <span class="fa fa-facebook fa-3x ICON"></span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <p class="copy offset-8 ml-2 mb-4">Small 2021 &copy;</p>
+
+          </div>
+
+        </div>
+
+    </footer>
 
 </body>
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
 </html>
